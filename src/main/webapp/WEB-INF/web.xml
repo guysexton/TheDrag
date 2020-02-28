@@ -24,7 +24,7 @@
   </servlet-mapping>
   <servlet>
 	     <servlet-name>page3</servlet-name>
-    	 <jsp-file>/page3.jsp</jsp-file>
+    	 <servlet-class>thedrag.DragServlet</servlet-class>
   </servlet>
   <servlet-mapping>
      	<servlet-name>page3</servlet-name>
