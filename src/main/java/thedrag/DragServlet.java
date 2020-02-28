@@ -17,7 +17,7 @@ public class DragServlet extends HttpServlet {
 
 		String json = run("https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/5UXWX7C5*BA?format=json&modelyear=2011", client);
 
-		resp.getWriter().println("test");
+		resp.getWriter().println(json);
 	}
 
 	String run(String url, OkHttpClient client) throws IOException {
