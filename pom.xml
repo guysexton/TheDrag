@@ -22,9 +22,9 @@
   </build>
   <dependencies>
   	<dependency>
-  		<groupId>com.squareup.okhttp3</groupId>
+  		<groupId>com.squareup.okhttp</groupId>
   		<artifactId>okhttp</artifactId>
-  		<version>4.4.0</version>
-	</dependency>
+  		<version>2.5.0</version>
+  	</dependency>
   </dependencies>
 </project>
