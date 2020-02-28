@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
          
-    <servlet>
+   <servlet>
         <servlet-name>thedrag</servlet-name>
-        <servlet-class>thedrag.DragServlet</servlet-class>
+        <jsp-file>/thedrag.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
         <servlet-name>thedrag</servlet-name>
@@ -14,8 +14,113 @@
   </servlet-mapping> 
      
      
+  <servlet>
+	     <servlet-name>page2</servlet-name>
+    	 <jsp-file>/page2.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page2</servlet-name>
+     	<url-pattern>/page2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page3</servlet-name>
+    	 <jsp-file>/page3.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page3</servlet-name>
+     	<url-pattern>/page3</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page4</servlet-name>
+    	 <jsp-file>/page4.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page4</servlet-name>
+     	<url-pattern>/page4</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page5</servlet-name>
+    	 <jsp-file>/page5.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page5</servlet-name>
+     	<url-pattern>/page5</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page6</servlet-name>
+    	 <jsp-file>/page6.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page6</servlet-name>
+     	<url-pattern>/page6</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page7</servlet-name>
+    	 <jsp-file>/page7.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page7</servlet-name>
+     	<url-pattern>/page7</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page8</servlet-name>
+    	 <jsp-file>/page8.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page8</servlet-name>
+     	<url-pattern>/page8</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page9</servlet-name>
+    	 <jsp-file>/page9.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page9</servlet-name>
+     	<url-pattern>/page9</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page10</servlet-name>
+    	 <jsp-file>/page10.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page10</servlet-name>
+     	<url-pattern>/page10</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page11</servlet-name>
+    	 <jsp-file>/page11.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page11</servlet-name>
+     	<url-pattern>/page11</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page12</servlet-name>
+    	 <jsp-file>/page12.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page12</servlet-name>
+     	<url-pattern>/page12</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page13</servlet-name>
+    	 <jsp-file>/page13.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page13</servlet-name>
+     	<url-pattern>/page13</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	     <servlet-name>page14</servlet-name>
+    	 <jsp-file>/page14.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+     	<servlet-name>page14</servlet-name>
+     	<url-pattern>/page14</url-pattern>
+  </servlet-mapping>
+     
      
   <welcome-file-list>
-    <welcome-file>thedrag</welcome-file>
+    <welcome-file>thedrag.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
