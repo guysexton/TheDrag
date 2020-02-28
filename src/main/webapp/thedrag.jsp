@@ -18,7 +18,7 @@
 			<td><a href='/thedrag'>Main Page</a></td>
 		</tr>
 		<tr>
-			<td><a href='/page2'>Page 2</a></td>
+			<td><a href='/about'>About Page</a></td>
 		</tr>
 		<tr>
 			<td><a href='/page3'>Page 3</a></td>

@@ -15,12 +15,12 @@
      
      
   <servlet>
-	     <servlet-name>page2</servlet-name>
-    	 <jsp-file>/page2.jsp</jsp-file>
+	     <servlet-name>about</servlet-name>
+    	 <jsp-file>/about.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-     	<servlet-name>page2</servlet-name>
-     	<url-pattern>/page2</url-pattern>
+     	<servlet-name>about</servlet-name>
+     	<url-pattern>/about</url-pattern>
   </servlet-mapping>
   <servlet>
 	     <servlet-name>page3</servlet-name>
