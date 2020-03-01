@@ -18,6 +18,8 @@
 	     <servlet-name>about</servlet-name>
     	 <jsp-file>/about.jsp</jsp-file>
   </servlet>
+  
+  <!-- Need to have the URL-pattern map to /html/about.html. Not working when you add "/html/about.html -->
   <servlet-mapping>
      	<servlet-name>about</servlet-name>
      	<url-pattern>/about</url-pattern>
