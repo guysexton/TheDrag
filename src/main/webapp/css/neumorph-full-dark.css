@@ -11073,7 +11073,8 @@ div.dropdown-menu {
   color: #afe88a;
 }
 .np-text-accent {
-  color: #eba3a3;
+  color: #FFCCCC;
+  font-weight: bold;
 }
 .np-text-warn {
   color: #e88a8a;
