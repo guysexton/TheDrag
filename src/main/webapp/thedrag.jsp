@@ -15,15 +15,13 @@
 			<td colspan="2" style="font-weight: bold;">Available Servlets:</td>
 		</tr>
 		<tr>
-			<td><a href='/thedrag'>Main Page</a></td>
-		</tr>
-		
-		<!--Temporary fix for redirecting to the new HTMl. Need to do it in WebXML but don't know how. -->
-		<tr>
-			<td><a href='/html/about.html'>About Page</a></td>
+			<td><a href='thedrag'>Main Page</a></td>
 		</tr>
 		<tr>
-			<td><a href='/page3'>Page 3</a></td>
+			<td><a href='about'>About Page</a></td>
+		</tr>
+		<tr>
+			<td><a href='json'>JSON Link</a></td>
 		</tr>
 		<tr>
 			<td><a href='/page4'>Page 4</a></td>

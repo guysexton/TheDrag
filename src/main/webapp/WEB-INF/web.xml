@@ -16,21 +16,21 @@
      
   <servlet>
 	     <servlet-name>about</servlet-name>
-    	 <jsp-file>/about.jsp</jsp-file>
+    	 <jsp-file>/html/about.html</jsp-file>
   </servlet>
   
-  <!-- Need to have the URL-pattern map to /html/about.html. Not working when you add "/html/about.html -->
   <servlet-mapping>
      	<servlet-name>about</servlet-name>
      	<url-pattern>/about</url-pattern>
   </servlet-mapping>
+  
   <servlet>
-	     <servlet-name>page3</servlet-name>
+	     <servlet-name>json</servlet-name>
     	 <servlet-class>thedrag.DragServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-     	<servlet-name>page3</servlet-name>
-     	<url-pattern>/page3</url-pattern>
+     	<servlet-name>json</servlet-name>
+     	<url-pattern>/json</url-pattern>
   </servlet-mapping>
   <servlet>
 	     <servlet-name>page4</servlet-name>
