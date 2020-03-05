@@ -36,7 +36,7 @@
   
   <servlet>
 	     <servlet-name>json</servlet-name>
-    	 <servlet-class>thedrag.DragServlet</servlet-class>
+    	 <servlet-class>thedrag.GithubStatsServlet</servlet-class>
   </servlet>
   <servlet-mapping>
      	<servlet-name>json</servlet-name>
