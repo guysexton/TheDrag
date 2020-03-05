@@ -32,10 +32,15 @@
   		<version>3.1.0</version>
   		<scope>provided</scope>
 	</dependency>
-		<dependency> 
+	<dependency> 
     	<groupId>com.opencsv</groupId> 
     	<artifactId>opencsv</artifactId> 
     	<version>4.1</version> 
-</dependency>
+	</dependency>
+	<dependency>
+    	<groupId>com.googlecode.json-simple</groupId>
+    	<artifactId>json-simple</artifactId>
+    	<version>1.1.1</version>
+	</dependency>	
   </dependencies>
 </project>
