@@ -25,6 +25,16 @@
   </servlet-mapping>
   
   <servlet>
+	     <servlet-name>gitabout</servlet-name>
+    	 <jsp-file>/gitabout.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+     	<servlet-name>gitabout</servlet-name>
+     	<url-pattern>/gitabout</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
 	     <servlet-name>json</servlet-name>
     	 <servlet-class>thedrag.DragServlet</servlet-class>
   </servlet>
