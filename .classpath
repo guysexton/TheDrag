@@ -35,5 +35,15 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="C:/Users/voch1/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar" sourcepath="C:/Users/voch1/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar">
+		<attributes>
+			<attribute name="com.google.cloud.tools.eclipse.appengine.libraries.repository" value="central"/>
+			<attribute name="com.google.cloud.tools.eclipse.appengine.libraries.groupid" value="javax.servlet"/>
+			<attribute name="com.google.cloud.tools.eclipse.appengine.libraries.artifactId" value="javax.servlet-api"/>
+			<attribute name="com.google.cloud.tools.eclipse.appengine.libraries.type" value="jar"/>
+			<attribute name="com.google.cloud.tools.eclipse.appengine.libraries.version" value="3.1.0"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
