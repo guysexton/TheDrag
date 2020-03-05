@@ -170,6 +170,18 @@
          <servlet-name>git</servlet-name>
          <url-pattern>/git</url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+         <servlet-name>sitemap</servlet-name>
+         <jsp-file>/html/sitemap.html</jsp-file>
+  </servlet>
+  <servlet-mapping>
+         <servlet-name>sitemap</servlet-name>
+         <url-pattern>/sitemap</url-pattern>
+  </servlet-mapping>
+  
+  
+
      
      
   <welcome-file-list>
