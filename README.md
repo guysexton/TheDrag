@@ -65,3 +65,10 @@ User Stories:
 3. As a undergraduate college student with no income, I want a way to find a cheap car under $20,000, so I can drive to school.
 4. As an environmental researcher not only does my career need me to travel but it has also made me aware of the dangers of carbon emissions. I would like a centralized source of vehicles that leaves a minimal amount of emissions.
 5. I'm in the market for a car. More than just knowing the price, I want to know what the car will look like before I buy it. 
+
+User Stories from Customers: 
+6. As a concerned user of who is making my product I would like to see the developer team of the product. 
+7. I want to be clear about the purpose of the website.
+8. As a user with bad eyesite I want to be able to use the website easily for someone with my disability. 
+9. As someone who browses the internet everyday, I would like a clean and polished UI.
+10. I would like to know closest locations of dealerships selling a certain model. 
