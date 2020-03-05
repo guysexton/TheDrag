@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.navbar-brand {
+	height:80vh;
+	width:auto;
+}
+
+.carousel-item{
+	backface-visibility : hidden; /* the magic ingredient */
+    transform           : skew(6deg, 0);
+    overflow                    : hidden;
+	height: 80vh;
+	width: 100vw;
+}
+
+.carousel-item img{
+	transform : skew(-6deg, 0);
+    position          : relative;
+	max-height: auto;
+	max-width: 100%;
+}
+
+.carousel-caption{
+	transform : skew(-6deg, 0);
+}
+
