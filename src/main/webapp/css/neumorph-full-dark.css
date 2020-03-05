@@ -392,11 +392,13 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 2rem;
+    font-size: 2rem;
+    padding-top: 10%;
 }
 
 h3, .h3 {
-  font-size: 1.75rem;
+    font-size: 1.75rem;
+    padding-bottom: 20px;
 }
 
 h4, .h4 {
@@ -4346,13 +4348,17 @@ input[type=button].btn-block {
   justify-content: space-between;
 }
 .navbar-brand {
-  display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 1rem;
-  font-size: 1.25rem;
-  line-height: inherit;
-  white-space: nowrap;
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    max-width: 100%;
+    max-height: 100%;
+    fit: contain;
+    -o-object-fit: contain;
 }
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
@@ -4657,7 +4663,7 @@ input[type=button].btn-block {
   color: #fff;
 }
 .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
-  color: #fff;
+    color: #fff;
 }
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.5);
@@ -6344,7 +6350,8 @@ a.close.disabled {
 }
 
 .carousel {
-  position: relative;
+    position: relative;
+    height: 70vh;
 }
 
 .carousel.pointer-event {
@@ -6352,9 +6359,13 @@ a.close.disabled {
 }
 
 .carousel-inner {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 70vh;
+    align-content: center;
+    vertical-align: middle;
+    align-items: middle;
 }
 .carousel-inner::after {
   display: block;
@@ -6888,7 +6899,8 @@ button.bg-shadow-light:focus {
 }
 
 .d-block {
-  display: block !important;
+    display: block !important;
+    width: 100vw;
 }
 
 .d-table {
@@ -10858,7 +10870,7 @@ div.dropdown-menu {
   box-shadow: 6px 6px 16px 0px rgba(40, 40, 41, 0.801), -6px -6px 16px 0px rgba(65, 65, 65, 0.801), inset 0px 0px 0px 0px rgba(40, 40, 41, 0.801), inset 0px 0px 0px 0px rgba(65, 65, 65, 0.801);
 }
 .np-hover:hover {
-  box-shadow: 0px 0px 0px 0px rgba(40, 40, 41, 0.801), 0px 0px 0px 0px rgba(65, 65, 65, 0.801), inset 6px 6px 16px 0px rgba(40, 40, 41, 0.801), inset -6px -6px 16px 0px rgba(65, 65, 65, 0.801);
+    box-shadow: 0px 0px 0px 0px rgba(40, 40, 41, 0.801), 0px 0px 0px 0px rgba(65, 65, 65, 0.801), inset 6px 6px 16px 0px rgba(40, 40, 41, 0.801), inset -6px -6px 16px 0px rgba(65, 65, 65, 0.801);
 }
 .np-hover-inverse:hover {
   box-shadow: 6px 6px 16px 0px rgba(40, 40, 41, 0.801), -6px -6px 16px 0px rgba(65, 65, 65, 0.801), inset 0px 0px 0px 0px rgba(40, 40, 41, 0.801), inset 0px 0px 0px 0px rgba(65, 65, 65, 0.801);
@@ -11116,7 +11128,7 @@ div.dropdown-menu {
   overflow: hidden;
 }
 .np-img-expand {
-  height: 100%;
+    -o-object-fit: contain;
 }
 .np-pointer {
   cursor: pointer;
