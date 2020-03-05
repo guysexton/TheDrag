@@ -3,12 +3,21 @@ package thedrag;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.opencsv.CSVReader;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+/*
 public class MakeServlet {
 	public static Set<String> getMakes(){
 		Set<String> makes = new HashSet<String>();
@@ -43,5 +52,28 @@ public class MakeServlet {
 	}
 	public static void main(String[] args) {
 		System.out.println(getMakes());
+	}
+}*/
+
+public class MakeServlet extends HttpServlet {
+
+	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
+		resp.setContentType("text/plain");
+
+		OkHttpClient client = new OkHttpClient();
+
+		String json = run("https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMake/honda?format=json", client);
+
+		resp.getWriter().println(json);
+	}
+
+	String run(String url, OkHttpClient client) throws IOException {
+		Request request = new Request.Builder()
+				.url(url)
+				.build();
+
+		try (Response response = client.newCall(request).execute()) {
+			return response.body().string();
+		}
 	}
 }
