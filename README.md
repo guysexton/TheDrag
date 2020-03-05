@@ -1,5 +1,14 @@
 # TheDrag
 
+Team Members: Name, UTeid, Github Link
+Daniel Lazcano, dl32678, https://github.com/DanielLazcano
+Ethan Santoni-Colvin, ers2677, https://github.com/ethansantonicolvin
+Frank Le, ,https://github.com/fle734449
+Guy Sexton, ,https://github.com/53Dude
+Jonathan Walsh, jdw4867, https://github.com/jdw4867
+Kishan Dayananda, kd8953,
+
+
 Models: Make, Model, Year
 
 Potential API 1:  https://apidocs.marketcheck.com/?version=latest
