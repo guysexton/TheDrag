@@ -2,17 +2,10 @@ package thedrag;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import com.opencsv.CSVReader;
 
@@ -49,35 +42,6 @@ public class DealerServlet {
 		return dealers;
 	}
 	public static void main(String[] args) {
-		
-	        //JSON parser object to parse read file
-	        JSONParser jsonParser = new JSONParser();
-	         
-	        try (FileReader reader = new FileReader("dealerships.json"))
-	        {
-	            //Read JSON file
-	        	Object obj = jsonParser.parse(reader);
-	        	JSONArray userList = new JSONArray();
-	        	userList.add(obj);
-	        	
-	            System.out.println(userList);
-	            
-	            userList.forEach( emp -> parseEmployeeObject( (JSONObject) emp ) );
-	           
-	        } catch (FileNotFoundException e) {
-	            e.printStackTrace();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        } catch (ParseException e) {
-	            e.printStackTrace();
-	        }
-	    
+		System.out.println(getDealers());
 	}
-	
-	 private static void parseEmployeeObject(JSONObject dealer) 
-	    {
-	        //Get dealer object within list
-	        JSONObject dealerObject = (JSONObject) dealer.get("Sold by Toyota of Cedar Park");
-	        System.out.println(dealerObject);
-	    }
 }
