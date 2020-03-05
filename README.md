@@ -66,9 +66,9 @@ User Stories:
 4. As an environmental researcher not only does my career need me to travel but it has also made me aware of the dangers of carbon emissions. I would like a centralized source of vehicles that leaves a minimal amount of emissions.
 5. I'm in the market for a car. More than just knowing the price, I want to know what the car will look like before I buy it. 
 
-User Stories from Customers: 
-6. As a concerned user of who is making my product I would like to see the developer team of the product. 
-7. I want to be clear about the purpose of the website.
-8. As a user with bad eyesite I want to be able to use the website easily for someone with my disability. 
-9. As someone who browses the internet everyday, I would like a clean and polished UI.
-10. I would like to know closest locations of dealerships selling a certain model. 
+User Stories from Customers with Estimations: 
+6. As a concerned user of who is making my product I would like to see the developer team of the product. / 1 Hour
+7. I want to be clear about the purpose of the website. / 1 Hour
+8. As a user with bad eyesite I want to be able to use the website easily for someone with my disability. /2 Hours
+9. As someone who browses the internet everyday, I would like a clean and polished UI. / 2 Hours
+10. I would like to know closest locations of dealerships selling a certain model.  / 3 Hours
