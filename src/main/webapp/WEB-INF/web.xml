@@ -180,8 +180,38 @@
          <url-pattern>/sitemap</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+         <servlet-name>austin-subaru</servlet-name>
+         <jsp-file>/html/austin-subaru.html</jsp-file>
+  </servlet>
+  <servlet-mapping>
+         <servlet-name>austin-subaru</servlet-name>
+         <url-pattern>/austin-subaru</url-pattern>
+  </servlet-mapping>
   
 
+   <servlet>
+         <servlet-name>first-texas-honda</servlet-name>
+         <jsp-file>/html/first-texas-honda.html</jsp-file>
+  </servlet>
+  <servlet-mapping>
+         <servlet-name>first-texas-honda</servlet-name>
+         <url-pattern>/first-texas-honda</url-pattern>
+  </servlet-mapping>
+  
+     <servlet>
+         <servlet-name>charles-maund-toyota</servlet-name>
+         <jsp-file>/html/charles-maund-toyota.html</jsp-file>
+  </servlet>
+  <servlet-mapping>
+         <servlet-name>charles-maund-toyota</servlet-name>
+         <url-pattern>/charles-maund-toyota</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
      
      
   <welcome-file-list>
