@@ -9,9 +9,9 @@ import java.util.Set;
 
 import com.opencsv.CSVReader;
 
-public class DealerServlet {
-	public static Set<String> getDealers(){
-		Set<String> dealers = new HashSet<String>();
+public class MakeServlet {
+	public static Set<String> getMakes(){
+		Set<String> makes = new HashSet<String>();
 		
 		File folder = new File("./");
 		File[] listOfFiles = folder.listFiles();
@@ -30,8 +30,8 @@ public class DealerServlet {
 		        while ((line = br.readLine()) != null) {
 		            // use comma as separator
 		            String[] cols = line.split(",");
-		            String[] dealer = cols[4].split("(?<=by) ");
-		            dealers.add(dealer[1].replaceAll("\"", "")); //remove unnecessary quotes
+		            String[] productName = cols[0].split("\\s+");
+		            makes.add(productName[1]);
 		        }
 			}
 		    catch (Exception e) { 
@@ -39,9 +39,9 @@ public class DealerServlet {
 		    } 
 		}
 		
-		return dealers;
+		return makes;
 	}
 	public static void main(String[] args) {
-		System.out.println(getDealers());
+		System.out.println(getMakes());
 	}
 }
