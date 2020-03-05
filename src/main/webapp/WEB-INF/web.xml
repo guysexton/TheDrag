@@ -185,6 +185,6 @@
      
      
   <welcome-file-list>
-    <welcome-file>html/sitemap.html</welcome-file>
+    <welcome-file>sitemap</welcome-file>
   </welcome-file-list>
 </web-app>
