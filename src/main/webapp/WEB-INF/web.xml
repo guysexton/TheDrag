@@ -12,17 +12,6 @@
      	<servlet-name>json</servlet-name>
      	<url-pattern>/json</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  		<servlet-name>githubstats</servlet-name>
-  		<servlet-class>thedrag.GithubStats</servlet-class>
-  </servlet>
-  
-   <servlet-mapping>
-     	<servlet-name>githubstats</servlet-name>
-     	<url-pattern>/githubstats</url-pattern>
-  </servlet-mapping>
-  
     
   <welcome-file-list>
     <welcome-file>html/sitemap.html</welcome-file>

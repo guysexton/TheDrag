@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<%@ page import="thedrag.GithubStats" %>
+<%@ page import="thedrag.CodeStats" %>
+<%@ page import="thedrag.IssueStats" %>
 
 <html lang="en">
   <head>
@@ -17,11 +18,11 @@
   <body>
   
   <%
-  	
-   	GithubStats githubStats = new GithubStats();
-  	pageContext.setAttribute("commitText", githubStats.getListAsString());
-  
-  %>
+    	CodeStats codeStats = new CodeStats();
+      	pageContext.setAttribute("commitText", codeStats.getListAsString());
+      	IssueStats issueStats = new IssueStats();
+      	pageContext.setAttribute("issueText", issueStats.getListAsString());
+    %>
     
  
     <!--Navigation bar-->
@@ -133,6 +134,7 @@
        <h3>Commits, Adds, and Deletes</h3>
        <p>${commitText}</p>
        <h3>Issues</h3>
+       <p>${issueText}</p>
        
        <h1 class="data">Our Sources</h1>
     	<p>
