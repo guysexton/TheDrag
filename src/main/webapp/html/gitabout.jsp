@@ -54,10 +54,10 @@
     	
     	<h1 class="results">Interesting results</h1>
     	<p>
-    	While we can't answer this part fully yet since Phase I is about making static pages to show our vision and collecting only a bit of data, we can still show some interesting results that might happen from scraping our data sources.
-    	Scraping our data from cars.com yields data on car models and dealership instances. We can change how our web scraper works so when it programmatically scrapes data we have seperate JSON files for dealers and models each with its own unique attributes.
-    	We can then use google images API and/or google maps API to get the images we need for the model instance and/or dealer instance. Furthermore, getting data from the NHTSA and CarMD API's provides us on even more info on car model instances that cars.com does not provide.
-    	We can add the additional data to our model instances. 
+    	Being able to pull data from NHTSA, carmd, google, and more aided the team in regard to the topic of cars in the following ways:
+<br>    -Nearly every if not all automobiles are going to have the same attributes such as pictures, colors, MPG, pricing, VINS etc. 
+Multiple sources for the same attributes will help give the user a better general idea of a model without having to go to multiple websites 
+to find the pieces of information. <br>-Other attributes found through scraping and APIs such as the VIN will later help to find specific automobiles with all the information of it.
     	
     	</p>
 	   <h1 class="display-4">Our Pit Crew</h1>
@@ -70,7 +70,9 @@
                 <img class="card-img-top" src="../assets/team/daniel.png" alt="Daniel Lazcano">
                 <div class="card-body">
                    <h4 class="card-title">Daniel Lazcano</h4>
-                   <p class="card-text">Year: Senior<br>
+                   <p class="card-text">Primary Responsibility: Front End (Instance Pages)<br>
+                   
+                   Year: Senior<br>
                    Post-Grad: Write a book and get a cybersecurity engineering job in Austin<br>
                    Drives: 2010 Toyota Corolla</p>
                 </div>
@@ -81,7 +83,8 @@
                 <img class="card-img-top" src="../assets/team/ethan.png" alt="Ethan Santoni-Colvin">
                 <div class="card-body">
                    <h4 class="card-title">Ethan Santoni-Colvin</h4>
-                   <p class="card-text">Year: Junior<br>Post-Grad: Live a comfortable life working at a tech company in Austin, my hometown and the best city in the US<br>Drives: 2017 Accord Sport</p>
+                   <p class="card-text">Primary Responsibility: Back End (OOP/REST API)<br>
+                   Year: Junior<br>Post-Grad: Live a comfortable life working at a tech company in Austin, my hometown and the best city in the US<br>Drives: 2017 Accord Sport</p>
                 </div>
 				</div>
           </div>
@@ -90,7 +93,9 @@
                 <img class="card-img-top" src="../assets/team/frank.png" alt="Daniel Lazcano">
                 <div class="card-body">
                   <h4 class="card-title">Frank Le</h4>
-			   <p class="card-text">Year: Junior<br>Post-Grad: Become a QA Developer and pursue a career as a Voice Actor<br>
+			   <p class="card-text">Primary Responsibility: Back End (QA)<br>
+			   
+			   Year: Junior<br>Post-Grad: Become a QA Developer and pursue a career as a Voice Actor<br>
 			     Drives: 2018 Toyota Corolla<br>"I know nothing about cars..."</p>
                 </div>
 				</div>
@@ -104,7 +109,8 @@
                 <img class="card-img-top" src="../assets/team/guy.png" alt="Guy Sexton">
                 <div class="card-body">
                    <h4 class="card-title">Guy Sexton</h4>
-                   <p class="card-text">Year: Junior<br>Minor: UI/UX Design<br>Post-Grad: Work in consumer electronics then MBA at Stanford<br>Drives: 2018 Toyota C-HR<br></p>
+                   <p class="card-text">Primary Responsibilties: Front End (UI/UX)<br>
+                   Year: Junior<br>Minor: UI/UX Design<br>Post-Grad: Work in consumer electronics then MBA at Stanford<br>Drives: 2018 Toyota C-HR<br></p>
                 </div>
              </div>
           </div>
@@ -113,7 +119,9 @@
                 <img class="card-img-top" src="../assets/team/jonathan.png" alt="Jonathan Walsh">
                 <div class="card-body">
                   <h4 class="card-title">Jonathan Walsh</h4>
-                   <p class="card-text">Year: Junior<br>Second Major: Government<br>Minor: Public Policy: Science & Technology<br>Post-Grad: Attend Yale Law School<br>Drives: 2015 Mini Cooper S</p>
+                   <p class="card-text">Primary Responsibilities: Back End (OOP/REST API)<br>
+                   
+                   Year: Junior<br>Second Major: Government<br>Minor: Public Policy: Science & Technology<br>Post-Grad: Attend Yale Law School<br>Drives: 2015 Mini Cooper S</p>
                 </div>
 				</div>
           </div>
@@ -122,7 +130,8 @@
                 <img class="card-img-top" src="../assets/team/kishan.png" alt="Kishan Dayananda">
                 <div class="card-body">
                    <h4 class="card-title">Kishan Dayananda</h4>
-                   <p class="card-text">Year: Junior<br>Post-Grad: Become a software developer<br>
+                   <p class="card-text">Primary Responsibilities: Phase Leader (Front End/Deliverables)<br>
+                   Year: Junior<br>Post-Grad: Become a software developer<br>
                    Drives: 2013 Honda Accord<br></p>
                 </div>
 				</div>

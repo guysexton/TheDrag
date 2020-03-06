@@ -28,11 +28,9 @@ public class IssueStats {
 			issuesList = new ArrayList<Issue>();
 			
 			String json = "{ \"array\":" + run("https://api.github.com/repos/53Dude/TheDrag/issues?state=all", client) + "}";
-
 			JSONParser jsonParser = new JSONParser();			
-			JSONObject obj = (JSONObject) jsonParser.parse(json);			
+			JSONObject obj = (JSONObject) jsonParser.parse(json);	
 			JSONArray arr = (JSONArray) obj.get("array");
-			
 			for(Object thisObj : arr) {
 				JSONObject issue = (JSONObject) thisObj;
 				
@@ -49,14 +47,15 @@ public class IssueStats {
 				issuesList.add(thisIssue);
 			}
 
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
+		} 
 	}
 
 	public String getListAsString() {
+		if(issuesList.size() == 0) {
+			return "GitHub API currently returning empty JSON due to GitHub server error";
+		}
 		String listString = "";
 		
 		int numIssues = 0, numOpen = 0, numClosed = 0;

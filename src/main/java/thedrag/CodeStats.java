@@ -19,7 +19,7 @@ public class CodeStats extends HttpServlet {
 
 	List<Contributor> contributors;
 
-	public void buildContributors() {
+	public CodeStats() {
 
 		OkHttpClient client = new OkHttpClient();
 		contributors = new ArrayList<Contributor>();
@@ -50,11 +50,9 @@ public class CodeStats extends HttpServlet {
 				contributors.add(new Contributor((String) ((JSONObject)contributorsInfo.get("author")).get("login"), adds, deletes, commits));
 
 			}					
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
+		} 
 	}
 
 	String run(String url, OkHttpClient client) throws IOException {
@@ -68,7 +66,9 @@ public class CodeStats extends HttpServlet {
 	}
 
 	public String getListAsString() {
-		buildContributors();
+		if(contributors.size() == 0) {
+			return "GitHub API currently returning empty JSON due to GitHub server error";
+		}
 
 		String list = "";
 		int allAdds = 0, allDeletes = 0, allCommits = 0;
