@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<%@ page import="thedrag.GithubStats" %>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -12,6 +15,13 @@
     <link href="../css/global.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+  
+  <%
+  	
+   	GithubStats githubStats = new GithubStats();
+  	pageContext.setAttribute("commitText", githubStats.getListAsString());
+  
+  %>
     
  
     <!--Navigation bar-->
@@ -32,8 +42,10 @@
 	<!--end of Navigation bar-->
 
     
+    
     <div class="container">
     	<h1 class="description">Description</h1>
+    	
     	<p> TheDrag is a website built for users who want a consolidated place that holds all the automobile information they would need. 
     	Whether its a college student looking prices and dealerships for their first car purchase, speed-demon car enthusiasts looking to 
     	find the next hot rod on the market, or a conserved environmentalist who needs to get to where they but wants to find the least carbon emissive vehicle that 
@@ -115,6 +127,13 @@
 				</div>
           </div>
        </div>
+       
+       <h1 class="display-4">Github Statistics</h1>
+       
+       <h3>Commits, Adds, and Deletes</h3>
+       <p>${commitText}</p>
+       <h3>Issues</h3>
+       
        <h1 class="data">Our Sources</h1>
     	<p>
     	NHTSA API:
