@@ -5,7 +5,9 @@ TheDrag is a website built for users who want a consolidated place that holds al
 
 *Interesting result produced by integrating disparate data sources: Being able to pull data from NHTSA, carmd, google, and more aided the team in regard to the topic of cars in the following ways: 
 
--Nearly every if not all automobiles are going to have the same attributes such as pictures, colors, MPG, pricing, VINS etc. Multiple sources for the same attributes will help give the use
+-Nearly every if not all automobiles are going to have the same attributes such as pictures, colors, MPG, pricing, VINS etc. Multiple sources for the same attributes will help give the user a better general idea of a model without having to go to multiple websites to find the pieces of information. 
+-Other attributes found through scraping and APIs such as the VIN will later help to find specific automobiles with all the information of it. 
+
 
 
 *Tools Used: 
