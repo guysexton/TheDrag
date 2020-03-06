@@ -3,15 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-         
-  <servlet>
-	     <servlet-name>json</servlet-name>
-    	 <servlet-class>thedrag.GithubStatsServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-     	<servlet-name>json</servlet-name>
-     	<url-pattern>/json</url-pattern>
-  </servlet-mapping>
     
   <welcome-file-list>
     <welcome-file>html/sitemap.html</welcome-file>
