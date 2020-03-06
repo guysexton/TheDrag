@@ -1,5 +1,4 @@
 # TheDrag
-*Needs Editing help*  
 About: 
 TheDrag is a website built for users who want a consolidated place that holds all the automobile information they would need. Whether its a college student looking prices and dealerships for their first car purchase, speed-demon car enthusiasts looking to find the next hot rod on the market, or a conserved environmentalist who needs to get to where they but wants to find the least carbon emissive vehicle that they can get; TheDrag serves to bring all that info right into your web surfing device. 
 
@@ -9,12 +8,12 @@ TheDrag is a website built for users who want a consolidated place that holds al
 *Tools Used: 
 The Pit Crew (The development team behind TheDrag) utilized the following technical tools to complete Phase I:
 Eclipse - The main IDE everyone used to code the Java, CSS, HTML, JSP, XML, etc. files and to run the website on the localhost through Google App Engine intergration.  
-Google AppEngine - The PaaS used to host and do webby stuff. 
+Google AppEngine - The PaaS used to host and take care of web protocol. Intergration with the IDE being used by all team members, Eclipse. 
 Adobe DreamWeaver - The Front-End team used this visual to code editor for steamlined editing/development of Bootstrap, CSS, and HTML files. 
-Bootstrap -  
-Maven - 
-JSON Simple by Google - 
-OKHTTP by Square - 
+Bootstrap - The HTML, CSS, and JS library used by the Front-End team to achieve a polished-clean UI look. 
+Maven - Built in automation tool for the java portions of the code. 
+JSON Simple by Google - Java toolkit by Google for JSON files. Helped the Backend-Tean. 
+OKHTTP by Square - Utilized by the backend to help connectivity issues. 
 
 
 *Website Link:
@@ -60,7 +59,7 @@ Potential API 8: http://www.dougdemuro.com/dougscore
 
 User Stories:
 
-1. They say newer cars have less probability of injury in the event of an accident. I need a list of cars made after 2015 because I'm concerned with safety.
+1. They say newer cars have less probability of injury in the event of an accident. I need a list of cars made after 2015 because I'm concerned with safety. 
 2. I'm a die hard Subaru fan, but I can't find any older models on their official website. I need to know which cars were made more than 15 years ago.
 3. As a undergraduate college student with no income, I want a way to find a cheap car under $20,000, so I can drive to school.
 4. As an environmental researcher not only does my career need me to travel but it has also made me aware of the dangers of carbon emissions. I would like a centralized source of vehicles that leaves a minimal amount of emissions.
