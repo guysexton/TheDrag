@@ -1,9 +1,13 @@
 package thedrag;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,8 +21,8 @@ import com.opencsv.CSVReader;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-/*
-public class MakeServlet {
+
+public class MakeServlet {/*
 	public static Set<String> getMakes(){
 		Set<String> makes = new HashSet<String>();
 		
@@ -49,12 +53,55 @@ public class MakeServlet {
 		}
 		
 		return makes;
-	}
+	}*/
 	public static void main(String[] args) {
-		System.out.println(getMakes());
-	}
-}*/
 
+
+		OkHttpClient client = new OkHttpClient();
+
+		try {
+			String json = run("https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMake/subaru?format=json", client);
+			 writeUsingOutputStream(json);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	
+	}
+
+	static String run(String url, OkHttpClient client) throws IOException {
+		Request request = new Request.Builder()
+				.url(url)
+				.build();
+
+		try (Response response = client.newCall(request).execute()) {
+			return response.body().string();
+		}
+	}
+    
+    /**
+     * Use Streams when you are dealing with raw data
+     * @param data
+     */
+    private static void writeUsingOutputStream(String data) {
+        OutputStream os = null;
+        try {
+            os = new FileOutputStream(new File("subaru.json"));
+            os.write(data.getBytes(), 0, data.length());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+            try {
+                os.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+	}
+
+/*
 public class MakeServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
@@ -76,4 +123,4 @@ public class MakeServlet extends HttpServlet {
 			return response.body().string();
 		}
 	}
-}
+}*/
