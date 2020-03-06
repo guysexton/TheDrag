@@ -44,7 +44,7 @@
     	While we can't answer this part fully yet since Phase I is about making static pages to show our vision and collecting only a bit of data, we can still show some interesting results that might happen from scraping our data sources.
     	Scraping our data from cars.com yields data on car models and dealership instances. We can change how our web scraper works so when it programmatically scrapes data we have seperate JSON files for dealers and models each with its own unique attributes.
     	We can then use google images API and/or google maps API to get the images we need for the model instance and/or dealer instance. Furthermore, getting data from the NHTSA and CarMD API's provides us on even more info on car model instances that cars.com does not provide.
-    	Using this data we can add the additional data to our model instances. 
+    	We can add the additional data to our model instances. 
     	
     	</p>
 	   <h1 class="display-4">Our Pit Crew</h1>
