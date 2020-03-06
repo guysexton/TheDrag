@@ -64,11 +64,11 @@ Potential API 8: http://www.dougdemuro.com/dougscore
 
 User Stories:
 
-1. They say newer cars have less probability of injury in the event of an accident. I need a list of cars made after 2015 because I'm concerned with safety. / 2 Hours
-2. I'm a die hard Subaru fan, but I can't find any older models on their official website. I need to know which cars were made more than 15 years ago. / 2 Hours
+1. I want a list of current manufacturers that are sold around my area. / 2 Hours
+2. I'm a die hard Subaru fan, but I can't find any older models on their official website. I need to know which models are made by Subaru. / 2 Hours
 3. As a undergraduate college student with no income, I want a way to find a cheap car under $20,000, so I can drive to school. / 3 Hours
-4. As an environmental researcher not only does my career need me to travel but it has also made me aware of the dangers of carbon emissions. I would like a centralized source of vehicles that leaves a minimal amount of emissions. /4 Hours
-5. I'm in the market for a car. More than just knowing the price, I want to know what the car will look like before I buy it. / 2 Hours
+4. As a commuter to work, I want to know the highway mpg of certain models. /4 Hours
+5. I'm in the market for a car. More than just knowing the price, I wantto know what the car will look like before I buy it. / 2 Hours
 
 User Stories from Customers with Estimations: 
 6. As a concerned user of who is making my product I would like to see the developer team of the product. / 2 Hour
