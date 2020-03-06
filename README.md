@@ -21,7 +21,7 @@ JSON Simple by Google - Used to encode the JSON file from CSV.
 OKHTTP by Square - A request response API that allows us to collect data on our instances through making a request to other APIs.
 Web Scraper by webscraper.io - A chrome extension that allows us to scrape data from websites easily. We can choose elements we want to  scrape and running the app allows us to download the scraped data as a CSV file which we can convert to a JSON file ourselves programmatically. We plan to only use this tool for Phase I, going forward we will program our own web scraper.
 
-*Website Link:
+*Website Link: https://thedrag.appspot.com/
 
 Team Members: Name, UTeid, Github Link
 Daniel Lazcano, dl32678, https://github.com/DanielLazcano
