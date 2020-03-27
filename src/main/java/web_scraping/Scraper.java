@@ -36,16 +36,20 @@ public class Scraper {
 			/*
 			 * Scrapes car urls
 			 */
-			String doc = run("https://www.cars.com/for-sale/searchresults.action/?mkId=20088&page=1&perPage=100&rd=20&searchSource=PAGINATION&sort=relevance&stkTypId=28880&zc=78705", client);
-			Elements instances = Jsoup.parse(doc).getElementsByClass("shop-srp-listings__listing-container");
+			 
 			ArrayList<String> carUrls = new ArrayList<>();
-			String url = null;
-			for (Element instance : instances) {				
-			        url = "https://www.cars.com" + instance.getElementsByClass("shop-srp-listings__listing").attr("href");
-			        carUrls.add(url);
+			for(int i = 1; i < 50; i++) {
+				String doc = run("https://www.cars.com/for-sale/searchresults.action/?mkId=20088&page=" + i + "&perPage=100&rd=20&searchSource=PAGINATION&sort=relevance&stkTypId=28880&zc=78705", client);
+				Elements instances = Jsoup.parse(doc).getElementsByClass("shop-srp-listings__listing-container");
+				String url = null;
+				for (Element instance : instances) {				
+						url = "https://www.cars.com" + instance.getElementsByClass("shop-srp-listings__listing").attr("href");
+						if(!carUrls.contains(url)) {
+							carUrls.add(url);
+						}
+				}	
 			}
 			System.out.println(carUrls);
-			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
