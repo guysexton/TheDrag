@@ -15,10 +15,11 @@ import okhttp3.Response;
 
 
 public class Scraper {
-	static OkHttpClient client;
-	static Set<String> carUrls;
-	static Set<Car> cars;
-
+	public static OkHttpClient client;
+	public static Set<String> carUrls = new HashSet<String>();
+	public static Set<Car> cars;
+	public static HashMap<String, String> dealerships = new HashMap<String, String>();
+	
 	public static void main(String[] args) {
 		client = new OkHttpClient.Builder().readTimeout(30, TimeUnit.SECONDS).callTimeout(30, TimeUnit.SECONDS).build();  // socket timeout
 		try {
@@ -26,7 +27,6 @@ public class Scraper {
 			/*
 			 * Scrapes all makeIds
 			 */
-
 			String mdoc = run("https://www.cars.com/", client);
 			Elements options = Jsoup.parse(mdoc).getElementsByAttributeValue("name", "makeId").get(0).children();
 			ArrayList<String> makes = new ArrayList<>();
@@ -40,10 +40,6 @@ public class Scraper {
 			/*
 			 * Scrapes car urls
 			 */
-
-			carUrls = new HashSet<String>();
-
-
 			for(int j = 1; j < makes.size(); j++) {
 				String makeIdAgain = makes.get(j);
 				
@@ -81,18 +77,16 @@ public class Scraper {
 				carUrls = new HashSet<String>();
 			} 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-
-		/*
-		 * Scrapes VIN from car URLs
-		 */
-		
+	
 		System.out.println("\nSUCCESSFULLY SCRAPED ALL MAKES\n");
 		System.exit(0);
 		
+		
+		/*
+		 * Scrapes VIN from car URLs
+		 */	
 		cars = new HashSet<Car>();
 
 		for(String url : carUrls) {
@@ -106,6 +100,16 @@ public class Scraper {
 						cars.add(new Car(url, carVin));
 					}
 				}
+				
+				//Get Dealership name and address
+				instances = Jsoup.parse(doc).getElementsByClass("vdp-dealer-location");
+				for (Element instance : instances) {
+					String dealershipName = instance.getElementsByClass("vdp-dealer-info__title").text();
+					String address = instance.getElementsByClass("vdp-dealer-location__address").text();
+					dealerships.put(dealershipName, address);
+					System.out.println(dealerships);
+				}
+				
 			}
 			catch(Exception e) {
 				e.printStackTrace();
@@ -114,7 +118,7 @@ public class Scraper {
 
 	}
 
-	static String run(String url, OkHttpClient client) throws IOException {
+	public static String run(String url, OkHttpClient client) throws IOException {
 		Request request = new Request.Builder()
 				.url(url)
 				.build();
@@ -124,7 +128,7 @@ public class Scraper {
 		}
 	}
 
-	static class Car{
+	public static class Car{
 		String url, vin;
 		Car(String url, String vin){
 			this.url = url;
