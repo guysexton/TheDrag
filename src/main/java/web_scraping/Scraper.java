@@ -18,23 +18,24 @@ public class Scraper {
 	static OkHttpClient client;
 
 	public static void main(String[] args) {
-		client = new OkHttpClient.Builder().readTimeout(15, TimeUnit.SECONDS).callTimeout(15, TimeUnit.SECONDS).build();  // socket timeout
+		client = new OkHttpClient.Builder().readTimeout(30, TimeUnit.SECONDS).callTimeout(30, TimeUnit.SECONDS).build();  // socket timeout
 		try {
 
 			/*
 			 * Scrapes all makeIds
 			 */
-			/*
-			String doc = run("https://www.cars.com/", client);
-			Elements options = Jsoup.parse(doc).getElementsByAttributeValue("name", "makeId").get(0).children();
+			
+			String mdoc = run("https://www.cars.com/", client);
+			Elements options = Jsoup.parse(mdoc).getElementsByAttributeValue("name", "makeId").get(0).children();
 			ArrayList<String> makes = new ArrayList<>();
 			String makeId = null;
 			for (Element option : options) {
 			        makeId = option.val();
 			        makes.add(makeId);
 			}
-			System.out.println(makes);
-			 */
+			
+			
+			 
 
 			/*
 			 * Scrapes car urls
@@ -46,7 +47,13 @@ public class Scraper {
 			int i = 1;
 			while(true) {
 				System.out.println("Retrieving page " + i + "....");
-				String doc = run("https://www.cars.com/for-sale/searchresults.action/?mkId=20088&page=" + i + "&perPage=100&rd=20&searchSource=PAGINATION&sort=relevance&stkTypId=28880&zc=78705", client);
+				String doc = run("https://www.cars.com/for-sale/searchresults.action/?mkId=20228&page=" + i + "&perPage=100&rd=20&searchSource=PAGINATION&sort=relevance&stkTypId=28880&zc=78705", client);
+				
+				String carNotFound = Jsoup.parse(doc).getElementsByClass("no-results-message").text();
+				if(carNotFound.contains("We didn't find cars")) {
+					break;
+				}
+				
 				Elements instances = Jsoup.parse(doc).getElementsByClass("shop-srp-listings__listing-container");
 				String url = null;
 				
