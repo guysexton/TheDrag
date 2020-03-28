@@ -1,5 +1,6 @@
 package web_scraping;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -9,10 +10,14 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
 
 public class Scraper {
 	public static OkHttpClient client;
@@ -180,6 +185,16 @@ public class Scraper {
 			//System.out.println(dealerships.get("Mercedes-Benz of Austin"));
 			
 		}
+		
+		//Testing writing to a JSON file with Jackson Library
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
+		mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+		try {
+            mapper.writeValue(new File("result.json"), dealerships);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 	}
 
