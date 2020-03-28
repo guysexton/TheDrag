@@ -17,7 +17,7 @@ import okhttp3.Response;
 public class Scraper {
 	public static OkHttpClient client;
 	public static Set<String> carUrls = new HashSet<String>();
-	public static Set<Car> cars;
+	public static Map<String, Car> cars = new HashMap<String, Car>();
 	public static Map<String, Dealership> dealerships = new HashMap<String, Dealership>();
 	public static ArrayList<String> makes = new ArrayList<>();
 	public static ArrayList<String> dealers = new ArrayList<String>();
@@ -100,7 +100,7 @@ public class Scraper {
 		//Scrapes from car URLs
 		 	
 		carUrls.add("https://www.cars.com/vehicledetail/detail/805411632/overview/");
-		cars = new HashSet<Car>();
+
 		for(String carUrl : carUrls) {
 			try {
 				String doc = run(carUrl, client);
@@ -129,13 +129,18 @@ public class Scraper {
 					newCar.price = Integer.parseInt(instance.text().replace("$", "").replace(",", ""));
 				}
 				
-				cars.add(newCar);
+				cars.put(newCar.vin, newCar);
+				System.out.println(dealerships.get(newCar.dealership));
 				
 				System.out.println("Scraped car: " + newCar);
+				
 			}
 			catch(Exception e) {
 				e.printStackTrace();
 			}
+			
+			System.out.println(dealerships.get("Mercedes-Benz of Austin"));
+			
 		}
 
 	}

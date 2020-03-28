@@ -45,7 +45,7 @@ public class Dealership {
 	}
 	
 	public String toString() {
-		return name +  " | " + img + " | " + address + " | " + phoneNum + " | " + website;
+		return name +  " | " + img + " | " + address + " | " + phoneNum + " | " + website + " | " + cars;
 	}
 	
 	public boolean equals(Object o) {
