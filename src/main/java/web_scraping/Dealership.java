@@ -6,7 +6,7 @@ public class Dealership {
 	String name;
 	String img;
 	HashSet<String> makes = new HashSet<String>();
-	ArrayList<Car> cars = new ArrayList<Car>();
+	ArrayList<String> cars = new ArrayList<String>();
 	String address;
 	String phoneNum;
 	String website;
@@ -28,7 +28,7 @@ public class Dealership {
 		return makes;
 	}
 	
-	public ArrayList<Car> getCars(){
+	public ArrayList<String> getCars(){
 		return cars;
 	}
 	
@@ -45,7 +45,8 @@ public class Dealership {
 	}
 	
 	public String toString() {
-		return name +  " | " + img + " | " + address + " | " + phoneNum + " | " + website + " | " + cars + makes;
+		return "Dealership Name: " + name +  " | " + "Image: " + img + " | " + "Address: " + address + " | " + "Phone Number: " + phoneNum + " | " + "Website: " + website 
+				+ " | " + "Cars at Dealership: " + cars + " | " + "Makes at Dealership: " + makes;
 	}
 	
 	public boolean equals(Object o) {

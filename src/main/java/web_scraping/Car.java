@@ -8,6 +8,7 @@ public class Car{
 	String dealership; 
 	String make;
 	Integer price;
+	String mpg;
 
 	Car(){
 		this.name = null;
@@ -17,9 +18,10 @@ public class Car{
 		this.dealership = null;
 		this.make = null;
 		this.price = null;
+		this.mpg = null;
 	}
 	
-	Car(String name, String img, String url, String vin, String dealership, String make, Integer price){
+	Car(String name, String img, String url, String vin, String dealership, String make, Integer price, String mpg){
 		this.name = name;
 		this.img = img;
 		this.url = url;
@@ -27,9 +29,11 @@ public class Car{
 		this.dealership = dealership;
 		this.make = make;
 		this.price = price;
+		this.mpg = mpg;
 	}
 	
 	public String toString() {
-		return "Manufactured by: " + make + " type: " + name + " with " + vin + " at " + dealership + " for " + price + " (URL: " + url + ")";
+		return "Car Name: " + name + " | " + "Car Image: " + img + " | " + "Car URL: " + url + " | " + "Car VIN: " + vin + " | " 
+					+ "Dealership: " + dealership + " | " + "Make: " + make + " | " + "Price: " + price + " | " + "MPG: " + mpg;
 	}
 }

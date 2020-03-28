@@ -1,0 +1,2682 @@
+{
+  "Franklin" : {
+    "name" : "Franklin",
+    "img" : "https://www.carlogos.org/logo/Franklin-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hennessey" : {
+    "name" : "Hennessey",
+    "img" : "https://www.carlogos.org/logo/Hennessey-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Singer" : {
+    "name" : "Singer",
+    "img" : "https://www.carlogos.org/logo/Singer-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "KTM" : {
+    "name" : "KTM",
+    "img" : "https://www.carlogos.org/logo/KTM-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Subaru" : {
+    "name" : "Subaru",
+    "img" : "https://www.carlogos.org/logo/Subaru-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Rambler" : {
+    "name" : "Rambler",
+    "img" : "https://www.carlogos.org/logo/Rambler-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Pegaso" : {
+    "name" : "Pegaso",
+    "img" : "https://www.carlogos.org/logo/Pegaso-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "GAC Group" : {
+    "name" : "GAC Group",
+    "img" : "https://www.carlogos.org/logo/GAC-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Berkeley" : {
+    "name" : "Berkeley",
+    "img" : "https://www.carlogos.org/logo/Berkeley-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "IC Bus" : {
+    "name" : "IC Bus",
+    "img" : "https://www.carlogos.org/logo/IC-Bus-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Cizeta" : {
+    "name" : "Cizeta",
+    "img" : "https://www.carlogos.org/logo/Cizeta-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Austin" : {
+    "name" : "Austin",
+    "img" : "https://www.carlogos.org/logo/Austin-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Elemental" : {
+    "name" : "Elemental",
+    "img" : "https://www.carlogos.org/logo/Elemental-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lucid" : {
+    "name" : "Lucid",
+    "img" : "https://www.carlogos.org/logo/Lucid-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "TVR" : {
+    "name" : "TVR",
+    "img" : "https://www.carlogos.org/logo/TVR-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "ZAZ" : {
+    "name" : "ZAZ",
+    "img" : "https://www.carlogos.org/logo/ZAZ-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Wanderer" : {
+    "name" : "Wanderer",
+    "img" : "https://www.carlogos.org/logo/Wanderer-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Infiniti" : {
+    "name" : "Infiniti",
+    "img" : "https://www.carlogos.org/logo/Infiniti-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Elfin" : {
+    "name" : "Elfin",
+    "img" : "https://www.carlogos.org/logo/Elfin-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "De Tomaso" : {
+    "name" : "De Tomaso",
+    "img" : "https://www.carlogos.org/logo/De-Tomaso-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "GMC" : {
+    "name" : "GMC",
+    "img" : "https://www.carlogos.org/logo/GMC-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Eagle" : {
+    "name" : "Eagle",
+    "img" : "https://www.carlogos.org/logo/Eagle-automobile-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hyundai" : {
+    "name" : "Hyundai",
+    "img" : "https://www.carlogos.org/logo/Hyundai-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Renault Samsung" : {
+    "name" : "Renault Samsung",
+    "img" : "https://www.carlogos.org/logo/Renault-Samsung-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Karma" : {
+    "name" : "Karma",
+    "img" : "https://www.carlogos.org/logo/Karma-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Haima" : {
+    "name" : "Haima",
+    "img" : "https://www.carlogos.org/logo/Haima-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Acura" : {
+    "name" : "Acura",
+    "img" : "https://www.carlogos.org/logo/Acura-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Microcar" : {
+    "name" : "Microcar",
+    "img" : "https://www.carlogos.org/logo/Microcar-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "AC" : {
+    "name" : "AC",
+    "img" : "https://www.carlogos.org/logo/AC-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Zotye" : {
+    "name" : "Zotye",
+    "img" : "https://www.carlogos.org/logo/Zotye-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "SEAT" : {
+    "name" : "SEAT",
+    "img" : "https://www.carlogos.org/logo/SEAT-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hudson" : {
+    "name" : "Hudson",
+    "img" : "https://www.carlogos.org/logo/Hudson-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mazda" : {
+    "name" : "Mazda",
+    "img" : "https://www.carlogos.org/logo/Mazda-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Navistar" : {
+    "name" : "Navistar",
+    "img" : "https://www.carlogos.org/logo/Navistar-International-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Brammo" : {
+    "name" : "Brammo",
+    "img" : "https://www.carlogos.org/logo/Brammo-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Paccar" : {
+    "name" : "Paccar",
+    "img" : "https://www.carlogos.org/logo/Paccar-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Englon" : {
+    "name" : "Englon",
+    "img" : "https://www.carlogos.org/logo/Englon-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Alvis" : {
+    "name" : "Alvis",
+    "img" : "https://www.carlogos.org/logo/Alvis-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Caterham" : {
+    "name" : "Caterham",
+    "img" : "https://www.carlogos.org/logo/Caterham-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Corre La Licorne" : {
+    "name" : "Corre La Licorne",
+    "img" : "https://www.carlogos.org/logo/Corre-La-Licorne-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Maybach" : {
+    "name" : "Maybach",
+    "img" : "https://www.carlogos.org/logo/Maybach-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Suffolk" : {
+    "name" : "Suffolk",
+    "img" : "https://www.carlogos.org/logo/Suffolk-Sportscars-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hawtai" : {
+    "name" : "Hawtai",
+    "img" : "https://www.carlogos.org/logo/Hawtai-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lifan" : {
+    "name" : "Lifan",
+    "img" : "https://www.carlogos.org/logo/Lifan-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Devel Sixteen" : {
+    "name" : "Devel Sixteen",
+    "img" : "https://www.carlogos.org/logo/Devel-Sixteen-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Tesla" : {
+    "name" : "Tesla",
+    "img" : "https://www.carlogos.org/logo/Tesla-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Atalanta" : {
+    "name" : "Atalanta",
+    "img" : "https://www.carlogos.org/logo/Atalanta-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "ARO" : {
+    "name" : "ARO",
+    "img" : "https://www.carlogos.org/logo/ARO-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mosler" : {
+    "name" : "Mosler",
+    "img" : "https://www.carlogos.org/logo/Mosler-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Jawa" : {
+    "name" : "Jawa",
+    "img" : "https://www.carlogos.org/logo/Jawa-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Volvo" : {
+    "name" : "Volvo",
+    "img" : "https://www.carlogos.org/logo/Volvo-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "TechArt" : {
+    "name" : "TechArt",
+    "img" : "https://www.carlogos.org/logo/TechArt-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Dodge" : {
+    "name" : "Dodge",
+    "img" : "https://www.carlogos.org/logo/Dodge-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lister" : {
+    "name" : "Lister",
+    "img" : "https://www.carlogos.org/logo/Lister-Cars-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Faraday Future" : {
+    "name" : "Faraday Future",
+    "img" : "https://www.carlogos.org/logo/Faraday-Future-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Ginetta" : {
+    "name" : "Ginetta",
+    "img" : "https://www.carlogos.org/logo/Ginetta-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Opel" : {
+    "name" : "Opel",
+    "img" : "https://www.carlogos.org/logo/Opel-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Kaiser" : {
+    "name" : "Kaiser",
+    "img" : "https://www.carlogos.org/logo/Kaiser-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Bertone" : {
+    "name" : "Bertone",
+    "img" : "https://www.carlogos.org/logo/Bertone-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Morgan" : {
+    "name" : "Morgan",
+    "img" : "https://www.carlogos.org/logo/Morgan-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Saipa" : {
+    "name" : "Saipa",
+    "img" : "https://www.carlogos.org/logo/Saipa-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "ABT" : {
+    "name" : "ABT",
+    "img" : "https://www.carlogos.org/logo/ABT-Sportsline-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mini" : {
+    "name" : "Mini",
+    "img" : "https://www.carlogos.org/logo/Mini-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Soueast" : {
+    "name" : "Soueast",
+    "img" : "https://www.carlogos.org/logo/Soueast-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Abarth" : {
+    "name" : "Abarth",
+    "img" : "https://www.carlogos.org/logo/Abarth-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mazzanti" : {
+    "name" : "Mazzanti",
+    "img" : "https://www.carlogos.org/logo/Mazzanti-Automobili-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mustang" : {
+    "name" : "Mustang",
+    "img" : "https://www.carlogos.org/logo/Mustang-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Marlin" : {
+    "name" : "Marlin",
+    "img" : "https://www.carlogos.org/logo/Marlin-car-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "RUF" : {
+    "name" : "RUF",
+    "img" : "https://www.carlogos.org/logo/Ruf-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hommell" : {
+    "name" : "Hommell",
+    "img" : "https://www.carlogos.org/logo/Hommell-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Iso" : {
+    "name" : "Iso",
+    "img" : "https://www.carlogos.org/logo/Iso-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "BharatBenz" : {
+    "name" : "BharatBenz",
+    "img" : "https://www.carlogos.org/logo/BharatBenz-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mastretta" : {
+    "name" : "Mastretta",
+    "img" : "https://www.carlogos.org/logo/Mastretta-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Leyland" : {
+    "name" : "Leyland",
+    "img" : "https://www.carlogos.org/logo/Leyland-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Polestar" : {
+    "name" : "Polestar",
+    "img" : "https://www.carlogos.org/logo/Polestar-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Axon" : {
+    "name" : "Axon",
+    "img" : "https://www.carlogos.org/logo/Axon-Automotive-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mitsubishi" : {
+    "name" : "Mitsubishi",
+    "img" : "https://www.carlogos.org/logo/Mitsubishi-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Land Rover" : {
+    "name" : "Land Rover",
+    "img" : "https://www.carlogos.org/logo/Land-Rover-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Cadillac" : {
+    "name" : "Cadillac",
+    "img" : "https://www.carlogos.org/logo/Cadillac-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Premier" : {
+    "name" : "Premier",
+    "img" : "https://www.carlogos.org/logo/Premier-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Qoros" : {
+    "name" : "Qoros",
+    "img" : "https://www.carlogos.org/logo/Qoros-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Daihatsu" : {
+    "name" : "Daihatsu",
+    "img" : "https://www.carlogos.org/logo/Daihatsu-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Great Wall" : {
+    "name" : "Great Wall",
+    "img" : "https://www.carlogos.org/logo/Great-Wall-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "GTA Motor" : {
+    "name" : "GTA Motor",
+    "img" : "https://www.carlogos.org/logo/GTA-Motor-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Fiat" : {
+    "name" : "Fiat",
+    "img" : "https://www.carlogos.org/logo/Fiat-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "JAC Motors" : {
+    "name" : "JAC Motors",
+    "img" : "https://www.carlogos.org/logo/JAC-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Saleen" : {
+    "name" : "Saleen",
+    "img" : "https://www.carlogos.org/logo/Saleen-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lloyd" : {
+    "name" : "Lloyd",
+    "img" : "https://www.carlogos.org/logo/Lloyd-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "McLaren" : {
+    "name" : "McLaren",
+    "img" : "https://www.carlogos.org/logo/McLaren-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Ranz" : {
+    "name" : "Ranz",
+    "img" : "https://www.carlogos.org/logo/Ranz-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Kamaz" : {
+    "name" : "Kamaz",
+    "img" : "https://www.carlogos.org/logo/Kamaz-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Trion" : {
+    "name" : "Trion",
+    "img" : "https://www.carlogos.org/logo/Trion-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hino" : {
+    "name" : "Hino",
+    "img" : "https://www.carlogos.org/logo/Hino-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Bizzarrini" : {
+    "name" : "Bizzarrini",
+    "img" : "https://www.carlogos.org/logo/Bizzarrini-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lexus" : {
+    "name" : "Lexus",
+    "img" : "https://www.carlogos.org/logo/Lexus-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Zenos" : {
+    "name" : "Zenos",
+    "img" : "https://www.carlogos.org/logo/Zenos-Cars-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Detroit Electric" : {
+    "name" : "Detroit Electric",
+    "img" : "https://www.carlogos.org/logo/Detroit-Electric-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Abbott-Detroit" : {
+    "name" : "Abbott-Detroit",
+    "img" : "https://www.carlogos.org/logo/Abbott-Detroit-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Chevrolet" : {
+    "name" : "Chevrolet",
+    "img" : "https://www.carlogos.org/logo/Chevrolet-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Maxus" : {
+    "name" : "Maxus",
+    "img" : "https://www.carlogos.org/logo/Maxus-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Bitter" : {
+    "name" : "Bitter",
+    "img" : "https://www.carlogos.org/logo/Bitter-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Triumph" : {
+    "name" : "Triumph",
+    "img" : "https://www.carlogos.org/logo/Triumph-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Foden" : {
+    "name" : "Foden",
+    "img" : "https://www.carlogos.org/logo/Foden-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Grinnall" : {
+    "name" : "Grinnall",
+    "img" : "https://www.carlogos.org/logo/Grinnall-cars-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Chrysler" : {
+    "name" : "Chrysler",
+    "img" : "https://www.carlogos.org/logo/Chrysler-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mitsuoka" : {
+    "name" : "Mitsuoka",
+    "img" : "https://www.carlogos.org/logo/Mitsuoka-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Toyota Crown" : {
+    "name" : "Toyota Crown",
+    "img" : "https://www.carlogos.org/logo/Toyota-Crown-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Force Motors" : {
+    "name" : "Force Motors",
+    "img" : "https://www.carlogos.org/logo/Force-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "UD" : {
+    "name" : "UD",
+    "img" : "https://www.carlogos.org/logo/UD-Trucks-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "DS" : {
+    "name" : "DS",
+    "img" : "https://www.carlogos.org/logo/DS-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Rover" : {
+    "name" : "Rover",
+    "img" : "https://www.carlogos.org/logo/Rover-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Borgward" : {
+    "name" : "Borgward",
+    "img" : "https://www.carlogos.org/logo/Borgward-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Bristol" : {
+    "name" : "Bristol",
+    "img" : "https://www.carlogos.org/logo/Bristol-Cars-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Tauro Sport" : {
+    "name" : "Tauro Sport",
+    "img" : "https://www.carlogos.org/logo/Tauro-Sport-Auto-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Kenworth" : {
+    "name" : "Kenworth",
+    "img" : "https://www.carlogos.org/logo/Kenworth-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Aixam" : {
+    "name" : "Aixam",
+    "img" : "https://www.carlogos.org/logo/Aixam-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Autobacs" : {
+    "name" : "Autobacs",
+    "img" : "https://www.carlogos.org/logo/Autobacs-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "W Motors" : {
+    "name" : "W Motors",
+    "img" : "https://www.carlogos.org/logo/W-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Kia" : {
+    "name" : "Kia",
+    "img" : "https://www.carlogos.org/logo/Kia-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "HSV" : {
+    "name" : "HSV",
+    "img" : "https://www.carlogos.org/logo/HSV-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Carlsson" : {
+    "name" : "Carlsson",
+    "img" : "https://www.carlogos.org/logo/Carlsson-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Peugeot" : {
+    "name" : "Peugeot",
+    "img" : "https://www.carlogos.org/logo/Peugeot-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Brooke" : {
+    "name" : "Brooke",
+    "img" : "https://www.carlogos.org/logo/Brooke-Cars-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hindustan Motors" : {
+    "name" : "Hindustan Motors",
+    "img" : "https://www.carlogos.org/logo/Hindustan-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "DKW" : {
+    "name" : "DKW",
+    "img" : "https://www.carlogos.org/logo/DKW-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lagonda" : {
+    "name" : "Lagonda",
+    "img" : "https://www.carlogos.org/logo/Lagonda-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Caparo" : {
+    "name" : "Caparo",
+    "img" : "https://www.carlogos.org/logo/Caparo-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Vauxhall" : {
+    "name" : "Vauxhall",
+    "img" : "https://www.carlogos.org/logo/Vauxhall-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Toyota" : {
+    "name" : "Toyota",
+    "img" : "https://www.carlogos.org/logo/Toyota-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Shelby" : {
+    "name" : "Shelby",
+    "img" : "https://www.carlogos.org/logo/Shelby-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Jaguar" : {
+    "name" : "Jaguar",
+    "img" : "https://www.carlogos.org/logo/Jaguar-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "9ff" : {
+    "name" : "9ff",
+    "img" : "https://www.carlogos.org/logo/9ff-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Baojun" : {
+    "name" : "Baojun",
+    "img" : "https://www.carlogos.org/logo/Baojun-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mercedes-Benz" : {
+    "name" : "Mercedes-Benz",
+    "img" : "https://www.carlogos.org/logo/Mercedes-Benz-logo.png",
+    "dealerships" : [ "Mercedes-Benz of Austin" ],
+    "cars" : [ "WDCTG4EB0LU021822" ],
+    "numCars" : 1,
+    "numDealerships" : 1
+  },
+  "Edsel" : {
+    "name" : "Edsel",
+    "img" : "https://www.carlogos.org/logo/Edsel-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Roewe" : {
+    "name" : "Roewe",
+    "img" : "https://www.carlogos.org/logo/Roewe-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "GAZ" : {
+    "name" : "GAZ",
+    "img" : "https://www.carlogos.org/logo/GAZ-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Sterling" : {
+    "name" : "Sterling",
+    "img" : "https://www.carlogos.org/logo/Sterling-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Saturn" : {
+    "name" : "Saturn",
+    "img" : "https://www.carlogos.org/logo/Saturn-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "BYD" : {
+    "name" : "BYD",
+    "img" : "https://www.carlogos.org/logo/BYD-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Radical" : {
+    "name" : "Radical",
+    "img" : "https://www.carlogos.org/logo/Radical-Sportscars-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "FPV" : {
+    "name" : "FPV",
+    "img" : "https://www.carlogos.org/logo/FPV-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Westfield" : {
+    "name" : "Westfield",
+    "img" : "https://www.carlogos.org/logo/Westfield-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Honda" : {
+    "name" : "Honda",
+    "img" : "https://www.carlogos.org/logo/Honda-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Keating" : {
+    "name" : "Keating",
+    "img" : "https://www.carlogos.org/logo/Keating-Supercars-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Gonow" : {
+    "name" : "Gonow",
+    "img" : "https://www.carlogos.org/logo/Gonow-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mansory" : {
+    "name" : "Mansory",
+    "img" : "https://www.carlogos.org/logo/Mansory-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "SsangYong" : {
+    "name" : "SsangYong",
+    "img" : "https://www.carlogos.org/logo/SsangYong-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "DINA" : {
+    "name" : "DINA",
+    "img" : "https://www.carlogos.org/logo/DINA-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Rossion" : {
+    "name" : "Rossion",
+    "img" : "https://www.carlogos.org/logo/Rossion-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "DMC" : {
+    "name" : "DMC",
+    "img" : "https://www.carlogos.org/logo/DMC-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Bowler" : {
+    "name" : "Bowler",
+    "img" : "https://www.carlogos.org/logo/Bowler-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Isuzu" : {
+    "name" : "Isuzu",
+    "img" : "https://www.carlogos.org/logo/Isuzu-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Riley" : {
+    "name" : "Riley",
+    "img" : "https://www.carlogos.org/logo/Riley-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "International" : {
+    "name" : "International",
+    "img" : "https://www.carlogos.org/logo/International-Trucks-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Autobianchi" : {
+    "name" : "Autobianchi",
+    "img" : "https://www.carlogos.org/logo/Autobianchi-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Irizar" : {
+    "name" : "Irizar",
+    "img" : "https://www.carlogos.org/logo/Irizar-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Datsun" : {
+    "name" : "Datsun",
+    "img" : "https://www.carlogos.org/logo/Datsun-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Geely" : {
+    "name" : "Geely",
+    "img" : "https://www.carlogos.org/logo/Geely-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Holden" : {
+    "name" : "Holden",
+    "img" : "https://www.carlogos.org/logo/Holden-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Zastava" : {
+    "name" : "Zastava",
+    "img" : "https://www.carlogos.org/logo/Zastava-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Buick" : {
+    "name" : "Buick",
+    "img" : "https://www.carlogos.org/logo/Buick-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Bugatti" : {
+    "name" : "Bugatti",
+    "img" : "https://www.carlogos.org/logo/Bugatti-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Spirra" : {
+    "name" : "Spirra",
+    "img" : "https://www.carlogos.org/logo/Spirra-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Wuling" : {
+    "name" : "Wuling",
+    "img" : "https://www.carlogos.org/logo/Wuling-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mahindra" : {
+    "name" : "Mahindra",
+    "img" : "https://www.carlogos.org/logo/Mahindra-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Vencer" : {
+    "name" : "Vencer",
+    "img" : "https://www.carlogos.org/logo/Vencer-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Bufori" : {
+    "name" : "Bufori",
+    "img" : "https://www.carlogos.org/logo/Bufori-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lada" : {
+    "name" : "Lada",
+    "img" : "https://www.carlogos.org/logo/Lada-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Facel Vega" : {
+    "name" : "Facel Vega",
+    "img" : "https://www.carlogos.org/logo/Facel-Vega-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Ford" : {
+    "name" : "Ford",
+    "img" : "https://www.carlogos.org/logo/Ford-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "FAW" : {
+    "name" : "FAW",
+    "img" : "https://www.carlogos.org/logo/FAW-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mercury" : {
+    "name" : "Mercury",
+    "img" : "https://www.carlogos.org/logo/Mercury-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "33 Logos" : {
+    "name" : "33 Logos",
+    "img" : "https://www.carlogos.org/logo/Volvo-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Delage" : {
+    "name" : "Delage",
+    "img" : "https://www.carlogos.org/logo/Delage-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Jensen" : {
+    "name" : "Jensen",
+    "img" : "https://www.carlogos.org/logo/Jensen-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Praga" : {
+    "name" : "Praga",
+    "img" : "https://www.carlogos.org/logo/Praga-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Pierce-Arrow" : {
+    "name" : "Pierce-Arrow",
+    "img" : "https://www.carlogos.org/logo/Pierce-Arrow-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Talbot" : {
+    "name" : "Talbot",
+    "img" : "https://www.carlogos.org/logo/Talbot-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Ascari" : {
+    "name" : "Ascari",
+    "img" : "https://www.carlogos.org/logo/Ascari-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Landwind" : {
+    "name" : "Landwind",
+    "img" : "https://www.carlogos.org/logo/Landwind-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Maserati" : {
+    "name" : "Maserati",
+    "img" : "https://www.carlogos.org/logo/Maserati-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Gillet" : {
+    "name" : "Gillet",
+    "img" : "https://www.carlogos.org/logo/Gillet-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Dacia" : {
+    "name" : "Dacia",
+    "img" : "https://www.carlogos.org/logo/Dacia-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Sisu Auto" : {
+    "name" : "Sisu Auto",
+    "img" : "https://www.carlogos.org/logo/Sisu-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Ariel" : {
+    "name" : "Ariel",
+    "img" : "https://www.carlogos.org/logo/Ariel-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Freightliner" : {
+    "name" : "Freightliner",
+    "img" : "https://www.carlogos.org/logo/Freightliner-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Suzuki" : {
+    "name" : "Suzuki",
+    "img" : "https://www.carlogos.org/logo/Suzuki-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Fisker" : {
+    "name" : "Fisker",
+    "img" : "https://www.carlogos.org/logo/Fisker-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Prodrive" : {
+    "name" : "Prodrive",
+    "img" : "https://www.carlogos.org/logo/Prodrive-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lincoln" : {
+    "name" : "Lincoln",
+    "img" : "https://www.carlogos.org/logo/Lincoln-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Fioravanti" : {
+    "name" : "Fioravanti",
+    "img" : "https://www.carlogos.org/logo/Fioravanti-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "IH" : {
+    "name" : "IH",
+    "img" : "https://www.carlogos.org/logo/International-Harvester-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Iveco" : {
+    "name" : "Iveco",
+    "img" : "https://www.carlogos.org/logo/Iveco-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Eicher" : {
+    "name" : "Eicher",
+    "img" : "https://www.carlogos.org/logo/Eicher-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Gumpert" : {
+    "name" : "Gumpert",
+    "img" : "https://www.carlogos.org/logo/Gumpert-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Cole" : {
+    "name" : "Cole",
+    "img" : "https://www.carlogos.org/logo/Cole-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "EDAG" : {
+    "name" : "EDAG",
+    "img" : "https://www.carlogos.org/logo/EDAG-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Alpina" : {
+    "name" : "Alpina",
+    "img" : "https://www.carlogos.org/logo/Alpina-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Chery" : {
+    "name" : "Chery",
+    "img" : "https://www.carlogos.org/logo/Chery-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Plymouth" : {
+    "name" : "Plymouth",
+    "img" : "https://www.carlogos.org/logo/Plymouth-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Saab" : {
+    "name" : "Saab",
+    "img" : "https://www.carlogos.org/logo/Saab-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Alpine" : {
+    "name" : "Alpine",
+    "img" : "https://www.carlogos.org/logo/Alpine-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Rimac" : {
+    "name" : "Rimac",
+    "img" : "https://www.carlogos.org/logo/Rimac-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "IKCO" : {
+    "name" : "IKCO",
+    "img" : "https://www.carlogos.org/logo/Iran-Khodro-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Ronart" : {
+    "name" : "Ronart",
+    "img" : "https://www.carlogos.org/logo/Ronart-Cars-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Setra" : {
+    "name" : "Setra",
+    "img" : "https://www.carlogos.org/logo/Setra-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Geo" : {
+    "name" : "Geo",
+    "img" : "https://www.carlogos.org/logo/Geo-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Melkus" : {
+    "name" : "Melkus",
+    "img" : "https://www.carlogos.org/logo/Melkus-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Abadal" : {
+    "name" : "Abadal",
+    "img" : "https://www.carlogos.org/logo/Abadal-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Ultima" : {
+    "name" : "Ultima",
+    "img" : "https://www.carlogos.org/logo/Ultima-Sports-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Scania" : {
+    "name" : "Scania",
+    "img" : "https://www.carlogos.org/logo/Scania-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Western Star" : {
+    "name" : "Western Star",
+    "img" : "https://www.carlogos.org/logo/Western-Star-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "ERF" : {
+    "name" : "ERF",
+    "img" : "https://www.carlogos.org/logo/ERF-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Mack" : {
+    "name" : "Mack",
+    "img" : "https://www.carlogos.org/logo/Mack-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "PGO" : {
+    "name" : "PGO",
+    "img" : "https://www.carlogos.org/logo/PGO-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Spyker" : {
+    "name" : "Spyker",
+    "img" : "https://www.carlogos.org/logo/Spyker-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "MAN" : {
+    "name" : "MAN",
+    "img" : "https://www.carlogos.org/logo/MAN-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Tatra" : {
+    "name" : "Tatra",
+    "img" : "https://www.carlogos.org/logo/Tatra-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "JBA Motors" : {
+    "name" : "JBA Motors",
+    "img" : "https://www.carlogos.org/logo/JBA-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Koenigsegg" : {
+    "name" : "Koenigsegg",
+    "img" : "https://www.carlogos.org/logo/Koenigsegg-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Volkswagen" : {
+    "name" : "Volkswagen",
+    "img" : "https://www.carlogos.org/logo/Volkswagen-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "MAZ" : {
+    "name" : "MAZ",
+    "img" : "https://www.carlogos.org/logo/MAZ-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hillman" : {
+    "name" : "Hillman",
+    "img" : "https://www.carlogos.org/logo/Hillman-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Haval" : {
+    "name" : "Haval",
+    "img" : "https://www.carlogos.org/logo/Haval-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Arash" : {
+    "name" : "Arash",
+    "img" : "https://www.carlogos.org/logo/Arash-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Willys-Overland" : {
+    "name" : "Willys-Overland",
+    "img" : "https://www.carlogos.org/logo/Willys-Overland-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Donkervoort" : {
+    "name" : "Donkervoort",
+    "img" : "https://www.carlogos.org/logo/Donkervoort-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Gilbern" : {
+    "name" : "Gilbern",
+    "img" : "https://www.carlogos.org/logo/Gilbern-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "UAZ" : {
+    "name" : "UAZ",
+    "img" : "https://www.carlogos.org/logo/UAZ-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Daimler" : {
+    "name" : "Daimler",
+    "img" : "https://www.carlogos.org/logo/Daimler-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Ferrari" : {
+    "name" : "Ferrari",
+    "img" : "https://www.carlogos.org/logo/Ferrari-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "GT-R" : {
+    "name" : "GT-R",
+    "img" : "https://www.carlogos.org/logo/GT-R-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Dartz" : {
+    "name" : "Dartz",
+    "img" : "https://www.carlogos.org/logo/Dartz-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Arrinera" : {
+    "name" : "Arrinera",
+    "img" : "https://www.carlogos.org/logo/Arrinera-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Luxgen" : {
+    "name" : "Luxgen",
+    "img" : "https://www.carlogos.org/logo/Luxgen-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Perodua" : {
+    "name" : "Perodua",
+    "img" : "https://www.carlogos.org/logo/Perodua-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Proton" : {
+    "name" : "Proton",
+    "img" : "https://www.carlogos.org/logo/Proton-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Scion" : {
+    "name" : "Scion",
+    "img" : "https://www.carlogos.org/logo/Scion-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Troller" : {
+    "name" : "Troller",
+    "img" : "https://www.carlogos.org/logo/Troller-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Changfeng" : {
+    "name" : "Changfeng",
+    "img" : "https://www.carlogos.org/logo/Changfeng-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Vector Motors" : {
+    "name" : "Vector Motors",
+    "img" : "https://www.carlogos.org/logo/Vector-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Zenvo" : {
+    "name" : "Zenvo",
+    "img" : "https://www.carlogos.org/logo/Zenvo-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Panhard" : {
+    "name" : "Panhard",
+    "img" : "https://www.carlogos.org/logo/Panhard-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "JMC" : {
+    "name" : "JMC",
+    "img" : "https://www.carlogos.org/logo/Jiangling-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Changan" : {
+    "name" : "Changan",
+    "img" : "https://www.carlogos.org/logo/Changan-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Jeep" : {
+    "name" : "Jeep",
+    "img" : "https://www.carlogos.org/logo/Jeep-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Merkur" : {
+    "name" : "Merkur",
+    "img" : "https://www.carlogos.org/logo/Merkur-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "OSCA" : {
+    "name" : "OSCA",
+    "img" : "https://www.carlogos.org/logo/OSCA-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "DAF" : {
+    "name" : "DAF",
+    "img" : "https://www.carlogos.org/logo/DAF-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Dongfeng" : {
+    "name" : "Dongfeng",
+    "img" : "https://www.carlogos.org/logo/Dongfeng-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hupmobile" : {
+    "name" : "Hupmobile",
+    "img" : "https://www.carlogos.org/logo/Hupmobile-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Smart" : {
+    "name" : "Smart",
+    "img" : "https://www.carlogos.org/logo/Smart-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "BMW" : {
+    "name" : "BMW",
+    "img" : "https://www.carlogos.org/logo/BMW-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Intermeccanica" : {
+    "name" : "Intermeccanica",
+    "img" : "https://www.carlogos.org/logo/Intermeccanica-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lamborghini" : {
+    "name" : "Lamborghini",
+    "img" : "https://www.carlogos.org/logo/Lamborghini-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Cisitalia" : {
+    "name" : "Cisitalia",
+    "img" : "https://www.carlogos.org/logo/Cisitalia-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Marcos" : {
+    "name" : "Marcos",
+    "img" : "https://www.carlogos.org/logo/Marcos-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hummer" : {
+    "name" : "Hummer",
+    "img" : "https://www.carlogos.org/logo/Hummer-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Rinspeed" : {
+    "name" : "Rinspeed",
+    "img" : "https://www.carlogos.org/logo/Rinspeed-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Venturi" : {
+    "name" : "Venturi",
+    "img" : "https://www.carlogos.org/logo/Venturi-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Ligier" : {
+    "name" : "Ligier",
+    "img" : "https://www.carlogos.org/logo/Ligier-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Innocenti" : {
+    "name" : "Innocenti",
+    "img" : "https://www.carlogos.org/logo/Innocenti-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Vandenbrink" : {
+    "name" : "Vandenbrink",
+    "img" : "https://www.carlogos.org/logo/Vandenbrink-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Viper" : {
+    "name" : "Viper",
+    "img" : "https://www.carlogos.org/logo/Viper-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Citroën" : {
+    "name" : "Citroën",
+    "img" : "https://www.carlogos.org/logo/Citroen-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Askam" : {
+    "name" : "Askam",
+    "img" : "https://www.carlogos.org/logo/Askam-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "David Brown" : {
+    "name" : "David Brown",
+    "img" : "https://www.carlogos.org/logo/David-Brown-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Tramontana" : {
+    "name" : "Tramontana",
+    "img" : "https://www.carlogos.org/logo/Tramontana-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Yulon" : {
+    "name" : "Yulon",
+    "img" : "https://www.carlogos.org/logo/Yulon-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Elva" : {
+    "name" : "Elva",
+    "img" : "https://www.carlogos.org/logo/Elva-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Simca" : {
+    "name" : "Simca",
+    "img" : "https://www.carlogos.org/logo/Simca-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "AMC" : {
+    "name" : "AMC",
+    "img" : "https://www.carlogos.org/logo/American-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lancia" : {
+    "name" : "Lancia",
+    "img" : "https://www.carlogos.org/logo/Lancia-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Morris" : {
+    "name" : "Morris",
+    "img" : "https://www.carlogos.org/logo/Morris-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "MG" : {
+    "name" : "MG",
+    "img" : "https://www.carlogos.org/logo/MG-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Tata" : {
+    "name" : "Tata",
+    "img" : "https://www.carlogos.org/logo/Tata-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "MK" : {
+    "name" : "MK",
+    "img" : "https://www.carlogos.org/logo/MK-Sportscars-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Aston Martin" : {
+    "name" : "Aston Martin",
+    "img" : "https://www.carlogos.org/logo/Aston-Martin-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lobini" : {
+    "name" : "Lobini",
+    "img" : "https://www.carlogos.org/logo/Lobini-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Peterbilt" : {
+    "name" : "Peterbilt",
+    "img" : "https://www.carlogos.org/logo/Peterbilt-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Wiesmann" : {
+    "name" : "Wiesmann",
+    "img" : "https://www.carlogos.org/logo/Wiesmann-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Oltcit" : {
+    "name" : "Oltcit",
+    "img" : "https://www.carlogos.org/logo/Oltcit-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Noble" : {
+    "name" : "Noble",
+    "img" : "https://www.carlogos.org/logo/Noble-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Apollo" : {
+    "name" : "Apollo",
+    "img" : "https://www.carlogos.org/logo/Apollo-Automobil-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Pontiac" : {
+    "name" : "Pontiac",
+    "img" : "https://www.carlogos.org/logo/Pontiac-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Wartburg" : {
+    "name" : "Wartburg",
+    "img" : "https://www.carlogos.org/logo/Wartburg-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Auburn" : {
+    "name" : "Auburn",
+    "img" : "https://www.carlogos.org/logo/Auburn-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Rezvani" : {
+    "name" : "Rezvani",
+    "img" : "https://www.carlogos.org/logo/Rezvani-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Pagani" : {
+    "name" : "Pagani",
+    "img" : "https://www.carlogos.org/logo/Pagani-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Isdera" : {
+    "name" : "Isdera",
+    "img" : "https://www.carlogos.org/logo/Isdera-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "/////AMG" : {
+    "name" : "/////AMG",
+    "img" : "https://www.carlogos.org/logo/AMG-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Brilliance" : {
+    "name" : "Brilliance",
+    "img" : "https://www.carlogos.org/logo/Brilliance-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Artega" : {
+    "name" : "Artega",
+    "img" : "https://www.carlogos.org/logo/Artega-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Panoz" : {
+    "name" : "Panoz",
+    "img" : "https://www.carlogos.org/logo/Panoz-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "MEV" : {
+    "name" : "MEV",
+    "img" : "https://www.carlogos.org/logo/Mills-Extreme-Vehicles-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Daewoo" : {
+    "name" : "Daewoo",
+    "img" : "https://www.carlogos.org/logo/Daewoo-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Foton" : {
+    "name" : "Foton",
+    "img" : "https://www.carlogos.org/logo/Foton-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "LEVC" : {
+    "name" : "LEVC",
+    "img" : "https://www.carlogos.org/logo/London-EV-Company-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Audi" : {
+    "name" : "Audi",
+    "img" : "https://www.carlogos.org/logo/Audi-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "///M" : {
+    "name" : "///M",
+    "img" : "https://www.carlogos.org/logo/BMW-M-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Corvette" : {
+    "name" : "Corvette",
+    "img" : "https://www.carlogos.org/logo/Corvette-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Alfa Romeo" : {
+    "name" : "Alfa Romeo",
+    "img" : "https://www.carlogos.org/logo/Alfa-Romeo-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hispano-Suiza" : {
+    "name" : "Hispano-Suiza",
+    "img" : "https://www.carlogos.org/logo/Hispano-Suiza-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "SAIC" : {
+    "name" : "SAIC",
+    "img" : "https://www.carlogos.org/logo/SAIC-Motor-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Studebaker" : {
+    "name" : "Studebaker",
+    "img" : "https://www.carlogos.org/logo/Studebaker-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Venucia" : {
+    "name" : "Venucia",
+    "img" : "https://www.carlogos.org/logo/Venucia-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Škoda" : {
+    "name" : "Škoda",
+    "img" : "https://www.carlogos.org/logo/Skoda-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "SRT" : {
+    "name" : "SRT",
+    "img" : "https://www.carlogos.org/logo/SRT-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Porsche" : {
+    "name" : "Porsche",
+    "img" : "https://www.carlogos.org/logo/Porsche-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Oldsmobile" : {
+    "name" : "Oldsmobile",
+    "img" : "https://www.carlogos.org/logo/Oldsmobile-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "BAIC Motor" : {
+    "name" : "BAIC Motor",
+    "img" : "https://www.carlogos.org/logo/BAIC-Motor-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Pininfarina" : {
+    "name" : "Pininfarina",
+    "img" : "https://www.carlogos.org/logo/Pininfarina-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Laraki" : {
+    "name" : "Laraki",
+    "img" : "https://www.carlogos.org/logo/Laraki-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Gardner Douglas" : {
+    "name" : "Gardner Douglas",
+    "img" : "https://www.carlogos.org/logo/Gardner-Douglas-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "SSC" : {
+    "name" : "SSC",
+    "img" : "https://www.carlogos.org/logo/SSC-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Rolls-Royce" : {
+    "name" : "Rolls-Royce",
+    "img" : "https://www.carlogos.org/logo/Rolls-Royce-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Renault" : {
+    "name" : "Renault",
+    "img" : "https://www.carlogos.org/logo/Renault-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "BAC" : {
+    "name" : "BAC",
+    "img" : "https://www.carlogos.org/logo/BAC-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Nismo" : {
+    "name" : "Nismo",
+    "img" : "https://www.carlogos.org/logo/Nismo-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Zarooq Motors" : {
+    "name" : "Zarooq Motors",
+    "img" : "https://www.carlogos.org/logo/Zarooq-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Alta" : {
+    "name" : "Alta",
+    "img" : "https://www.carlogos.org/logo/Alta-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Lotus" : {
+    "name" : "Lotus",
+    "img" : "https://www.carlogos.org/logo/Lotus-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Diatto" : {
+    "name" : "Diatto",
+    "img" : "https://www.carlogos.org/logo/Diatto-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Bentley" : {
+    "name" : "Bentley",
+    "img" : "https://www.carlogos.org/logo/Bentley-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "General Motors" : {
+    "name" : "General Motors",
+    "img" : "https://www.carlogos.org/logo/General-Motors-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Hafei" : {
+    "name" : "Hafei",
+    "img" : "https://www.carlogos.org/logo/Hafei-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Berliet" : {
+    "name" : "Berliet",
+    "img" : "https://www.carlogos.org/logo/Berliet-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Genesis" : {
+    "name" : "Genesis",
+    "img" : "https://www.carlogos.org/logo/Genesis-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Horch" : {
+    "name" : "Horch",
+    "img" : "https://www.carlogos.org/logo/Horch-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Eterniti" : {
+    "name" : "Eterniti",
+    "img" : "https://www.carlogos.org/logo/Eterniti-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Audi Sport" : {
+    "name" : "Audi Sport",
+    "img" : "https://www.carlogos.org/logo/Audi-Sport-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Brabus" : {
+    "name" : "Brabus",
+    "img" : "https://www.carlogos.org/logo/Brabus-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "RAM" : {
+    "name" : "RAM",
+    "img" : "https://www.carlogos.org/logo/Ram-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  },
+  "Nissan" : {
+    "name" : "Nissan",
+    "img" : "https://www.carlogos.org/logo/Nissan-logo.png",
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
+  }
+}

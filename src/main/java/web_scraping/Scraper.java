@@ -125,33 +125,41 @@ public class Scraper {
 				String doc = run(carUrl, client);
 				Car newCar = new Car();
 				
+				newCar.url = carUrl;
 			
+				//Get car name
 				Elements instances = Jsoup.parse(doc).getElementsByClass("cui-heading-2--secondary vehicle-info__title");
 				for(Element instance : instances) {
 					newCar.name = instance.text();
 				}
 				
-				//Get car VIN
+				//Get car image
+				instances = Jsoup.parse(doc).getElementsByClass("media-gallery__display-item media-gallery__display-item--image");
+				for(Element instance : instances) {
+					newCar.img = instance.attr("src");
+				}
+				
+				//Get car VIN and MPGs
 				instances = Jsoup.parse(doc).getElementsByClass("vdp-details-basics__item");
 				String carVin = "FAILED";
 				for(Element instance : instances) {
 					if(instance.select("strong").text().equals("VIN:")) {
 						newCar.vin = instance.select("span[ng-non-bindable]").text();							
 					}
+					if(instance.select("strong").text().equals("City MPG:")) {
+						newCar.mpg = instance.select("span[ng-non-bindable]").text() + "city/";							
+					}
+					if(instance.select("strong").text().equals("Highway MPG:")) {
+						newCar.mpg += instance.select("span[ng-non-bindable]").text() + "hwy";							
+					}
 				}
+				
 				
 				//Get car dealership
 				instances = Jsoup.parse(doc).getElementsByClass("vdp-dealer-location");
 				for (Element instance : instances) { // should only loop once
-					newCar.dealership = instance.getElementsByClass("vdp-dealer-info__title").text(); //adds dealership info to car
-					Set<String> makeName = makes.keySet();
-					for(String make : makeName) {
-						if(newCar.dealership.contains(make)){
-							makes.get(make).dealerships.add(newCar.dealership);
-						}
-					}
-					
-					dealerships.get(newCar.dealership).cars.add(newCar); //adds car to dealership car list
+					newCar.dealership = instance.getElementsByClass("vdp-dealer-info__title").text(); //adds dealership info to car					
+					dealerships.get(newCar.dealership).cars.add(newCar.vin); //adds car to dealership car list
 				}
 				
 				
@@ -162,12 +170,16 @@ public class Scraper {
 					newCar.price = Integer.parseInt(instance.text().replace("$", "").replace(",", ""));
 				}
 				
+				
 				Set<String> makeName = makes.keySet();
-				for(String make : makeName) {
-					if(newCar.name.contains(make)){
-						makes.get(make).cars.add(newCar);
-						newCar.make = make;
-						dealerships.get(newCar.dealership).makes.add(make);
+				for(String make : makeName) {					//loop until it finds matching make
+					if(newCar.name.contains(make)){				//if car has the make in its name
+						makes.get(make).cars.add(newCar.vin);	//then make gets that car added
+						newCar.make = make;						//car getts the make
+						dealerships.get(newCar.dealership).makes.add(make);		//dealership that already has the car get the make
+						makes.get(make).dealerships.add(newCar.dealership);		//make gets that dealership added to the make
+						makes.get(make).numCars++;
+						makes.get(make).numDealerships++;
 					}
 				}
 				
@@ -182,7 +194,6 @@ public class Scraper {
 				e.printStackTrace();
 			}
 			
-			//System.out.println(dealerships.get("Mercedes-Benz of Austin"));
 			
 		}
 		
@@ -191,7 +202,9 @@ public class Scraper {
 		mapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
 		mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 		try {
-            mapper.writeValue(new File("result.json"), dealerships);
+            mapper.writeValue(new File("dealerships.json"), dealerships);
+            mapper.writeValue(new File("cars.json"), cars);
+            mapper.writeValue(new File("makes.json"), makes);
         } catch (Exception e) {
             e.printStackTrace();
         }

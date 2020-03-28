@@ -6,16 +6,21 @@ public class Make {
 	String name;
 	String img;
 	HashSet<String> dealerships;
-	ArrayList<Car> cars;
+	ArrayList<String> cars;
+	Integer numCars;
+	Integer numDealerships;
 	
 	Make(){
 		this.name = null;
 		this.img = null;
 		this.dealerships = new HashSet<String>();
-		this.cars = new ArrayList<Car>();
+		this.cars = new ArrayList<String>();
+		this.numCars = 0;
+		this.numDealerships = 0;
 	}
 	
 	public String toString() {
-		return name + " | " + img + " | " + dealerships + " | " + cars;
+		return "Make: " + name + " | " + "Image: " + img + " | " + "Dealerships: " + dealerships 
+				+ " | " + "Number of Dealerships: " + numDealerships + " | " + "Cars: " + cars + " | " + "Number of Cars: " + numCars;
 	}
 }
