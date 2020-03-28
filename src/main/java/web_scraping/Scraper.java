@@ -19,6 +19,8 @@ public class Scraper {
 	public static Set<String> carUrls = new HashSet<String>();
 	public static Set<Car> cars;
 	public static Set<Dealership> dealerships = new HashSet<Dealership>();
+	public static ArrayList<String> makes = new ArrayList<>();
+	public static ArrayList<String> dealers = new ArrayList<String>();
 	
 	public static void main(String[] args) {
 		client = new OkHttpClient.Builder().readTimeout(30, TimeUnit.SECONDS).callTimeout(30, TimeUnit.SECONDS).build();  // socket timeout
@@ -26,17 +28,27 @@ public class Scraper {
 		try {
 
 			
-			//Scrapes all makeIds
-			 
+			//Scrapes all makeIds			 
 			String mdoc = run("https://www.cars.com/", client);
 			Elements options = Jsoup.parse(mdoc).getElementsByAttributeValue("name", "makeId").get(0).children();
-			ArrayList<String> makes = new ArrayList<>();
+			
 			String makeId = null;
 			for (Element option : options) {
 				makeId = option.val();
 				makes.add(makeId);
 			}
-
+			
+			// Scrapes dealer urls
+			String ddoc = run("https://www.cars.com/dealers/buy/78705/?rd=30&sortBy=DISTANCE&order=ASC&page=1&perPage=250", client);
+			Elements urls = Jsoup.parse(ddoc).getElementsByClass("dealer-contact");
+			
+			String s = null;
+			for (Element url : urls) {
+				s = "https://www.cars.com" + url.select("a").attr("href");
+				dealers.add(s);
+			}
+			scrapeDealerUrls();
+			
 
 			// Scrapes car urls
 			
@@ -101,10 +113,6 @@ public class Scraper {
 					}
 				}
 				
-				//Scrape for Dealership class
-				addDealership(doc);
-				
-				
 			}
 			catch(Exception e) {
 				e.printStackTrace();
@@ -113,8 +121,30 @@ public class Scraper {
 
 	}
 
+	public static void scrapeDealerUrls() {
+		try {	
+			for(int i = 0; i < dealers.size(); i++) {
+				String url = "https://www.cars.com/dealers/22731/cag-first-texas-honda/";
+				System.out.println("Retrieving page " + url);
+				String doc = run(url, client);
+				addDealership(doc);
+			} 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 	//Adds name, address, phone number, and website url to a dealership instance
 	public static void addDealership(String doc) {
+		Dealership d = new Dealership();
+		d.name = Jsoup.parse(doc).getElementsByClass("seller-name cui-alpha dealer-review__seller-name").text();
+		d.img = Jsoup.parse(doc).getElementsByClass("dealer__logo").attr("src");
+		d.address = Jsoup.parse(doc).getElementsByClass("dealer-update__streetAddress").text();
+		d.phoneNum = Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--new").text();
+		d.website = Jsoup.parse(doc).getElementsByClass("dealer-update-website-link").attr("href");
+		dealerships.add(d);
+		/*
 		//Get Dealership name and address
 		Dealership d = new Dealership();
 		Elements instances = Jsoup.parse(doc).getElementsByClass("vdp-dealer-location");
@@ -141,6 +171,7 @@ public class Scraper {
 		
 		dealerships.add(d);
 		System.out.println(dealerships);
+		*/
 	}
 
 	public static String run(String url, OkHttpClient client) throws IOException {
