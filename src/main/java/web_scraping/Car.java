@@ -1,11 +1,17 @@
 package web_scraping;
 
 public class Car{
-	String name, url, vin, dealership, make;
+	String name;
+	String img;
+	String url; 
+	String vin; 
+	String dealership; 
+	String make;
 	Integer price;
 
 	Car(){
 		this.name = null;
+		this.img = null;
 		this.url = null;
 		this.vin = null;
 		this.dealership = null;
@@ -13,8 +19,9 @@ public class Car{
 		this.price = null;
 	}
 	
-	Car(String name, String url, String vin, String dealership, String make, Integer price){
+	Car(String name, String img, String url, String vin, String dealership, String make, Integer price){
 		this.name = name;
+		this.img = img;
 		this.url = url;
 		this.vin = vin;
 		this.dealership = dealership;

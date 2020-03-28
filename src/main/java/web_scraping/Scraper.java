@@ -21,7 +21,7 @@ public class Scraper {
 	public static Map<String, Dealership> dealerships = new HashMap<String, Dealership>();
 	public static Map<String, Make> makes = new HashMap<String, Make>();
 	public static ArrayList<String> makeIds = new ArrayList<>();
-	public static ArrayList<String> dealers = new ArrayList<String>();
+	public static HashSet<String> dealers = new HashSet<String>();
 	
 	public static void main(String[] args) {
 		client = new OkHttpClient.Builder().readTimeout(30, TimeUnit.SECONDS).callTimeout(30, TimeUnit.SECONDS).build();  // socket timeout
@@ -35,10 +35,20 @@ public class Scraper {
 			String makeId = null;
 			for (Element option : options) {
 				makeId = option.val();
-				Make m = new Make();
-				m.name = option.text();
-				makes.put(option.text(), m);
 				makeIds.add(makeId);
+			}
+			
+			for(int i = 1; i < 8; i++) {
+				String makeimgDoc = run("https://www.carlogos.org/Car-Logos/list_1_" + i + ".html", client);
+				Elements elements = Jsoup.parse(makeimgDoc).getElementsByClass("logo1").select("dd");
+				for (Element e : elements) {
+					String name = e.select("a").text();
+					String image = e.select("a").select("img").attr("src");
+					Make m = new Make();
+					m.name = name;
+					m.img = image;
+					makes.put(name, m);
+				}
 			}
 			
 
@@ -175,8 +185,7 @@ public class Scraper {
 
 	public static void scrapeDealerUrls() {
 		try {	
-			for(int i = 0; i < dealers.size(); i++) {
-				String url = dealers.get(i);
+			for(String url : dealers) {
 				System.out.println("Retrieving page " + url);
 				String doc = run(url, client);
 				addDealership(doc);
