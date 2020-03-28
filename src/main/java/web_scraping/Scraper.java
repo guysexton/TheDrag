@@ -69,7 +69,7 @@ public class Scraper {
 			scrapeDealerUrls();
 			
 			
-			/*
+			
 			// Scrapes car urls
 			
 			for(int j = 1; j < makeIds.size(); j++) {
@@ -108,18 +108,18 @@ public class Scraper {
 				System.out.println(makeIdAgain + ": " + carUrls.size() + " results");
 				carUrls = new HashSet<String>();
 				
-			} 	*/
+			} 	
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	
-		//System.out.println("\nSUCCESSFULLY SCRAPED ALL MAKES\n");
+		System.out.println("\nSUCCESSFULLY SCRAPED ALL MAKES\n");
 		
 	
 		//Scrapes from car URLs
 		 	
-		carUrls.add("https://www.cars.com/vehicledetail/detail/805411632/overview/");
-
+		//carUrls.add("https://www.cars.com/vehicledetail/detail/805411632/overview/");
+		int k = 1;
 		for(String carUrl : carUrls) {
 			try {
 				String doc = run(carUrl, client);
@@ -184,18 +184,19 @@ public class Scraper {
 				}
 				
 				cars.put(newCar.vin, newCar);
-				System.out.println(dealerships.get(newCar.dealership));
-				
-				System.out.println(makes.get(newCar.make));
-				System.out.println("Scraped car: " + newCar);
+				//System.out.println(dealerships.get(newCar.dealership));
+				//System.out.println(makes.get(newCar.make));
+				//System.out.println("Scraped car: " + newCar);
 				
 			}
 			catch(Exception e) {
 				e.printStackTrace();
 			}
-			
-			
+			System.out.println("Finished scrapeing car page: " + carUrl + "Counter: " + k);
+			k++;
 		}
+		
+		System.out.println(cars.size());
 		
 		//Testing writing to a JSON file with Jackson Library
 		ObjectMapper mapper = new ObjectMapper();
