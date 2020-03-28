@@ -6,7 +6,7 @@ public class Dealership {
 	String name;
 	String img;
 	String make;
-	ArrayList<String> models = new ArrayList<String>();
+	ArrayList<Car> cars = new ArrayList<Car>();
 	String address;
 	String phoneNum;
 	String website;
@@ -28,8 +28,8 @@ public class Dealership {
 		return make;
 	}
 	
-	public ArrayList<String> getModels(){
-		return models;
+	public ArrayList<Car> getCars(){
+		return cars;
 	}
 	
 	public String getAddress() {
