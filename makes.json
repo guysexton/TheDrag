@@ -1066,10 +1066,10 @@
   "Mercedes-Benz" : {
     "name" : "Mercedes-Benz",
     "img" : "https://www.carlogos.org/logo/Mercedes-Benz-logo.png",
-    "dealerships" : [ "Mercedes-Benz of Austin" ],
-    "cars" : [ "WDCTG4EB0LU021822" ],
-    "numCars" : 1,
-    "numDealerships" : 1
+    "dealerships" : [ ],
+    "cars" : [ ],
+    "numCars" : 0,
+    "numDealerships" : 0
   },
   "Edsel" : {
     "name" : "Edsel",

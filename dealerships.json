@@ -972,8 +972,8 @@
   "Mercedes-Benz of Austin" : {
     "name" : "Mercedes-Benz of Austin",
     "img" : "https://www.cstatic-images.com/logo-dealer/147822.jpg",
-    "makes" : [ "Mercedes-Benz" ],
-    "cars" : [ "WDCTG4EB0LU021822" ],
+    "makes" : [ ],
+    "cars" : [ ],
     "address" : "6757 Airport Blvd Austin, TX 78752",
     "phoneNum" : "New (512) 961-5753",
     "website" : "https://www.mercedesbenzofaustin.com/?utm_source=cars.com&utm_medium=referral",

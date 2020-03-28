@@ -106,7 +106,7 @@ public class Scraper {
 					i++;
 				}
 				System.out.println(makeIdAgain + ": " + carUrls.size() + " results");
-				carUrls = new HashSet<String>();
+				//carUrls = new HashSet<String>();
 				
 			} 	
 		} catch (IOException e) {
