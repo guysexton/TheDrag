@@ -692,8 +692,8 @@
   "Nyle Maxwell Pre-Owned Supercenter" : {
     "name" : "Nyle Maxwell Pre-Owned Supercenter",
     "img" : "https://www.cstatic-images.com/logo-dealer/12dd3dfc61eb5dfc036c36a42a367520.jpg",
-    "makes" : [ ],
-    "cars" : [ ],
+    "makes" : [ "Dodge" ],
+    "cars" : [ "2C3CDXL95LH144894" ],
     "address" : "13817 Research Blvd Austin, TX 78750",
     "phoneNum" : "New (512) 861-0095",
     "website" : "http://www.nylemaxwellcdjr.com/?utm_source=cars.com&utm_medium=referral",

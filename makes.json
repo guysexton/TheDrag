@@ -418,10 +418,10 @@
   "Dodge" : {
     "name" : "Dodge",
     "img" : "https://www.carlogos.org/logo/Dodge-logo.png",
-    "dealerships" : [ ],
-    "cars" : [ ],
-    "numCars" : 0,
-    "numDealerships" : 0
+    "dealerships" : [ "Nyle Maxwell Pre-Owned Supercenter" ],
+    "cars" : [ "2C3CDXL95LH144894" ],
+    "numCars" : 1,
+    "numDealerships" : 1
   },
   "Lister" : {
     "name" : "Lister",

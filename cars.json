@@ -1,1 +1,12 @@
-{ }
+{
+  "2C3CDXL95LH144894" : {
+    "name" : "2020 Dodge Charger SRT Hellcat",
+    "img" : "https://www.cstatic-images.com/supersized/in/v1/444790/2C3CDXL95LH144894/3c02b68537f0dd929550588e1b943a89.jpg",
+    "url" : "https://www.cars.com/vehicledetail/detail/805364103/overview/",
+    "vin" : "2C3CDXL95LH144894",
+    "dealership" : "Nyle Maxwell Pre-Owned Supercenter",
+    "make" : "Dodge",
+    "price" : 72345,
+    "mpg" : "12city/21hwy"
+  }
+}

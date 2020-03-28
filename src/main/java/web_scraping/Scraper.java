@@ -118,7 +118,7 @@ public class Scraper {
 	
 		//Scrapes from car URLs
 		 	
-		//carUrls.add("https://www.cars.com/vehicledetail/detail/805411632/overview/");
+		//carUrls.add("https://www.cars.com/vehicledetail/detail/805364103/overview/");
 		int k = 1;
 		for(String carUrl : carUrls) {
 			try {
@@ -173,7 +173,8 @@ public class Scraper {
 				
 				Set<String> makeName = makes.keySet();
 				for(String make : makeName) {					//loop until it finds matching make
-					if(newCar.name.contains(make)){				//if car has the make in its name
+					String[] carName = newCar.name.split(" ");
+					if(carName[1].equals(make)){				//if car has the make in its name
 						makes.get(make).cars.add(newCar.vin);	//then make gets that car added
 						newCar.make = make;						//car getts the make
 						dealerships.get(newCar.dealership).makes.add(make);		//dealership that already has the car get the make
@@ -192,7 +193,7 @@ public class Scraper {
 			catch(Exception e) {
 				e.printStackTrace();
 			}
-			System.out.println("Finished scrapeing car page: " + carUrl + "Counter: " + k);
+			System.out.println("Finished scrapeing car page: " + carUrl + " | Counter: " + k);
 			k++;
 		}
 		
