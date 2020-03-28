@@ -19,7 +19,8 @@ public class Scraper {
 	public static Set<String> carUrls = new HashSet<String>();
 	public static Map<String, Car> cars = new HashMap<String, Car>();
 	public static Map<String, Dealership> dealerships = new HashMap<String, Dealership>();
-	public static ArrayList<String> makes = new ArrayList<>();
+	public static Map<String, Make> makes = new HashMap<String, Make>();
+	public static ArrayList<String> makeIds = new ArrayList<>();
 	public static ArrayList<String> dealers = new ArrayList<String>();
 	
 	public static void main(String[] args) {
@@ -31,13 +32,14 @@ public class Scraper {
 			//Scrapes all makeIds			 
 			String mdoc = run("https://www.cars.com/", client);
 			Elements options = Jsoup.parse(mdoc).getElementsByAttributeValue("name", "makeId").get(0).children();
-			
 			String makeId = null;
 			for (Element option : options) {
 				makeId = option.val();
-				makes.add(makeId);
+				makes.put(option.text(), new Make());
+				makeIds.add(makeId);
 			}
 			
+
 			// Scrapes dealer urls
 			String ddoc = run("https://www.cars.com/dealers/buy/78705/?rd=30&sortBy=DISTANCE&order=ASC&page=1&perPage=250", client);
 			Elements urls = Jsoup.parse(ddoc).getElementsByClass("dealer-contact");
@@ -49,12 +51,12 @@ public class Scraper {
 			}
 			scrapeDealerUrls();
 			
-			/*
+			
 
 			// Scrapes car urls
 			
-			for(int j = 1; j < makes.size(); j++) {
-				String makeIdAgain = makes.get(j);
+			for(int j = 1; j < makeIds.size(); j++) {
+				String makeIdAgain = makeIds.get(j);
 				
 				boolean getOut = false;
 				int numDuplicates = 0;
@@ -89,25 +91,31 @@ public class Scraper {
 				System.out.println(makeIdAgain + ": " + carUrls.size() + " results");
 				carUrls = new HashSet<String>();
 				
-			} */
+			} 	
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	
 		System.out.println("\nSUCCESSFULLY SCRAPED ALL MAKES\n");
 
-		
+	
 		//Scrapes from car URLs
 		 	
-		carUrls.add("https://www.cars.com/vehicledetail/detail/805411632/overview/");
+		//carUrls.add("https://www.cars.com/vehicledetail/detail/805411632/overview/");
 
 		for(String carUrl : carUrls) {
 			try {
 				String doc = run(carUrl, client);
 				Car newCar = new Car();
 				
+			
+				Elements instances = Jsoup.parse(doc).getElementsByClass("cui-heading-2--secondary vehicle-info__title");
+				for(Element instance : instances) {
+					newCar.name = instance.text();
+				}
+				
 				//Get car VIN
-				Elements instances = Jsoup.parse(doc).getElementsByClass("vdp-details-basics__item");
+				instances = Jsoup.parse(doc).getElementsByClass("vdp-details-basics__item");
 				String carVin = "FAILED";
 				for(Element instance : instances) {
 					if(instance.select("strong").text().equals("VIN:")) {
@@ -119,8 +127,16 @@ public class Scraper {
 				instances = Jsoup.parse(doc).getElementsByClass("vdp-dealer-location");
 				for (Element instance : instances) { // should only loop once
 					newCar.dealership = instance.getElementsByClass("vdp-dealer-info__title").text(); //adds dealership info to car
+					/*Set<String> makeName = makes.keySet();
+					for(String make : makeName) {
+						if(newCar.dealership.contains(make)){
+							makes.get(make).dealerships.add(newCar.dealership);
+						}
+					}*/
+					
 					dealerships.get(newCar.dealership).cars.add(newCar); //adds car to dealership car list
 				}
+				
 				
 				
 				//Get car price
@@ -129,9 +145,17 @@ public class Scraper {
 					newCar.price = Integer.parseInt(instance.text().replace("$", "").replace(",", ""));
 				}
 				
-				cars.put(newCar.vin, newCar);
-				System.out.println(dealerships.get(newCar.dealership));
+				Set<String> makeName = makes.keySet();
+				for(String make : makeName) {
+					if(newCar.name.contains(make)){
+						makes.get(make).cars.add(newCar);
+					}
+				}
 				
+				cars.put(newCar.vin, newCar);
+				//System.out.println(dealerships.get(newCar.dealership));
+				
+				//System.out.println(makes);
 				System.out.println("Scraped car: " + newCar);
 				
 			}
@@ -139,7 +163,7 @@ public class Scraper {
 				e.printStackTrace();
 			}
 			
-			System.out.println(dealerships.get("Mercedes-Benz of Austin"));
+			//System.out.println(dealerships.get("Mercedes-Benz of Austin"));
 			
 		}
 
