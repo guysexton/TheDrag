@@ -124,7 +124,7 @@ public class Scraper {
 	public static void scrapeDealerUrls() {
 		try {	
 			for(int i = 0; i < dealers.size(); i++) {
-				String url = "https://www.cars.com/dealers/22731/cag-first-texas-honda/";
+				String url = dealers.get(i);
 				System.out.println("Retrieving page " + url);
 				String doc = run(url, client);
 				addDealership(doc);
