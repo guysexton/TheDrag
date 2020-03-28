@@ -23,6 +23,6 @@ public class Car{
 	}
 	
 	public String toString() {
-		return name + " with " + vin + " at " + dealership + " for " + price + " (URL: " + url + ")";
+		return "Manufactured by: " + make + " type: " + name + " with " + vin + " at " + dealership + " for " + price + " (URL: " + url + ")";
 	}
 }

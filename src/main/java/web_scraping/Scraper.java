@@ -35,7 +35,9 @@ public class Scraper {
 			String makeId = null;
 			for (Element option : options) {
 				makeId = option.val();
-				makes.put(option.text(), new Make());
+				Make m = new Make();
+				m.name = option.text();
+				makes.put(option.text(), m);
 				makeIds.add(makeId);
 			}
 			
@@ -52,7 +54,7 @@ public class Scraper {
 			scrapeDealerUrls();
 			
 			
-
+			/*
 			// Scrapes car urls
 			
 			for(int j = 1; j < makeIds.size(); j++) {
@@ -91,17 +93,17 @@ public class Scraper {
 				System.out.println(makeIdAgain + ": " + carUrls.size() + " results");
 				carUrls = new HashSet<String>();
 				
-			} 	
+			} 	*/
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	
-		System.out.println("\nSUCCESSFULLY SCRAPED ALL MAKES\n");
-
+		//System.out.println("\nSUCCESSFULLY SCRAPED ALL MAKES\n");
+		
 	
 		//Scrapes from car URLs
 		 	
-		//carUrls.add("https://www.cars.com/vehicledetail/detail/805411632/overview/");
+		carUrls.add("https://www.cars.com/vehicledetail/detail/805411632/overview/");
 
 		for(String carUrl : carUrls) {
 			try {
@@ -127,12 +129,12 @@ public class Scraper {
 				instances = Jsoup.parse(doc).getElementsByClass("vdp-dealer-location");
 				for (Element instance : instances) { // should only loop once
 					newCar.dealership = instance.getElementsByClass("vdp-dealer-info__title").text(); //adds dealership info to car
-					/*Set<String> makeName = makes.keySet();
+					Set<String> makeName = makes.keySet();
 					for(String make : makeName) {
 						if(newCar.dealership.contains(make)){
 							makes.get(make).dealerships.add(newCar.dealership);
 						}
-					}*/
+					}
 					
 					dealerships.get(newCar.dealership).cars.add(newCar); //adds car to dealership car list
 				}
@@ -149,13 +151,15 @@ public class Scraper {
 				for(String make : makeName) {
 					if(newCar.name.contains(make)){
 						makes.get(make).cars.add(newCar);
+						newCar.make = make;
+						dealerships.get(newCar.dealership).makes.add(make);
 					}
 				}
 				
 				cars.put(newCar.vin, newCar);
-				//System.out.println(dealerships.get(newCar.dealership));
+				System.out.println(dealerships.get(newCar.dealership));
 				
-				//System.out.println(makes);
+				System.out.println(makes.get(newCar.make));
 				System.out.println("Scraped car: " + newCar);
 				
 			}
@@ -192,34 +196,6 @@ public class Scraper {
 		d.phoneNum = Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--new").text();
 		d.website = Jsoup.parse(doc).getElementsByClass("dealer-update-website-link").attr("href");
 		dealerships.put(d.name, d);
-		/*
-		//Get Dealership name and address
-		Dealership d = new Dealership();
-		Elements instances = Jsoup.parse(doc).getElementsByClass("vdp-dealer-location");
-		for (Element instance : instances) {
-			String dealershipName = instance.getElementsByClass("vdp-dealer-info__title").text();
-			String address = instance.getElementsByClass("vdp-dealer-location__address").text();
-			d.name = dealershipName;
-			d.address = address;
-		}
-		
-		//Get Dealership phone number
-		instances = Jsoup.parse(doc).getElementsByClass("vdp-cap-seller-exp__phone");
-		for (Element instance : instances) {
-			String phoneNumber = instance.getElementsByClass("dni-replace-8669105682").text();
-			d.phoneNum = phoneNumber;
-		}
-		
-		//Get Dealership website
-		instances = Jsoup.parse(doc).getElementsByClass("vdp-dealer-links");
-		Element instance = instances.get(0).child(1);
-		String website = instance.attr("href");
-		d.website = website;
-		
-		
-		dealerships.add(d);
-		System.out.println(dealerships);
-		*/
 	}
 
 	public static String run(String url, OkHttpClient client) throws IOException {

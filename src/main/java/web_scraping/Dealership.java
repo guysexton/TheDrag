@@ -5,7 +5,7 @@ import java.util.*;
 public class Dealership {
 	String name;
 	String img;
-	String make;
+	HashSet<String> makes = new HashSet<String>();
 	ArrayList<Car> cars = new ArrayList<Car>();
 	String address;
 	String phoneNum;
@@ -24,8 +24,8 @@ public class Dealership {
 		return img;
 	}
 	
-	public String getMake() {
-		return make;
+	public HashSet<String> getMakes() {
+		return makes;
 	}
 	
 	public ArrayList<Car> getCars(){
@@ -45,7 +45,7 @@ public class Dealership {
 	}
 	
 	public String toString() {
-		return name +  " | " + img + " | " + address + " | " + phoneNum + " | " + website + " | " + cars;
+		return name +  " | " + img + " | " + address + " | " + phoneNum + " | " + website + " | " + cars + makes;
 	}
 	
 	public boolean equals(Object o) {
