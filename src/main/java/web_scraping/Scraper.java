@@ -180,7 +180,7 @@ public class Scraper {
 						dealerships.get(newCar.dealership).makes.add(make);		//dealership that already has the car get the make
 						makes.get(make).dealerships.add(newCar.dealership);		//make gets that dealership added to the make
 						makes.get(make).numCars++;
-						makes.get(make).numDealerships++;
+						makes.get(make).numDealerships = makes.get(make).dealerships.size();
 					}
 				}
 				
