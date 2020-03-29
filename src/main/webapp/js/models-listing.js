@@ -129,7 +129,7 @@ const models = [{
     "make" : "Hyundai",
     "price" : null,
     "mpg" : "55city/54hwy"
-  },,
+  },
   {
     "name" : "2020 Genesis G70 2.0T Sport",
     "img" : "https://www.cstatic-images.com/supersized/in/v1/2320376/KMTG24LA0LU064431/1cbc2d4a29d384fbdaaeaa79f8d19e5f.jpg",
@@ -269,12 +269,24 @@ function buildGrid() {
 	var myGrid = data.querySet
 	
 	for(var i = 1 in myGrid){
-		var listing = "<li class='card np-element np-hover col-4 model-card' style='margin: 20px;height:275px;' >"+
-						"<a href='#'>"+
-						"<h3 style='text-align: center;'>" + myGrid[i].name + "</h3>"
 		
-		if(myGrid[i].img!=""){ listing = listing + "<div class='np-img-wrapper' width='50px' height='50px'>"+
-							"<img class='np-img-expand' src='" + myGrid[i].img + "' width='inherit' height='inherit' style='margin: 10px'></div>"}
+		 if (i % 2 == 0){
+			
+			var listing = "<li class='card np-element np-hover col-4 model-card' style='margin-bottom: 70px; margin-right: 30px; height: 370px; float: left;' >"+
+			"<a href='#'>"+
+			"<h3 style='text-align: center;'>" + myGrid[i].name + "</h3>"
+		
+			
+		} else {
+			var listing = "<li class='card np-element np-hover col-4 model-card' style='margin-bottom: 70px;  height: 370px;' >"+
+			"<a href='#'>"+
+			"<h3 style='text-align: center;'>" + myGrid[i].name + "</h3>"
+			
+		}
+		
+		
+		if(myGrid[i].img!=""){ listing = listing + "<div class='np-img-wrapper' width='50px' height='90px'>"+
+			"<img class='np-img-expand' src='" + myGrid[i].img + "' width='200px' height='90px' style='margin: 10px'></div>"}
 		
 		if(myGrid[i].address!=""){ listing = listing + "<p><strong>Dealership:</strong> " + myGrid[i].dealership + "</p>"}
 		if(myGrid[i].phoneNum!=""){ listing = listing + "<p><strong>Price:</strong> " + myGrid[i].price + "</p>"}
