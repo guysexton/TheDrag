@@ -341,8 +341,13 @@ function pageButtons(pages){
 	var wrapper = document.getElementById('pagination-wrapper')
 	wrapper.innerHTML = ''
 	
-		if(pages)
-		wrapper.innerHTML += `<li class="page-item"> <button class="prev np-element np-hover" style="margin:5px;" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">Previous</span> </button> </li>`
+		if(state.page>1){
+		wrapper.innerHTML += `<li class="page-item"> <button class="first np-element np-hover" style="margin:5px;" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </button> </li>`}
+		else{
+			wrapper.innerHTML += `<li class="page-item"> <button class="first np-element" style="margin:5px;" href="#" aria-label="Previous" disabled> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </button> </li>`
+		}
+	
+	wrapper.innerHTML += `<li class="page-item"> <button class="prev np-element np-hover" style="margin:5px;" href="#" aria-label="Previous"> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </button> </li>`
 	
 	for(var page = 1; page <= pages ; page++){
 		if(page==state.page)
@@ -351,7 +356,13 @@ function pageButtons(pages){
 			wrapper.innerHTML += `<li><button value=${page} class="page np-element np-hover" style="margin:5px;">${page}</button></li>`
 	}
 	
-		wrapper.innerHTML += `<li class="page-item"> <button class="back np-element np-hover" style="margin:5px;" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Next</span> </button> </li>`
+		wrapper.innerHTML += `<li class="page-item"> <button class="next np-element np-hover" style="margin:5px;" href="#" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </button> </li>`
+	
+		if(state.page<pages){
+		wrapper.innerHTML += `<li class="page-item"> <button class="last np-element np-hover" style="margin:5px;" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </button> </li>`}
+		else{
+			wrapper.innerHTML += `<li class="page-item"> <button class="last np-element" style="margin:5px;" href="#" aria-label="Next" disabled> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </button> </li>`
+		}
 	
 	$('.page').on('click',function(){
 		document.getElementById('dealer-grid').innerHTML=''
@@ -370,11 +381,27 @@ function pageButtons(pages){
 		buildGrid()
 	})
 	
-	$('.back').on('click',function(){
+	$('.next').on('click',function(){
 		document.getElementById('dealer-grid').innerHTML=''
 		
 		if(state.page<pages){state.page = state.page+1}
 		else{state.page=1}
+		
+		buildGrid()
+	})
+	
+	$('.first').on('click',function(){
+		document.getElementById('dealer-grid').innerHTML=''
+		
+		state.page=1
+		
+		buildGrid()
+	})
+	
+	$('.last').on('click',function(){
+		document.getElementById('dealer-grid').innerHTML=''
+		
+		state.page=pages
 		
 		buildGrid()
 	})
