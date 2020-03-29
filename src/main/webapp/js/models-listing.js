@@ -143,7 +143,7 @@ const models = [{
 ]
 
 var state = {
-		'querySet': dealers,
+		'querySet': models,
 		
 		'page':1,
 		'items':10,
