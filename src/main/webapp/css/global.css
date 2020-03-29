@@ -35,3 +35,18 @@
 	text-align: center;
 	box-sizing: border-box;
 }
+
+.car-grid{
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: non;
+	padding-left: 0;
+}
+
+.car-card{
+	flex: 0 0 calc(20%-10px);
+	margin: 5px;
+	padding 5px 0;
+	text-align: center;
+	box-sizing: border-box;
+}

@@ -12,7 +12,7 @@
     <link href="../css/global.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-  This is a Toyota Dealership  This is a Toyota&nbsp;  This is aToyota&nbsp;  Toyota&nbsp;  Ma Toyota&nbsp;	<!--Navigation bar-->
+  <!--Navigation bar-->
 		 <body class="navbar-dark">
 		 
 		 	<!-- Attempt to resize logo. Should be something else. -->
@@ -30,80 +30,37 @@
 	<!--end of Navigation bar-->
 	 	  
 	  
-	  	<div class="jumbotron" id="background" style="background-image: url(https://www.toyotaofcedarpark.com/wp-content/themes/DealerInspireDealerTheme/images/dealership-image-mobile.png); background-size: cover; height: 50vh; vertical-align: middle;">
    		<div class="container">
-  		 <h1 class="modal-header" id="make">Toyota of Cedar Park</h1>
+  		 <h1 class="modal-header" id="dealer-name">Dealership</h1>
   		 </div>
-	  </div>
 	  
   <div class="row" style="padding:30px;">
 		  <div class="offset-xl-1 col-xl-7">
 			  <h1 class="text-center">Cars Available</h1>
-		    <div class="row" > <a href = "/html/c-hr.html" class="col-xl-3 np-element np-hover">
-		      <div>C-HR</div>
-		    </a><a href = "/html/highlander.html" class="col-xl-3 np-element offset-xl-1 np-hover">
-            <div>Highlander</div>
-            </a><a class="col-xl-3 np-element offset-xl-1 np-hover">
-            <div>More to come...</div>
-            </a>
-            <br>
-			 "Sold by Toyota of Cedar Park": {
-        		"product_name": "2020 Toyota C-HR LE",
-        		"price": "$23,674 ",
-        		"mileage": "6 miles",
-        		"sold_by": "Sold by Toyota of Cedar Park",
-        		"location": "Cedar Park, TX 78641",
-        		"rating": "-4.9",
-        		"no_of_reviews": "761 Reviews",
-        		"fuel_type": "Gasoline",
-        		"city_mpg": "Black",
-        		"highway_mpg": "FWD",
-        		"drivetrain": "2.0L I4 16V MPFI DOHC",
-        		"engine": "6",
-        		"exterior_color": "Red",
-        		"interior_color": "19346",
-        		"stock": "Automatic CVT",
-        		"transmission": "JTNKHMBX6L1072107",
-        		"vin": "null",
-        		"contact_info": "(737) 843-6630"
-    }   
-		    </div>
+			  <ul class="offset-2 car-grid offset-xl-0" id="car-grid">
+				  <!-- <li class="card np-element np-hover col-2 car-card" style="margin: 20px;"><a href="#">TEMPVIN</a></li> -->
+			  </ul>
+		    
 			  
           </div>
 		  	<div class="np-element np-colorize offset-xl-1 col-xl-3">
+				<div class="np-img-wrapper" width="100px" height="100px" id="dealer-img"></div>
 		  	  <h1 class="text-center">Dealership Information</h1>
-<div class="np-divider">&nbsp;</div>
-<colgroup>
-</colgroup>
-<p><span><b>Address: </b><span>5600 183A Cedar Park, TX 78641</span></span></p>
-			  <p><strong>Website:</strong><a href="https://www.toyotaofcedarpark.com/"> www.toyotaofcedarpark.com</a></p>
-			  <a href="/html/toyota.html">
+				<div class="np-divider">&nbsp;</div>
+				<p><span><b>Address: </b><span id="address"></span></span></p>
+				<p><span><b>Phone: </b><span id="phone"></span></span></p>
+			  <p><a id="link" href=""><strong>Click here to visit dealership website</strong></a></p>
+			  <a href="#" id="dealer-brand-card">
 			  <div class="card np-element np-hover">
 			    <div class="card-body text-center">
-			      <h5 class="card-title">This is a Toyota Dealership</h5>
-			      <p class="card-text">Click here to learn more about Toyota.&nbsp;</p>
+			      <h5 class="card-title" id="dealer-brand"></h5>
+			      <p class="card-text" id="dealer-brand-paragraph"></p>
 		        </div>
 		      </div>
 		    </a>            </div>
 </div>
-  <br>
-  <br>
-  <br>
-	  	<div class="offset-xl-1 col-xl-7">
-	<h1 class="text-center">Other Nearby Dealerships</h1>
-  	<div class="row offset-xl-1 col-xl-7"> <a href = "/html/round-rock-toyota.html" class="col-xl-5">
-	<div class="card np-element np-img-wrapper text-center container-fluid np-hover"><img src="https://pictures.dealer.com/p/penskeroundrocktoyota/0040/6f8b9746ac8eb3968fc541d0834b047cx.jpg" alt="Subaru Logo" width="200" height="200" class="img-fluid np-img-expand">
-    <h3>Round Rock Toyota</h3>
-  </div>
-  </a>
-    <a href = "/html/charles-maund-toyota.html" class="col-xl-5">
-    <div class="card np-element np-img-wrapper text-center container-fluid np-hover"><img src="https://nyc3.digitaloceanspaces.com/nolig/production/companies/logo_images/000/000/107/thumb/Charles_Maund_Toyota.jpg" alt="Subaru Logo" width="200" height="200" class="img-fluid np-img-expand">
-      <h3>Charles Maund Toyota</h3>
-    </div>
-    </a>
-  </div>
-	  </div>
-  <br>
+
+	  <script src="../js/dealer.js"></script>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
     <script src="../js/jquery-3.4.1.min.js"></script>
 
