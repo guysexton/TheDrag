@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "abab953c-3c18-4a3b-8f19-b66cb3fb6139",
+		"name": "NHTSA API unit tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "testBodyClassAttr",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7a71c63c-3ef5-437e-839f-2337529d3c67",
+						"exec": [
+							"pm.test(\"Status code 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Check for body class\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    //var response = JSON.parse(jsonData)",
+							"    pm.expect(jsonData.Results[0].BodyClass).to.eql(\"Minivan\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/2C4RC1GG5LR187589?format=json",
+					"protocol": "https",
+					"host": [
+						"vpic",
+						"nhtsa",
+						"dot",
+						"gov"
+					],
+					"path": [
+						"api",
+						"vehicles",
+						"decodevinvalues",
+						"2C4RC1GG5LR187589"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testVehicleTypeAttr",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54f59d15-a109-4b9c-b12c-a6e81a9157c0",
+						"exec": [
+							"pm.test(\"Status code 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Check for vehichle type 0\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    //var response = JSON.parse(jsonData)",
+							"    pm.expect(jsonData.Results[0].VehicleTypeName).to.eql(\"Passenger Car\");",
+							"})",
+							"",
+							"pm.test(\"Check for vehichle type 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    //var response = JSON.parse(jsonData)",
+							"    pm.expect(jsonData.Results[1].VehicleTypeName).to.eql(\"Truck \");",
+							"})",
+							"",
+							"pm.test(\"Check for vehichle type 2\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    //var response = JSON.parse(jsonData)",
+							"    pm.expect(jsonData.Results[2].VehicleTypeName).to.eql(\"Bus\");",
+							"})",
+							"",
+							"pm.test(\"Check for vehichle type 3\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    //var response = JSON.parse(jsonData)",
+							"    pm.expect(jsonData.Results[3].VehicleTypeName).to.eql(\"Multipurpose Passenger Vehicle (MPV)\");",
+							"})",
+							"",
+							"pm.test(\"Check for vehichle type 4\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    //var response = JSON.parse(jsonData)",
+							"    pm.expect(jsonData.Results[4].VehicleTypeName).to.eql(\"Incomplete Vehicle\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMake/Mercedes-Benz?format=json",
+					"protocol": "https",
+					"host": [
+						"vpic",
+						"nhtsa",
+						"dot",
+						"gov"
+					],
+					"path": [
+						"api",
+						"vehicles",
+						"GetVehicleTypesForMake",
+						"Mercedes-Benz"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
