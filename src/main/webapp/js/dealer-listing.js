@@ -316,7 +316,7 @@ var state = {
 	'querySet': dealers,
 	
 	'page':1,
-	'items':6,
+	'items':10,
 	
 	'window':5
 }
@@ -338,6 +338,24 @@ function pagination(querySet,page,items) {
 }
 
 function pageButtons(pages){
+	
+	var winStart = (state.page - Math.floor(state.window/2));
+	var winEnd = (state.page + Math.floor(state.window/2));
+	
+	if(winStart < 1){
+		winStart=1
+		winEnd=state.window
+	}
+	
+	if(winEnd > pages){
+		winStart = pages - (state.window - 1)
+		
+		if(winStart < 1){
+			winStart=1
+		}
+		winEnd=pages
+	}
+	
 	var wrapper = document.getElementById('pagination-wrapper')
 	wrapper.innerHTML = ''
 	
@@ -349,7 +367,7 @@ function pageButtons(pages){
 	
 	wrapper.innerHTML += `<li class="page-item"> <button class="prev np-element np-hover" style="margin:5px;" href="#" aria-label="Previous"> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </button> </li>`
 	
-	for(var page = 1; page <= pages ; page++){
+	for(var page = winStart; page <= winEnd ; page++){
 		if(page==state.page)
 			wrapper.innerHTML += `<li><button value=${page} class="np-element np-shadow-inverse np-hover-inverse" style="margin:5px;">${page}</button></li>`
 		else
@@ -367,7 +385,7 @@ function pageButtons(pages){
 	$('.page').on('click',function(){
 		document.getElementById('dealer-grid').innerHTML=''
 		
-		state.page = $(this).val()
+		state.page = Number($(this).val())
 		
 		buildGrid()
 	})
