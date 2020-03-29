@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+	
+	<script></script>
+	
+<head>
     <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,13 +14,13 @@
 	<link href="../css/global.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-  	<!-- body code goes here -->
+    	<!-- body code goes here -->
 
    <!--Navigation bar-->
 		 <body class="navbar-dark">
 		 
 		 	<!-- Attempt to resize logo. Should be something else. -->
-		<div class="col-xl-1"><a href = "/html/sitemap.html"><img src="../assets/logo.png" style = "width: 100%; height: 120%" alt="" class="navbar-brand" ></a></div>
+  <div class="col-xl-1"><a href = "/html/sitemap.html"><img src="../assets/logo.png" style = "width: 100%; height: 120%" alt="" class="navbar-brand" ></a></div>
 			<div class="col-xl-6 offset-xl-6 container"><a href="/html/makes.html" class="np-element col np-hover order-0">Browse by Make</a><a href="/html/models.html" class="np-element col order-1 offset-1 np-hover">Browse by Model</a><a href="/html/dealers.html" class="np-element col order-2 offset-1 np-hover">Browse by Dealer</a></div>			    
 	
 			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
@@ -31,58 +34,35 @@
 	<!--end of Navigation bar-->
 	  
 	  
-		<h1 class="offset-1 col-9">Dealers</h1>
+		<h1 class="offset-1 col-9 np-text-accent">Dealers</h1>
 	  
-	  <!-- Dealer cards begin -->
+	  <ul class="offset-2 dealer-grid" id="dealer-grid">
+		  
+		  <!-- <li class="card np-element np-hover col-4 dealer-card" style="margin: 20px;"><a href="#">
+			  <h3 style="text-align: center;">Dealer</h3>
+			  <div class="np-img-wrapper" width="50px" height="50px"><img class="np-img-expand" src="https://pictures.dealer.com/p/penskeroundrocktoyota/0040/6f8b9746ac8eb3968fc541d0834b047cx.jpg" width="inherit" height="inherit" style="margin: 10px"></div>
+			  <p><strong>Address:</strong> #### Street St, Austin, TX 78705</p>
+			  <p><strong>Phone:</strong> (###) ###-####</p>
+			  <p><strong>Website:</strong><a href="#"> www.address.com</a></p>
+			  </a>
+		  </li> -->
+		  
+		  
+		  
+	  </ul>	  
 	  
-		<row> <a href="/html/round-rock-toyota.html">
-	    <div class="np-element offset-2 col-7 np-hover" style="height:30vh;"> 
-	      <div class="row">
-	        <div class="col-xl-6 text-center align-content-center">
-	          <h2>Round Rock Toyota</h2>
-            </div>
-	        <div class="col-xl-6 np-img-wrapper"><img src="https://pictures.dealer.com/p/penskeroundrocktoyota/0040/6f8b9746ac8eb3968fc541d0834b047cx.jpg" alt="Toyota Logo" class="img-fluid np-img-expand" style="height: 25vh;"></div>
-          </div>
-        </div>
-		</a>
-		</row>
-<br>
-		<row> <a href="/html/toyota-of-cedar-park.html">
-	    <div class="np-element offset-2 col-7 np-hover" style="height: 30vh;">
-	      <div class="row">
-	        <div class="col-xl-6 text-center align-content-center">
-	          <h2>Toyota of Cedar Park</h2>
-</div>
-	        <div class="col-xl-6 np-img-wrapper"><img src="https://www.toyotaofcedarpark.com/wp-content/themes/DealerInspireDealerTheme/images/logo-head.png" alt="Toyota Logo" class="img-fluid np-img-expand" style="height: 25vh;"></div>
-          </div>
-        </div>
-		</a>
-
-  </row>
-  <br>
-		<row> <a href="/html/charles-maund-toyota.html">
-	    <div class="np-element offset-2 col-7 np-hover" style="height: 30vh;">
-	      <div class="row">
-	        <div class="col-xl-6 text-center align-content-center">
-	          <h2>Charles Maund Toyota</h2>
-            </div>
-	        <div class="col-xl-6 np-img-wrapper"><img src="https://nyc3.digitaloceanspaces.com/nolig/production/companies/logo_images/000/000/107/thumb/Charles_Maund_Toyota.jpg" alt="Toyota Logo" class="img-fluid np-img-expand" style="height: 25vh;"></div>
-          </div>
-        </div>
-		</a>
-
-  </row>
-	  
-	  <!-- Dealer cards end -->
+	  <nav aria-label="Page navigation example">
+    <!-- Add class .pagination-lg for larger blocks or .pagination-sm for smaller blocks-->
+    <ul class="pagination" style="align-content: center;" id="pagination-wrapper">
+    </ul>
+  </nav>
 	  
 	  
-	  
-	  
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/dealer-listing.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="../js/jquery-3.4.1.min.js"></script>
+	 
+<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../js/popper.min.js"></script> 
 	<script src="../js/bootstrap-4.4.1.js"></script>
   </body>
