@@ -102,9 +102,14 @@ public class MongoDBStorer {
 			MongoClient mongoClient = new MongoClient(uri);
 				
 			MongoDatabase db = mongoClient.getDatabase("The_Drag");
+			
 			MongoCollection col = db.getCollection("makes");
 			
-			System.out.println(col.find(eq("_id", "Honda")).first());
+			Document doc = (Document) col.find(eq("_id", "Honda")).first();
+			System.out.print(((Document)doc.get("query")).get("img"));
+			
+			//Object getMakeAttribute(String makeName, String attributeName);
+			//Object getDealershipAttribute(String dealerName, String attributeName);
 
 		} catch (Exception e) {
 			e.printStackTrace();
