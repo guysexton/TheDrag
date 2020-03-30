@@ -131,6 +131,32 @@ public class DBServlet {
 		working += "]";
 		
 		return working;
+	}
+	
+	public int getCarsPgNumbers() {
+		return((int)Math.ceil(carVins.size()/10));
+	}
+	
+	
+	public String getJSCarsArray(int page) {
+		String working = "[";
+		
+		for(int i=(page-1)*10;i<(page+9);i++) {
+		working+= "{ \"name\" : ";
+		working+= "\"" + getCarAttribute(carVins.get(i), "name") + "\" , \"img\" : ";
+		working+= "\"" + getCarAttribute(carVins.get(i),"img") + "\" , \"url\" : ";
+		working+= "\"" + getCarAttribute(carVins.get(i),"url") + "\" , \"vin\" : ";
+		working+= "\"" + getCarAttribute(carVins.get(i),"vin") + "\" , \"dealership\" : ";
+		working+= "\"" + getCarAttribute(carVins.get(i),"dealership") + "\" , \"make\" : ";
+		working+= "\"" + getCarAttribute(carVins.get(i),"make") + "\" , \"price\" : ";
+		working+= "\"" + getCarAttribute(carVins.get(i),"price") + "\" , \"mpg\" : ";
+		working+= "\"" + getCarAttribute(carVins.get(i),"mpg") + "\" },";
+		}
+		
+		working=working.substring(0,working.length()-1);
+		working += "]";
+		
+		return working;
 		
 	}
 	
