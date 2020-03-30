@@ -34,8 +34,8 @@ function render(){
 	var grid = $('#car-grid')
 	
 	var myGrid = dealer.cars
-	
-	for(var i = 1 in myGrid){
+
+	for(var i in myGrid){
 		var listing = `<li class="card np-element np-hover col-2 car-card" style="margin: 20px;"><a href="#">` + myGrid[i] + `</a></li>`
 		
 		grid.append(listing)

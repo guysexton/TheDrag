@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ page import="java.util.List"%>
+<%@ page import="java.util.*"%>
 <%@ page import="java.util.Iterator"%>
 <%@ page import="java.io.*"%>
 <%@ page import="com.google.appengine.api.users.User"%>
@@ -73,167 +74,34 @@
     <ul class="pagination" style="align-content: center;" id="pagination-wrapper">
     </ul>
   </nav>
-	  
-	  
-<script>
-
-
-<%
+	 
+	<%  
+	String spageid=request.getParameter("page"); 
+	int pageLimit=Integer.parseInt(spageid); 
+	int pageid=Integer.parseInt(spageid);  
+	int total=10;  
+	if(pageid==1){}  
+	else{  
+	    pageid=pageid-1;  
+	    pageid=pageid*total+1;  
+	}  
 	DBServlet db = new DBServlet();
-	/* int pageNum = Integer.parseInt(request.getParameter("pageNum"));
-	if (pageNum == null) {
-		pageNum = 1;
-	} */
-	
-	int pageNum=1;
-	
-%>
-
-var dealers = <%=db.getJSDealerArray(pageNum)%>
-var tot_pages = <%=db.getDealerPgNumbers()%>
-
-
-
-
-
-buildGrid()
-
-/*     function pagination(querySet,page,items) {
-	var trimStart = (page - 1) * items
-	var trimEnd = trimStart + items
-	
-	var trimmedData = Array.from(querySet).slice(trimStart, trimEnd)
-	
-	var pages = tot_pages
-	
-	return{
-		'querySet':trimmedData,
-		'pages':pages
-	} 
-} */
-
-function pageButtons(pages){
-	
-	var winStart = (<%=pageNum%> - Math.floor(5/2));
-	var winEnd = (<%=pageNum%> + Math.floor(5/2));
-	
-	if(winStart < 1){
-		winStart=1
-		winEnd=5
+	List<String> dealers = db.dealerNames; 
+	List<String> pageDealers = new ArrayList<>();
+	for(int i = pageid-1; i < total*pageLimit; i++){
+		pageDealers.add(dealers.get(i));
 	}
-	
-	if(winEnd > tot_pages){
-		winStart = tot_pages - (5 - 1)
-		
-		if(winStart < 1){
-			winStart=1
-		}
-		winEnd=pages
-	}
-	
-	var wrapper = document.getElementById('pagination-wrapper')
-	wrapper.innerHTML = ''
-	
-		if(<%=pageNum%>>1){
-		wrapper.innerHTML += `<li class="page-item"> <button class="first np-element np-hover" style="margin:5px;" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </button> </li>`}
-		else{
-			wrapper.innerHTML += `<li class="page-item"> <button class="first np-element" style="margin:5px;" href="#" aria-label="Previous" disabled> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </button> </li>`
-		}
-	
-	wrapper.innerHTML += `<li class="page-item"> <button class="prev np-element np-hover" style="margin:5px;" href="#" aria-label="Previous"> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </button> </li>`
-	
-	for(var page = winStart; page <= winEnd ; page++){
-		if(page==<%=pageNum%>)
-			wrapper.innerHTML += `<li><button value=${page} class="np-element np-shadow-inverse np-hover-inverse" style="margin:5px;">${page}</button></li>`
-		else
-			wrapper.innerHTML += `<li><button value=${page} class="page np-element np-hover" style="margin:5px;">${page}</button></li>`
-	}
-	
-		wrapper.innerHTML += `<li class="page-item"> <button class="next np-element np-hover" style="margin:5px;" href="#" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </button> </li>`
-	
-		if(<%=pageNum%> < tot_pages){
-		wrapper.innerHTML += `<li class="page-item"> <button class="last np-element np-hover" style="margin:5px;" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </button> </li>`}
-		else{
-			wrapper.innerHTML += `<li class="page-item"> <button class="last np-element" style="margin:5px;" href="#" aria-label="Next" disabled> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </button> </li>`
-		}
-	
-	$('.page').on('click',function(){
-		
-		window.location = window.location.href + '?pageNum=' + Number($(this).val());
-		
-		/* document.getElementById('dealer-grid').innerHTML=''
-		
-		state.page = Number($(this).val())
-		
-		buildGrid() */
-	})
-	
-	/* $('.prev').on('click',function(){
-		document.getElementById('dealer-grid').innerHTML=''
-		
-		if(state.page>1){state.page = state.page-1}
-		else{state.page=pages}
-		
-		buildGrid()
-	})
-	
-	$('.next').on('click',function(){
-		document.getElementById('dealer-grid').innerHTML=''
-		
-		if(state.page<pages){state.page = state.page+1}
-		else{state.page=1}
-		
-		buildGrid()
-	})
-	
-	$('.first').on('click',function(){
-		document.getElementById('dealer-grid').innerHTML=''
-		
-		state.page=1
-		
-		buildGrid()
-	})
-	
-	$('.last').on('click',function(){
-		document.getElementById('dealer-grid').innerHTML=''
-		
-		state.page=pages
-		
-		buildGrid()
-	}) */
-}  
+	  
+	out.print("<h1>Page No: "+spageid+"</h1>");   
+	for(String s: pageDealers){  
+	    out.print("<tr><td>"+ db.getDealershipAttribute(s, "name"));  
+	}  
+	out.print("</table>");  
+	%>  
+<a href="dealers.jsp?page=1">1</a>  
+<a href="dealers.jsp?page=2">2</a>  
+<a href="dealers.jsp?page=3">3</a>  
 
-function buildGrid() {
-	var console = window.console
-	console.log(dealers[0])
-	
- 	var grid = $('#dealer-grid')
-	
-	//var data = pagination(state.querySet,state.page, state.items)
-	
-	var myGrid = <%=db.getJSDealerArray(pageNum)%>
-	
-	for(var i in myGrid){
-		
-				
-		 var listing = "<li class='card np-element np-hover col-4 dealer-card' style='margin: 20px;height:275px;' >"+
-						"<a href='/view-dealer?dealership=" + myGrid[i].name + ">"+
-						"<h3 style='text-align: center;'>" + myGrid[i].name + "</h3>"
-						
-		if(myGrid[i].img!=""){ listing = listing + "<div class='np-img-wrapper' width='50px' height='50px'>"+
-							"<img class='np-img-expand' src='" + myGrid[i].img + "' width='inherit' height='inherit' style='margin: 10px'></div>"}
-		if(myGrid[i].address!=""){ listing = listing + "<p><strong>Address:</strong> " + myGrid[i].address + "</p>"}
-		if(myGrid[i].phoneNum!=""){ listing = listing + "<p><strong>Phone:</strong> " + myGrid[i].phoneNum + "</p>"}
-		if(myGrid[i].website!=""){ listing = listing + "<a href='" + myGrid[i].website + "'><strong>Visit Dealer Website</strong></a>"}
-		listing = listing + "</a> </li>" 
-						
-		
-		grid.append(listing) 
-		}
-	
-	pageButtons(tot_pages)
-}
-</script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="../js/jquery-3.4.1.min.js"></script>
 	 
