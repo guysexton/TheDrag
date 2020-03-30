@@ -105,6 +105,32 @@ public class DBServlet {
         return allDocs;
     }
 	
+	public int getDealerPgNumbers() {
+		return((int)Math.ceil(dealerNames.size()/10));
+	}
+	
+	public String getJSDealerArray(int page) {
+		String working = "[";
+		
+		for(int i=(page-1)*10;i<(page+10);i++) {
+		working+= "{ \"name\" : ";
+		working+= "\"" + dealerNames.get(i) + "\" , \"img\" : ";
+		working+= "\"" + getDealershipAttribute(dealerNames.get(i),"img") + "\" , \"makes\" : ";
+		working+= "\"" + getDealershipAttribute(dealerNames.get(i),"makes") + "\" , \"cars\" : ";
+		working+= "\"" + getDealershipAttribute(dealerNames.get(i),"cars") + "\" , \"address\" : ";
+		working+= "\"" + getDealershipAttribute(dealerNames.get(i),"address") + "\" , \"phoneNum\" : ";
+		working+= "\"" + getDealershipAttribute(dealerNames.get(i),"phoneNum") + "\" , \"website\" : ";
+		working+= "\"" + getDealershipAttribute(dealerNames.get(i),"website") + "\" , \"image\" : ";
+		working+= "\"" + getDealershipAttribute(dealerNames.get(i),"image") + "\" },";
+		}
+		
+		working=working.substring(0,working.length()-1);
+		working += "]";
+		
+		return working;
+		
+	}
+	
 	
 	public static void main(String[] args) {
 		DBServlet dbservlet = new DBServlet();
