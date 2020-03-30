@@ -45,13 +45,8 @@
 	List<String> dealers = db.dealerNames;
 	List<String> pageDealers = new ArrayList<>();
 	int totalPgs = (int)Math.ceil(dealers.size()/10)+1;
-out.print("<h1>pgs"+totalPgs+"</h1>");
 	int windowStart = (pageNum-1)*10;
-out.print("<h1>strt"+windowStart+"</h1>");
-	int windowEnd = Math.min((windowStart+10),dealers.size());
-out.print("<h1>end"+windowEnd+"</h1>");
-	
-	
+	int windowEnd = Math.min((windowStart+10),dealers.size());	
 	
 	for(int i = windowStart; i < windowEnd; i++){
 		pageDealers.add(dealers.get(i));
@@ -91,6 +86,29 @@ out.print("<h1>end"+windowEnd+"</h1>");
 			  <p><strong>Website:</strong><a href="#"> www.address.com</a></p>
 			  </a>
 		  </li> -->
+		  
+		  <% 
+		  
+		  for(String s:pageDealers){
+			  String listing= "<li class='card np-element np-hover col-4 dealer-card' style='margin: 20px;height:275px;' >"+
+						"<a href='/view-dealer?dealership=" + db.getDealershipAttribute(s, "name") + ">"+
+						"<h3 style='text-align: center;'>" + db.getDealershipAttribute(s, "name") + "</h3>";
+						
+			if(db.getDealershipAttribute(s, "img")!=null)
+				listing += "<div class='np-img-wrapper' width='50px' height='50px'>" + "<img class='np-img-expand' src='" + db.getDealershipAttribute(s, "img") + "' width='inherit' height='inherit' style='margin: 10px'></div>";
+			if(db.getDealershipAttribute(s, "address")!=null)
+				listing += "<p><strong>Address:</strong> " + db.getDealershipAttribute(s, "address") + "</p>";
+			if(db.getDealershipAttribute(s, "phoneNum")!=null)
+				listing += "<p><strong>Phone:</strong> " + db.getDealershipAttribute(s, "phoneNum") + "</p>";
+			if(db.getDealershipAttribute(s, "website")!=null)
+				listing = listing + "<a href='" + db.getDealershipAttribute(s, "website") + "'><strong>Visit Dealer Website</strong></a>";
+			listing += "</a> </li>";
+			
+			out.print(listing);
+		  }
+		  
+		  %>
+		  
 	  </ul>
 
 	  <nav class="col-xl-4 offset-xl-2" style="align-content: center;" aria-label="Page navigation example">
@@ -98,20 +116,62 @@ out.print("<h1>end"+windowEnd+"</h1>");
     <ul class="pagination" style="align-content: center;" id="pagination-wrapper">
     </ul>
   </nav>
+	<script>
+	
+	pageButtons()
 
-	<%
-
-	out.print("<h1>Page No: "+pageNum+"</h1>");
-	for(String s: pageDealers){
-	    out.print("<tr><td>"+ db.getDealershipAttribute(s, "name"));
+	function pageButtons(){
+		
+		var winStart = (<%=pageNum%> - Math.floor(5/2));
+		var winEnd = (<%=pageNum%> + Math.floor(5/2));
+		
+		if(winStart < 1){
+			winStart=1
+			winEnd=5
+		}
+		
+		if(winEnd > <%=totalPgs%>){
+			winStart = <%=totalPgs%> - (4)
+			
+			if(winStart < 1){
+				winStart=1
+			}
+			winEnd=<%=totalPgs%>
+		}
+		
+		var wrapper = document.getElementById('pagination-wrapper')
+		wrapper.innerHTML = ''
+		
+			if(<%=pageNum%>>1){
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="dealers.jsp?page=1" aria-label="First"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="dealers.jsp?page=<%=pageNum-1%>" aria-label="Previous"> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
+			} else {
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="dealers.jsp?page=1" aria-label="First" disabled> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="dealers.jsp?page=<%=totalPgs%>" aria-label="Previous" disabled> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
+			}
+		
+		for(var page = winStart; page <= winEnd ; page++){
+			if(page==<%=pageNum%>){
+				var temp = `<li><a class="np-element np-shadow-inverse np-hover-inverse" href="dealers.jsp?page=`
+						temp+=page
+						temp+=`" style="margin:5px;">` + page + `</a></li>`
+				wrapper.innerHTML +=  temp
+				} else {
+				var temp = `<li><a class="np-element np-hover-" href="dealers.jsp?page=`
+					temp+=page
+					temp+=`" style="margin:5px;">` + page + `</a></li>`
+					wrapper.innerHTML +=  temp
+			}
+		}
+		
+			if(<%=pageNum%> < <%=totalPgs%>){
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="dealers.jsp?page=<%=pageNum+1%>" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="dealers.jsp?page=<%=totalPgs%>" aria-label="last"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
+			} else {
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="dealers.jsp?page=1" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="dealers.jsp?page=<%=totalPgs%>" aria-label="Last" disabled> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
+			}
 	}
-	out.print("</table>");
-	%>
-
-<script>
-
-	
-	
 	
 	</script>
 <a href="dealers.jsp?page=1">1</a>
