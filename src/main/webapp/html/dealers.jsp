@@ -80,18 +80,39 @@
 
 <%
 	DBServlet db = new DBServlet();
-	/* int pageNum = Integer.parseInt(request.getParameter("pageNum"));
-	if (pageNum == null) {
-		pageNum = 1;
-	} */
 	
-	int pageNum=1;
+	int pageNum;
+
+	if (request.getParameter("pg") == null) {
+	    pageNum=1;
+	} else {
+	    pageNum = Integer.parseInt(request. getParameter("pg"));
+	}
+
 	
 %>
 
 var dealers = <%=db.getJSDealerArray(pageNum)%>
 var tot_pages = <%=db.getDealerPgNumbers()%>
 
+
+testFunc()
+
+function testFunc(){
+	var MongoClient = require('mongodb').MongoClient;
+	var url = "mongodb+srv://jdwalsh21:BI6SfPDyhGX8ihAU@thedragapiscrapes-2duen.gcp.mongodb.net/test?authSource=admin&replicaSet=TheDragAPIScrapes-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true"
+
+
+	MongoClient.connect(url, function(err, db) {
+	  if (err) throw err;
+	  var dbo = db.db("mydb");
+	  dbo.collection("dealerships").findOne({}, function(err, result) {
+	    if (err) throw err;
+	    console.log(result.name);
+	    db.close();
+	  });
+	});
+}
 
 
 
@@ -159,7 +180,20 @@ function pageButtons(pages){
 	
 	$('.page').on('click',function(){
 		
-		window.location = window.location.href + '?pageNum=' + Number($(this).val());
+		// Get the current page
+		var curr_page = window.location.href,
+		    next_page = "";
+
+		// If current page has a query string, append action to the end of the query string, else
+		// create our query string
+		if(curr_page.indexOf("?") > -1) {
+		    next_page = curr_page.split("?")[0] + "?pg=" + $(this).val();
+		} else {
+		    next_page = curr_page+ "?pg=" + $(this).val();
+		}
+
+		// Redirect to next page
+		window.location = next_page;
 		
 		/* document.getElementById('dealer-grid').innerHTML=''
 		
@@ -168,7 +202,7 @@ function pageButtons(pages){
 		buildGrid() */
 	})
 	
-	/* $('.prev').on('click',function(){
+	 /* $('.prev').on('click',function(){
 		document.getElementById('dealer-grid').innerHTML=''
 		
 		if(state.page>1){state.page = state.page-1}
@@ -200,7 +234,7 @@ function pageButtons(pages){
 		state.page=pages
 		
 		buildGrid()
-	}) */
+	})  */
 }  
 
 function buildGrid() {

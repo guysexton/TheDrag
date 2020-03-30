@@ -110,9 +110,12 @@ public class DBServlet {
 	}
 	
 	public String getJSDealerArray(int page) {
+		int startI = (page-1)*10;
+		int endI =Math.min((((page-1)*10)+10),dealerNames.size());
+		
 		String working = "[";
 		
-		for(int i=(page-1)*10;i<(page+10);i++) {
+		for(int i=startI;i<endI;i++) {
 		working+= "{ \"name\" : ";
 		working+= "\"" + dealerNames.get(i) + "\" , \"img\" : ";
 		working+= "\"" + getDealershipAttribute(dealerNames.get(i),"img") + "\" , \"makes\" : ";
