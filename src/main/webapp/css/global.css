@@ -50,3 +50,19 @@
 	text-align: center;
 	box-sizing: border-box;
 }
+
+.make-grid{
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: non;
+	padding-left: 0;
+}
+
+.make-card{
+	flex: 0 0 calc(20%-10px);
+	margin: 5px;
+	padding 5px 0;
+	text-align: center;
+	box-sizing: border-box;
+}
+
