@@ -34,6 +34,30 @@
 	<link href="../css/neumorph-full-dark.css" rel="stylesheet" type="text/css">
 	<link href="../css/global.css" rel="stylesheet" type="text/css">
   </head>
+  
+  <% 
+  	int pageNum=1;
+  	if (request.getParameter("page") != null) {
+	    pageNum = Integer.parseInt(request. getParameter("page"));
+	}
+  	
+  	DBServlet db = new DBServlet();
+	List<String> dealers = db.dealerNames;
+	List<String> pageDealers = new ArrayList<>();
+	int totalPgs = (int)Math.ceil(dealers.size()/10)+1;
+out.print("<h1>pgs"+totalPgs+"</h1>");
+	int windowStart = (pageNum-1)*10;
+out.print("<h1>strt"+windowStart+"</h1>");
+	int windowEnd = Math.min((windowStart+10),dealers.size());
+out.print("<h1>end"+windowEnd+"</h1>");
+	
+	
+	
+	for(int i = windowStart; i < windowEnd; i++){
+		pageDealers.add(dealers.get(i));
+	}
+  %>
+  
   <body>
     	<!-- body code goes here -->
 
@@ -76,28 +100,20 @@
   </nav>
 
 	<%
-	String spageid=request.getParameter("page");
-	int pageLimit=Integer.parseInt(spageid);
-	int pageid=Integer.parseInt(spageid);
-	int total=10;
-	if(pageid==1){}
-	else{
-	    pageid=pageid-1;
-	    pageid=pageid*total+1;
-	}
-	DBServlet db = new DBServlet();
-	List<String> dealers = db.dealerNames;
-	List<String> pageDealers = new ArrayList<>();
-	for(int i = pageid-1; i < total*pageLimit; i++){
-		pageDealers.add(dealers.get(i));
-	}
 
-	out.print("<h1>Page No: "+spageid+"</h1>");
+	out.print("<h1>Page No: "+pageNum+"</h1>");
 	for(String s: pageDealers){
 	    out.print("<tr><td>"+ db.getDealershipAttribute(s, "name"));
 	}
 	out.print("</table>");
 	%>
+
+<script>
+
+	
+	
+	
+	</script>
 <a href="dealers.jsp?page=1">1</a>
 <a href="dealers.jsp?page=2">2</a>
 <a href="dealers.jsp?page=3">3</a>
