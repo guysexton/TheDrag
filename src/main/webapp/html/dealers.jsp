@@ -18,6 +18,8 @@
 <%@ page import="com.mongodb.MongoCredential"%>
 <%@ page import="com.mongodb.MongoClientOptions"%>
 
+<%@ page import="thedrag.DBServlet"%>
+
 
 <!DOCTYPE html>
 <html lang="en">	
@@ -386,15 +388,7 @@ const dealers = [{
   }
 ]
 
-<%
-MongoClientURI uri = new MongoClientURI(
-		    "mongodb+srv://jdwalsh21:BI6SfPDyhGX8ihAU@thedragapiscrapes-2duen.gcp.mongodb.net/test?authSource=admin&replicaSet=TheDragAPIScrapes-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true");
 
-		MongoClient mongoClient = new MongoClient(uri);
-		
-		MongoDatabase db = mongoClient.getDatabase("The_Drag");
-		MongoCollection col = db.getCollection("Scraped_Data_P2");
-%>
 var state = {
 	'querySet': dealers,
 	
@@ -518,22 +512,30 @@ function buildGrid() {
 	
 	var myGrid = data.querySet
 	
-	for(var i = 1 in myGrid){
-		var listing = "<li class='card np-element np-hover col-4 dealer-card' style='margin: 20px;height:275px;' >"+
+	<%
+	DBServlet db = new DBServlet();
+
+	
+	//for(String dealerName : db.dealerNames){
+	%>
+	
+	//for(var i = 1 in myGrid){
+		/*var listing = "<li class='card np-element np-hover col-4 dealer-card' style='margin: 20px;height:275px;' >"+
 						"<a href='#'>"+
-						"<h3 style='text-align: center;'>" + myGrid[i].name + "</h3>"
+						"<h3 style='text-align: center;'>" +  + "</h3>"*/
 		
-		if(myGrid[i].img!=""){ listing = listing + "<div class='np-img-wrapper' width='50px' height='50px'>"+
+		/*if(myGrid[i].img!=""){ listing = listing + "<div class='np-img-wrapper' width='50px' height='50px'>"+
 							"<img class='np-img-expand' src='" + myGrid[i].img + "' width='inherit' height='inherit' style='margin: 10px'></div>"}
 		if(myGrid[i].address!=""){ listing = listing + "<p><strong>Address:</strong> " + myGrid[i].address + "</p>"}
 		if(myGrid[i].phoneNum!=""){ listing = listing + "<p><strong>Phone:</strong> " + myGrid[i].phoneNum + "</p>"}
 		if(myGrid[i].website!=""){ listing = listing + "<a href='" + myGrid[i].website + "'><strong>Visit Dealer Website</strong></a>"}
-		listing = listing + "</a> </li>"
+		listing = listing + "</a> </li>"*/
 						
 		
-		grid.append(listing)
-	}
-
+		grid.append("<p>" + <%=db.getDealershipAttribute("Covert Cadillac", "address")%> + "</p>")
+	<%
+	//}
+	%>
 	pageButtons(data.pages)
 }
 </script>
