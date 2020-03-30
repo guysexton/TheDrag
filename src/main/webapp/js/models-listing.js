@@ -142,6 +142,9 @@ const models = [{
   }
 ]
 
+
+
+
 var state = {
 		'querySet': models,
 		
@@ -206,7 +209,7 @@ function pageButtons(pages){
 	}
 	
 		wrapper.innerHTML += `<li class="page-item"> <button class="next np-element np-hover" style="margin:5px;" href="#" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </button> </li>`
-	
+	 
 		if(state.page<pages){
 		wrapper.innerHTML += `<li class="page-item"> <button class="last np-element np-hover" style="margin:5px;" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </button> </li>`}
 		else{
