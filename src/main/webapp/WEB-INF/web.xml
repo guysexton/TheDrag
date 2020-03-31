@@ -5,6 +5,6 @@
          version="3.1">
     
   <welcome-file-list>
-    <welcome-file>html/sitemap.html</welcome-file>
+    <welcome-file>html/home.html</welcome-file>
   </welcome-file-list>
 </web-app>

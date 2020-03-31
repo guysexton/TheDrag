@@ -38,7 +38,7 @@
   <% 
   	int pageNum=1;
   	if (request.getParameter("page") != null) {
-	    pageNum = Integer.parseInt(request. getParameter("page"));
+	    pageNum = Integer.parseInt(request.getParameter("page"));
 	}
   	
   	DBServlet db = new DBServlet();
@@ -61,7 +61,7 @@
 
 		 	<!-- Attempt to resize logo. Should be something else. -->
   <div class="col-xl-1"><a href = "/html/sitemap.html"><img src="../assets/logo.png" style = "width: 100%; height: 120%" alt="" class="navbar-brand" ></a></div>
-			<div class="col-xl-6 offset-xl-6 container"><a href="/html/makes.html" class="np-element col np-hover order-0">Browse by Make</a><a href="/html/models.html" class="np-element col order-1 offset-1 np-hover">Browse by Model</a><a href="/html/dealers.html" class="np-element col order-2 offset-1 np-hover">Browse by Dealer</a></div>
+			<div class="col-xl-6 offset-xl-6 container"><a href="/html/makes.jsp" class="np-element col np-hover order-0">Browse by Make</a><a href="/html/models.jsp" class="np-element col order-1 offset-1 np-hover">Browse by Model</a><a href="/html/dealers.jsp" class="np-element col order-2 offset-1 np-hover">Browse by Dealer</a></div>
 
 			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 			<script src="../js/jquery-3.4.1.min.js"></script>
@@ -91,9 +91,10 @@
 		  
 		  for(String s:pageDealers){
 			  String name = db.getDealershipAttribute(s, "name").toString();
+			  String slug = name.replace(' ','_')+"~";
 			  
 			  String listing= "<li class='card np-element np-hover col-4 dealer-card' style='margin: 20px;height:275px;' >"+
-						"<a href='/view-dealer?dealership=" + name + ">"+
+						"<a href='/html/view-dealer.jsp?dealership=" + slug + "' style='margin:0px;display:block;width:100%;height:100%;'>"+
 						"<h3 style='text-align: center;'>" + name + "</h3>";
 					
 			String image = db.getDealershipAttribute(s, "img").toString();
