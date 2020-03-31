@@ -54,7 +54,7 @@
   <% 
   	int pageNum=1;
   	if (request.getParameter("page") != null) {
-	    pageNum = Integer.parseInt(request.getParameter("page"));
+	    pageNum = Integer.parseInt(request. getParameter("page"));
 	}
   	
   	DBServlet db = new DBServlet();
@@ -80,11 +80,11 @@
 			  
 			if (i%2 == 0) {
 				listing = "<li class='card np-element np-hover col-4 model-card' style='margin-bottom: 70px; margin-right: 30px; height: 370px; float: left;' >"+
-						"<a href='#'>"+
+						"<a href='/html/car.jsp?vin=" + pageCars.get(i).toString() + "'>" +
 						"<h3 style='text-align: center;'>" + db.getCarAttribute(pageCars.get(i), "name").toString() + "</h3>";
 			} else {
 				listing = "<li class='card np-element np-hover col-4 model-card' style='margin-bottom: 70px;  height: 370px;' >"+
-						"<a href='#'>"+
+						"<a href='/html/car.jsp?vin=" + pageCars.get(i).toString() + "'>" +
 						"<h3 style='text-align: center;'>" + db.getCarAttribute(pageCars.get(i), "name").toString() + "</h3>";
 			}
 			

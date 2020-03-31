@@ -55,7 +55,7 @@
 		 
 		 	<!-- Attempt to resize logo. Should be something else. -->
   <div class="col-xl-1"><a href = "/html/sitemap.html"><img src="../assets/logo.png" style = "width: 100%; height: 120%" alt="" class="navbar-brand" ></a></div>
-			<div class="col-xl-6 offset-xl-6 container"><a href="/html/makes.jsp" class="np-element col np-hover order-0">Browse by Make</a><a href="/html/models.jsp" class="np-element col order-1 offset-1 np-hover">Browse by Model</a><a href="/html/dealers.jsp" class="np-element col order-2 offset-1 np-hover">Browse by Dealer</a></div>			  
+			<div class="col-xl-6 offset-xl-6 container"><a href="/html/makes.jsp?page=1" class="np-element col np-hover order-0">Browse by Make</a><a href="/html/cars.jsp?page=1" class="np-element col order-1 offset-1 np-hover">Browse by Model</a><a href="/html/dealers.jsp?page=1" class="np-element col order-2 offset-1 np-hover">Browse by Dealer</a></div>			  
 	 	 </header>
 	<!--end of Navigation bar-->
 	 	  
@@ -69,61 +69,40 @@
 			  <h1 class="text-center">Cars Available</h1>
 			  <ul class="offset-2 car-grid offset-xl-0" id="car-grid">
 				  <!-- <li class="card np-element np-hover col-2 car-card" style="margin: 20px;"><a href="#">TEMPVIN</a></li> -->
+				  
+				  <%
+				  	ArrayList<String> cars = (ArrayList<String>)db.getDealershipAttribute(dealer,"cars");
+				  
+				  	for(String c:cars){
+				  		out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href='/html/car.jsp?vin=" + c + "'>" + db.getCarAttribute(c,"name") + "</a></li>");
+				  	}
+
+				  %>
+				  
 			  </ul>
 		    
 			  
           </div>
 		  	<div class="np-element np-colorize offset-xl-1 col-xl-3">
-				<div class="np-img-wrapper" width="100px" height="100px" id="dealer-img"></div>
+				<div class="np-img-wrapper" width="100px" height="100px" id="dealer-img"><%out.print("<img class='np-img-expand' src='" + db.getDealershipAttribute(dealer,"img") + "' width='inherit' height='inherit' style='margin: 10px'>");%></div>
 		  	  <h1 class="text-center">Dealership Information</h1>
 				<div class="np-divider"></div>
-				<p><span><b>Address: </b><span id="address"></span></span></p>
-				<p><span><b>Phone: </b><span id="phone"></span></span></p>
-			  <p><a id="link" href=""><strong>Click here to visit dealership website</strong></a></p>
-			  <a href="#" id="dealer-brand-card">
-			  <div class="card np-element np-hover">
-			    <div class="card-body text-center">
-			      <h5 class="card-title" id="dealer-brand"></h5>
-			      <p class="card-text" id="dealer-brand-paragraph"></p>
-		        </div>
-		      </div>
-		    </a>            </div>
+				<p><span><b>Address: </b><span id="address"><%out.print(db.getDealershipAttribute(dealer,"address"));%></span></span></p>
+				<p><span><b>Phone: </b><span id="phone"><%out.print(db.getDealershipAttribute(dealer,"phoneNum"));%></span></span></p>
+			  <% 
+			  String website = (String) db.getDealershipAttribute(dealer,"website");
+			  if(!website.equals(""))
+			  	out.print("<p><a id='link' href="+ website +"><strong>Click here to visit dealership website</strong></a></p>");
+			  
+			  
+			  ArrayList<String> makes = (ArrayList<String>)db.getDealershipAttribute(dealer,"makes");
+			  
+			  if(makes.size()>0){
+			  out.print("<a href='/html/makes.jsp?make=" + makes.get(0) + "' id='dealer-brand-card'>"+"<div class='card np-element np-hover'>" + "<div class='card-body text-center'>" + "<h5 class='card-title' id='dealer-brand'>This is a " +  makes.get(0) + " Dealership</h5>" + "<p class='card-text' id='dealer-brand-paragraph'>Click here to learn more about " + makes.get(0) + ".</p>" + "</div></div></a>" );}%>
+			  </div>
 </div>
 
-	  <script>
-	  
-	  render()
 
-	  function render(){
-	  	document.getElementById('dealer-name').innerHTML = <%=dealer%>
-	  	
-	  	document.getElementById('dealer-img').innerHTML = "<img class='np-img-expand' src='" + db.getDealershipAttribute(<%=dealer%>,"img") + "' width='inherit' height='inherit' style='margin: 10px'>"
-	  	
-	  	document.getElementById('address').innerHTML = db.getDealershipAttribute(<%=dealer%>,"address")
-	  	
-	  	document.getElementById('phone').innerHTML = db.getDealershipAttribute(<%=dealer%>,"phone")
-	  	
-	  	if(dealer.website == "")
-	  		document.getElementById('link').hidden = true
-	  	else
-	  		document.getElementById('link').href = db.getDealershipAttribute(<%=dealer%>,"website")
-	  	
-	  	document.getElementById('dealer-brand-card').href = "#"
-	  	document.getElementById('dealer-brand').innerHTML = "This is a " +  db.getDealershipAttribute(<%=dealer%>,"makes")[0] + " Dealership"
-	  	document.getElementById('dealer-brand-paragraph').innerHTML = "Click here to learn more about " + db.getDealershipAttribute(<%=dealer%>,"makes")[0]s + "."
-	  	
-	  	var grid = $('#car-grid')
-	  	
-	  	var myGrid = dealer.cars
-
-	  	for(var i in myGrid){
-	  		var listing = `<li class="card np-element np-hover col-2 car-card" style="margin: 20px;"><a href="#">` + myGrid[i] + `</a></li>`
-	  		
-	  		grid.append(listing)
-	  	}
-	  }
-	  
-	  </script>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
     <script src="../js/jquery-3.4.1.min.js"></script>
 

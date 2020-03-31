@@ -55,7 +55,7 @@
 		 
 		 	<!-- Attempt to resize logo. Should be something else. -->
   <div class="col-xl-1"><a href = "/html/sitemap.html"><img src="../assets/logo.png" style = "width: 100%; height: 120%" alt="" class="navbar-brand" ></a></div>
-			<div class="col-xl-6 offset-xl-6 container"><a href="/html/makes.jsp?page=1" class="np-element col np-hover order-0">Browse by Make</a><a href="/html/models.jsp?page=1" class="np-element col order-1 offset-1 np-hover">Browse by Model</a><a href="/html/dealers.jsp?page=1" class="np-element col order-2 offset-1 np-hover">Browse by Dealer</a></div>			  
+			<div class="col-xl-6 offset-xl-6 container"><a href="/html/makes.jsp" class="np-element col np-hover order-0">Browse by Make</a><a href="/html/models.jsp" class="np-element col order-1 offset-1 np-hover">Browse by Model</a><a href="/html/dealers.jsp" class="np-element col order-2 offset-1 np-hover">Browse by Dealer</a></div>			  
 	 	 </header>
 	<!--end of Navigation bar-->
 	 	  
@@ -69,17 +69,6 @@
 			  <h1 class="text-center">Cars Available</h1>
 			  <ul class="offset-2 car-grid offset-xl-0" id="car-grid">
 				  <!-- <li class="card np-element np-hover col-2 car-card" style="margin: 20px;"><a href="#">TEMPVIN</a></li> -->
-				  <%
-				  	ArrayList<String> cars = (ArrayList<String>)db.getMakeAttribute(make,"cars");
-				  
-				  	for(String c:cars){
-				  		out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href='/html/car.jsp?vin=" + c + "'>" + db.getCarAttribute(c,"name") + "</a></li>");
-				  	}
-
-				  %>
-			 
-			 
-			 
 			  </ul>
 		    
 			  
@@ -88,17 +77,50 @@
 				<div class="np-img-wrapper" width="100px" height="100px" id="make-img"></div>
 		  	  <h1 class="text-center">Make Information</h1>
 				<div class="np-divider"></div>
-				<p><span><b>numCars: </b><span id="numCars"><%out.print(db.getMakeAttribute(make,"numCars"));%></span></span></p>
-				<p><span><b>numDealerships: </b><span id="numDealerships"><%out.print(db.getMakeAttribute(make,"numDealerships"));%></span></span></p>
-			  <% 
-			  ArrayList<String> dealers = (ArrayList<String>)db.getMakeAttribute(make,"dealerships");
+				<p><span><b>Number of Cars: </b><span id="numCars"></span></span></p>
+				<p><span><b>Number of Dealerships: </b><span id="numDealerships"></span></span></p>
 			  
-			  if(dealers.size()>0){
-				  out.print("<a href='/html/dealers.jsp?make=" + dealers.get(0) + "' id='make-brand-card'>"+"<div class='card np-element np-hover'>" + "<div class='card-body text-center'>" + "<h5 class='card-title' id='make-brand'>This is " +  dealers.get(0) + "<p class='card-text' id='dealer-brand-paragraph'>Click here to learn more about " + dealers.get(0) + ".</p>" + "</div></div></a>" );}%>			  </div>
-		   
+			  <a href="#" id="make-brand-card">
+			  <div class="card np-element np-hover">
+			    <div class="card-body text-center">
+			      <h5 class="card-title" id="make-brand"></h5>
+			      <p class="card-text" id="make-brand-paragraph"></p>
+		        </div>
+		      </div>
+		    </a>            </div>
 </div>
 
+	  <script>
 	  
+	  render()
+
+	  function render(){
+	  	document.getElementById('make-name').innerHTML = <%=make%>
+	  	
+	  	document.getElementById('make-img').innerHTML = "<img class='np-img-expand' src='" + db.getMakeAttribute(<%=make%>,"img") + "' width='inherit' height='inherit' style='margin: 10px'>"
+	  	
+	  	document.getElementById('numCars').innerHTML = db.getMakeAttribute(<%=make%>,"numCars")
+	  	
+	  	document.getElementById('numDealerships').innerHTML = db.getMakeAttribute(<%=make%>,"numDealerships")
+	  	
+	  	
+	  	document.getElementById('make-brand-card').href = "#"
+	  	document.getElementById('make-brand').innerHTML = "This is a " +  db.getMakeAttribute(<%=make%>,"cars")[0] + " Dealership"
+	  	document.getElementById('make-brand-paragraph').innerHTML = "Click here to learn more about " + db.getDealershipAttribute(<%=dealer%>,"makes")[0]s + "."
+	  	
+	  	 
+	  	var grid = $('#car-grid')
+	  	
+	  	var myGrid = make.cars
+
+	  	for(var i in myGrid){
+	  		var listing = `<li class="card np-element np-hover col-2 car-card" style="margin: 20px;"><a href="#">` + myGrid[i] + `</a></li>`
+	  		
+	  		grid.append(listing)
+	  	}
+	  }
+	  
+	  </script>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
     <script src="../js/jquery-3.4.1.min.js"></script>
 
