@@ -28,7 +28,7 @@
     <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dealerships</title>
+    <title>Makes</title>
     <!-- Bootstrap -->
 	<link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
 	<link href="../css/neumorph-full-dark.css" rel="stylesheet" type="text/css">
@@ -42,14 +42,14 @@
 	}
   	
   	DBServlet db = new DBServlet();
-	List<String> dealers = db.dealerNames;
-	List<String> pageDealers = new ArrayList<>();
-	int totalPgs = (int)Math.ceil(dealers.size()/10)+1;
+	List<String> makes = db.makeNames;
+	List<String> pageMakes = new ArrayList<>();
+	int totalPgs = (int)Math.ceil(makes.size()/10)+1;
 	int windowStart = (pageNum-1)*10;
-	int windowEnd = Math.min((windowStart+10),dealers.size());	
+	int windowEnd = Math.min((windowStart+10),makes.size());	
 	
 	for(int i = windowStart; i < windowEnd; i++){
-		pageDealers.add(dealers.get(i));
+		pageMakes.add(makes.get(i));
 	}
   %>
   
@@ -58,9 +58,6 @@
 
   <!--NEW Navigation bar-->
 		 <body class="navbar-dark">
-
-		 	<!-- Attempt to resize logo. Should be something else. -->
-			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 			<div class="col-xl-1"><a href = "/html/home.html"><img src="../assets/logo.png" style = "width: 100%; height: 120%" alt="" class="navbar-brand" ></a></div>
 			<div class="col-xl-6 offset-xl-6 container">
 				<a href="/html/gitabout.jsp" class="np-element col order-0 np-hover">About</a>
@@ -76,9 +73,9 @@
 	<!--end of NEW Navigation bar-->
 
 
-		<h1 class="offset-1 col-9 np-text-accent">Dealers</h1>
+		<h1 class="offset-1 col-9 np-text-accent">Makes</h1>
 
-	  <ul class="offset-2 dealer-grid" id="dealer-grid">
+	  <ul class="offset-2 make-grid" id="make-grid">
 
 		  <!-- <li class="card np-element np-hover col-4 dealer-card" style="margin: 20px;"><a href="#">
 			  <h3 style="text-align: center;">Dealer</h3>
@@ -91,27 +88,24 @@
 		  
 		  <% 
 		  
-		  for(String s:pageDealers){
-			  String name = db.getDealershipAttribute(s, "name").toString();
-			  String slug = name.replace(' ','_')+"~";
+		  for(String s:pageMakes){
+			  String name = db.getMakeAttribute(s, "name").toString();
 			  
-			  String listing= "<li class='card np-element np-hover col-4 dealer-card' style='margin: 20px;height:275px;' >"+
-						"<a href='/html/view-dealer.jsp?dealership=" + slug + "' style='margin:0px;display:block;width:100%;height:100%;'>"+
+			  String listing= "<li class='card np-element np-hover col-4 make-card' style='margin: 20px;height:275px;' >"+
+						"<a href='/view-make?make=" + name + ">"+
 						"<h3 style='text-align: center;'>" + name + "</h3>";
 					
-			String image = db.getDealershipAttribute(s, "img").toString();
-			String address = db.getDealershipAttribute(s, "address").toString();
-			String phoneNum = db.getDealershipAttribute(s, "phoneNum").toString();
-			String website = db.getDealershipAttribute(s, "website").toString();
+			String image = db.getMakeAttribute(s, "img").toString();
+			String numCars = db.getMakeAttribute(s, "numCars").toString();
+			String numDealerships = db.getMakeAttribute(s, "numDealerships").toString();
+			
 			
 			if(!image.equals(""))
 				listing += "<div class='np-img-wrapper' width='50px' height='50px'>" + "<img class='np-img-expand' src='" + image + "' width='inherit' height='inherit' style='margin: 10px'></div>";
-			if(!address.equals(""))
-				listing += "<p><strong>Address:</strong> " + address + "</p>";
-			if(!phoneNum.equals(""))
-				listing += "<p><strong>Phone:</strong> " + phoneNum + "</p>";
-			if(!website.equals(""))
-				listing = listing + "<a href='" + website + "'><strong>Visit Dealer Website</strong></a>";
+			if(!numCars.equals(""))
+				listing += "<p><strong>Number of Cars:</strong> " + numCars + "</p>";
+			if(!numDealerships.equals(""))
+				listing += "<p><strong>Number of Dealerships:</strong> " + numDealerships + "</p>";
 			listing += "</a> </li>";
 			
 			out.print(listing);
@@ -153,21 +147,21 @@
 		wrapper.innerHTML = ''
 		
 			if(<%=pageNum%>>1){
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="dealers.jsp?page=1" aria-label="First"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="dealers.jsp?page=<%=pageNum-1%>" aria-label="Previous"> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=1" aria-label="First"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=<%=pageNum-1%>" aria-label="Previous"> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
 			} else {
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="dealers.jsp?page=1" aria-label="First" disabled> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="dealers.jsp?page=<%=totalPgs%>" aria-label="Previous" disabled> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=1" aria-label="First" disabled> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=<%=totalPgs%>" aria-label="Previous" disabled> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
 			}
 		
 		for(var page = winStart; page <= winEnd ; page++){
 			if(page==<%=pageNum%>){
-				var temp = `<li><a class="np-element np-shadow-inverse np-hover-inverse" href="dealers.jsp?page=`
+				var temp = `<li><a class="np-element np-shadow-inverse np-hover-inverse" href="makes.jsp?page=`
 						temp+=page
 						temp+=`" style="margin:5px;">` + page + `</a></li>`
 				wrapper.innerHTML +=  temp
 				} else {
-				var temp = `<li><a class="np-element np-hover-" href="dealers.jsp?page=`
+				var temp = `<li><a class="np-element np-hover-" href="makes.jsp?page=`
 					temp+=page
 					temp+=`" style="margin:5px;">` + page + `</a></li>`
 					wrapper.innerHTML +=  temp
@@ -175,11 +169,11 @@
 		}
 		
 			if(<%=pageNum%> < <%=totalPgs%>){
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="dealers.jsp?page=<%=pageNum+1%>" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="dealers.jsp?page=<%=totalPgs%>" aria-label="last"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=<%=pageNum+1%>" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=<%=totalPgs%>" aria-label="last"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
 			} else {
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="dealers.jsp?page=1" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="dealers.jsp?page=<%=totalPgs%>" aria-label="Last" disabled> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=1" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=<%=totalPgs%>" aria-label="Last" disabled> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
 			}
 	}
 	

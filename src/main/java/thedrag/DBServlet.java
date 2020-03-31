@@ -160,6 +160,30 @@ public class DBServlet {
 		
 	}
 	
+	public int getMakesPgNumbers() {
+		return((int)Math.ceil(carVins.size()/10));
+	}
+	
+	
+	public String getJSMakesArray(int page) {
+		String working = "[";
+		
+		for(int i=(page-1)*10;i<(page+9);i++) {
+		working+= "{ \"name\" : ";
+		working+= "\"" + getMakeAttribute(makeNames.get(i), "name") + "\" , \"img\" : ";
+		working+= "\"" + getMakeAttribute(makeNames.get(i),"img") + "\" , \"dealership\" : ";
+		working+= "\"" + getMakeAttribute(makeNames.get(i),"dealership") + "\" , \"cars\" : ";
+		working+= "\"" + getMakeAttribute(makeNames.get(i),"cars") + "\" , \"numCars\" : ";
+		working+= "\"" + getMakeAttribute(makeNames.get(i),"numCars") + "\" , \"numDealerships\" : ";
+		working+= "\"" + getMakeAttribute(makeNames.get(i),"numDealerships") + "\" },";
+		}
+		
+		working=working.substring(0,working.length()-1);
+		working += "]";
+		
+		return working;
+		
+	}
 	
 	public static void main(String[] args) {
 		DBServlet dbservlet = new DBServlet();
