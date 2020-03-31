@@ -20,7 +20,7 @@
 <%@ page import="com.mongodb.MongoClientOptions"%>
 
 <%@ page import="thedrag.DBServlet"%>
-
+<%@ page import="thedrag.NHTSAServlet"%>
 
   <% 
   	String current_vin = "KEK";
@@ -29,6 +29,7 @@
   	}
   	
   	DBServlet db = new DBServlet();
+  	NHTSAServlet ns = new NHTSAServlet(current_vin); 
 	List<String> cars = db.carVins;
 	
 	String name = "";
@@ -38,6 +39,10 @@
 	String make = "";
 	String price = "";
 	String mpg = ""; 
+	
+	//NHSTA attributes
+	String bodyclass = "";
+	String hp = "";
 
 	for(String s : cars) {
 		if (s.equals(current_vin)) {
@@ -82,6 +87,18 @@
 				mpg = db.getCarAttribute(current_vin, "mpg").toString();
 			} else {
 				mpg = "N/A";
+			}
+			
+			if (ns.getBodyClass() != ""){
+				bodyclass = ns.getBodyClass();
+			} else {
+				bodyclass = "N/A";
+			}
+			
+			if (ns.getHP() != ""){
+				hp = ns.getHP();
+			} else {
+				hp = "N/A";
 			}
 			
 			break;
@@ -131,10 +148,13 @@
 		  	listing += "<br><div class=\"row\"><div class=\"offset-xl-1 col-xl-4\"> <a href=/html/make-instance.jsp?make=" + make + "><div class=\"card np-element np-hover\"><div class=\"card-body text-center\">";
 		  	listing += "<h5 class=\"card-title\">Manufactured by " + make + "</h5><p class=\"card-text\">Click here to learn more about " + make + "</p></div></div></a><br>";
 		  	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">Price</h5><h1 class=\"card-text\">$" + price + "</h1></div></div><br>";
+		  	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">Body Class</h5><h1 class=\"card-text\">" + bodyclass + "</h1></div></div><br>";
 		  	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">MPG</h5><h3 class=\"card-text\">" + mpg + "</h3></div></div></div>";
+		  	
 		  	listing += "<div class=\"col-xl-4 offset-xl-2\"><a href=\"/html/view-dealer.jsp?dealership=" + slug +"~\"><div class=\"card np-element np-hover\"><div class=\"card-body text-center\"><h5 class=\"card-title\">Sold by " + dealership +"</h5><p class=\"card-text\">Click here find more cars from " + dealership + "</p></div></div></a><br>";
 		 	listing += "<a href="+ url + "><div class=\"card np-element np-hover\"><div class=\"card-body text-center\"><h5 class=\"card-title\">Listing</h5><p class=\"card-text\">Click here to check out listing</p></div></div></a><br>";
-			listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">VIN</h5><h3 class=\"card-text\">" + current_vin + "</h3></div></div></div></div><br><div class=\"np-divider\"></div><br>";
+		 	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">Horsepower</h5><h1 class=\"card-text\">" + hp + "</h1></div></div><br>";
+		 	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">VIN</h5><h3 class=\"card-text\">" + current_vin + "</h3></div></div></div></div><br><div class=\"np-divider\"></div><br>";
 		 	
 			out.print(listing);
 
