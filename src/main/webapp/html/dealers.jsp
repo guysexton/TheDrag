@@ -93,7 +93,7 @@
 		  
 		  for(String s:pageDealers){
 			  String name = db.getDealershipAttribute(s, "name").toString();
-			  String slug = name.replace(' ','_')+"~";
+			  String slug = name.replace('&','$').replace(' ','_')+"~";
 			  
 			  String listing= "<li class='card np-element np-hover col-4 dealer-card' style='margin: 20px;height:275px;' >"+
 						"<a href='/html/view-dealer.jsp?dealership=" + slug + "' style='margin:0px;display:block;width:100%;height:100%;'>"+

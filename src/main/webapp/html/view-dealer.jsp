@@ -29,7 +29,7 @@
   	String[] dealerName=dealer.split("~");
   	
   	DBServlet db = new DBServlet();
-  	dealer = dealer.split("~")[0].replace('_',' ');
+  	dealer = dealer.split("~")[0].replace('_',' ').replace('$','&');
 	
   %>
 
@@ -75,7 +75,7 @@
 				  
 				  	for(String c:cars){
 				  		out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href='/html/car.jsp?vin=" + c + "'>" + db.getCarAttribute(c,"name") + "</a></li>");
-				  	}
+			  		}
 
 				  %>
 				  
