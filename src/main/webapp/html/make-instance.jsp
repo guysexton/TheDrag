@@ -74,7 +74,7 @@
 			  
           </div>
 		  	<div class="np-element np-colorize offset-xl-1 col-xl-3">
-				<div class="np-img-wrapper" width="100px" height="100px" id="make-img"></div>
+				<div class="np-img-wrapper" width="80px" height="80px" id="make-img"></div>
 		  	  <h1 class="text-center">Make Information</h1>
 				<div class="np-divider"></div>
 				<p><span><b>Number of Cars: </b><span id="numCars"></span></span></p>
@@ -106,7 +106,7 @@
 	  	
 	  	document.getElementById('make-brand-card').href = "#"
 	  	document.getElementById('make-brand').innerHTML = "This is a " +  db.getMakeAttribute(<%=make%>,"cars")[0] + " Dealership"
-	  	document.getElementById('make-brand-paragraph').innerHTML = "Click here to learn more about " + db.getDealershipAttribute(<%=dealer%>,"makes")[0]s + "."
+	  	document.getElementById('make-brand-paragraph').innerHTML = "Click here to learn more about " + db.getMakeAttribute(<%=make%>,"cars")[0]s + "."
 	  	
 	  	 
 	  	var grid = $('#car-grid')
@@ -114,7 +114,7 @@
 	  	var myGrid = make.cars
 
 	  	for(var i in myGrid){
-	  		var listing = `<li class="card np-element np-hover col-2 car-card" style="margin: 20px;"><a href="#">` + myGrid[i] + `</a></li>`
+	  		var listing = `<li class="card np-element np-hover col-2 make-card" style="margin: 20px;"><a href="#">` + myGrid[i] + `</a></li>`
 	  		
 	  		grid.append(listing)
 	  	}
