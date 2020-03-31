@@ -90,18 +90,25 @@
 		  <% 
 		  
 		  for(String s:pageDealers){
+			  String name = db.getDealershipAttribute(s, "name").toString();
+			  
 			  String listing= "<li class='card np-element np-hover col-4 dealer-card' style='margin: 20px;height:275px;' >"+
-						"<a href='/view-dealer?dealership=" + db.getDealershipAttribute(s, "name") + ">"+
-						"<h3 style='text-align: center;'>" + db.getDealershipAttribute(s, "name") + "</h3>";
-						
-			if(!db.getDealershipAttribute(s, "img").toString().equals(""))
-				listing += "<div class='np-img-wrapper' width='50px' height='50px'>" + "<img class='np-img-expand' src='" + db.getDealershipAttribute(s, "img") + "' width='inherit' height='inherit' style='margin: 10px'></div>";
-			if(!db.getDealershipAttribute(s, "address").toString().equals(""))
-				listing += "<p><strong>Address:</strong> " + db.getDealershipAttribute(s, "address") + "</p>";
-			if(!db.getDealershipAttribute(s, "phoneNum").toString().equals(""))
-				listing += "<p><strong>Phone:</strong> " + db.getDealershipAttribute(s, "phoneNum") + "</p>";
-			if(!db.getDealershipAttribute(s, "website").toString().equals(""))
-				listing = listing + "<a href='" + db.getDealershipAttribute(s, "website") + "'><strong>Visit Dealer Website</strong></a>";
+						"<a href='/view-dealer?dealership=" + name + ">"+
+						"<h3 style='text-align: center;'>" + name + "</h3>";
+					
+			String image = db.getDealershipAttribute(s, "img").toString();
+			String address = db.getDealershipAttribute(s, "address").toString();
+			String phoneNum = db.getDealershipAttribute(s, "phoneNum").toString();
+			String website = db.getDealershipAttribute(s, "website").toString();
+			
+			if(!image.equals(""))
+				listing += "<div class='np-img-wrapper' width='50px' height='50px'>" + "<img class='np-img-expand' src='" + image + "' width='inherit' height='inherit' style='margin: 10px'></div>";
+			if(!address.equals(""))
+				listing += "<p><strong>Address:</strong> " + address + "</p>";
+			if(!phoneNum.equals(""))
+				listing += "<p><strong>Phone:</strong> " + phoneNum + "</p>";
+			if(!website.equals(""))
+				listing = listing + "<a href='" + website + "'><strong>Visit Dealer Website</strong></a>";
 			listing += "</a> </li>";
 			
 			out.print(listing);
