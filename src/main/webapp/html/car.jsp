@@ -154,7 +154,7 @@
 		  	listing += "<div class=\"col-xl-4 offset-xl-2\"><a href=\"/html/view-dealer.jsp?dealership=" + slug +"~\"><div class=\"card np-element np-hover\"><div class=\"card-body text-center\"><h5 class=\"card-title\">Sold by " + dealership +"</h5><p class=\"card-text\">Click here find more cars from " + dealership + "</p></div></div></a><br>";
 		 	listing += "<a href="+ url + "><div class=\"card np-element np-hover\"><div class=\"card-body text-center\"><h5 class=\"card-title\">Listing</h5><p class=\"card-text\">Click here to check out listing</p></div></div></a><br>";
 		 	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">Horsepower</h5><h1 class=\"card-text\">" + hp + "</h1></div></div><br>";
-		 	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">VIN</h5><h3 class=\"card-text\">" + current_vin + "</h3></div></div></div></div><br><div class=\"np-divider\"></div><br>";
+		 	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">VIN</h5><h3 class=\"card-text\">" + current_vin + "</h3></div></div></div></div><br><br>";
 		 	
 			out.print(listing);
 
@@ -168,4 +168,10 @@
 	<script src="../js/popper.min.js"></script> 
 	<script src="../js/bootstrap-4.4.1.js"></script>
   </body>
+  <footer>
+		<br>
+		<div class="np-divider-fat"></div>
+		<p style="text-align: center;">Copyright © 2020 · All Rights Reserved · The Drag</p>
+		<p style="text-align: center;"><a href="/html/home.html">Home</a> · <a href="/html/gitabout.jsp">About</a> · <a href="/html/makes.jsp?page=1">Makes</a> · <a href="/html/cars.jsp?page=1">Cars</a> · <a href="/html/dealers.jsp?page=1">Dealers</a></p>
+	</footer>
 </html>

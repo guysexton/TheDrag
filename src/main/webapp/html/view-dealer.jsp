@@ -54,7 +54,7 @@
 		 <header class="navbar-dark">
 		 
 		 	<!-- Attempt to resize logo. Should be something else. -->
-  <div class="col-xl-1"><a href = "/html/sitemap.html"><img src="../assets/logo.png" style = "width: 100%; height: 120%" alt="" class="navbar-brand" ></a></div>
+  <div class="col-xl-1"><a href = "/html/home.html"><img src="../assets/logo.png" style = "width: 100%; height: 120%" alt="" class="navbar-brand" ></a></div>
 			<div class="col-xl-6 offset-xl-6 container"><a href="/html/makes.jsp?page=1" class="np-element col np-hover order-0">Browse by Make</a><a href="/html/cars.jsp?page=1" class="np-element col order-1 offset-1 np-hover">Browse by Model</a><a href="/html/dealers.jsp?page=1" class="np-element col order-2 offset-1 np-hover">Browse by Dealer</a></div>			  
 	 	 </header>
 	<!--end of Navigation bar-->
@@ -110,4 +110,10 @@
     <script src="../js/popper.min.js"></script>
   <script src="../js/bootstrap-4.4.1.js"></script>
   </body>
+  <footer>
+		<br>
+		<div class="np-divider-fat"></div>
+		<p style="text-align: center;">Copyright © 2020 · All Rights Reserved · The Drag</p>
+		<p style="text-align: center;"><a href="/html/home.html">Home</a> · <a href="/html/gitabout.jsp">About</a> · <a href="/html/makes.jsp?page=1">Makes</a> · <a href="/html/cars.jsp?page=1">Cars</a> · <a href="/html/dealers.jsp?page=1">Dealers</a></p>
+	</footer>
 </html>

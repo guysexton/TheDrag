@@ -180,4 +180,10 @@
 	<script src="../js/popper.min.js"></script> 
 	<script src="../js/bootstrap-4.4.1.js"></script>
   </body>
+  <footer>
+  		<br>
+		<div class="np-divider-fat"></div>
+		<p style="text-align: center;">Copyright © 2020 · All Rights Reserved · The Drag</p>
+		<p style="text-align: center;"><a href="/html/home.html">Home</a> · <a href="/html/gitabout.jsp">About</a> · <a href="/html/makes.jsp?page=1">Makes</a> · <a href="/html/cars.jsp?page=1">Cars</a> · <a href="/html/dealers.jsp?page=1">Dealers</a></p>
+	</footer>
 </html>
