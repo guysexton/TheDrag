@@ -46,7 +46,7 @@
 .car-card{
 	flex: 0 0 calc(20%-10px);
 	margin: 5px;
-	padding: 5px 0;
+	padding 5px 0;
 	text-align: center;
 	box-sizing: border-box;
 }
@@ -61,7 +61,7 @@
 .make-card{
 	flex: 0 0 calc(20%-10px);
 	margin: 5px;
-	padding: 5px 0;
+	padding 5px 0;
 	text-align: center;
 	box-sizing: border-box;
 }
