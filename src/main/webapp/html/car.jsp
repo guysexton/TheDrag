@@ -29,7 +29,7 @@
   	}
   	
   	DBServlet db = new DBServlet();
-  	NHTSAServlet ns = new NHTSAServlet(current_vin); 
+  	NHTSAServlet ns = new NHTSAServlet(current_vin);
 	List<String> cars = db.carVins;
 	
 	String name = "";
@@ -47,55 +47,55 @@
 	for(String s : cars) {
 		if (s.equals(current_vin)) {
 			
-			if (db.getCarAttribute(current_vin, "name").toString() != ""){
+			if (!db.getCarAttribute(current_vin, "name").toString().equals("")){
 				name = db.getCarAttribute(current_vin, "name").toString();
 			} else {
 				name = "N/A";
 			}
 			
-			if (db.getCarAttribute(current_vin, "img").toString() != ""){
+			if (!db.getCarAttribute(current_vin, "img").toString().equals("")){
 				img = db.getCarAttribute(current_vin, "img").toString();
 			} else {
 				img = "N/A";
 			}
 			
-			if (db.getCarAttribute(current_vin, "url").toString() != ""){
+			if (!db.getCarAttribute(current_vin, "url").toString().equals("")){
 				url = db.getCarAttribute(current_vin, "url").toString();
 			} else {
 				url = "N/A";
 			}
 			
-			if (db.getCarAttribute(current_vin, "dealership").toString() != ""){
+			if (!db.getCarAttribute(current_vin, "dealership").toString().equals("")){
 				dealership = db.getCarAttribute(current_vin, "dealership").toString();
 			} else {
 				dealership = "N/A";
 			}
 			
-			if (db.getCarAttribute(current_vin, "make").toString() != ""){
+			if (!db.getCarAttribute(current_vin, "make").toString().equals("")){
 				make = db.getCarAttribute(current_vin, "make").toString();
 			} else {
 				make = "N/A";
 			}
 			
-			if (db.getCarAttribute(current_vin, "price").toString() != ""){
+			if (!db.getCarAttribute(current_vin, "price").toString().equals("")){
 				price = db.getCarAttribute(current_vin, "price").toString();
 			} else {
 				price = "N/A";
 			}
 			
-			if (db.getCarAttribute(current_vin, "mpg").toString() != ""){
+			if (!db.getCarAttribute(current_vin, "mpg").equals(null)){
 				mpg = db.getCarAttribute(current_vin, "mpg").toString();
 			} else {
 				mpg = "N/A";
 			}
 			
-			if (ns.getBodyClass() != ""){
+			if (!ns.getBodyClass().equals("")){
 				bodyclass = ns.getBodyClass();
 			} else {
 				bodyclass = "N/A";
 			}
 			
-			if (ns.getHP() != ""){
+			if (!ns.getHP().toString().equals("")){
 				hp = ns.getHP();
 			} else {
 				hp = "N/A";

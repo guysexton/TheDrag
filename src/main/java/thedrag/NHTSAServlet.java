@@ -17,6 +17,7 @@ public class NHTSAServlet {
 	JSONParser jsonParser;
 	JSONArray arr;
 	JSONObject results;
+	
 	public NHTSAServlet(String vin) throws IOException, org.json.simple.parser.ParseException {
 		try {
 			OkHttpClient client = new OkHttpClient();
@@ -38,6 +39,7 @@ public class NHTSAServlet {
 	public String getHP() {
 		return (String)results.get("EngineHP");
 	}
+	
 	static String run(String url, OkHttpClient client) throws IOException {
 		Request request = new Request.Builder()
 				.url(url)
@@ -46,6 +48,7 @@ public class NHTSAServlet {
 			return response.body().string();
 		}
 	}
+	
 	public static void main(String[] args) {
 	}
 }
