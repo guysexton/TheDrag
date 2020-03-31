@@ -91,7 +91,7 @@
 		  for(String s:pageMakes){
 			  String name = db.getMakeAttribute(s, "name").toString();
 			  
-			  String listing= "<li class='card np-element np-hover col-4 make-card' style='margin: 20px;height:275px;' >"+
+			  String listing= "<li class='card np-element np-hover col-4 make-card' style='margin: 20px;height:200px;' >"+
 						"<a href='/view-make?make=" + name + ">"+
 						"<h3 style='text-align: center;'>" + name + "</h3>";
 					
