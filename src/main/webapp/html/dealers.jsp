@@ -38,7 +38,7 @@
   <% 
   	int pageNum=1;
   	if (request.getParameter("page") != null) {
-	    pageNum = Integer.parseInt(request. getParameter("page"));
+	    pageNum = Integer.parseInt(request.getParameter("page"));
 	}
   	
   	DBServlet db = new DBServlet();
