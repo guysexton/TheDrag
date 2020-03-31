@@ -83,7 +83,7 @@
 				price = "N/A";
 			}
 			
-			if (!db.getCarAttribute(current_vin, "mpg").equals(null)){
+			if (db.getCarAttribute(current_vin, "mpg") != null){
 				mpg = db.getCarAttribute(current_vin, "mpg").toString();
 			} else {
 				mpg = "N/A";
