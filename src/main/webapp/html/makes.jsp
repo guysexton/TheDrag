@@ -38,7 +38,7 @@
   <% 
   	int pageNum=1;
   	if (request.getParameter("page") != null) {
-	    pageNum = Integer.parseInt(request. getParameter("page"));
+	    pageNum = Integer.parseInt(request.getParameter("page"));
 	}
   	
   	DBServlet db = new DBServlet();
@@ -96,7 +96,7 @@
 						"<h3 style='text-align: center;'>" + name + "</h3>";
 					
 			String image = db.getMakeAttribute(s, "img").toString();
-			String numCars = db.getMakeAttribute(s, "address").toString();
+			String numCars = db.getMakeAttribute(s, "numCars").toString();
 			String numDealerships = db.getMakeAttribute(s, "numDealerships").toString();
 			
 			
