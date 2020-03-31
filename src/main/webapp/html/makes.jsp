@@ -90,9 +90,9 @@
 		  
 		  for(String s:pageMakes){
 			  String name = db.getMakeAttribute(s, "name").toString();
-			  
-			  String listing= "<li class='card np-element np-hover col-4 make-card' style='margin: 20px;height:275px;' >"+
-						"<a href='/view-make?make=" + name + ">"+
+			  name=name.replace(" ","_");
+			  String listing= "<li class='card np-element np-hover col-4 make-card' style='margin: 20px;height:325px;' >"+
+					  "<a href='/html/make-instance.jsp?make=" + name + "' style='margin:0px;display:block;width:100%;height:100%;'>"+
 						"<h3 style='text-align: center;'>" + name + "</h3>";
 					
 			String image = db.getMakeAttribute(s, "img").toString();
@@ -101,7 +101,7 @@
 			
 			
 			if(!image.equals(""))
-				listing += "<div class='np-img-wrapper' width='40px' height='40px'>" + "<img class='np-img-expand' src='" + image + "' width='inherit' height='inherit' style='margin: 10px'></div>";
+				listing += "<div class='np-img-wrapper' width='30px' height='30px'>" + "<img class='np-img-expand' src='" + image + "' width='inherit' height='inherit' style='margin: 10px'></div>";
 			if(!numCars.equals(""))
 				listing += "<p><strong>Number of Cars:</strong> " + numCars + "</p>";
 			if(!numDealerships.equals(""))
