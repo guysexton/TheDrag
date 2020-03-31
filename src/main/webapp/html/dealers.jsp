@@ -94,13 +94,13 @@
 						"<a href='/view-dealer?dealership=" + db.getDealershipAttribute(s, "name") + ">"+
 						"<h3 style='text-align: center;'>" + db.getDealershipAttribute(s, "name") + "</h3>";
 						
-			if(db.getDealershipAttribute(s, "img")!=null)
+			if(!db.getDealershipAttribute(s, "img").toString().equals(""))
 				listing += "<div class='np-img-wrapper' width='50px' height='50px'>" + "<img class='np-img-expand' src='" + db.getDealershipAttribute(s, "img") + "' width='inherit' height='inherit' style='margin: 10px'></div>";
-			if(db.getDealershipAttribute(s, "address")!=null)
+			if(!db.getDealershipAttribute(s, "address").toString().equals(""))
 				listing += "<p><strong>Address:</strong> " + db.getDealershipAttribute(s, "address") + "</p>";
-			if(db.getDealershipAttribute(s, "phoneNum")!=null)
+			if(!db.getDealershipAttribute(s, "phoneNum").toString().equals(""))
 				listing += "<p><strong>Phone:</strong> " + db.getDealershipAttribute(s, "phoneNum") + "</p>";
-			if(db.getDealershipAttribute(s, "website")!=null)
+			if(!db.getDealershipAttribute(s, "website").toString().equals(""))
 				listing = listing + "<a href='" + db.getDealershipAttribute(s, "website") + "'><strong>Visit Dealer Website</strong></a>";
 			listing += "</a> </li>";
 			
@@ -174,9 +174,6 @@
 	}
 	
 	</script>
-<a href="dealers.jsp?page=1">1</a>
-<a href="dealers.jsp?page=2">2</a>
-<a href="dealers.jsp?page=3">3</a>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../js/jquery-3.4.1.min.js"></script>
