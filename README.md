@@ -2,33 +2,33 @@
 About: 
 TheDrag is a website built for users who want a consolidated place that holds all the automobile information they would need. Whether its a college student looking prices and dealerships for their first car purchase, speed-demon car enthusiasts looking to find the next hot rod on the market, or a conserved environmentalist who needs to get to where they but wants to find the least carbon emissive vehicle that they can get; TheDrag serves to bring all that info right into your web surfing device. 
 
-Website Link: https://thedrag.appspot.com/
+Website Link: https://thedrag.appspot.com/<br>
 Models: Make, Car, Year
 
-Team Members: Name, UTEID, Github Link
-Daniel Lazcano, dl32678, https://github.com/DanielLazcano
-Ethan Santoni-Colvin, ers2677, https://github.com/ethansantonicolvin
-Frank Le, Fpl227,https://github.com/fle734449
-Guy Sexton, gwm639,https://github.com/53Dude
-Jonathan Walsh, jdw4867, https://github.com/jdw4867
+Team Members: Name, UTEID, Github Link<br>
+Daniel Lazcano, dl32678, https://github.com/DanielLazcano<br>
+Ethan Santoni-Colvin, ers2677, https://github.com/ethansantonicolvin<br>
+Frank Le, Fpl227,https://github.com/fle734449<br>
+Guy Sexton, gwm639,https://github.com/53Dude<br>
+Jonathan Walsh, jdw4867, https://github.com/jdw4867<br>
 Kishan Dayananda, kd8953, https://github.com/kish314
 
 
-Estimated Completion Time:
-Daniel Lazcano = 15 Hours
-Ethan Santoni-Colvin = 20 Hours
-Frank Le = 20 Hours
-Guy Sexton = 15 Hours
-Jonathan Walsh = 20 Hours 
+Estimated Completion Time:<br>
+Daniel Lazcano = 15 Hours<br>
+Ethan Santoni-Colvin = 20 Hours<br>
+Frank Le = 20 Hours<br>
+Guy Sexton = 15 Hours<br>
+Jonathan Walsh = 20 Hours<br> 
 Kishan Dayananda = 15 Hours
 
 
-Actual Completion Time:
-Daniel Lazcano = 20 Hours
-Ethan Santoni-Colvin = 32 Hours
-Frank Le = 35 Hours
-Guy Sexton = 28 Hours
-Jonathan Walsh = 23 Hours
+Actual Completion Time:<br>
+Daniel Lazcano = 20 Hours<br>
+Ethan Santoni-Colvin = 32 Hours<br>
+Frank Le = 35 Hours<br>
+Guy Sexton = 28 Hours<br>
+Jonathan Walsh = 23 Hours<br>
 Kishan Dayananda = 22 Hours
 
 
@@ -49,9 +49,9 @@ Old User Stories:
 4. As a commuter to work, I want to know the highway mpg of certain models. /4 Hours
 5. I'm in the market for a car. More than just knowing the price, I wantto know what the car will look like before I buy it. / 2 Hours
 
-User Stories from Customers with Estimations: 
-6. As a concerned user of who is making my product I would like to see the developer team of the product. / 2 Hour
-7. I want to be clear about the purpose of the website. / 1 Hour
-8. As a user with bad eyesite I want to be able to use the website easily for someone with my disability. /2 Hours
-9. As someone who browses the internet everyday, I would like a clean and polished UI. / 3 Hours
-10. I would like to know closest locations of dealerships selling a certain model.  / 3 Hours
+User Stories from Customers with Estimations: <br>
+6.   As a concerned user of who is making my product I would like to see the developer team of the product. / 2 Hour<br>
+7.   I want to be clear about the purpose of the website. / 1 Hour<br>
+8.   As a user with bad eyesite I want to be able to use the website easily for someone with my disability. /2 Hours<br>
+9.   As someone who browses the internet everyday, I would like a clean and polished UI. / 3 Hours<br>
+10.  I would like to know closest locations of dealerships selling a certain model.  / 3 Hours
