@@ -53,10 +53,14 @@
     	
     	<h1 class="results">Interesting results</h1>
     	<p>
-    	Being able to pull data from NHTSA, carmd, google, and more aided the team in regard to the topic of cars in the following ways:
+    	Being able to pull data from NHTSA, cars.com, carlogos.com, and more aided the team in regard to the topic of cars in the following ways:
 <br>    -Nearly every if not all automobiles are going to have the same attributes such as pictures, colors, MPG, pricing, VINS etc. 
 Multiple sources for the same attributes will help give the user a better general idea of a model without having to go to multiple websites 
-to find the pieces of information. <br>-Other attributes found through scraping and APIs such as the VIN will later help to find specific automobiles with all the information of it.
+to find the pieces of information. <br>
+-It was very easy to find unique identifiers for each of our instances, VINs are unique to each car, no two car dealerships have the exact same name, and neither do any two makes. This made setting up our data structures to be directly addressible quite simple.
+<br>
+-JSPs are not as bad as we originally thought as long as you minimize the amount of Java code directly written in the JSP to a few method calls.
+<br>-JavaScript interfacing with Java via JSPs can be a nightmare though
     	
     	</p>
 	   <h1 class="display-4">Our Pit Crew</h1>
@@ -141,8 +145,11 @@ to find the pieces of information. <br>-Other attributes found through scraping 
        
        <h3>Commits, Adds, and Deletes</h3>
        <p>${commitText}</p>
+       <br>
+       <p>Number of unit tests: 23 evenly distributed among team</p>
        <h3>Issues</h3>
        <p>${issueText}</p>
+       
        
        <h1 class="data">Our Sources</h1>
     	<p>

@@ -141,7 +141,7 @@
 		  
 		  <% 
 
-			String slug = dealership.replace(" ", "_");
+		  	String slug = name.replace('&','$').replace(' ','_')+"~";
 		  
 		  	String listing = "<body><div><ul class=\"list-inline offset-xl-2 col-xl-8\"><li class=\"list-inline-item\"><h2 id=\"CarName\">" + name +"</h2></li></ul></div>";
 		 	listing += "<div class=\"np-img-wrapper col-10 offset-1 \" style = \"width: 100%; height: 50%;\" ><div class=\"card np-element np-hover\"><img class=\"np-img-expand\" src=" + img + " alt=\"\"></div></div>";
