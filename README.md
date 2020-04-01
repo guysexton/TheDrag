@@ -37,7 +37,7 @@ User Stores:
 2. As a car fanatic, I can easily get lost browsing these amazing car websites, like TheDrag! I need a way to get back to the home page. /2 Hours
 3. As a first time car buyer and opportunist, I am very concerned about missing a good deal. I would love a website that shows all the cars I'm interested in within my area and updates that list too! /8 Hours
 4. As a user with age-related macular degeneration, seeing blurry or disproportionately sized images on websites puts a strain on my eyes. I would love some uniformity in image styling across a website! / 3 Hours
-4. As a commuter to work, I want to know the highway mpg of certain models. *Rolled over user story that was completed in this phase.* /2 Hours
+5. As a commuter to work, I want to know the highway mpg of certain models. *Rolled over user story that was completed in this phase.* /2 Hours
 
 
 
