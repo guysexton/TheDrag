@@ -104,7 +104,7 @@
 			  ArrayList<String> makes = (ArrayList<String>)db.getDealershipAttribute(dealer,"makes");
 			  
 			  if(makes.size()>0){
-			  out.print("<a href='/html/makes.jsp?make-instance=" + makes.get(0) + "' id='dealer-brand-card'>"+"<div class='card np-element np-hover'>" + "<div class='card-body text-center'>" + "<h5 class='card-title' id='dealer-brand'>This is a " +  makes.get(0) + " Dealership</h5>" + "<p class='card-text' id='dealer-brand-paragraph'>Click here to learn more about " + makes.get(0) + ".</p>" + "</div></div></a>" );}%>
+			  out.print("<a href='/html/makes.jsp?make-instance=" + makes.get(0) + "~' id='dealer-brand-card'>"+"<div class='card np-element np-hover'>" + "<div class='card-body text-center'>" + "<h5 class='card-title' id='dealer-brand'>This is a " +  makes.get(0) + " Dealership</h5>" + "<p class='card-text' id='dealer-brand-paragraph'>Click here to learn more about " + makes.get(0) + ".</p>" + "</div></div></a>" );}%>
 			  </div>
 </div>
 

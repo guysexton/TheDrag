@@ -141,7 +141,7 @@
 		  
 		  <% 
 
-		  	String slug = name.replace('&','$').replace(' ','_')+"~";
+		  	String slug = dealership.replace('&','$').replace(' ','_')+"~";
 		  
 		  	String listing = "<body><div><ul class=\"list-inline offset-xl-2 col-xl-8\"><li class=\"list-inline-item\"><h2 id=\"CarName\">" + name +"</h2></li></ul></div>";
 		 	listing += "<div class=\"np-img-wrapper col-10 offset-1 \" style = \"width: 100%; height: 50%;\" ><div class=\"card np-element np-hover\"><img class=\"np-img-expand\" src=" + img + " alt=\"\"></div></div>";
@@ -151,7 +151,7 @@
 		  	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">Body Class</h5><h1 class=\"card-text\">" + bodyclass + "</h1></div></div><br>";
 		  	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">MPG</h5><h3 class=\"card-text\">" + mpg + "</h3></div></div></div>";
 		  	
-		  	listing += "<div class=\"col-xl-4 offset-xl-2\"><a href=\"/html/view-dealer.jsp?dealership=" + slug +"~\"><div class=\"card np-element np-hover\"><div class=\"card-body text-center\"><h5 class=\"card-title\">Sold by " + dealership +"</h5><p class=\"card-text\">Click here find more cars from " + dealership + "</p></div></div></a><br>";
+		  	listing += "<div class=\"col-xl-4 offset-xl-2\"><a href=\"/html/view-dealer.jsp?dealership=" + slug +"\"><div class=\"card np-element np-hover\"><div class=\"card-body text-center\"><h5 class=\"card-title\">Sold by " + dealership +"</h5><p class=\"card-text\">Click here find more cars from " + dealership + "</p></div></div></a><br>";
 		 	listing += "<a href="+ url + "><div class=\"card np-element np-hover\"><div class=\"card-body text-center\"><h5 class=\"card-title\">Listing</h5><p class=\"card-text\">Click here to check out listing</p></div></div></a><br>";
 		 	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">Horsepower</h5><h1 class=\"card-text\">" + hp + "</h1></div></div><br>";
 		 	listing += "<div class=\"card np-element\"><div class=\"card-body\"><h5 class=\"card-title\">VIN</h5><h3 class=\"card-text\">" + current_vin + "</h3></div></div></div></div><br><br>";
