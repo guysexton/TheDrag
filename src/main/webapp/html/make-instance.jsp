@@ -29,10 +29,12 @@
 	}
   	
   	String[] makeName=make.split("~");
-  	int dealerSize=0;
   	
   	DBServlet db = new DBServlet();
   	make = make.split("~")[0].replace('_',' ');
+  	
+  	ArrayList<String> dealers = (ArrayList<String>)db.getMakeAttribute(make,"dealerships");
+	int dealerSize = dealers.size();
 	
   %>
 
@@ -97,13 +99,20 @@
 			  
           </div>
           
+          <div class="np-element np-colorize offset-xl-1 col-xl-3">
+				<div class="np-img-wrapper" width="100px" height="100px" id="make-img"><%out.print("<img class='np-img-expand' src='" + db.getMakeAttribute(make,"img") + "' width='inherit' height='inherit' style='margin: 10px'>");%></div>
+		  	  <h1 class="text-center">Make Information</h1>
+				<div class="np-divider"></div>
+				<p><span><b>Number of Cars: <%=db.getMakeAttribute(make,"numCars")%></b><span id="numCars"></span></span></p> 
+				<p><span><b>Number of Dealerships: <%=dealerSize%></b><span id="numDealerships"></span></span></p>
+
+		     </div>
+          
           <div class="offset-xl-1 col-xl-7">
 			  <h1 class="text-center">Dealerships <%=make%> is sold at</h1>
 			  <ul class="offset-2 car-grid offset-xl-0" id="car-grid">
 				  
       	  		  <%
-				  	ArrayList<String> dealers = (ArrayList<String>)db.getMakeAttribute(make,"dealerships");
-      	  		  	dealerSize = dealers.size();
 				  	if(dealerSize>0){
 				  		for(String d:dealers){
 				  			String slug = d.replace(" ", "_");
@@ -120,14 +129,15 @@
 		    
 			  
           </div>
-		  	<div class="np-element np-colorize offset-xl-1 col-xl-3">
+          
+		  	<%-- <div class="np-element np-colorize offset-xl-1 col-xl-3">
 				<div class="np-img-wrapper" width="100px" height="100px" id="make-img"><%out.print("<img class='np-img-expand' src='" + db.getMakeAttribute(make,"img") + "' width='inherit' height='inherit' style='margin: 10px'>");%></div>
 		  	  <h1 class="text-center">Make Information</h1>
 				<div class="np-divider"></div>
 				<p><span><b>Number of Cars: <%=db.getMakeAttribute(make,"numCars")%></b><span id="numCars"></span></span></p> 
 				<p><span><b>Number of Dealerships: <%=dealerSize%></b><span id="numDealerships"></span></span></p>
 
-		     </div>
+		     </div> --%>
 </div>
 
 	  
