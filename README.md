@@ -15,24 +15,33 @@ Kishan Dayananda, kd8953, https://github.com/kish314
 
 
 Estimated Completion Time:
-Daniel Lazcano = X Hours
+Daniel Lazcano = 15 Hours
 Ethan Santoni-Colvin = 20 Hours
 Frank Le = 20 Hours
-Guy Sexton = X Hours
+Guy Sexton = 15 Hours
 Jonathan Walsh = 20 Hours 
-Kishan Dayananda = X Hours
+Kishan Dayananda = 15 Hours
 
 
 Actual Completion Time:
-Daniel Lazcano = X Hours
+Daniel Lazcano = 20 Hours
 Ethan Santoni-Colvin = 32 Hours
 Frank Le = 35 Hours
-Guy Sexton = X Hours
+Guy Sexton = 28 Hours
 Jonathan Walsh = 23 Hours
-Kishan Dayananda = X Hours
+Kishan Dayananda = 22 Hours
 
 
-User Stories:
+User Stores:
+1. I hate really long pages of lists and really short pages of lists on websites. I wish there was an option like on other sites to go through pages to see a certain amounts of things. / 4 Hours
+2. As a car fanatic, I can easily get lost browsing these amazing car websites, like TheDrag! I need a way to get back to the home page. /2 Hours
+3. As a first time car buyer and opportunist, I am very concerned about missing a good deal. I would love a website that shows all the cars I'm interested in within my area and updates that list too! /8 Hours
+4. As a user with age-related macular degeneration, seeing blurry or disproportionately sized images on websites puts a strain on my eyes. I would love some uniformity in image styling across a website! / 3 Hours
+4. As a commuter to work, I want to know the highway mpg of certain models. *Rolled over user story that was completed in this phase.* /2 Hours
+
+
+
+Old User Stories:
 
 1. I want a list of current manufacturers that are sold around my area. / 2 Hours
 2. I'm a die hard Subaru fan, I need to know which models are made by Subaru. / 2 Hours
