@@ -56,7 +56,7 @@
   <body>
     	<!-- body code goes here -->
 
-  <!--NEW Navigation bar-->
+   <!--NEW Navigation bar-->
 		 <body class="navbar-dark">
 			<div class="col-xl-1"><a href = "/html/home.html"><img src="../assets/logo.png" style = "width: 100%; height: 120%" alt="" class="navbar-brand" ></a></div>
 			<div class="col-xl-6 offset-xl-6 container">
@@ -71,6 +71,7 @@
 		 	<br>
 	 	 </body>
 	<!--end of NEW Navigation bar-->
+
 
 
 		<h1 class="offset-1 col-9 np-text-accent">Makes</h1>
