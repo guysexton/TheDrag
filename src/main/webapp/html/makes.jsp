@@ -91,9 +91,9 @@
 		  
 		  for(String s:pageMakes){
 			  String name = db.getMakeAttribute(s, "name").toString();
-			  name=name.replace(" ","_");
+			  String slug=name.replace(" ","_");
 			  String listing= "<li class='card np-element np-hover col-4 make-card' style='margin: 20px;height:325px;' >"+
-					  "<a href='/html/make-instance.jsp?make=" + name + "' style='margin:0px;display:block;width:100%;height:100%;'>"+
+					  "<a href='/html/make-instance.jsp?make=" + slug + "' style='margin:0px;display:block;width:100%;height:100%;'>"+
 						"<h3 style='text-align: center;'>" + name + "</h3>";
 					
 			String image = db.getMakeAttribute(s, "img").toString();
