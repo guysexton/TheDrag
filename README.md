@@ -1,57 +1,21 @@
 # TheDrag
-About: 
-TheDrag is a website built for users who want a consolidated place that holds all the automobile information they would need. Whether its a college student looking prices and dealerships for their first car purchase, speed-demon car enthusiasts looking to find the next hot rod on the market, or a conserved environmentalist who needs to get to where they but wants to find the least carbon emissive vehicle that they can get; TheDrag serves to bring all that info right into your web surfing device. 
 
-Website Link: https://thedrag.appspot.com/<br>
-Models: Make, Car, Year
+Models: Make, Model, Year
 
-Team Members: Name, UTEID, Github Link<br>
-Daniel Lazcano, dl32678, https://github.com/DanielLazcano<br>
-Ethan Santoni-Colvin, ers2677, https://github.com/ethansantonicolvin<br>
-Frank Le, Fpl227,https://github.com/fle734449<br>
-Guy Sexton, gwm639,https://github.com/53Dude<br>
-Jonathan Walsh, jdw4867, https://github.com/jdw4867<br>
-Kishan Dayananda, kd8953, https://github.com/kish314
+Potential API 1:  https://apidocs.marketcheck.com/?version=latest
+Potential API 2: https://vpic.nhtsa.dot.gov/api/
+Potential API 3: Youtube
+Potential API 4: https://www.fueleconomy.gov/feg/ws/index.shtml
+Potential API 5: https://pricedigests.com/api/
+Potential API 6: https://api.carmd.com/member/docs#image
+Potential API 7: Twitter
+Potential API 8: http://www.dougdemuro.com/dougscore
 
 
-Estimated Completion Time:<br>
-Daniel Lazcano = 15 Hours<br>
-Ethan Santoni-Colvin = 20 Hours<br>
-Frank Le = 20 Hours<br>
-Guy Sexton = 15 Hours<br>
-Jonathan Walsh = 20 Hours<br> 
-Kishan Dayananda = 15 Hours
+User Stories:
 
-
-Actual Completion Time:<br>
-Daniel Lazcano = 20 Hours<br>
-Ethan Santoni-Colvin = 32 Hours<br>
-Frank Le = 35 Hours<br>
-Guy Sexton = 28 Hours<br>
-Jonathan Walsh = 23 Hours<br>
-Kishan Dayananda = 22 Hours
-
-
-User Stores:
-1. I hate really long pages of lists and really short pages of lists on websites. I wish there was an option like on other sites to go through pages to see a certain amounts of things. / 4 Hours
-2. As a car fanatic, I can easily get lost browsing these amazing car websites, like TheDrag! I need a way to get back to the home page. /2 Hours
-3. As a first time car buyer and opportunist, I am very concerned about missing a good deal. I would love a website that shows all the cars I'm interested in within my area and updates that list too! /8 Hours
-4. As a user with age-related macular degeneration, seeing blurry or disproportionately sized images on websites puts a strain on my eyes. I would love some uniformity in image styling across a website! / 3 Hours
-5. As a commuter to work, I want to know the highway mpg of certain models. *Rolled over user story that was completed in this phase.* /2 Hours
-
-
-
-Old User Stories:
-
-1. I want a list of current manufacturers that are sold around my area. / 2 Hours
-2. I'm a die hard Subaru fan, I need to know which models are made by Subaru. / 2 Hours
-3. As a undergraduate college student with no income, I want a way to find a cheap car under $20,000, so I can drive to school. / 3 Hours
-4. As a commuter to work, I want to know the highway mpg of certain models. /4 Hours
-5. I'm in the market for a car. More than just knowing the price, I wantto know what the car will look like before I buy it. / 2 Hours
-
-User Stories from Customers with Estimations: <br>
-6.   As a concerned user of who is making my product I would like to see the developer team of the product. / 2 Hour<br>
-7.   I want to be clear about the purpose of the website. / 1 Hour<br>
-8.   As a user with bad eyesite I want to be able to use the website easily for someone with my disability. /2 Hours<br>
-9.   As someone who browses the internet everyday, I would like a clean and polished UI. / 3 Hours<br>
-10.  I would like to know closest locations of dealerships selling a certain model.  / 3 Hours
+1. They say newer cars have less probability of injury in the event of an accident. I need a list of cars made after 2015 because I'm concerned with safety.
+2. I'm a die hard Subaru fan, but I can't find any older models on their official website. I need to know which cars were made more than 15 years ago.
+3. As a undergraduate college student with no income, I want a way to find a cheap car under $20,000, so I can drive to school.
+4. As an environmental researcher not only does my career need me to travel but it has also made me aware of the dangers of carbon emissions. I would like a centralized source of vehicles that leaves a minimal amount of emissions.
+5. I'm in the market for a car. More than just knowing the price, I want to know what the car will look like before I buy it. 
