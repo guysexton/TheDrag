@@ -8,7 +8,7 @@ Models: Make, Car, Year
 Team Members: Name, UTEID, Github Link
 Daniel Lazcano, dl32678, https://github.com/DanielLazcano
 Ethan Santoni-Colvin, ers2677, https://github.com/ethansantonicolvin
-*Frank Le, Fpl227,https://github.com/fle734449
+Frank Le, Fpl227,https://github.com/fle734449
 Guy Sexton, gwm639,https://github.com/53Dude
 Jonathan Walsh, jdw4867, https://github.com/jdw4867
 Kishan Dayananda, kd8953, https://github.com/kish314
