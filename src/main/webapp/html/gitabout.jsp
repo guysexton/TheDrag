@@ -150,16 +150,15 @@ to find the pieces of information. <br>-Other attributes found through scraping 
     	<a href="https://vpic.nhtsa.dot.gov/api/">https://vpic.nhtsa.dot.gov/api/</a>
     	</p>
     	<p>
-    	We scraped data from this API by using the OkHttp library in Java. The API allows us to get access JSON files of makes and models by going to a corresponding url and or decoding a VIN.
-    	For Phase I of our project we have a java program MakeServlet that we ran to collect the data of three instances of make and wrote them to a corresponding JSON file, that we showed statically on the instance pages.
+    	We scraped data from this API by using the OkHttp library in Java. The API allows us to get access JSON files of details such as body type, horsepower, etc. on a specific car by decoding a VIN.
     	</p>
     	<br>
     	<p>
-    	CarMD API:
-    	<a href="https://api.carmd.com/member/docs#image">https://api.carmd.com/member/docs#image</a>
+    	Carlogos.com:
+    	<a href=" https://www.carlogos.org/">https://www.carlogos.org/</a>
     	</p>
     	<p>
-    	We plan to scrape data on our models through this API by using HTTP request and decoding the VIN number for car models. We use this API for additional info such as car image, type, etc
+    	We scrape the logos for different car makes from this website.
     	</p>
     	<br>
     	<p>
@@ -167,8 +166,8 @@ to find the pieces of information. <br>-Other attributes found through scraping 
     	<a href="https://www.cars.com/">https://www.cars.com/</a>
     	</p>
     	<p>
-    	We scraped data from this website using a web scraper which outputs the data we want into a JSON File. We plan to store the JSON file in a database where we can call on the information we need.
-    	This source provides us with car model instances and dealership instances as well as important attributes for each model instance.
+    	We wrote a web scraper that scrapes cars.com to pull cars for sale within 20 miles of UT campus. We also scrape pricing and dealership data, the make of the car, etc. To help us bucket our data.
+    	The data is then parsed out and pushed to our MongoDB database for persistant storage and use.
     	</p>
     	<br>
     	<h1 class="tools">Our Tools</h1>
@@ -188,15 +187,28 @@ to find the pieces of information. <br>-Other attributes found through scraping 
     	Maven - Used as our project builder and to quickly add third party libraries for us to use in our project
     	</p>
     	<p>
-    	JSON Simple by Google - Used to encode the JSON file from CSV.
+    	OKHTTP by Square - A request-response API that allows us to collect data on our instances through making a request to other APIs.
     	</p>
     	<p>
-    	OKHTTP by Square - A request response API that allows us to collect data on our instances through making a request to other APIs.
+    	JSOUP - An open source Java HTMLparser library that we used to scrape websites. We used this tool to scrape two of our data sources, cars.com and carlogos.org for the information we needed for our models.
     	</p>
     	<p>
-    	Web Scraper by webscraper.io - A chrome extension that allows us to scrape data from websites easily. We can choose elements we want to  scrape and running the app allows us to download the scraped data as a CSV file which we can convert to a JSON file ourselves programmatically. We plan to only use this tool for Phase I, going forward we will program our own web scraper.
+    	Jackson - A java based library we used to map our java objects (data we scraped for our models) to JSON. After our web scraper finished scraping the websites and stored the data into objects, we mapped them to three separate JSON files which we would later store into our database.
     	</p>
-    	<br>
+    	<p>
+    	JUNIT - Unit testing framework for java. We used this to test our java code, specifically our web scraper.
+    	</p>
+    	<p>
+    	Postman - API used to create collections and test API calls. We used this to test our RESTful API and getting data from APIs such as NHTSA. 
+    	</p>
+    	<p>
+    	MongoDB - Our database program. We use this to store information about the cars, dealerships, and makes listed on our site. Our cluster is built on Atlas, MongoDB's free cloud storage.
+    	</p>
+    	<p>
+    	Selenium IDE - Our front-end/GUI automated testing framework. We used its chrome extension version and exported JUNIT test cases as talked about in the above testing portion of this report. 
+    	</p>
+		
+		<br>
     	
     	<h1 class="repo">Our GitHub</h1>
     	<p><a href="https://github.com/53Dude/TheDrag">https://github.com/53Dude/TheDrag</a></p>
