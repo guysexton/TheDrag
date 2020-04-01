@@ -97,15 +97,16 @@
 					
 			String image = db.getMakeAttribute(s, "img").toString();
 			String numCars = db.getMakeAttribute(s, "numCars").toString();
-			String numDealerships = db.getMakeAttribute(s, "numDealerships").toString();
+			ArrayList<String> dealers = (ArrayList<String>)db.getMakeAttribute(s,"dealerships");
+			int numDealerships = dealers.size();
 			
 			
 			if(!image.equals(""))
 				listing += "<div class='np-img-wrapper' width='30px' height='30px'>" + "<img class='np-img-expand' src='" + image + "' width='inherit' height='inherit' style='margin: 10px'></div>";
 			if(!numCars.equals(""))
 				listing += "<p><strong>Number of Cars:</strong> " + numCars + "</p>";
-			if(!numDealerships.equals(""))
-				listing += "<p><strong>Number of Dealerships:</strong> " + numDealerships + "</p>";
+			
+			listing += "<p><strong>Number of Dealerships:</strong> " + numDealerships + "</p>";
 			listing += "</a> </li>";
 			
 			out.print(listing);

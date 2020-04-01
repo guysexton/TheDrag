@@ -23,10 +23,13 @@
 
 <% 
   	String make="ERROR";
+	
   	if (request.getParameter("make") != null) {
 	    make = request.getParameter("make").toString();
 	}
+  	
   	String[] makeName=make.split("~");
+  	int dealerSize=0;
   	
   	DBServlet db = new DBServlet();
   	make = make.split("~")[0].replace('_',' ');
@@ -92,7 +95,8 @@
 				  
       	  		  <%
 				  	ArrayList<String> dealers = (ArrayList<String>)db.getMakeAttribute(make,"dealerships");
-				  	if(dealers.size()>0){
+      	  		  	dealerSize = dealers.size();
+				  	if(dealerSize>0){
 				  		for(String d:dealers){
 				  			String slug = d.replace(" ", "_");
 				  			out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href=\"/html/view-dealer.jsp?dealership=" + slug +"~\">" + db.getDealershipAttribute(d,"name") + "</a></li>");
@@ -113,7 +117,7 @@
 		  	  <h1 class="text-center">Make Information</h1>
 				<div class="np-divider"></div>
 				<p><span><b>Number of Cars: <%=db.getMakeAttribute(make,"numCars")%></b><span id="numCars"></span></span></p> 
-				<p><span><b>Number of Dealerships: <%=db.getMakeAttribute(make,"numDealers")%></b><span id="numDealerships"></span></span></p>
+				<p><span><b>Number of Dealerships: <%=dealerSize%></b><span id="numDealerships"></span></span></p>
 
 		     </div>
 </div>
