@@ -6,3 +6,63 @@
 	width:auto;
 }
 
+.parallax { 
+  /* The image used */
+  background-image: url("../assets/drew-beamer-Fp7qRMsOB0s-unsplash.jpg");
+
+  /* Set a specific height */
+  height: 85vh; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.dealer-grid{
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: non;
+	padding-left: 0;
+}
+
+.dealer-card{
+	flex: 0 0 calc(50%-10px);
+	margin: 5px;
+	padding: 0px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.car-grid{
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: non;
+	padding-left: 0;
+}
+
+.car-card{
+	flex: 0 0 calc(20%-10px);
+	margin: 5px;
+	padding: 5px 0;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.make-grid{
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: non;
+	padding-left: 0;
+}
+
+.make-card{
+	flex: 0 0 calc(20%-10px);
+	margin: 5px;
+	padding: 5px 0;
+	text-align: center;
+	box-sizing: border-box;
+}
+

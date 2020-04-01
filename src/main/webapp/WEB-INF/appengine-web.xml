@@ -9,6 +9,7 @@
   	<include path="/css/**.css"></include>
   	<include path="/js/**.js"></include>
   	<include path="/assets/**.png"></include>
+  	<include path="/assets/**.jpg"></include>
   	</static-files>
   <system-properties>
     <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>

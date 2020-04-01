@@ -25,22 +25,21 @@
     %>
     
  
-    <!--Navigation bar-->
+  <!--NEW Navigation bar-->
 		 <body class="navbar-dark">
-		 
-		 	<!-- Attempt to resize logo. Should be something else. -->
-			<div class="col-xl-1"><a href = "/html/sitemap.html"><img src="../assets/logo.png" style = "width: 100%; height: 120%" alt="" class="navbar-brand" ></a></div>
-			<div class="col-xl-6 offset-xl-6 container"><a href="/html/makes.html" class="np-element col np-hover order-0">Browse by Make</a><a href="/html/models.html" class="np-element col order-1 offset-1 np-hover">Browse by Model</a><a href="/html/dealers.html" class="np-element col order-2 offset-1 np-hover">Browse by Dealer</a></div>			  
-	
-			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+			<div class="col-xl-1"><a href = "/html/home.html"><img src="../assets/logo.png" style = "width: 100%; height: 120%" alt="" class="navbar-brand" ></a></div>
+			<div class="col-xl-6 offset-xl-6 container">
+				<a href="/html/gitabout.jsp" class="np-element col order-0 np-hover">About</a>
+				<a href="/html/makes.jsp?page=1" class="np-element col order-1 offset-1 np-hover">Browse by Make</a>
+				<a href="/html/cars.jsp?page=1" class="np-element col order-2 offset-1 np-hover">Browse by Car</a>
+				<a href="/html/dealers.jsp?page=1" class="np-element col order-3 offset-1 np-hover">Browse by Dealer</a>
+			</div>			  
 			<script src="../js/jquery-3.4.1.min.js"></script>
-		
-			<!-- Include all compiled plugins (below), or include individual files as needed -->
 			<script src="../js/popper.min.js"></script> 
 		 	<script src="../js/bootstrap-4.4.1.js"></script>
 		 	<br>
 	 	 </body>
-	<!--end of Navigation bar-->
+	<!--end of NEW Navigation bar-->
 
     
     
@@ -151,16 +150,15 @@ to find the pieces of information. <br>-Other attributes found through scraping 
     	<a href="https://vpic.nhtsa.dot.gov/api/">https://vpic.nhtsa.dot.gov/api/</a>
     	</p>
     	<p>
-    	We scraped data from this API by using the OkHttp library in Java. The API allows us to get access JSON files of makes and models by going to a corresponding url and or decoding a VIN.
-    	For Phase I of our project we have a java program MakeServlet that we ran to collect the data of three instances of make and wrote them to a corresponding JSON file, that we showed statically on the instance pages.
+    	We scraped data from this API by using the OkHttp library in Java. The API allows us to get access JSON files of details such as body type, horsepower, etc. on a specific car by decoding a VIN.
     	</p>
     	<br>
     	<p>
-    	CarMD API:
-    	<a href="https://api.carmd.com/member/docs#image">https://api.carmd.com/member/docs#image</a>
+    	Carlogos.com:
+    	<a href=" https://www.carlogos.org/">https://www.carlogos.org/</a>
     	</p>
     	<p>
-    	We plan to scrape data on our models through this API by using HTTP request and decoding the VIN number for car models. We use this API for additional info such as car image, type, etc
+    	We scrape the logos for different car makes from this website.
     	</p>
     	<br>
     	<p>
@@ -168,8 +166,8 @@ to find the pieces of information. <br>-Other attributes found through scraping 
     	<a href="https://www.cars.com/">https://www.cars.com/</a>
     	</p>
     	<p>
-    	We scraped data from this website using a web scraper which outputs the data we want into a JSON File. We plan to store the JSON file in a database where we can call on the information we need.
-    	This source provides us with car model instances and dealership instances as well as important attributes for each model instance.
+    	We wrote a web scraper that scrapes cars.com to pull cars for sale within 20 miles of UT campus. We also scrape pricing and dealership data, the make of the car, etc. To help us bucket our data.
+    	The data is then parsed out and pushed to our MongoDB database for persistant storage and use.
     	</p>
     	<br>
     	<h1 class="tools">Our Tools</h1>
@@ -189,15 +187,28 @@ to find the pieces of information. <br>-Other attributes found through scraping 
     	Maven - Used as our project builder and to quickly add third party libraries for us to use in our project
     	</p>
     	<p>
-    	JSON Simple by Google - Used to encode the JSON file from CSV.
+    	OKHTTP by Square - A request-response API that allows us to collect data on our instances through making a request to other APIs.
     	</p>
     	<p>
-    	OKHTTP by Square - A request response API that allows us to collect data on our instances through making a request to other APIs.
+    	JSOUP - An open source Java HTMLparser library that we used to scrape websites. We used this tool to scrape two of our data sources, cars.com and carlogos.org for the information we needed for our models.
     	</p>
     	<p>
-    	Web Scraper by webscraper.io - A chrome extension that allows us to scrape data from websites easily. We can choose elements we want to  scrape and running the app allows us to download the scraped data as a CSV file which we can convert to a JSON file ourselves programmatically. We plan to only use this tool for Phase I, going forward we will program our own web scraper.
+    	Jackson - A java based library we used to map our java objects (data we scraped for our models) to JSON. After our web scraper finished scraping the websites and stored the data into objects, we mapped them to three separate JSON files which we would later store into our database.
     	</p>
-    	<br>
+    	<p>
+    	JUNIT - Unit testing framework for java. We used this to test our java code, specifically our web scraper.
+    	</p>
+    	<p>
+    	Postman - API used to create collections and test API calls. We used this to test our RESTful API and getting data from APIs such as NHTSA. 
+    	</p>
+    	<p>
+    	MongoDB - Our database program. We use this to store information about the cars, dealerships, and makes listed on our site. Our cluster is built on Atlas, MongoDB's free cloud storage.
+    	</p>
+    	<p>
+    	Selenium IDE - Our front-end/GUI automated testing framework. We used its chrome extension version and exported JUNIT test cases as talked about in the above testing portion of this report. 
+    	</p>
+		
+		<br>
     	
     	<h1 class="repo">Our GitHub</h1>
     	<p><a href="https://github.com/53Dude/TheDrag">https://github.com/53Dude/TheDrag</a></p>
@@ -217,4 +228,9 @@ to find the pieces of information. <br>-Other attributes found through scraping 
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap-4.4.1.js"></script>
   </body>
+  <footer>
+		<div class="np-divider-fat"></div>
+		<p style="text-align: center;">Copyright © 2020 · All Rights Reserved · The Drag</p>
+		<p style="text-align: center;"><a href="/html/home.html">Home</a> · <a href="/html/gitabout.jsp">About</a> · <a href="/html/makes.jsp?page=1">Makes</a> · <a href="/html/cars.jsp?page=1">Cars</a> · <a href="/html/dealers.jsp?page=1">Dealers</a></p>
+	</footer>
 </html>
