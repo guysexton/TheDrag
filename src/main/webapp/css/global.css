@@ -20,6 +20,33 @@
   background-size: cover;
 }
 
+.carousel-caption {
+	text-align:right;
+	text-shadow: 2px 5px 20px black;
+	
+}
+
+.drop{
+	text-shadow: 2px 5px 20px black;
+}
+
+.hov:hover{
+	color:red;
+}
+
+.home-hero{
+		width: 100%;
+        height: 100%;            
+        position: absolute;
+        top: 0;
+        left: 0;
+}
+
+.stack {
+	z-index: 9;
+    margin: 20px;
+}
+
 
 .dealer-grid{
 	display: flex;

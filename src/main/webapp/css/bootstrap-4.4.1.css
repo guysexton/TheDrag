@@ -6603,7 +6603,7 @@ a.close.disabled {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
-  text-align: center;
+  text-align: left;
 }
 
 @-webkit-keyframes spinner-border {

@@ -12,23 +12,45 @@
   </head>
 	
   <body>
-  	<!-- body code goes here -->
-    <div class="jumbotron parallax" id="hero">
-      <div class="np-img-wrapper col-10 offset-xl-1 col-xl-5" style = "width: auto; height: 50%;" ><img class="np-img-expand" src="../assets/logo.png" alt=""></div>
+	  
+	<!-- carousel begin -->
+  <div id="carouselExampleIndicators2" class="carousel slide home-hero" data-ride="carousel" style="background-color: grey">
+	      <ol class="carousel-indicators">
+	        <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+	        <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+	        <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+    </ol>
+	      <div class="carousel-inner" role="listbox">
+	        <div class="carousel-item active"> <div class="np-img-wrapper" style="height:100vh;width:100%;"><img class="np-img-expand" style="width:100%;height:auto;" src="../assets/drew-beamer-Fp7qRMsOB0s-unsplash.jpg" alt="First slide"></div>
+	          <div class="carousel-caption">
+	            <h1 class="offset-8 col-xl-5 np-text-light">Start your engines,<br>your car search<br>begins here.</h1><br><br>
+              </div>
+            </div>
+	        <div class="carousel-item"> <div class="np-img-wrapper" style="height:100vh;width:100%;"><img class="np-img-expand" style="width:100%;height:auto;" src="../assets/spencer-davis-vdg14E8KsVM-unsplash.jpg" alt="Second slide"></div>
+	          <div class="carousel-caption">
+<div class="offset-6 col-xl-7" style="background-color: rgba(0, 0, 0, 0.50);">
+  <h1 style="padding: 20px;" class="np-text-light">The Drag is the ultimate place<br>to find your next car.</h1>
+</div>
+<br><br>
+              </div>
+            </div>
+	        <div class="carousel-item"> <div class="np-img-wrapper" style="height:100vh;width:100%;"><img class="np-img-expand" style="width:100%;height:auto;" src="../assets/jeremy-banks-Ui_7PiqnNbs-unsplash.jpg" alt="Third slide"></div>
+	          <div class="carousel-caption">
+	            <h1 class="offset-7 col-xl-6 np-text-light">Created by Longhorns, <br>for Longhorns.</h1><br><br>
+              </div>
+            </div>
     </div>
-	  <br>
-	  <div class="card np-element offset-xl-1 col-xl-10"><h1>Start your engines, your car search begins here.</h1>
-	    <p class="np-text-accent">The Drag is the ultimate place to find your next car. Here we offer a place to research car makes, models, and dealerships here in the Austin area. Created by Longhorns, for Longhorns, we aim to aggregate all the data you may need in your next car search.</p>
+	      <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+<!-- carousel end nav begin -->
+	  
+	  <div class="home-hero stack">
+		  <div class="col-xl-1" ><a href = "/html/sitemap.html"><img src="../assets/logo.png" style = "width: auto; height: 200px;" alt="" class="navbar-brand" ></a></div>
+			<div class="col-xl-4 drop offset-xl-7"><strong><div style="background-color: rgba(0, 0, 0, 0.50);"><a href="/html/gitabout.jsp" class="col order-0 np-1-5x">About</a><a href="/html/makes.jsp?page=1" class="col order-1 np-1-5x offset-1">Makes</a><a href="/html/cars.jsp?page=1" class="col order-2 np-1-5x offset-1">Cars</a><a href="/html/dealers.jsp?page=1" class="col order-3 np-1-5x offset-1">Dealers</a></div></strong></div>			  
+			
 	  </div>
-  <br><br><br>
-	  <div class="np-element offset-xl-1 col-xl-10"><h2>Browse cars by...</h2><br>
-	    <div class="row">
-	      <div class="col-xl-2 offset-xl-1"><a href="/html/makes.jsp?page=1" class="np-element np-btn np-2x">Make</a></div>
-	      <div class="col-xl-2 offset-xl-2"><a href="/html/cars.jsp?page=1" class="np-element np-btn np-2x">Car</a></div>
-	      <div class="col-xl-2 offset-xl-2"><a href="/html/dealers.jsp?page=1" class="np-element np-btn np-2x">Dealer</a></div>
-        </div><br>
-      </div>
-	  <br>
+  	<!-- nav end -->
+    
+	  
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 	<script src="../js/jquery-3.4.1.min.js"></script>
 
