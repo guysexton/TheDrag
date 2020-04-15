@@ -9,6 +9,9 @@ public class Make {
 	ArrayList<String> cars;
 	Integer numCars;
 	Integer numDealerships;
+	String market;
+	String years;
+	String url;
 	
 	Make(){
 		this.name = null;
@@ -17,10 +20,14 @@ public class Make {
 		this.cars = new ArrayList<String>();
 		this.numCars = 0;
 		this.numDealerships = 0;
+		this.market = null;
+		this.years = null;
+		this.url = null;
 	}
 	
 	public String toString() {
 		return "Make: " + name + " | " + "Image: " + img + " | " + "Dealerships: " + dealerships 
-				+ " | " + "Number of Dealerships: " + numDealerships + " | " + "Cars: " + cars + " | " + "Number of Cars: " + numCars;
+				+ " | " + "Number of Dealerships: " + numDealerships + " | " + "Cars: " + cars + " | " + "Number of Cars: " + numCars
+				+ " | " + "Market: " + market + " | " + "Years: " + years + " | " + "url: " + url;
 	}
 }

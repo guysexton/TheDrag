@@ -43,14 +43,20 @@ public class Scraper {
 				makeIds.add(makeId);
 			}
 			
-			for(int i = 1; i < 8; i++) {
-				String makeimgDoc = run("https://www.carlogos.org/Car-Logos/list_1_" + i + ".html", client);
-				Elements elements = Jsoup.parse(makeimgDoc).getElementsByClass("logo1").select("dd");
+			for(int i = 1; i < 9; i++) {
+				String makeDoc = run("https://www.carlogos.org/car-brands/list_1_" + i + ".html", client);
+				Elements elements = Jsoup.parse(makeDoc).getElementsByClass("logo-list").select("li");
 				for (Element e : elements) {
-					String name = e.select("a").text();
-					String image = e.select("a").select("img").attr("src");
+					String name= e.select("a").first().ownText();
+					String market = e.select("a").select("span").eq(0).text();
+					String years = e.select("a").select("span").eq(1).text();
+					String image = "https://www.carlogos.org" + e.select("a").select("img").attr("src");
+					System.out.println(name);
+					System.out.println(image);
 					Make m = new Make();
 					m.name = name;
+					m.market = market;
+					m.years = years;
 					m.img = image;
 					makes.put(name, m);
 				}

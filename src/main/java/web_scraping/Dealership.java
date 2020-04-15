@@ -10,14 +10,18 @@ public class Dealership {
 	String address;
 	String phoneNum;
 	String website;
+	String hours;
+	String about;
 	
 	Dealership(){}
 	
-	Dealership(String name, String address, String phoneNum, String website){
+	Dealership(String name, String address, String phoneNum, String website, String hours, String about){
 		this.name = name;
 		this.address= address;
 		this.phoneNum = phoneNum;
 		this.website = website;
+		this.hours = hours;
+		this.about = about;
 	}
 	
 	public String getImage() {
@@ -46,7 +50,8 @@ public class Dealership {
 	
 	public String toString() {
 		return "Dealership Name: " + name +  " | " + "Image: " + img + " | " + "Address: " + address + " | " + "Phone Number: " + phoneNum + " | " + "Website: " + website 
-				+ " | " + "Cars at Dealership: " + cars + " | " + "Makes at Dealership: " + makes;
+				+ " | " + "Cars at Dealership: " + cars + " | " + "Makes at Dealership: " + makes + " | " 
+					+ "Operation Hours: " + hours + " | " + "About: " + about;
 	}
 	
 	public boolean equals(Object o) {
