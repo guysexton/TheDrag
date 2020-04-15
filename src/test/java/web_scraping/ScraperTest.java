@@ -58,13 +58,18 @@ class ScraperTest {
 				String makeDoc = run("https://www.carlogos.org/car-brands/list_1_" + i + ".html", client);
 				Elements elements = Jsoup.parse(makeDoc).getElementsByClass("logo-list").select("li");
 				for (Element e : elements) {
+					String url = "https://www.carlogos.org" + e.select("a").attr("href");
 					String name= e.select("a").first().ownText();
 					String market = e.select("a").select("span").eq(0).text();
 					String years = e.select("a").select("span").eq(1).text();
 					String image = "https://www.carlogos.org" + e.select("a").select("img").attr("src");
+					System.out.println(url);
 					System.out.println(name);
 					System.out.println(image);
+					System.out.println(market);
+					System.out.println(years);
 					Make m = new Make();
+					m.url = url;
 					m.name = name;
 					m.market = market;
 					m.years = years;
@@ -72,6 +77,7 @@ class ScraperTest {
 					makes.put(name, m);
 				}
 			}
+			assertEquals("https://www.carlogos.org/car-brands/tesla-logo.html", makes.get("Tesla").url);
 			assertEquals("Tesla", makes.get("Tesla").name);
 			assertEquals("https://www.carlogos.org/car-logos/tesla-logo.png", makes.get("Tesla").img);
 			assertEquals("Luxury Electric Vehicles", makes.get("Tesla").market);

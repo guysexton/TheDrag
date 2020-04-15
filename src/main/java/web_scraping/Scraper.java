@@ -47,13 +47,13 @@ public class Scraper {
 				String makeDoc = run("https://www.carlogos.org/car-brands/list_1_" + i + ".html", client);
 				Elements elements = Jsoup.parse(makeDoc).getElementsByClass("logo-list").select("li");
 				for (Element e : elements) {
+					String url = "https://www.carlogos.org" + e.select("a").attr("href");
 					String name= e.select("a").first().ownText();
 					String market = e.select("a").select("span").eq(0).text();
 					String years = e.select("a").select("span").eq(1).text();
 					String image = "https://www.carlogos.org" + e.select("a").select("img").attr("src");
-					System.out.println(name);
-					System.out.println(image);
 					Make m = new Make();
+					m.url = url;
 					m.name = name;
 					m.market = market;
 					m.years = years;
