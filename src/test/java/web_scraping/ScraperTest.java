@@ -186,7 +186,7 @@ class ScraperTest {
 			Set<String> carUrls = new HashSet<String>();
 			Map<String, Car> cars = new HashMap<String, Car>();
 			
-			carUrls.add("https://www.cars.com/vehicledetail/detail/805364103/overview/");
+			carUrls.add("https://www.cars.com/vehicledetail/detail/808982752/overview/");
 			
 			for(String carUrl : carUrls) {
 					String doc = run(carUrl, client);
@@ -211,12 +211,13 @@ class ScraperTest {
 					instances = Jsoup.parse(doc).getElementsByClass("vehicle-info__price-display");
 					for (Element instance : instances) { // should only loop once
 						newCar.price = Integer.parseInt(instance.text().replace("$", "").replace(",", ""));
+						//System.out.println(newCar.price);
 					}
 					
-					assertEquals("https://www.cars.com/vehicledetail/detail/805364103/overview/", newCar.url);
-					assertEquals("2020 Dodge Charger SRT Hellcat", newCar.name);
-					assertEquals("https://www.cstatic-images.com/supersized/in/v1/444790/2C3CDXL95LH144894/3c02b68537f0dd929550588e1b943a89.jpg", newCar.img);
-					assertEquals(72345, newCar.price);
+					assertEquals("https://www.cars.com/vehicledetail/detail/808982752/overview/", newCar.url);
+					assertEquals("2020 Toyota Corolla Hatchback Nightshade", newCar.name);
+					assertEquals("https://www.cstatic-images.com/supersized/in/v1/420787/JTND4RBE3L3096630/e33dccccc1a78923aab61d5a8b32960c.jpg", newCar.img);
+					assertEquals(22312, newCar.price);
 			}
 		}
 		catch (IOException e) {
@@ -232,7 +233,7 @@ class ScraperTest {
 			Set<String> carUrls = new HashSet<String>();
 			Map<String, Car> cars = new HashMap<String, Car>();
 			
-			carUrls.add("https://www.cars.com/vehicledetail/detail/805364103/overview/");
+			carUrls.add("https://www.cars.com/vehicledetail/detail/808982752/overview/");
 			
 			for(String carUrl : carUrls) {
 					String doc = run(carUrl, client);
@@ -253,8 +254,8 @@ class ScraperTest {
 						}
 					}
 					
-					assertEquals("2C3CDXL95LH144894", newCar.vin);
-					assertEquals("12city/21hwy", newCar.mpg);
+					assertEquals("JTND4RBE3L3096630", newCar.vin);
+					assertEquals("32city/41hwy", newCar.mpg);
 					
 			}
 		}
@@ -273,11 +274,10 @@ class ScraperTest {
 			Map<String, Make> makes = new HashMap<String, Make>();
 
 			Make m = new Make();
-			m.name = "Dodge";
-			m.img = "https://www.carlogos.org/logo/Dodge-logo.png";
-			makes.put("Dodge", m);
+			m.name = "Toyota";
+			makes.put("Toyota", m);
 			
-			carUrls.add("https://www.cars.com/vehicledetail/detail/805364103/overview/");
+			carUrls.add("https://www.cars.com/vehicledetail/detail/808982752/overview/");
 			
 			for(String carUrl : carUrls) {
 					String doc = run(carUrl, client);
@@ -299,13 +299,13 @@ class ScraperTest {
 					for(String make : makeName) {					//loop until it finds matching make
 						String[] carName = newCar.name.split(" ");
 						if(carName[1].equals(make)){				//if car has the make in its name
-							newCar.make = make;						//car getts the make
+							newCar.make = make;						//car gets the make
 						}
 					}
 					
 					
-					assertEquals("Nyle Maxwell Pre-Owned Supercenter", newCar.dealership);
-					assertEquals("Dodge", newCar.make);
+					assertEquals("Charles Maund Toyota", newCar.dealership);
+					assertEquals("Toyota", newCar.make);
 					
 			}
 		}
