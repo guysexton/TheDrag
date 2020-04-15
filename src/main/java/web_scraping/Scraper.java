@@ -43,6 +43,7 @@ public class Scraper {
 				makeIds.add(makeId);
 			}
 			
+			//scrape carlogos.org
 			for(int i = 1; i < 9; i++) {
 				String makeDoc = run("https://www.carlogos.org/car-brands/list_1_" + i + ".html", client);
 				Elements elements = Jsoup.parse(makeDoc).getElementsByClass("logo-list").select("li");
@@ -238,8 +239,17 @@ public class Scraper {
 		d.name = Jsoup.parse(doc).getElementsByClass("seller-name cui-alpha dealer-review__seller-name").text();
 		d.img = Jsoup.parse(doc).getElementsByClass("dealer__logo").attr("src");
 		d.address = Jsoup.parse(doc).getElementsByClass("dealer-update__streetAddress").text();
-		d.phoneNum = Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--new").text();
+		d.phoneNum = Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--new").text() + " " 
+							+ Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--used").text();
 		d.website = Jsoup.parse(doc).getElementsByClass("dealer-update-website-link").attr("href");
+		d.hours = Jsoup.parse(doc).getElementsByClass("dpp-update__sales-hours-operation").text();
+		Elements e = Jsoup.parse(doc).getElementsByClass("about-dealership-section__container");
+		String about = null;
+		for(Element e1: e) {
+			about = e1.getElementsByClass("cui-section__accordion-preview").text()
+			 	+ e1.getElementsByClass("cui-section__accordion-content").text();
+		}
+		d.about = about;
 		dealerships.put(d.name, d);
 	}
 

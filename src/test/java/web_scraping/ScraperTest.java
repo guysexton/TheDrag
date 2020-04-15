@@ -51,7 +51,7 @@ class ScraperTest {
 	}
 	
 	@Test
-	void testScrapeMakeNameandImages() {
+	void testScrapeMakes() {
 		try {
 			Map<String, Make> makes = new HashMap<String, Make>();
 			for(int i = 1; i < 9; i++) {
@@ -130,7 +130,9 @@ class ScraperTest {
 	void testScrapeDealershipPhoneNumber() {
 		try {
 			String doc = run("https://www.cars.com/dealers/2208445/covert-chrysler-dodge-jeep-ram/", client);
-			assertEquals("New (512) 402-8526", Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--new").text());
+			assertEquals("New (512) 402-8526 Used (512) 961-5108", Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--new").text() + " " + Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--used").text());
+			System.out.println(Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--new").text() + " " 
+					+ Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--used").text());
 		} 	
 		catch (IOException e) {
 			e.printStackTrace();
@@ -142,6 +144,36 @@ class ScraperTest {
 		try {
 			String doc = run("https://www.cars.com/dealers/2208445/covert-chrysler-dodge-jeep-ram/", client);
 			assertEquals("https://www.covertchryslerdodgejeepram.com?utm_source=cars.com&utm_medium=referral", Jsoup.parse(doc).getElementsByClass("dealer-update-website-link").attr("href"));
+		} 	
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	void testScrapeDealershipHours() {
+		try {
+			String doc = run("https://www.cars.com/dealers/2208445/covert-chrysler-dodge-jeep-ram/", client);
+			assertEquals("Sales 8:00 AM - 8:00 PM", Jsoup.parse(doc).getElementsByClass("dpp-update__sales-hours-operation").text());
+			System.out.println(Jsoup.parse(doc).getElementsByClass("dpp-update__sales-hours-operation").text());
+		} 	
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	void testScrapeDealershipAbout() {
+		try {
+			String doc = run("https://www.cars.com/dealers/2208445/covert-chrysler-dodge-jeep-ram/", client);
+			Elements e = Jsoup.parse(doc).getElementsByClass("about-dealership-section__container");
+			String about = null;
+			for(Element e1: e) {
+				about = e1.getElementsByClass("cui-section__accordion-preview").text()
+				 	+ e1.getElementsByClass("cui-section__accordion-content").text();
+			}
+			System.out.println(about);
+			assertEquals("We are the newest member to the Covert Auto Group. We are located at the corner of 183 and North Lamar.Covert Auto Grouphas been family owned and operated since 1909. Serving the Austin area for over 100 years!", about);
 		} 	
 		catch (IOException e) {
 			e.printStackTrace();
