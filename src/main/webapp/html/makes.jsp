@@ -101,13 +101,22 @@
 			ArrayList<String> dealers = (ArrayList<String>)db.getMakeAttribute(s,"dealerships");
 			int numDealerships = dealers.size();
 			
+			String market = db.getMakeAttribute(s,"market").toString();
+			String years = db.getMakeAttribute(s,"years").toString();
+			String url = db.getMakeAttribute(s,"url").toString();
+			
 			
 			if(!image.equals(""))
 				listing += "<div class='np-img-wrapper' width='30px' height='30px'>" + "<img class='np-img-expand' src='" + image + "' width='inherit' height='inherit' style='margin: 10px'></div>";
-			if(!numCars.equals(""))
+			if(!market.equals(""))
+				listing += "<p><strong>Market:</strong> " + market + "</p>";
+			if(!years.equals(""))
+				listing += "<p><strong>Years sold in:</strong> " + years + "</p>"; 
+			
+			/* if(!numCars.equals(""))
 				listing += "<p><strong>Number of Cars:</strong> " + numCars + "</p>";
 			
-			listing += "<p><strong>Number of Dealerships:</strong> " + numDealerships + "</p>";
+			listing += "<p><strong>Number of Dealerships:</strong> " + numDealerships + "</p>"; */ 
 			listing += "</a> </li>";
 			
 			out.print(listing);
