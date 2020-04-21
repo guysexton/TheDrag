@@ -18,20 +18,21 @@ public class NHTSAmakeServlet {
 	JSONObject obj;
 	JSONParser jsonParser;
 	JSONArray arr;
-	JSONObject results;
 	
+	ArrayList<String> stringRes;
+
 	public NHTSAmakeServlet(String make) throws IOException, org.json.simple.parser.ParseException {
 		try {
-			OkHttpClient client = new OkHttpClient();
-			String json = run("https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMake/" + make + "?format=json", client);
+			client = new OkHttpClient();
+			json = run("https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMake/" + make + "?format=json", client);
 			jsonParser = new JSONParser();
-			JSONObject obj;
 	        obj = (JSONObject) jsonParser.parse(json);
-	        JSONArray arr = (JSONArray) obj.get("Results");
+	        arr = (JSONArray) obj.get("Results");
 	        Iterator<JSONObject> iterator = arr.iterator();
+	        stringRes = new ArrayList<>();
 	        while (iterator.hasNext()) {
-	            results = iterator.next();
-	            //System.out.println(result.get("VehicleTypeName"));
+	            stringRes.add((String) iterator.next().get("VehicleTypeName"));
+
 	        }
 
 		}
@@ -39,11 +40,22 @@ public class NHTSAmakeServlet {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public String getVehicleTypeName() {
-		return (String)results.get("VehicleTypeName");
+		String list="";
+		if(stringRes.size()>0) {
+			for(int i=0;i<stringRes.size();i++) {
+				if(i!=stringRes.size()-1)
+					list+= (String)stringRes.get(i)+", ";
+				else
+					list+= (String)stringRes.get(i);
+			}
+		}
+		else
+			list+="N/A";
+		return list;
 	}
-	
+
 	static String run(String url, OkHttpClient client) throws IOException {
         Request request = new Request.Builder()
                 .url(url)
@@ -52,7 +64,7 @@ public class NHTSAmakeServlet {
             return response.body().string();
         }
 	}
-	
+
 	public static void main(String[] args) {
 	}
 }
