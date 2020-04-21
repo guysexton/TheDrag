@@ -72,6 +72,14 @@
 	  
   <div class="row" style="padding:30px;">
 		  <div class="offset-xl-1 col-xl-7">
+		  	<p><span id="about"><%out.print(db.getDealershipAttribute(dealer,"about"));%></span></p>
+		  	<br>
+		  	<% 
+		  		String address = (String)db.getDealershipAttribute(dealer,"address");
+		  		if(!address.equals(""))
+		  			out.print("<iframe width='100%' height='600' frameborder='0' style='border:0' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyDH2SH8bI5WAjlplxVYOx7LK-Gr3MrjeK4&q=" + address.replace(" ","+") + "' allowfullscreen></iframe>");
+		  	%>
+		  	<br>
 			  <h1 class="text-center">Cars Available</h1>
 			  <ul class="offset-2 car-grid offset-xl-0" id="car-grid">
 				  <!-- <li class="card np-element np-hover col-2 car-card" style="margin: 20px;"><a href="#">TEMPVIN</a></li> -->
@@ -80,7 +88,7 @@
 				  	ArrayList<String> cars = (ArrayList<String>)db.getDealershipAttribute(dealer,"cars");
 				  
 				  	for(String c:cars){
-				  		out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href='/html/car.jsp?vin=" + c + "'>" + db.getCarAttribute(c,"name") + "</a></li>");
+				  		out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href='/html/car.jsp?vin=" + c + "'><div style='width:100%;height:100%;'>" + db.getCarAttribute(c,"name") + "</div></a></li>");
 			  		}
 
 				  %>
@@ -95,16 +103,30 @@
 				<div class="np-divider"></div>
 				<p><span><b>Address: </b><span id="address"><%out.print(db.getDealershipAttribute(dealer,"address"));%></span></span></p>
 				<p><span><b>Phone: </b><span id="phone"><%out.print(db.getDealershipAttribute(dealer,"phoneNum"));%></span></span></p>
+				<p><span><b>Hours: </b><span id="hours"><%out.print(db.getDealershipAttribute(dealer,"hours"));%></span></span></p>
 			  <% 
 			  String website = (String) db.getDealershipAttribute(dealer,"website");
 			  if(!website.equals(""))
-			  	out.print("<p><a id='link' href="+ website +"><strong>Click here to visit dealership website</strong></a></p>");
+			  	out.print("<p><a id='link' href="+ website +" class='hov'><strong>Click here to visit dealership website</strong></a></p>");
 			  
 			  
 			  ArrayList<String> makes = (ArrayList<String>)db.getDealershipAttribute(dealer,"makes");
+			  int makeSize = makes.size();
 			  
-			  if(makes.size()>0){
-			  out.print("<a href='/html/make-instance.jsp?make=" + makes.get(0) + "~' id='dealer-brand-card'>"+"<div class='card np-element np-hover'>" + "<div class='card-body text-center'>" + "<h5 class='card-title' id='dealer-brand'>This is a " +  makes.get(0) + " Dealership</h5>" + "<p class='card-text' id='dealer-brand-paragraph'>Click here to learn more about " + makes.get(0) + ".</p>" + "</div></div></a>" );}%>
+			  if(makeSize>0){
+			  out.print("<a href='/html/make-instance.jsp?make=" + makes.get(0).replace('&','$').replace(' ','_') + "~' id='dealer-brand-card'>"+"<div class='card np-element np-hover'>" + "<div class='card-body text-center'>" + "<h5 class='card-title' id='dealer-brand'>This is a " +  makes.get(0) + " Dealership</h5>" + "<p class='card-text' id='dealer-brand-paragraph'>Click here to learn more about " + makes.get(0) + ".</p>" + "</div></div></a>" );}
+			  
+			  if(makeSize>1){
+				  out.print("<br><p>This dealership also sells cars made by: ");
+				  if(makeSize>2){
+				  	for(int i=1;i<makeSize-2;i++){
+						out.print("<a class='hov' href='/html/make-instance.jsp?make=" + makes.get(i).replace('&','$').replace(' ','_') + "~'>" + makes.get(i) + "</a>, ");  
+				  	}
+				  	out.print("and ");
+				  }
+				  out.print("<a class='hov' href='/html/make-instance.jsp?make=" + makes.get(makeSize-1).replace('&','$').replace(' ','_') + "~'>" + makes.get(makeSize-1) + "</a></p>");
+			  }
+			  %>
 			  </div>
 </div>
 
