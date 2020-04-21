@@ -261,6 +261,30 @@ public class DBServlet {
 	}
 
 	
+	// *********************************************//
+	// Car Search Template //
+	/*
+	 * Returns an ArrayList with the cars that match the search term
+	 */
+	public ArrayList<String> carSearch(String searchTerm) {
+		ArrayList<String> searchResults = new ArrayList<String>();
+		MongoCollection col = db.getCollection("cars");
+		List<Document> allCarDocs = getAllDocuments(col);
+		
+		//TODO: Convert searchTerm to lower case
+		
+		for(Document doc : allCarDocs) {
+			String lowercaseName = ((Document)doc.get("query")).get("name").toString();
+			
+			//TODO: Convert lowerCaseName to lower case 
+			
+			if(lowercaseName.contains(searchTerm)) {
+				searchResults.add((String)doc.get("_id"));
+			}
+		}
+		return searchResults;
+	}
+	// *********************************************//
 	
 	public static void main(String[] args) {
 		DBServlet dbservlet = new DBServlet();
