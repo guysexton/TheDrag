@@ -3,6 +3,7 @@ package thedrag;
 import static com.mongodb.client.model.Filters.eq;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.bson.Document;
@@ -41,6 +42,7 @@ public class DBServlet {
 		for(Document doc : allDealerDocs) {
 			dealerNames.add((String)doc.get("_id"));
 		}
+		Collections.sort(dealerNames);
 		
 		makeNames = new ArrayList<String>();
 		col = db.getCollection("makes");
@@ -202,6 +204,27 @@ public class DBServlet {
 	
 	// *********************************************************************************************
 	
+	
+	// Searching methods  ***************************************************************************
+	
+
+	public List<String> dealerSearch(List<String> list,String term){
+		List<String> rtn  = new ArrayList<String>();
+		
+		for(String s : list) {
+			if(s.toLowerCase().contains(term.toLowerCase()))
+				rtn.add(s);
+			
+		}
+		
+		return rtn;
+	}
+	
+	
+	
+	
+	
+	// *********************************************************************************************
 	
 	
 	
