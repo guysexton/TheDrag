@@ -6,13 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.operation.OrderBy;
 
 public class DBServlet {
 	MongoClientURI uri;
@@ -55,6 +58,7 @@ public class DBServlet {
 				
 	}
 	
+	
 	public Object getMakeAttribute(String makeName, String attribute) {
 		MongoCollection col = db.getCollection("makes");
 		
@@ -87,6 +91,8 @@ public class DBServlet {
 		
 		return ((Document)doc.get("query")).get(attribute);
 	}
+	
+	
 	
 	private static List<Document> getAllDocuments(MongoCollection<Document> col) {
 		List<Document> allDocs = new ArrayList<Document>();
@@ -184,6 +190,20 @@ public class DBServlet {
 		return working;
 		
 	}
+	
+	// Sorting methods  ***************************************************************************
+	
+
+	
+	
+	
+	
+	
+	
+	// *********************************************************************************************
+	
+	
+	
 	
 	public static void main(String[] args) {
 		DBServlet dbservlet = new DBServlet();

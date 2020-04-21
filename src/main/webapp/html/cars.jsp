@@ -49,9 +49,11 @@
 		 	<br>
 	 	 </body>
 	<!--end of NEW Navigation bar-->
-
 	
-  <% 
+  <%   
+  
+  
+  
   	int pageNum=1;
   	if (request.getParameter("page") != null) {
 	    pageNum = Integer.parseInt(request. getParameter("page"));
@@ -60,6 +62,63 @@
   	DBServlet db = new DBServlet();
 	List<String> cars = db.carVins;
 	List<String> pageCars = new ArrayList<>();
+	
+	String sort_type = null;
+ 	if (request.getParameter("sort") != null ) {
+	    sort_type  = request.getParameter("sort");
+	}
+ 	
+ 	if (sort_type.equals("price_lowhigh")){
+ 		List<Integer> prices = new ArrayList<>();
+ 		
+ 		
+ 		for (String car : cars) {
+ 			if (db.getCarAttribute(car, "price") != "" && db.getCarAttribute(car, "price") != null) {
+ 				String price = db.getCarAttribute(car, "price").toString(); 
+ 				prices.add(Integer.valueOf(price));
+ 			} else {
+ 				prices.add(Integer.MAX_VALUE);
+ 			}
+ 		}
+ 		
+ 		
+ 		int cars_size = cars.size();
+ 	
+ 		for (int i = cars_size - 1; i >= 0; i--) {
+ 			for (int j = 1; j <= i; j++) {
+ 				if (prices.get(j - 1) > prices.get(j)) {
+ 					int temp_prices = prices.get(j - 1);
+ 					String temp_cars = cars.get(j - 1);
+ 					
+ 					prices.set(j - 1, prices.get(j));
+ 					cars.set(j - 1, cars.get(j));
+ 					
+ 					prices.set(j, temp_prices);
+ 					cars.set(j, temp_cars);
+ 				}
+ 			}
+ 		}		
+ 	}
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	/*
+ 	if (request.getParameter("filter") != null) {
+	    String filter_type  = request.getParameter("filter");
+	}
+ 	
+ 	if (request.getParameter("search") != null) {
+	    String search_text  = request.getParameter("sort");
+	}
+ 	*/
+ 	
+	
+	
+	
+	
+	
 	int totalPgs = (int)Math.ceil(cars.size()/10)+1;
 	int windowStart = (pageNum-1)*10;
 	int windowEnd = Math.min((windowStart+10),cars.size());	
@@ -70,9 +129,24 @@
   %>
   
       <h1 class="offset-1 col-9 np-text-accent">Cars</h1>
-	  <ul class="offset-2 car-grid" id="car-grid">
-  
-		  
+       <body class="navbar-dark">
+			<div class="" style = 'text-align: center'>
+				<a href="/html/cars.jsp?page=1&sort=price_lowhigh" class="np-element col order-0 np-hover">Sort by: </a>
+				<a href="/html/cars.jsp?page=1" class="np-element col order-1 offset-1 np-hover">Filter by: </a>
+				<a href="/html/cars.jsp?page=1" class="np-element col order-2 offset-1 np-hover">Search for: </a>
+			</div>			  
+			<script src="../js/jquery-3.4.1.min.js"></script>
+			<script src="../js/popper.min.js"></script> 
+		 	<script src="../js/bootstrap-4.4.1.js"></script>
+		 	<br>
+	 	 </body>
+      
+      
+      
+      
+      
+      
+	  <ul class="offset-2 car-grid" id="car-grid"> 
 		  <% 
 		  
 		  for (int i = 0; i < pageCars.size(); i++) {
