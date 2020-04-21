@@ -191,18 +191,75 @@ public class DBServlet {
 		
 	}
 	
-	// Sorting methods  ***************************************************************************
+	public List<String> sortCarYearsLowHigh() {
+		List<String> to_sort = new ArrayList<String>();
+		
+		for (String car : carVins) { 
+			if (!car.contains("MOVETOU")) {
+				to_sort.add(car);
+			}
+		}
+		
+		int size = to_sort.size();
+		
+		for (int i = 0; i < size; i++) {
+			for (int j = i + 1; j < size; j++) {
+				String first = String.valueOf(to_sort.get(i).charAt(9));
+				String second = String.valueOf(to_sort.get(j).charAt(9));
+				
+				if (first.compareTo(second) > 0) {
+					String temp_vin = to_sort.get(i);
+					to_sort.set(i, to_sort.get(j));
+					to_sort.set(j, temp_vin);
+				}				
+			}
+		}
+		
+		return to_sort;
+		
+	}
 	
+	public List<String> sortCarYearsHighLow() {
+		List<String> to_sort = new ArrayList<String>();
+		
+		for (String car : carVins) { 
+			if (!car.contains("MOVETOU")) {
+				to_sort.add(car);
+			}
+		}
+		
+		int size = to_sort.size();
+		
+		for (int i = 0; i < size; i++) {
+			for (int j = i + 1; j < size; j++) {
+				String first = String.valueOf(to_sort.get(i).charAt(9));
+				String second = String.valueOf(to_sort.get(j).charAt(9));
+				
+				if (first.compareTo(second) < 0) {
+					String temp_vin = to_sort.get(i);
+					to_sort.set(i, to_sort.get(j));
+					to_sort.set(j, temp_vin);
+				}				
+			}
+		}
+		
+		return to_sort;
+		
+	}
+	
+	public List<String> filterCarYears(char vin_value){
+		List<String> to_filter = new ArrayList<String>(); 
+		
+		
+		for (String car : carVins) {
+			if (car.charAt(9) == vin_value && !car.contains("MOVETOU")) {
+				to_filter.add(car);
+			}
+		}
+		
+		return to_filter; 
+	}
 
-	
-	
-	
-	
-	
-	
-	// *********************************************************************************************
-	
-	
 	
 	
 	public static void main(String[] args) {

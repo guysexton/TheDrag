@@ -66,58 +66,25 @@
 	String sort_type = null;
  	if (request.getParameter("sort") != null ) {
 	    sort_type  = request.getParameter("sort");
+	 	if (sort_type.equals("year_lowhigh")){
+	 		cars = db.sortCarYearsLowHigh();
+	 	} 
+	 	
+	 	if (sort_type.equals("year_highlow")) {
+	 		cars = db.sortCarYearsHighLow();
+	 	}
+	    
 	}
  	
- 	if (sort_type.equals("price_lowhigh")){
- 		List<Integer> prices = new ArrayList<>();
- 		
- 		
- 		for (String car : cars) {
- 			if (db.getCarAttribute(car, "price") != "" && db.getCarAttribute(car, "price") != null) {
- 				String price = db.getCarAttribute(car, "price").toString(); 
- 				prices.add(Integer.valueOf(price));
- 			} else {
- 				prices.add(Integer.MAX_VALUE);
- 			}
- 		}
- 		
- 		
- 		int cars_size = cars.size();
- 	
- 		for (int i = cars_size - 1; i >= 0; i--) {
- 			for (int j = 1; j <= i; j++) {
- 				if (prices.get(j - 1) > prices.get(j)) {
- 					int temp_prices = prices.get(j - 1);
- 					String temp_cars = cars.get(j - 1);
- 					
- 					prices.set(j - 1, prices.get(j));
- 					cars.set(j - 1, cars.get(j));
- 					
- 					prices.set(j, temp_prices);
- 					cars.set(j, temp_cars);
- 				}
- 			}
- 		}		
- 	}
- 	
- 	
- 	
- 	
- 	
- 	/*
+
  	if (request.getParameter("filter") != null) {
 	    String filter_type  = request.getParameter("filter");
+	    char filter_value = filter_type.charAt(0);
+	    cars = db.filterCarYears(filter_value);
 	}
  	
- 	if (request.getParameter("search") != null) {
-	    String search_text  = request.getParameter("sort");
-	}
- 	*/
  	
-	
-	
-	
-	
+
 	
 	int totalPgs = (int)Math.ceil(cars.size()/10)+1;
 	int windowStart = (pageNum-1)*10;
@@ -131,9 +98,18 @@
       <h1 class="offset-1 col-9 np-text-accent">Cars</h1>
        <body class="navbar-dark">
 			<div class="" style = 'text-align: center'>
-				<a href="/html/cars.jsp?page=1&sort=price_lowhigh" class="np-element col order-0 np-hover">Sort by: </a>
-				<a href="/html/cars.jsp?page=1" class="np-element col order-1 offset-1 np-hover">Filter by: </a>
-				<a href="/html/cars.jsp?page=1" class="np-element col order-2 offset-1 np-hover">Search for: </a>
+				<a class="np-element col order-0">Sort by year: </a>
+				<a href="/html/cars.jsp?page=1&amp;sort=year_lowhigh" class="np-element col order-1 offset-0 np-hover">Low - High</a>
+				<a href="/html/cars.jsp?page=1&amp;sort=year_lowhigh" class="np-element col order-1 offset-0 np-hover">High - Low</a>
+				
+				<a class="np-element col order-2 offset-1">Filter by year: </a>
+				<a href="/html/cars.jsp?page=1&amp;filter=H" class="np-element col order-2 offset-0 np-hover">2017</a>
+				<a href="/html/cars.jsp?page=1&amp;filter=J" class="np-element col order-2 offset-0 np-hover">2018</a>
+				<a href="/html/cars.jsp?page=1&amp;filter=K" class="np-element col order-2 offset-0 np-hover">2019</a>
+				<a href="/html/cars.jsp?page=1&amp;filter=L" class="np-element col order-2 offset-0 np-hover">2020</a>
+				<a href="/html/cars.jsp?page=1&amp;filter=M" class="np-element col order-2 offset-0 np-hover">2021</a>
+				
+				<a class="np-element col order-3 offset-1">Search for: </a>
 			</div>			  
 			<script src="../js/jquery-3.4.1.min.js"></script>
 			<script src="../js/popper.min.js"></script> 
@@ -169,9 +145,16 @@
 			if(db.getCarAttribute(pageCars.get(i), "dealership") != ""){
 				listing += "<p><strong>Dealership:</strong> " + db.getCarAttribute(pageCars.get(i), "dealership").toString() + "</p>";
 			}
-			if(db.getCarAttribute(pageCars.get(i), "Price") != ""){
-				listing += "<p><strong>Price: $</strong> " + db.getCarAttribute(pageCars.get(i), "price").toString() + "</p>";
+			if(db.getCarAttribute(pageCars.get(i), "price") != null){
+				if (!db.getCarAttribute(pageCars.get(i), "price").toString().equals("")){
+					listing += "<p><strong>Price: $</strong>" + db.getCarAttribute(pageCars.get(i), "price").toString() + "</p>";
+				} else {
+					listing += "<p><strong>No Price Listed</strong>" + db.getCarAttribute(pageCars.get(i), "price").toString() + "</p>";
+				}
+			} else {
+				listing += "<p><strong>No Price Listed</strong>" + db.getCarAttribute(pageCars.get(i), "price").toString() + "</p>";
 			}
+			
 			if(db.getCarAttribute(pageCars.get(i), "url") != ""){
 				listing += "<a href='" + db.getCarAttribute(pageCars.get(i), "url").toString() + "'><strong>Check Out Dealership Listing</strong></a></a> </li>";
 			}
