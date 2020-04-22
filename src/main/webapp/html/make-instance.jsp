@@ -125,7 +125,7 @@
       	  		  <%
 				  	if(dealerSize>0){
 				  		for(String d:dealers){
-				  			String slug = d.replace('&','$').replace(' ','_')+"~";
+				  			String slug = d.replace('&','$').replace(' ','_').replace("'",".")+"~";
 				  			out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href=\"/html/view-dealer.jsp?dealership=" + slug +"~\">" + db.getDealershipAttribute(d,"name") + "</a></li>");
 			  			}
 				  	}

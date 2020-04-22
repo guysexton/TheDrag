@@ -41,8 +41,74 @@
 	    pageNum = Integer.parseInt(request.getParameter("page"));
 	}
   	
+  	boolean Z2A = false;
+  	if (request.getParameter("Z2A") != null) {
+	    Z2A = Boolean.parseBoolean(request.getParameter("Z2A"));
+	}
+  	
+  	boolean carsListed = false;
+  	if (request.getParameter("carsListed") != null) {
+	    carsListed = Boolean.parseBoolean(request.getParameter("carsListed"));
+  	}
+  	
+  	boolean dealersListed = false;
+  	if (request.getParameter("dealersListed") != null) {
+	    dealersListed = Boolean.parseBoolean(request.getParameter("dealersListed"));
+	} 
+  	
+  	String markets = "";
+  	if (request.getParameter("market") != null) {
+	    markets = request.getParameter("market");
+	}
+  	
+  	String search = "";
+  	if (request.getParameter("search") != null) {
+	    search = request.getParameter("search").replace("%20"," ");
+	}
+  	
   	DBServlet db = new DBServlet();
 	List<String> makes = db.makeNames;
+	
+    Collections.sort(makes);
+	
+	if(Z2A)
+		Collections.reverse(makes);
+	
+	if(dealersListed){
+		List<String> newMakes = new ArrayList<String>();
+		for(String make:makes){
+			if(!((ArrayList<String>)db.getMakeAttribute(make, "dealerships")).isEmpty())
+				newMakes.add(make);
+		}
+		makes = newMakes;
+	} 
+	
+	if(carsListed){
+		List<String> newMakes = new ArrayList<String>();
+		for(String make:makes){
+			if(!((ArrayList<String>)db.getMakeAttribute(make, "cars")).isEmpty())
+				newMakes.add(make);
+		}
+		makes = newMakes;
+	}
+	
+	if(!markets.equals("")){
+		List<String> newMakes = new ArrayList<String>();
+		for(String make:makes){
+			if(((String)db.getMakeAttribute(make, "market")).equals(markets))
+				newMakes.add(make);
+		}
+		makes = newMakes;
+	}
+	
+	
+	
+	if(!search.equals("")){
+		makes = db.makeSearch(makes, search);
+	}
+	
+	///////////////////
+	
 	List<String> pageMakes = new ArrayList<>();
 	int totalPgs = (int)Math.ceil(makes.size()/10)+1;
 	int windowStart = (pageNum-1)*10;
@@ -75,24 +141,58 @@
 
 
 		<h1 class="offset-1 col-9 np-text-accent">Makes</h1>
+		
+		<div class="offset-1 col-10">
+			<form name="sfs" action="/html/makes.jsp" method="post">
+			  <span class="np-form-group" style="display:inline-block;">
+				<label><strong>Sort:</strong></label>
+				<input type="radio" class="np-form-element" name="Z2A" value="false" <%if(!Z2A) out.print("checked");%>>A-Z 
+				<input type="radio" class="np-form-element" name="Z2A" value="true" <%if(Z2A) out.print("checked");%>>Z-A
+				&nbsp;
+				<strong>Cars Available: </strong><input type="checkbox" class="np-form-element" name="carsListed" value="true" <%if(carsListed) out.print("checked='checked'");%>> 
+				<strong>Dealers Available: </strong><input type="checkbox" class="np-form-element" name="dealersListed" value="true" <%if(dealersListed) out.print("checked='checked'");%>>
+				&nbsp;
+ 				<strong>Filter by Market:</strong><select class="np-form-element" id="market" name="market" value="Filter by Market"> 
+				<%-- <strong>Dealers Available: </strong><input type="checkbox" class="np-form-element" name="dealersListed" value="true" <%if(dealersListed) out.print("checked='checked'");%>> --%>
+					<%
+						List<String> marketList = new ArrayList<>();
+						for(String make : db.makeNames){
+							if(!marketList.contains(db.getMakeAttribute(make,"market").toString()))
+								marketList.add(db.getMakeAttribute(make,"market").toString());
+						}
+						Collections.sort(marketList);
+						marketList.add(0,"");
+						for(String m : marketList){
+							if(markets.equals(m))
+								//out.print("<option value='" + m.replace(" ","%20") + "' selected>" + m + "</option>");
+								out.print("<option value='" + m + "' selected>" + m + "</option>");
+							else
+								//out.print("<option value='" + m.replace(" ","%20") + "'>" + m + "</option>");
+								out.print("<option value='" + m + "'>" + m + "</option>");
+						}
+					%> 
+				</select> 
+				
+				<input class="np-btn" type="submit" value="Apply Filters">
+				<a class="np-btn hov" href="/html/makes.jsp?page=1">Clear Filters</a>
+			   </span>
+			   <span class="np-form-group offset-2" style="display:inline-block;">
+				<label for="search">Search:</label>
+				<input class="np-form-element" type="text" id="search" name="search" value="<%=search%>">
+				<input class="np-btn" type="submit" value="Search">
+			   </span>
+			</form>
+		</div>
 
 	  <ul class="offset-2 make-grid" id="make-grid">
 
-		  <!-- <li class="card np-element np-hover col-4 dealer-card" style="margin: 20px;"><a href="#">
-			  <h3 style="text-align: center;">Dealer</h3>
-			  <div class="np-img-wrapper" width="50px" height="50px"><img class="np-img-expand" src="https://pictures.dealer.com/p/penskeroundrocktoyota/0040/6f8b9746ac8eb3968fc541d0834b047cx.jpg" width="inherit" height="inherit" style="margin: 10px"></div>
-			  <p><strong>Address:</strong> #### Street St, Austin, TX 78705</p>
-			  <p><strong>Phone:</strong> (###) ###-####</p>
-			  <p><strong>Website:</strong><a href="#"> www.address.com</a></p>
-			  </a>
-		  </li> -->
 		  
 		  <% 
 		  
 		  for(String s:pageMakes){
 			  String name = db.getMakeAttribute(s, "name").toString();
 			  String slug=name.replace(" ","_");
-			  String listing= "<li class='card np-element np-hover col-4 make-card' style='margin: 20px;height:325px;' >"+
+			  String listing= "<li class='card np-element np-hover col-4 make-card' style='margin: 20px;height:375px;' >"+
 					  "<a href='/html/make-instance.jsp?make=" + slug + "' style='margin:0px;display:block;width:100%;height:100%;'>"+
 						"<h3 style='text-align: center;'>" + name + "</h3>";
 					
@@ -112,11 +212,10 @@
 				listing += "<p><strong>Market:</strong> " + market + "</p>";
 			if(!years.equals(""))
 				listing += "<p><strong>Years sold in:</strong> " + years + "</p>"; 
-			
-			/* if(!numCars.equals(""))
-				listing += "<p><strong>Number of Cars:</strong> " + numCars + "</p>";
-			
-			listing += "<p><strong>Number of Dealerships:</strong> " + numDealerships + "</p>"; */ 
+			if(!url.equals("")){
+				listing += "<a href='" + url + "'><strong><u>Make Website</u></strong></a>";
+			}
+			 
 			listing += "</a> </li>";
 			
 			out.print(listing);
@@ -134,6 +233,14 @@
 	<script>
 	
 	pageButtons()
+	
+	if(<%=pageMakes.size()%> < 1){
+		alert("No makes within search criteria. Please change filter parameters and try again. All filters have been reset.");
+		
+		var url = window.location.href;  
+		var newURL = url.substr(0, url.indexOf('?'));
+		window.location.href = newURL;
+	}
 
 	function pageButtons(){
 		
