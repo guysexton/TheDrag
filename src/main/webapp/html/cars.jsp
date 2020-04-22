@@ -42,6 +42,8 @@
 				<a href="/html/makes.jsp?page=1" class="np-element col order-1 offset-1 np-hover">Browse by Make</a>
 				<a href="/html/cars.jsp?page=1" class="np-element col order-2 offset-1 np-hover">Browse by Car</a>
 				<a href="/html/dealers.jsp?page=1" class="np-element col order-3 offset-1 np-hover">Browse by Dealer</a>
+		
+				
 			</div>			  
 			<script src="../js/jquery-3.4.1.min.js"></script>
 			<script src="../js/popper.min.js"></script> 
@@ -52,7 +54,7 @@
 	
   <%   
   
-  
+  	String param_pages = "";
   
   	int pageNum=1;
   	if (request.getParameter("page") != null) {
@@ -65,22 +67,36 @@
 	
 	String sort_type = null;
  	if (request.getParameter("sort") != null ) {
+ 		param_pages += "&sort=";
+ 		
 	    sort_type  = request.getParameter("sort");
 	 	if (sort_type.equals("year_lowhigh")){
 	 		cars = db.sortCarYearsLowHigh();
+	 		param_pages += "year_lowhigh";
 	 	} 
 	 	
 	 	if (sort_type.equals("year_highlow")) {
 	 		cars = db.sortCarYearsHighLow();
+	 		param_pages += "year_highlow";
 	 	}
 	    
 	}
  	
 
  	if (request.getParameter("filter") != null) {
+ 		param_pages += "&filter=";
 	    String filter_type  = request.getParameter("filter");
 	    char filter_value = filter_type.charAt(0);
+	    param_pages += Character.toString(filter_value);
 	    cars = db.filterCarYears(filter_value);
+	}
+ 	
+ 	if (request.getParameter("search") != null) {
+ 		param_pages += "&search=";
+	    String search_term  = request.getParameter("search");
+	    param_pages += search_term;
+	    String replaced_searchterm = search_term.replace("_", " ");
+	   	cars = db.carSearch(replaced_searchterm); 
 	}
  	
  	
@@ -95,10 +111,13 @@
 	}
   %>
   
+  
       <h1 class="offset-1 col-9 np-text-accent">Cars</h1>
        <body class="navbar-dark">
-			<div class="" style = 'text-align: center'>
-				<a class="np-element col order-0">Sort by year: </a>
+       <br>
+			<div class="" style = 'text-align: left'>
+					
+				<a class="np-element col order-0 offset-1">Sort by year: </a>
 				<a href="/html/cars.jsp?page=1&amp;sort=year_lowhigh" class="np-element col order-1 offset-0 np-hover">Low - High</a>
 				<a href="/html/cars.jsp?page=1&amp;sort=year_lowhigh" class="np-element col order-1 offset-0 np-hover">High - Low</a>
 				
@@ -108,16 +127,17 @@
 				<a href="/html/cars.jsp?page=1&amp;filter=K" class="np-element col order-2 offset-0 np-hover">2019</a>
 				<a href="/html/cars.jsp?page=1&amp;filter=L" class="np-element col order-2 offset-0 np-hover">2020</a>
 				<a href="/html/cars.jsp?page=1&amp;filter=M" class="np-element col order-2 offset-0 np-hover">2021</a>
+				<a class="col order-3 offset-1"> 
+					<input type="text" class="np-element offset-0" id = "user_search_input" >
+					<button class="np-element offset-0 np-hover">Search</button>
+				</a>
 				
-				<a class="np-element col order-3 offset-1">Search for: </a>
 			</div>			  
 			<script src="../js/jquery-3.4.1.min.js"></script>
 			<script src="../js/popper.min.js"></script> 
 		 	<script src="../js/bootstrap-4.4.1.js"></script>
 		 	<br>
 	 	 </body>
-      
-      
       
       
       
@@ -152,7 +172,7 @@
 					listing += "<p><strong>No Price Listed</strong>" + db.getCarAttribute(pageCars.get(i), "price").toString() + "</p>";
 				}
 			} else {
-				listing += "<p><strong>No Price Listed</strong>" + db.getCarAttribute(pageCars.get(i), "price").toString() + "</p>";
+				listing += "<p><strong>No Price Listed</strong></p>";
 			}
 			
 			if(db.getCarAttribute(pageCars.get(i), "url") != ""){
@@ -200,33 +220,35 @@
 		wrapper.innerHTML = ''
 		
 			if(<%=pageNum%>>1){
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="cars.jsp?page=1" aria-label="First"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="cars.jsp?page=<%=pageNum-1%>" aria-label="Previous"> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="cars.jsp?page=1<%=param_pages%>" aria-label="First"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="cars.jsp?page=<%=pageNum-1%><%=param_pages%>" aria-label="Previous"> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
 			} else {
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="cars.jsp?page=1" aria-label="First" disabled> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="cars.jsp?page=<%=totalPgs%>" aria-label="Previous" disabled> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="cars.jsp?page=1<%=param_pages%>" aria-label="First" disabled> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="cars.jsp?page=<%=totalPgs%><%=param_pages%>" aria-label="Previous" disabled> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
 			}
 		
 		for(var page = winStart; page <= winEnd ; page++){
 			if(page==<%=pageNum%>){
 				var temp = `<li><a class="np-element np-shadow-inverse np-hover-inverse" href="cars.jsp?page=`
 						temp+=page
+						temp+= "<%=param_pages%>"
 						temp+=`" style="margin:5px;">` + page + `</a></li>`
 				wrapper.innerHTML +=  temp
 				} else {
 				var temp = `<li><a class="np-element np-hover-" href="cars.jsp?page=`
 					temp+=page
+					temp += "<%=param_pages%>"
 					temp+=`" style="margin:5px;">` + page + `</a></li>`
 					wrapper.innerHTML +=  temp
 			}
 		}
 		
 			if(<%=pageNum%> < <%=totalPgs%>){
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="cars.jsp?page=<%=pageNum+1%>" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="cars.jsp?page=<%=totalPgs%>" aria-label="last"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="cars.jsp?page=<%=pageNum+1%><%=param_pages%>" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="cars.jsp?page=<%=totalPgs%><%=param_pages%>" aria-label="last"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
 			} else {
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="cars.jsp?page=1" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="cars.jsp?page=<%=totalPgs%>" aria-label="Last" disabled> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="cars.jsp?page=1<%=param_pages%>" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="cars.jsp?page=<%=totalPgs%><%=param_pages%>" aria-label="Last" disabled> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
 			}
 	}
 	

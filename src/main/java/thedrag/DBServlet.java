@@ -289,16 +289,16 @@ public class DBServlet {
 	public ArrayList<String> carSearch(String searchTerm) {
 		ArrayList<String> searchResults = new ArrayList<String>();
 		MongoCollection col = db.getCollection("cars");
-		List<Document> allCarDocs = getAllDocuments(col);
-
-		//TODO: Convert searchTerm to lower case
-
+		List<Document> allCarDocs = getAllDocuments(col);S
+		
+		String lc_searchterm = searchTerm.toLowerCase();
+		
 		for(Document doc : allCarDocs) {
-			String lowercaseName = ((Document)doc.get("query")).get("name").toString();
-
-			//TODO: Convert lowerCaseName to lower case
-
-			if(lowercaseName.contains(searchTerm)) {
+			String name = ((Document)doc.get("query")).get("name").toString();
+			
+			String lowercaseName = name.toLowerCase();
+			
+			if(lowercaseName.contains(lc_searchterm)) {
 				searchResults.add((String)doc.get("_id"));
 			}
 		}
