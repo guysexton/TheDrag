@@ -51,11 +51,6 @@
 	    carsListed = Boolean.parseBoolean(request.getParameter("carsListed"));
   	}
   	
-  	boolean dealersListed = false;
-  	if (request.getParameter("dealersListed") != null) {
-	    dealersListed = Boolean.parseBoolean(request.getParameter("dealersListed"));
-	} 
-  	
   	String markets = "";
   	if (request.getParameter("market") != null) {
 	    markets = request.getParameter("market");
@@ -73,15 +68,6 @@
 	
 	if(Z2A)
 		Collections.reverse(makes);
-	
-	if(dealersListed){
-		List<String> newMakes = new ArrayList<String>();
-		for(String make:makes){
-			if(!((ArrayList<String>)db.getMakeAttribute(make, "dealerships")).isEmpty())
-				newMakes.add(make);
-		}
-		makes = newMakes;
-	} 
 	
 	if(carsListed){
 		List<String> newMakes = new ArrayList<String>();
@@ -145,7 +131,7 @@
 				<input type="radio" class="np-form-element" name="Z2A" value="true" <%if(Z2A) out.print("checked");%>>Z-A
 				&nbsp;
 				<strong>Cars Available: </strong><input type="checkbox" class="np-form-element" name="carsListed" value="true" <%if(carsListed) out.print("checked='checked'");%>> 
-				<strong>Dealers Available: </strong><input type="checkbox" class="np-form-element" name="dealersListed" value="true" <%if(dealersListed) out.print("checked='checked'");%>>
+				
 				&nbsp;
  				<strong>Filter by Market:</strong><select class="np-form-element" id="market" name="market" value="Filter by Market"> 
 				<%-- <strong>Dealers Available: </strong><input type="checkbox" class="np-form-element" name="dealersListed" value="true" <%if(dealersListed) out.print("checked='checked'");%>> --%>
@@ -155,10 +141,8 @@
 						marketList.add(0,"");
 						for(String m : marketList){
 							if(markets.equals(m))
-								//out.print("<option value='" + m.replace(" ","%20") + "' selected>" + m + "</option>");
 								out.print("<option value='" + m + "' selected>" + m + "</option>");
 							else
-								//out.print("<option value='" + m.replace(" ","%20") + "'>" + m + "</option>");
 								out.print("<option value='" + m + "'>" + m + "</option>");
 						}
 					%> 
