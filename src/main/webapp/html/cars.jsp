@@ -115,23 +115,36 @@
       <h1 class="offset-1 col-9 np-text-accent">Cars</h1>
        <body class="navbar-dark">
        <br>
-			<div class="" style = 'text-align: left'>
+			<div style = 'text-align: left'>
+				<form action = "/html/cars.jsp?page=1&amp;search=">
+					<span class= "col-1 offset-1">
+						<a class="np-element ">Sort by year: </a>
+						<a href="/html/cars.jsp?page=1&amp;sort=year_lowhigh" class="np-element np-hover">Low - High</a>
+						<a href="/html/cars.jsp?page=1&amp;sort=year_highlow" class="np-element np-hover">High - Low</a>
+					</span>	
+				
+					<span class= "col-1 offset-1">
+						<a class="np-element">Filter by year: </a>
+						<a href="/html/cars.jsp?page=1&amp;filter=H" class="np-element np-hover">2017</a>
+						<a href="/html/cars.jsp?page=1&amp;filter=J" class="np-element np-hover">2018</a>
+						<a href="/html/cars.jsp?page=1&amp;filter=K" class="np-element np-hover">2019</a>
+						<a href="/html/cars.jsp?page=1&amp;filter=L" class="np-element np-hover">2020</a>
+						<a href="/html/cars.jsp?page=1&amp;filter=M" class="np-element np-hover">2021</a>
+					</span>
 					
-				<a class="np-element col order-0 offset-1">Sort by year: </a>
-				<a href="/html/cars.jsp?page=1&amp;sort=year_lowhigh" class="np-element col order-1 offset-0 np-hover">Low - High</a>
-				<a href="/html/cars.jsp?page=1&amp;sort=year_lowhigh" class="np-element col order-1 offset-0 np-hover">High - Low</a>
+					<span class= "col-1 offset-1">
+							<%
+								String search = "";
+							  	if (request.getParameter("search") != null) {
+								    search = request.getParameter("search");
+								}
+							%>
+							<input type="text" class="np-element" id = "user_search_input" name ="search" value="<%=search%>">
+							
+							<button type="submit" style="width: 100px" class="np-element np-hover" >Search</button>
 				
-				<a class="np-element col order-2 offset-1">Filter by year: </a>
-				<a href="/html/cars.jsp?page=1&amp;filter=H" class="np-element col order-2 offset-0 np-hover">2017</a>
-				<a href="/html/cars.jsp?page=1&amp;filter=J" class="np-element col order-2 offset-0 np-hover">2018</a>
-				<a href="/html/cars.jsp?page=1&amp;filter=K" class="np-element col order-2 offset-0 np-hover">2019</a>
-				<a href="/html/cars.jsp?page=1&amp;filter=L" class="np-element col order-2 offset-0 np-hover">2020</a>
-				<a href="/html/cars.jsp?page=1&amp;filter=M" class="np-element col order-2 offset-0 np-hover">2021</a>
-				<a class="col order-3 offset-1"> 
-					<input type="text" class="np-element offset-0" id = "user_search_input" >
-					<button class="np-element offset-0 np-hover">Search</button>
-				</a>
-				
+					</span>
+				</form>
 			</div>			  
 			<script src="../js/jquery-3.4.1.min.js"></script>
 			<script src="../js/popper.min.js"></script> 

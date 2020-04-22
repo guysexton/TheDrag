@@ -289,7 +289,7 @@ public class DBServlet {
 	public ArrayList<String> carSearch(String searchTerm) {
 		ArrayList<String> searchResults = new ArrayList<String>();
 		MongoCollection col = db.getCollection("cars");
-		List<Document> allCarDocs = getAllDocuments(col);S
+		List<Document> allCarDocs = getAllDocuments(col);
 		
 		String lc_searchterm = searchTerm.toLowerCase();
 		
