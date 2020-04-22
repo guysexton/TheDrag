@@ -46,28 +46,29 @@
 	    Z2A = Boolean.parseBoolean(request.getParameter("Z2A"));
 	}
   	
-  	boolean carsListed = false;
-  	if (request.getParameter("carsListed") != null) {
-	    carsListed = Boolean.parseBoolean(request.getParameter("carsListed"));
-  	}
-  	
+
   	String markets = "";
   	if (request.getParameter("market") != null) {
 	    markets = request.getParameter("market");
 	}
   	
+  	
+  	boolean carsListed = false;
+  	if (request.getParameter("carsListed") != null) {
+	    carsListed = Boolean.parseBoolean(request.getParameter("carsListed"));
+  	}
+  	
   	String search = "";
   	if (request.getParameter("search") != null) {
-	    search = request.getParameter("search").replace("%20"," ");
+	    search = request.getParameter("search");//.replace("%20"," ");
 	}
   	
   	DBServlet db = new DBServlet();
 	List<String> makes = db.makeNames;
 	
-    Collections.sort(makes);
-	
-	if(Z2A)
-		Collections.reverse(makes);
+	if(!markets.equals("")){
+		makes = db.makeMarketFilter(markets);
+	}
 	
 	if(carsListed){
 		List<String> newMakes = new ArrayList<String>();
@@ -78,10 +79,11 @@
 		makes = newMakes;
 	}
 	
-	if(!markets.equals("")){
-		makes = db.makeMarketFilter(markets);
-	}
 	
+	Collections.sort(makes);
+
+	if(Z2A)
+		Collections.reverse(makes);
 	
 	
 	if(!search.equals("")){
@@ -207,6 +209,10 @@
   </nav>
 	<script>
 	
+	<%
+	String vars = "&Z2A="+Z2A+"&market="+markets+"&carsListed="+carsListed+"&search="+search;
+	%>
+	
 	pageButtons()
 	
 	if(<%=pageMakes.size()%> < 1){
@@ -240,37 +246,38 @@
 		wrapper.innerHTML = ''
 		
 			if(<%=pageNum%>>1){
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=1" aria-label="First"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=<%=pageNum-1%>" aria-label="Previous"> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=1<%=vars%>" aria-label="First"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=<%=pageNum-1%><%=vars%>" aria-label="Previous"> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
 			} else {
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=1" aria-label="First" disabled> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=<%=totalPgs%>" aria-label="Previous" disabled> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=1<%=vars%>" aria-label="First" disabled> <span aria-hidden="true">&laquo;</span> <span class="sr-only">First</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=<%=totalPgs%><%=vars%>" aria-label="Previous" disabled> <span aria-hidden="true">&lt;</span> <span class="sr-only">Previous</span> </a> </li>`
 			}
 		
 		for(var page = winStart; page <= winEnd ; page++){
 			if(page==<%=pageNum%>){
 				var temp = `<li><a class="np-element np-shadow-inverse np-hover-inverse" href="makes.jsp?page=`
 						temp+=page
-						temp+=`" style="margin:5px;">` + page + `</a></li>`
+						temp+=`<%=vars%>" style="margin:5px;">` + page + `</a></li>`
 				wrapper.innerHTML +=  temp
 				} else {
 				var temp = `<li><a class="np-element np-hover-" href="makes.jsp?page=`
 					temp+=page
-					temp+=`" style="margin:5px;">` + page + `</a></li>`
+					temp+=`<%=vars%>" style="margin:5px;">` + page + `</a></li>`
 					wrapper.innerHTML +=  temp
 			}
 		}
 		
 			if(<%=pageNum%> < <%=totalPgs%>){
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=<%=pageNum+1%>" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=<%=totalPgs%>" aria-label="last"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=<%=pageNum+1%><%=vars%>" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element np-hover" style="margin:5px;" href="makes.jsp?page=<%=totalPgs%><%=vars%>" aria-label="last"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
 			} else {
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=1" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
-				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=<%=totalPgs%>" aria-label="Last" disabled> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=1<%=vars%>" aria-label="Next"> <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span> </a> </li>`
+				wrapper.innerHTML += `<li class="page-item"> <a class="np-element" style="margin:5px;" href="makes.jsp?page=<%=totalPgs%><%=vars%>" aria-label="Last" disabled> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Last</span> </a> </li>`
 			}
 	}
 	
 	</script>
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../js/jquery-3.4.1.min.js"></script>
