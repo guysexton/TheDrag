@@ -170,8 +170,9 @@
 			  </a>
 		  </li> -->
 		  
-		  <% 
 		  
+		  
+		  <%
 		  
 		  for(String s:pageDealers){
 			  String name = db.getDealershipAttribute(s, "name").toString();
@@ -214,8 +215,8 @@
 		  %>
 		  
 	  </ul>
-
-	  <nav class="col-xl-4 offset-xl-2" style="align-content: center;" aria-label="Page navigation example">
+	  
+	  <nav class="col-xl-4 offset-xl-2" style="align-content: center;" aria-label="Page navigation">
     <!-- Add class .pagination-lg for larger blocks or .pagination-sm for smaller blocks-->
     <ul class="pagination" style="align-content: center;" id="pagination-wrapper">
     </ul>
@@ -227,6 +228,14 @@
 	%>
 	
 	pageButtons()
+	
+	if(<%=pageDealers.size()%> < 1){
+		alert("No dealers within search criteria. Please change filter parameters and try again. All filters have been reset.");
+		
+		var url = window.location.href;  
+		var newURL = url.substr(0, url.indexOf('?'));
+		window.location.href = newURL;
+	}
 
 	function pageButtons(){
 		
