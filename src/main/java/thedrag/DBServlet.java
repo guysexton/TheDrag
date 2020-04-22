@@ -271,14 +271,14 @@ public class DBServlet {
 		MongoCollection col = db.getCollection("cars");
 		List<Document> allCarDocs = getAllDocuments(col);
 		
-		//TODO: Convert searchTerm to lower case
+		String lc_searchterm = searchTerm.toLowerCase();
 		
 		for(Document doc : allCarDocs) {
-			String lowercaseName = ((Document)doc.get("query")).get("name").toString();
+			String name = ((Document)doc.get("query")).get("name").toString();
 			
-			//TODO: Convert lowerCaseName to lower case 
+			String lowercaseName = name.toLowerCase();
 			
-			if(lowercaseName.contains(searchTerm)) {
+			if(lowercaseName.contains(lc_searchterm)) {
 				searchResults.add((String)doc.get("_id"));
 			}
 		}
