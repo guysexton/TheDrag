@@ -114,7 +114,7 @@
 				<% 
 				String website = (String) db.getMakeAttribute(make,"url");
 			  	if(!website.equals(""))
-			  		out.print("<p><a id='link' href="+ website +"><strong>Click here to learn more</strong></a></p>");
+			  		out.print("<p><a id='link' href="+ website +"><strong><u>Click here to learn more</u></strong></a></p>");
 			  	%>
 		     </div>
           
