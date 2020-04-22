@@ -77,7 +77,7 @@
 				make = "N/A";
 			}
 			
-			if (!db.getCarAttribute(current_vin, "price").toString().equals("")){
+			if (db.getCarAttribute(current_vin, "price") != null){
 				price = db.getCarAttribute(current_vin, "price").toString();
 			} else {
 				price = "N/A";

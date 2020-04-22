@@ -5,6 +5,7 @@ import static com.mongodb.client.model.Filters.eq;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.*;
 
 import org.bson.Document;
 import org.bson.conversions.Bson;
@@ -26,6 +27,7 @@ public class DBServlet {
 	public List<String> dealerNames;
 	public List<String> makeNames;
 	public List<String> carVins;
+	public TreeSet<String> makeMarkets;
 
 	public DBServlet() {
 		uri = new MongoClientURI(
@@ -45,10 +47,17 @@ public class DBServlet {
 		Collections.sort(dealerNames);
 
 		makeNames = new ArrayList<String>();
+		makeMarkets = new TreeSet<String>();
 		col = db.getCollection("makes");
 		List<Document> allMakeDocs = getAllDocuments(col);
 		for(Document doc : allMakeDocs) {
 			makeNames.add((String)doc.get("_id"));
+			String marketName = ((Document)doc.get("query")).get("market").toString();
+			if(marketName.equals("1959-2015")) {
+				makeMarkets.add(((Document)doc.get("query")).get("years").toString());
+			} else {
+				makeMarkets.add(marketName);
+			}
 		}
 
 		carVins = new ArrayList<String>();
@@ -289,6 +298,22 @@ public class DBServlet {
 		return rtn;
 	}
 
+	public ArrayList<String> makeMarketFilter(String marketFilter) {
+		ArrayList<String> filterResults = new ArrayList<String>();
+		MongoCollection col = db.getCollection("makes");
+		List<Document> allMakeDocs = getAllDocuments(col);
+		
+		for(Document doc : allMakeDocs) {
+			String market = ((Document)doc.get("query")).get("market").toString();
+			if(market.equals("1959-2015")) {
+				market = ((Document)doc.get("query")).get("years").toString();
+			}
+			if(market.equals(marketFilter)) {
+				filterResults.add((String)doc.get("_id"));
+			}
+		}
+		return filterResults;
+	}
 
 	// *********************************************************************************************
 
@@ -320,7 +345,7 @@ public class DBServlet {
 
 	public static void main(String[] args) {
 		DBServlet dbservlet = new DBServlet();
-
-		System.out.println(dbservlet.getDealershipAttribute("Covert Cadillac", "address"));
+		System.out.println(dbservlet.makeMarkets);
+		//System.out.println(dbservlet.getDealershipAttribute("Covert Cadillac", "address"));
 	}
 }

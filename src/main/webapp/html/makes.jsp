@@ -93,12 +93,7 @@
 	}
 	
 	if(!markets.equals("")){
-		List<String> newMakes = new ArrayList<String>();
-		for(String make:makes){
-			if(((String)db.getMakeAttribute(make, "market")).equals(markets))
-				newMakes.add(make);
-		}
-		makes = newMakes;
+		makes = db.makeMarketFilter(markets);
 	}
 	
 	
@@ -155,12 +150,8 @@
  				<strong>Filter by Market:</strong><select class="np-form-element" id="market" name="market" value="Filter by Market"> 
 				<%-- <strong>Dealers Available: </strong><input type="checkbox" class="np-form-element" name="dealersListed" value="true" <%if(dealersListed) out.print("checked='checked'");%>> --%>
 					<%
-						List<String> marketList = new ArrayList<>();
-						for(String make : db.makeNames){
-							if(!marketList.contains(db.getMakeAttribute(make,"market").toString()))
-								marketList.add(db.getMakeAttribute(make,"market").toString());
-						}
-						Collections.sort(marketList);
+						List<String> marketList = new ArrayList<String>(db.makeMarkets);
+						
 						marketList.add(0,"");
 						for(String m : marketList){
 							if(markets.equals(m))
