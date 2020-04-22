@@ -276,6 +276,18 @@ public class DBServlet {
 
 		return to_filter;
 	}
+	
+	public List<String> makeSearch(List<String> list,String term){
+		List<String> rtn  = new ArrayList<String>();
+
+		for(String s : list) {
+			if(s.toLowerCase().contains(term.toLowerCase()))
+				rtn.add(s);
+
+		}
+
+		return rtn;
+	}
 
 
 	// *********************************************************************************************
