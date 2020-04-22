@@ -29,7 +29,7 @@
   	String[] dealerName=dealer.split("~");
   	
   	DBServlet db = new DBServlet();
-  	dealer = dealer.split("~")[0].replace('_',' ').replace('$','&');
+  	dealer = dealer.split("~")[0].replace('_',' ').replace('$','&').replace(".","'");
 	
   %>
 
@@ -72,7 +72,7 @@
 	  
   <div class="row" style="padding:30px;">
 		  <div class="offset-xl-1 col-xl-7">
-		  	<p><span id="about"><%out.print(db.getDealershipAttribute(dealer,"about"));%></span></p>
+		  	<p><span id="about"><%if(db.getDealershipAttribute(dealer,"about") != null)out.print(db.getDealershipAttribute(dealer,"about"));%></span></p>
 		  	<br>
 		  	<% 
 		  		String address = (String)db.getDealershipAttribute(dealer,"address");
@@ -101,9 +101,22 @@
 				<div class="np-img-wrapper" width="100px" height="100px" id="dealer-img"><%out.print("<img class='np-img-expand' src='" + db.getDealershipAttribute(dealer,"img") + "' width='inherit' height='inherit' style='margin: 10px'>");%></div>
 		  	  <h1 class="text-center">Dealership Information</h1>
 				<div class="np-divider"></div>
-				<p><span><b>Address: </b><span id="address"><%out.print(db.getDealershipAttribute(dealer,"address"));%></span></span></p>
-				<p><span><b>Phone: </b><span id="phone"><%out.print(db.getDealershipAttribute(dealer,"phoneNum"));%></span></span></p>
-				<p><span><b>Hours: </b><span id="hours"><%out.print(db.getDealershipAttribute(dealer,"hours"));%></span></span></p>
+				
+				<%
+					String addr = (String)db.getDealershipAttribute(dealer,"address");
+					
+					String phone = (String)db.getDealershipAttribute(dealer,"phoneNum");
+					if(phone.equals(" "))
+						phone = " N/A ";
+					
+					String hrs = (String)db.getDealershipAttribute(dealer,"hours");
+					if(hrs.equals(""))
+						hrs=" N/A ";
+				%>
+				
+				<p><span><b>Address: </b><span id="address"><%=addr%></span></span></p>
+				<p><span><b>Phone: </b><span id="phone"><%=phone%></span></span></p>
+				<p><span><b>Hours: </b><span id="hours"><%=hrs%></span></span></p>
 			  <% 
 			  String website = (String) db.getDealershipAttribute(dealer,"website");
 			  if(!website.equals(""))
