@@ -325,7 +325,6 @@ class ScraperTest {
 
 			Make m = new Make();
 			m.name = "Dodge";
-			m.img = "https://www.carlogos.org/logo/Dodge-logo.png";
 			makes.put("Dodge", m);
 			Dealership d = new Dealership();
 			d.name = "Nyle Maxwell Pre-Owned Supercenter";
@@ -335,7 +334,7 @@ class ScraperTest {
 			d.website = "http://www.nylemaxwellcdjr.com/?utm_source=cars.com&utm_medium=referral";
 			dealerships.put(d.name, d);
 			
-			carUrls.add("https://www.cars.com/vehicledetail/detail/805364103/overview/");
+			carUrls.add("https://www.cars.com/vehicledetail/detail/805677938/overview/");
 			
 			for(String carUrl : carUrls) {
 					String doc = run(carUrl, client);
@@ -402,25 +401,25 @@ class ScraperTest {
 					
 					//Car
 					cars.put(newCar.vin, newCar);
-					assertEquals("https://www.cars.com/vehicledetail/detail/805364103/overview/", cars.get(newCar.vin).url);
-					assertEquals("2020 Dodge Charger SRT Hellcat", cars.get(newCar.vin).name);
-					assertEquals("https://www.cstatic-images.com/supersized/in/v1/444790/2C3CDXL95LH144894/3c02b68537f0dd929550588e1b943a89.jpg", 
+					assertEquals("https://www.cars.com/vehicledetail/detail/805677938/overview/", cars.get(newCar.vin).url);
+					assertEquals("2020 Dodge Grand Caravan SE", cars.get(newCar.vin).name);
+					assertEquals("https://www.cstatic-images.com/supersized/in/v1/444790/2C4RDGBG2LR195348/306f047c94328f16399179c91c411288.jpg", 
 							cars.get(newCar.vin).img);
-					assertEquals(72345, cars.get(newCar.vin).price);
-					assertEquals("2C3CDXL95LH144894", cars.get(newCar.vin).vin);
-					assertEquals("12city/21hwy", cars.get(newCar.vin).mpg);
+					assertEquals(27040, cars.get(newCar.vin).price);
+					assertEquals("2C4RDGBG2LR195348", cars.get(newCar.vin).vin);
+					assertEquals("17city/25hwy", cars.get(newCar.vin).mpg);
 					assertEquals("Nyle Maxwell Pre-Owned Supercenter", cars.get(newCar.vin).dealership);
 					assertEquals("Dodge", cars.get(newCar.vin).make);
 					
 					//Dealer
 					assertEquals("Nyle Maxwell Pre-Owned Supercenter", dealerships.get(newCar.dealership).name);
-					assertEquals("2C3CDXL95LH144894", dealerships.get(newCar.dealership).cars.get(0));
+					assertEquals("2C4RDGBG2LR195348", dealerships.get(newCar.dealership).cars.get(0));
 					assertTrue(dealerships.get(newCar.dealership).makes.contains("Dodge"));
 					//System.out.println(makes.get(newCar.make));
 					
 					//Make
 					assertEquals("Dodge", makes.get(newCar.make).name);
-					assertEquals("2C3CDXL95LH144894", makes.get(newCar.make).cars.get(0));
+					assertEquals("2C4RDGBG2LR195348", makes.get(newCar.make).cars.get(0));
 					assertTrue(makes.get(newCar.make).dealerships.contains("Nyle Maxwell Pre-Owned Supercenter"));	
 					assertEquals(1, makes.get(newCar.make).numCars);
 					assertEquals(1, makes.get(newCar.make).numDealerships);
@@ -444,18 +443,16 @@ class ScraperTest {
 
 			Make m = new Make();
 			m.name = "Dodge";
-			m.img = "https://www.carlogos.org/logo/Dodge-logo.png";
 			makes.put("Dodge", m);
 			Dealership d = new Dealership();
 			d.name = "Nyle Maxwell Pre-Owned Supercenter";
-			d.img = "https://www.cstatic-images.com/logo-dealer/12dd3dfc61eb5dfc036c36a42a367520.jpg";
 			d.address = "13817 Research Blvd Austin, TX 78750";
 			d.phoneNum = "New (512) 861-0095";
 			d.website = "http://www.nylemaxwellcdjr.com/?utm_source=cars.com&utm_medium=referral";
 			dealerships.put(d.name, d);
 			
-			carUrls.add("https://www.cars.com/vehicledetail/detail/805364103/overview/");
-			carUrls.add("https://www.cars.com/vehicledetail/detail/806704066/overview/");
+			carUrls.add("https://www.cars.com/vehicledetail/detail/805677938/overview/");
+			carUrls.add("https://www.cars.com/vehicledetail/detail/806473915/overview/");
 			for(String carUrl : carUrls) {
 					String doc = run(carUrl, client);
 					Car newCar = new Car();
@@ -522,51 +519,51 @@ class ScraperTest {
 					cars.put(newCar.vin, newCar);
 			}
 			
-			//Car 2020 Dodge Charger SRT Hellcat
-			assertEquals("https://www.cars.com/vehicledetail/detail/805364103/overview/", cars.get("2C3CDXL95LH144894").url);
-			assertEquals("2020 Dodge Charger SRT Hellcat", cars.get("2C3CDXL95LH144894").name);
-			assertEquals("https://www.cstatic-images.com/supersized/in/v1/444790/2C3CDXL95LH144894/3c02b68537f0dd929550588e1b943a89.jpg", 
-					cars.get("2C3CDXL95LH144894").img);
-			assertEquals(72345, cars.get("2C3CDXL95LH144894").price);
-			assertEquals("2C3CDXL95LH144894", cars.get("2C3CDXL95LH144894").vin);
-			assertEquals("12city/21hwy", cars.get("2C3CDXL95LH144894").mpg);
-			assertEquals("Nyle Maxwell Pre-Owned Supercenter", cars.get("2C3CDXL95LH144894").dealership);
-			assertEquals("Dodge", cars.get("2C3CDXL95LH144894").make);
+			//Car 2020 Dodge Grand Caravan SE
+			assertEquals("https://www.cars.com/vehicledetail/detail/805677938/overview/", cars.get("2C4RDGBG2LR195348").url);
+			assertEquals("2020 Dodge Grand Caravan SE", cars.get("2C4RDGBG2LR195348").name);
+			assertEquals("https://www.cstatic-images.com/supersized/in/v1/444790/2C4RDGBG2LR195348/306f047c94328f16399179c91c411288.jpg", 
+					cars.get("2C4RDGBG2LR195348").img);
+			assertEquals(27040, cars.get("2C4RDGBG2LR195348").price);
+			assertEquals("2C4RDGBG2LR195348", cars.get("2C4RDGBG2LR195348").vin);
+			assertEquals("17city/25hwy", cars.get("2C4RDGBG2LR195348").mpg);
+			assertEquals("Nyle Maxwell Pre-Owned Supercenter", cars.get("2C4RDGBG2LR195348").dealership);
+			assertEquals("Dodge", cars.get("2C4RDGBG2LR195348").make);
 			
 			//2020 Dodge Charger R/T
-			assertEquals("https://www.cars.com/vehicledetail/detail/806704066/overview/", cars.get("2C3CDXCT3LH153895").url);
-			assertEquals("2020 Dodge Charger R/T", cars.get("2C3CDXCT3LH153895").name);
-			assertEquals("https://www.cstatic-images.com/supersized/in/v1/444790/2C3CDXCT3LH153895/c99bb91729f2b24b5bbb3a06ac5356f5.jpg", 
-					cars.get("2C3CDXCT3LH153895").img);
-			assertEquals(37675, cars.get("2C3CDXCT3LH153895").price);
-			assertEquals("2C3CDXCT3LH153895", cars.get("2C3CDXCT3LH153895").vin);
-			assertEquals("16city/25hwy", cars.get("2C3CDXCT3LH153895").mpg);
-			assertEquals("Nyle Maxwell Pre-Owned Supercenter", cars.get("2C3CDXCT3LH153895").dealership);
-			assertEquals("Dodge", cars.get("2C3CDXCT3LH153895").make);
+			assertEquals("https://www.cars.com/vehicledetail/detail/806473915/overview/", cars.get("2C3CDXCT1LH153894").url);
+			assertEquals("2020 Dodge Charger R/T", cars.get("2C3CDXCT1LH153894").name);
+			assertEquals("https://www.cstatic-images.com/supersized/in/v1/444790/2C3CDXCT1LH153894/cea173a68d2534f4ea6305d91924d721.jpg", 
+					cars.get("2C3CDXCT1LH153894").img);
+			assertEquals(33172, cars.get("2C3CDXCT1LH153894").price);
+			assertEquals("2C3CDXCT1LH153894", cars.get("2C3CDXCT1LH153894").vin);
+			assertEquals("16city/25hwy", cars.get("2C3CDXCT1LH153894").mpg);
+			assertEquals("Nyle Maxwell Pre-Owned Supercenter", cars.get("2C3CDXCT1LH153894").dealership);
+			assertEquals("Dodge", cars.get("2C3CDXCT1LH153894").make);
 			
 			//Dealer
-			assertEquals("Nyle Maxwell Pre-Owned Supercenter", dealerships.get(cars.get("2C3CDXL95LH144894").dealership).name);
-			assertEquals("Nyle Maxwell Pre-Owned Supercenter", dealerships.get(cars.get("2C3CDXCT3LH153895").dealership).name);
-			assertEquals("2C3CDXL95LH144894", dealerships.get(cars.get("2C3CDXL95LH144894").dealership).cars.get(0));
-			assertEquals("2C3CDXCT3LH153895", dealerships.get(cars.get("2C3CDXL95LH144894").dealership).cars.get(1));
-			assertEquals("2C3CDXL95LH144894", dealerships.get(cars.get("2C3CDXCT3LH153895").dealership).cars.get(0));
-			assertEquals("2C3CDXCT3LH153895", dealerships.get(cars.get("2C3CDXCT3LH153895").dealership).cars.get(1));
-			assertTrue(dealerships.get(cars.get("2C3CDXL95LH144894").dealership).makes.contains("Dodge"));
-			assertTrue(dealerships.get(cars.get("2C3CDXCT3LH153895").dealership).makes.contains("Dodge"));
+			assertEquals("Nyle Maxwell Pre-Owned Supercenter", dealerships.get(cars.get("2C4RDGBG2LR195348").dealership).name);
+			assertEquals("Nyle Maxwell Pre-Owned Supercenter", dealerships.get(cars.get("2C3CDXCT1LH153894").dealership).name);
+			assertEquals("2C3CDXCT1LH153894", dealerships.get(cars.get("2C3CDXCT1LH153894").dealership).cars.get(0));
+			assertEquals("2C4RDGBG2LR195348", dealerships.get(cars.get("2C3CDXCT1LH153894").dealership).cars.get(1));
+			assertEquals("2C3CDXCT1LH153894", dealerships.get(cars.get("2C4RDGBG2LR195348").dealership).cars.get(0));
+			assertEquals("2C4RDGBG2LR195348", dealerships.get(cars.get("2C4RDGBG2LR195348").dealership).cars.get(1));
+			assertTrue(dealerships.get(cars.get("2C3CDXCT1LH153894").dealership).makes.contains("Dodge"));
+			assertTrue(dealerships.get(cars.get("2C4RDGBG2LR195348").dealership).makes.contains("Dodge"));
 			
 			//Make
-			assertEquals("Dodge", makes.get(cars.get("2C3CDXL95LH144894").make).name);
-			assertEquals("Dodge", makes.get(cars.get("2C3CDXCT3LH153895").make).name);
-			assertEquals("2C3CDXL95LH144894", makes.get(cars.get("2C3CDXL95LH144894").make).cars.get(0));
-			assertEquals("2C3CDXCT3LH153895", makes.get(cars.get("2C3CDXL95LH144894").make).cars.get(1));
-			assertEquals("2C3CDXL95LH144894", makes.get(cars.get("2C3CDXCT3LH153895").make).cars.get(0));
-			assertEquals("2C3CDXCT3LH153895", makes.get(cars.get("2C3CDXCT3LH153895").make).cars.get(1));
-			assertTrue(makes.get(cars.get("2C3CDXL95LH144894").make).dealerships.contains("Nyle Maxwell Pre-Owned Supercenter"));
-			assertTrue(makes.get(cars.get("2C3CDXCT3LH153895").make).dealerships.contains("Nyle Maxwell Pre-Owned Supercenter"));
-			assertEquals(2, makes.get(cars.get("2C3CDXL95LH144894").make).numCars);
-			assertEquals(1, makes.get(cars.get("2C3CDXL95LH144894").make).numDealerships);
-			assertEquals(2, makes.get(cars.get("2C3CDXCT3LH153895").make).numCars);
-			assertEquals(1, makes.get(cars.get("2C3CDXCT3LH153895").make).numDealerships);
+			assertEquals("Dodge", makes.get(cars.get("2C3CDXCT1LH153894").make).name);
+			assertEquals("Dodge", makes.get(cars.get("2C4RDGBG2LR195348").make).name);
+			assertEquals("2C3CDXCT1LH153894", makes.get(cars.get("2C3CDXCT1LH153894").make).cars.get(0));
+			assertEquals("2C4RDGBG2LR195348", makes.get(cars.get("2C3CDXCT1LH153894").make).cars.get(1));
+			assertEquals("2C3CDXCT1LH153894", makes.get(cars.get("2C4RDGBG2LR195348").make).cars.get(0));
+			assertEquals("2C4RDGBG2LR195348", makes.get(cars.get("2C4RDGBG2LR195348").make).cars.get(1));
+			assertTrue(makes.get(cars.get("2C3CDXCT1LH153894").make).dealerships.contains("Nyle Maxwell Pre-Owned Supercenter"));
+			assertTrue(makes.get(cars.get("2C4RDGBG2LR195348").make).dealerships.contains("Nyle Maxwell Pre-Owned Supercenter"));
+			assertEquals(2, makes.get(cars.get("2C3CDXCT1LH153894").make).numCars);
+			assertEquals(1, makes.get(cars.get("2C3CDXCT1LH153894").make).numDealerships);
+			assertEquals(2, makes.get(cars.get("2C4RDGBG2LR195348").make).numCars);
+			assertEquals(1, makes.get(cars.get("2C4RDGBG2LR195348").make).numDealerships);
 			
 		}
 		catch (IOException e) {
@@ -584,7 +581,6 @@ class ScraperTest {
 
 			Make m = new Make();
 			m.name = "Dodge";
-			m.img = "https://www.carlogos.org/logo/Dodge-logo.png";
 			makes.put("Dodge", m);
 			
 			Make j = new Make();
@@ -593,14 +589,13 @@ class ScraperTest {
 			
 			Dealership d = new Dealership();
 			d.name = "Nyle Maxwell Pre-Owned Supercenter";
-			d.img = "https://www.cstatic-images.com/logo-dealer/12dd3dfc61eb5dfc036c36a42a367520.jpg";
 			d.address = "13817 Research Blvd Austin, TX 78750";
 			d.phoneNum = "New (512) 861-0095";
 			d.website = "http://www.nylemaxwellcdjr.com/?utm_source=cars.com&utm_medium=referral";
 			dealerships.put(d.name, d);
 			
-			carUrls.add("https://www.cars.com/vehicledetail/detail/805364103/overview/");
-			carUrls.add("https://www.cars.com/vehicledetail/detail/799715831/overview/");
+			carUrls.add("https://www.cars.com/vehicledetail/detail/805677938/overview/");
+			carUrls.add("https://www.cars.com/vehicledetail/detail/795026331/overview/");
 			for(String carUrl : carUrls) {
 					String doc = run(carUrl, client);
 					Car newCar = new Car();
@@ -667,51 +662,51 @@ class ScraperTest {
 					cars.put(newCar.vin, newCar);
 			}
 			
-			//Car 2020 Dodge Charger SRT Hellcat
-			assertEquals("https://www.cars.com/vehicledetail/detail/805364103/overview/", cars.get("2C3CDXL95LH144894").url);
-			assertEquals("2020 Dodge Charger SRT Hellcat", cars.get("2C3CDXL95LH144894").name);
-			assertEquals("https://www.cstatic-images.com/supersized/in/v1/444790/2C3CDXL95LH144894/3c02b68537f0dd929550588e1b943a89.jpg", 
-					cars.get("2C3CDXL95LH144894").img);
-			assertEquals(72345, cars.get("2C3CDXL95LH144894").price);
-			assertEquals("2C3CDXL95LH144894", cars.get("2C3CDXL95LH144894").vin);
-			assertEquals("12city/21hwy", cars.get("2C3CDXL95LH144894").mpg);
-			assertEquals("Nyle Maxwell Pre-Owned Supercenter", cars.get("2C3CDXL95LH144894").dealership);
-			assertEquals("Dodge", cars.get("2C3CDXL95LH144894").make);
+			//Car 2020 Dodge Grand Caravan SE
+			assertEquals("https://www.cars.com/vehicledetail/detail/805677938/overview/", cars.get("2C4RDGBG2LR195348").url);
+			assertEquals("2020 Dodge Grand Caravan SE", cars.get("2C4RDGBG2LR195348").name);
+			assertEquals("https://www.cstatic-images.com/supersized/in/v1/444790/2C4RDGBG2LR195348/306f047c94328f16399179c91c411288.jpg", 
+					cars.get("2C4RDGBG2LR195348").img);
+			assertEquals(27040, cars.get("2C4RDGBG2LR195348").price);
+			assertEquals("2C4RDGBG2LR195348", cars.get("2C4RDGBG2LR195348").vin);
+			assertEquals("17city/25hwy", cars.get("2C4RDGBG2LR195348").mpg);
+			assertEquals("Nyle Maxwell Pre-Owned Supercenter", cars.get("2C4RDGBG2LR195348").dealership);
+			assertEquals("Dodge", cars.get("2C4RDGBG2LR195348").make);
 			
-			//2020 Jeep Wrangler Unlimited Sahara
-			assertEquals("https://www.cars.com/vehicledetail/detail/799715831/overview/", cars.get("1C4HJXEG5LW188403").url);
-			assertEquals("2020 Jeep Wrangler Unlimited Sahara", cars.get("1C4HJXEG5LW188403").name);
-			assertEquals("https://www.cstatic-images.com/supersized/in/v1/444790/1C4HJXEG5LW188403/ee34d906a7a29ac0fb3aef95e133afff.jpg", 
-					cars.get("1C4HJXEG5LW188403").img);
-			assertEquals(47790, cars.get("1C4HJXEG5LW188403").price);
-			assertEquals("1C4HJXEG5LW188403", cars.get("1C4HJXEG5LW188403").vin);
-			assertEquals("17city/23hwy", cars.get("1C4HJXEG5LW188403").mpg);
-			assertEquals("Nyle Maxwell Pre-Owned Supercenter", cars.get("1C4HJXEG5LW188403").dealership);
-			assertEquals("Jeep", cars.get("1C4HJXEG5LW188403").make);
+			//2020 Jeep Cherokee Latitude Plus
+			assertEquals("https://www.cars.com/vehicledetail/detail/795026331/overview/", cars.get("1C4PJLLB5LD560863").url);
+			assertEquals("2020 Jeep Cherokee Latitude Plus", cars.get("1C4PJLLB5LD560863").name);
+			assertEquals("https://www.cstatic-images.com/supersized/in/v1/444790/1C4PJLLB5LD560863/532cab5a3e04d64eb372092e4c97a1b3.jpg", 
+					cars.get("1C4PJLLB5LD560863").img);
+			assertEquals(25881, cars.get("1C4PJLLB5LD560863").price);
+			assertEquals("1C4PJLLB5LD560863", cars.get("1C4PJLLB5LD560863").vin);
+			assertEquals("22city/31hwy", cars.get("1C4PJLLB5LD560863").mpg);
+			assertEquals("Nyle Maxwell Pre-Owned Supercenter", cars.get("1C4PJLLB5LD560863").dealership);
+			assertEquals("Jeep", cars.get("1C4PJLLB5LD560863").make);
 			
 			//Dealer
-			assertEquals("Nyle Maxwell Pre-Owned Supercenter", dealerships.get(cars.get("2C3CDXL95LH144894").dealership).name);
-			assertEquals("Nyle Maxwell Pre-Owned Supercenter", dealerships.get(cars.get("1C4HJXEG5LW188403").dealership).name);
-			assertEquals("2C3CDXL95LH144894", dealerships.get(cars.get("2C3CDXL95LH144894").dealership).cars.get(0));
-			assertEquals("1C4HJXEG5LW188403", dealerships.get(cars.get("2C3CDXL95LH144894").dealership).cars.get(1));
-			assertEquals("2C3CDXL95LH144894", dealerships.get(cars.get("1C4HJXEG5LW188403").dealership).cars.get(0));
-			assertEquals("1C4HJXEG5LW188403", dealerships.get(cars.get("1C4HJXEG5LW188403").dealership).cars.get(1));
-			assertTrue(dealerships.get(cars.get("2C3CDXL95LH144894").dealership).makes.contains("Dodge"));
-			assertTrue(dealerships.get(cars.get("2C3CDXL95LH144894").dealership).makes.contains("Jeep"));
-			assertTrue(dealerships.get(cars.get("1C4HJXEG5LW188403").dealership).makes.contains("Dodge"));
-			assertTrue(dealerships.get(cars.get("1C4HJXEG5LW188403").dealership).makes.contains("Jeep"));
+			assertEquals("Nyle Maxwell Pre-Owned Supercenter", dealerships.get(cars.get("2C4RDGBG2LR195348").dealership).name);
+			assertEquals("Nyle Maxwell Pre-Owned Supercenter", dealerships.get(cars.get("1C4PJLLB5LD560863").dealership).name);
+			assertEquals("1C4PJLLB5LD560863", dealerships.get(cars.get("1C4PJLLB5LD560863").dealership).cars.get(0));
+			assertEquals("2C4RDGBG2LR195348", dealerships.get(cars.get("1C4PJLLB5LD560863").dealership).cars.get(1));
+			assertEquals("1C4PJLLB5LD560863", dealerships.get(cars.get("2C4RDGBG2LR195348").dealership).cars.get(0));
+			assertEquals("2C4RDGBG2LR195348", dealerships.get(cars.get("2C4RDGBG2LR195348").dealership).cars.get(1));
+			assertTrue(dealerships.get(cars.get("1C4PJLLB5LD560863").dealership).makes.contains("Dodge"));
+			assertTrue(dealerships.get(cars.get("1C4PJLLB5LD560863").dealership).makes.contains("Jeep"));
+			assertTrue(dealerships.get(cars.get("2C4RDGBG2LR195348").dealership).makes.contains("Dodge"));
+			assertTrue(dealerships.get(cars.get("2C4RDGBG2LR195348").dealership).makes.contains("Jeep"));
 			
 			//Make
-			assertEquals("Dodge", makes.get(cars.get("2C3CDXL95LH144894").make).name);
-			assertEquals("Jeep", makes.get(cars.get("1C4HJXEG5LW188403").make).name);
-			assertEquals("2C3CDXL95LH144894", makes.get(cars.get("2C3CDXL95LH144894").make).cars.get(0));
-			assertEquals("1C4HJXEG5LW188403", makes.get(cars.get("1C4HJXEG5LW188403").make).cars.get(0));
-			assertTrue(makes.get(cars.get("2C3CDXL95LH144894").make).dealerships.contains("Nyle Maxwell Pre-Owned Supercenter"));	
-			assertTrue(makes.get(cars.get("1C4HJXEG5LW188403").make).dealerships.contains("Nyle Maxwell Pre-Owned Supercenter"));
-			assertEquals(1, makes.get(cars.get("2C3CDXL95LH144894").make).numCars);
-			assertEquals(1, makes.get(cars.get("2C3CDXL95LH144894").make).numDealerships);
-			assertEquals(1, makes.get(cars.get("1C4HJXEG5LW188403").make).numCars);
-			assertEquals(1, makes.get(cars.get("1C4HJXEG5LW188403").make).numDealerships);
+			assertEquals("Jeep", makes.get(cars.get("1C4PJLLB5LD560863").make).name);
+			assertEquals("Dodge", makes.get(cars.get("2C4RDGBG2LR195348").make).name);
+			assertEquals("1C4PJLLB5LD560863", makes.get(cars.get("1C4PJLLB5LD560863").make).cars.get(0));
+			assertEquals("2C4RDGBG2LR195348", makes.get(cars.get("2C4RDGBG2LR195348").make).cars.get(0));
+			assertTrue(makes.get(cars.get("1C4PJLLB5LD560863").make).dealerships.contains("Nyle Maxwell Pre-Owned Supercenter"));	
+			assertTrue(makes.get(cars.get("2C4RDGBG2LR195348").make).dealerships.contains("Nyle Maxwell Pre-Owned Supercenter"));
+			assertEquals(1, makes.get(cars.get("1C4PJLLB5LD560863").make).numCars);
+			assertEquals(1, makes.get(cars.get("1C4PJLLB5LD560863").make).numDealerships);
+			assertEquals(1, makes.get(cars.get("2C4RDGBG2LR195348").make).numCars);
+			assertEquals(1, makes.get(cars.get("2C4RDGBG2LR195348").make).numDealerships);
 			
 		}
 		catch (IOException e) {
