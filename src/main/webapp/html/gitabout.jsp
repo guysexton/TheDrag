@@ -146,7 +146,7 @@ to find the pieces of information. <br>
        <h3>Commits, Adds, and Deletes</h3>
        <p>${commitText}</p>
        <br>
-       <p>Number of unit tests: 23 evenly distributed among team</p>
+       <p>Number of unit tests: 26 evenly distributed among team</p>
        <h3>Issues</h3>
        <p>${issueText}</p>
        
@@ -161,7 +161,7 @@ to find the pieces of information. <br>
     	</p>
     	<br>
     	<p>
-    	Carlogos.com:
+    	carlogos.org:
     	<a href=" https://www.carlogos.org/">https://www.carlogos.org/</a>
     	</p>
     	<p>
@@ -175,6 +175,14 @@ to find the pieces of information. <br>
     	<p>
     	We wrote a web scraper that scrapes cars.com to pull cars for sale within 20 miles of UT campus. We also scrape pricing and dealership data, the make of the car, etc. To help us bucket our data.
     	The data is then parsed out and pushed to our MongoDB database for persistant storage and use.
+    	</p>
+    	<br>
+    	<p>
+    	Google Maps Embed API:
+    	<a href="https://developers.google.com/maps/documentation/embed/start">Developer Guide to Maps Embed API</a>
+    	</p>
+    	<p>
+    	We used this API to display the location of a dealership instance on an embedded google map for each dealership using their address.
     	</p>
     	<br>
     	<h1 class="tools">Our Tools</h1>
