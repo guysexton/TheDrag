@@ -20,6 +20,8 @@
 <%@ page import="com.mongodb.MongoClientOptions"%>
 
 <%@ page import="thedrag.DBServlet"%>
+<%@ page import="thedrag.NHTSAmakeServlet"%>
+
 
 <% 
   	String make="ERROR";
@@ -32,6 +34,7 @@
   	
   	DBServlet db = new DBServlet();
   	make = make.split("~")[0].replace('_',' ');
+  	NHTSAmakeServlet ns = new NHTSAmakeServlet(make);
   	
   	ArrayList<String> dealers = (ArrayList<String>)db.getMakeAttribute(make,"dealerships");
 	int dealerSize = dealers.size();
@@ -103,9 +106,16 @@
 				<div class="np-img-wrapper" width="100px" height="100px" id="make-img"><%out.print("<img class='np-img-expand' src='" + db.getMakeAttribute(make,"img") + "' width='inherit' height='inherit' style='margin: 10px'>");%></div>
 		  	  <h1 class="text-center">Make Information</h1>
 				<div class="np-divider"></div>
+				<p><span><b>Vehicle Type: <%=ns.getVehicleTypeName()%></b><span id="vehicleName"></span></span></p>
 				<p><span><b>Number of Cars: <%=db.getMakeAttribute(make,"numCars")%></b><span id="numCars"></span></span></p> 
 				<p><span><b>Number of Dealerships: <%=dealerSize%></b><span id="numDealerships"></span></span></p>
-
+				<p><span><b>Market: <%=db.getMakeAttribute(make,"market")%></b><span id="market"></span></span></p>
+				<p><span><b>Years sold in: <%=db.getMakeAttribute(make,"years")%></b><span id="years"></span></span></p>
+				<% 
+				String website = (String) db.getMakeAttribute(make,"url");
+			  	if(!website.equals(""))
+			  		out.print("<p><a id='link' href="+ website +"><strong><u>Click here to learn more</u></strong></a></p>");
+			  	%>
 		     </div>
           
           <div class="offset-xl-1 col-xl-7">
@@ -115,8 +125,8 @@
       	  		  <%
 				  	if(dealerSize>0){
 				  		for(String d:dealers){
-				  			String slug = d.replace('&','$').replace(' ','_')+"~";
-				  			out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href=\"/html/view-dealer.jsp?dealership=" + slug +"\">" + db.getDealershipAttribute(d,"name") + "</a></li>");
+				  			String slug = d.replace('&','$').replace(' ','_').replace("'",".")+"~";
+				  			out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href=\"/html/view-dealer.jsp?dealership=" + slug +"~\">" + db.getDealershipAttribute(d,"name") + "</a></li>");
 			  			}
 				  	}
 				  	else

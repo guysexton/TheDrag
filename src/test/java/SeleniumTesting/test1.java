@@ -43,25 +43,44 @@ public class test1 {
   }
   @Test
   public void test1() throws InterruptedException {
-    driver.get("https://thedrag.appspot.com/html/home.html");
-    driver.manage().window().setSize(new Dimension(1936, 1066));
-    
-    driver.findElement(By.linkText("Car")).click();
-    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-    driver.findElement(By.cssSelector(".card:nth-child(6)")).click();
-    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-    driver.findElement(By.cssSelector(".card:nth-child(6) .np-img-wrapper")).click();
-    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-    driver.findElement(By.cssSelector(".offset-xl-2 > a:nth-child(1) .card-body")).click();
-    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-    driver.findElement(By.cssSelector(".card:nth-child(83) > a")).click();
-    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-    driver.findElement(By.linkText("Browse by Dealer")).click();
-    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-    driver.findElement(By.linkText("4")).click();
-    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-    driver.findElement(By.linkText("About")).click();
-    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-    driver.findElement(By.linkText("Browse by Car")).click();
+	driver.get("https://thedrag.appspot.com/html/home.html");
+	driver.manage().window().setSize(new Dimension(1936, 1066));
+	
+	driver.findElement(By.linkText("About")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.linkText("Browse by Make")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.linkText("2")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.linkText("3")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.id("search")).sendKeys("Honda");
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.cssSelector(".np-btn:nth-child(3)")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.cssSelector(".np-form-group:nth-child(2)")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.id("search")).sendKeys("BMW");
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.cssSelector(".np-btn:nth-child(3)")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.name("sfs")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.id("search")).sendKeys("Toyota");
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.cssSelector(".np-btn:nth-child(3)")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.name("sfs")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.id("search")).sendKeys("Kia");
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.cssSelector(".np-btn:nth-child(3)")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.name("sfs")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.cssSelector(".np-btn:nth-child(8)")).click();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	driver.findElement(By.cssSelector(".page-item:nth-child(9) span:nth-child(1)")).click();
+
   }
 }

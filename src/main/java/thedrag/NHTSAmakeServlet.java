@@ -20,7 +20,7 @@ public class NHTSAmakeServlet {
 	JSONArray arr;
 	
 	ArrayList<String> stringRes;
-	
+
 	public NHTSAmakeServlet(String make) throws IOException, org.json.simple.parser.ParseException {
 		try {
 			client = new OkHttpClient();
@@ -31,8 +31,9 @@ public class NHTSAmakeServlet {
 	        Iterator<JSONObject> iterator = arr.iterator();
 	        stringRes = new ArrayList<>();
 	        while (iterator.hasNext()) {
-	            stringRes.add((String) iterator.next().get("VehicleTypeName"));
-	        	
+	        	String next = (String) iterator.next().get("VehicleTypeName");
+	        	if(!stringRes.contains(next))
+	        		stringRes.add(next);
 	        }
 
 		}
@@ -40,22 +41,27 @@ public class NHTSAmakeServlet {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public String getVehicleTypeName() {
-		String list="";
-		if(stringRes.size()>0) {
-			for(int i=0;i<stringRes.size();i++) {
-				if(i!=stringRes.size()-1)
-					list+= (String)stringRes.get(i)+", ";
-				else
-					list+= (String)stringRes.get(i);
+		try {
+			String list="";
+			if(stringRes.size()>0) {
+				for(int i=0;i<stringRes.size();i++) {
+					if(i!=stringRes.size()-1)
+						list+= (String)stringRes.get(i)+", ";
+					else
+						list+= (String)stringRes.get(i);
+				}
 			}
+			else
+				list+="N/A";
+			return list;
 		}
-		else
-			list+="N/A";
-		return list;
+		catch(Exception e) {
+			return "NHTSA Server API Error";
+		}
 	}
-	
+
 	static String run(String url, OkHttpClient client) throws IOException {
         Request request = new Request.Builder()
                 .url(url)
@@ -64,7 +70,7 @@ public class NHTSAmakeServlet {
             return response.body().string();
         }
 	}
-	
+
 	public static void main(String[] args) {
 	}
 }

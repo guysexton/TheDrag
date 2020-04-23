@@ -43,14 +43,21 @@ public class Scraper {
 				makeIds.add(makeId);
 			}
 			
-			for(int i = 1; i < 8; i++) {
-				String makeimgDoc = run("https://www.carlogos.org/Car-Logos/list_1_" + i + ".html", client);
-				Elements elements = Jsoup.parse(makeimgDoc).getElementsByClass("logo1").select("dd");
+			//scrape carlogos.org
+			for(int i = 1; i < 9; i++) {
+				String makeDoc = run("https://www.carlogos.org/car-brands/list_1_" + i + ".html", client);
+				Elements elements = Jsoup.parse(makeDoc).getElementsByClass("logo-list").select("li");
 				for (Element e : elements) {
-					String name = e.select("a").text();
-					String image = e.select("a").select("img").attr("src");
+					String url = "https://www.carlogos.org" + e.select("a").attr("href");
+					String name= e.select("a").first().ownText();
+					String market = e.select("a").select("span").eq(0).text();
+					String years = e.select("a").select("span").eq(1).text();
+					String image = "https://www.carlogos.org" + e.select("a").select("img").attr("src");
 					Make m = new Make();
+					m.url = url;
 					m.name = name;
+					m.market = market;
+					m.years = years;
 					m.img = image;
 					makes.put(name, m);
 				}
@@ -232,8 +239,17 @@ public class Scraper {
 		d.name = Jsoup.parse(doc).getElementsByClass("seller-name cui-alpha dealer-review__seller-name").text();
 		d.img = Jsoup.parse(doc).getElementsByClass("dealer__logo").attr("src");
 		d.address = Jsoup.parse(doc).getElementsByClass("dealer-update__streetAddress").text();
-		d.phoneNum = Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--new").text();
+		d.phoneNum = Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--new").text() + " " 
+							+ Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--used").text();
 		d.website = Jsoup.parse(doc).getElementsByClass("dealer-update-website-link").attr("href");
+		d.hours = Jsoup.parse(doc).getElementsByClass("dpp-update__sales-hours-operation").text();
+		Elements e = Jsoup.parse(doc).getElementsByClass("about-dealership-section__container");
+		String about = null;
+		for(Element e1: e) {
+			about = e1.getElementsByClass("cui-section__accordion-preview").text()
+			 	+ e1.getElementsByClass("cui-section__accordion-content").text();
+		}
+		d.about = about;
 		dealerships.put(d.name, d);
 	}
 

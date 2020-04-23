@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "abab953c-3c18-4a3b-8f19-b66cb3fb6139",
-		"name": "NHTSA API unit tests",
+		"name": "NHTSA API Tests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -20,7 +20,7 @@
 							"pm.test(\"Check for body class\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    //var response = JSON.parse(jsonData)",
-							"    pm.expect(jsonData.Results[0].BodyClass).to.eql(\"Minivan\");",
+							"    pm.expect(jsonData.Results[0].BodyClass).to.eql(\"Sport Utility Vehicle (SUV)\\/Multi-Purpose Vehicle (MPV)\");",
 							"})"
 						],
 						"type": "text/javascript"
@@ -31,7 +31,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/2C4RC1GG5LR187589?format=json",
+					"raw": "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/1C4PJLLB5LD560863?format=json",
 					"protocol": "https",
 					"host": [
 						"vpic",
@@ -43,7 +43,7 @@
 						"api",
 						"vehicles",
 						"decodevinvalues",
-						"2C4RC1GG5LR187589"
+						"1C4PJLLB5LD560863"
 					],
 					"query": [
 						{
@@ -123,6 +123,103 @@
 						{
 							"key": "format",
 							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testHorsePower",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d9515e64-4c4c-4852-9015-50d74d52847e",
+						"exec": [
+							"pm.test(\"Status code 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Check for horsepower\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    //var response = JSON.parse(jsonData)",
+							"    pm.expect(jsonData.Results[0].EngineHP).to.eql(\"184\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/1C4PJLLB5LD560863?format=json",
+					"protocol": "https",
+					"host": [
+						"vpic",
+						"nhtsa",
+						"dot",
+						"gov"
+					],
+					"path": [
+						"api",
+						"vehicles",
+						"decodevinvalues",
+						"1C4PJLLB5LD560863"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testEmbedMaps",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "642dfb00-d7cb-4735-b869-3ae50247894e",
+						"exec": [
+							"pm.test(\"Status code 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.google.com/maps/embed/v1/place?key=AIzaSyDH2SH8bI5WAjlplxVYOx7LK-Gr3MrjeK4&q=2400+West+Braker+Lane,+Suite+E+Austin,+TX+78758",
+					"protocol": "https",
+					"host": [
+						"www",
+						"google",
+						"com"
+					],
+					"path": [
+						"maps",
+						"embed",
+						"v1",
+						"place"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyDH2SH8bI5WAjlplxVYOx7LK-Gr3MrjeK4"
+						},
+						{
+							"key": "q",
+							"value": "2400+West+Braker+Lane,+Suite+E+Austin,+TX+78758"
 						}
 					]
 				}

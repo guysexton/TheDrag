@@ -41,22 +41,43 @@ public class test2 {
 	}
 	@Test
 	public void test2() {
-		driver.get("https://thedrag.appspot.com/html/home.html");
-		driver.manage().window().setSize(new Dimension(1936, 1066));
-		driver.findElement(By.cssSelector(".col-xl-2:nth-child(3)")).click();
+	    driver.get("https://thedrag.appspot.com/html/home.html");
+	    driver.manage().window().setSize(new Dimension(1936, 1066));
+	    
+	    driver.findElement(By.linkText("Cars")).click();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.findElement(By.linkText("Dealer")).click();
+	    driver.findElement(By.linkText("2")).click();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.findElement(By.cssSelector(".page-item:nth-child(9) span:nth-child(1)")).click();
+	    driver.findElement(By.linkText("3")).click();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.findElement(By.cssSelector(".navbar-brand")).click();
+	    driver.findElement(By.linkText("Low - High")).click();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.findElement(By.linkText("Car")).click();
+	    driver.findElement(By.linkText("2")).click();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.findElement(By.linkText("5")).click();
+	    driver.findElement(By.linkText("High - Low")).click();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.findElement(By.cssSelector(".card:nth-child(3) .np-img-wrapper")).click();
+	    driver.findElement(By.linkText("5")).click();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.findElement(By.cssSelector(".offset-xl-2 > a:nth-child(1) .card-title")).click();
+	    driver.findElement(By.linkText("2018")).click();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    driver.findElement(By.linkText("2019")).click();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    driver.findElement(By.linkText("2021")).click();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    driver.findElement(By.cssSelector(".page-item:nth-child(7) > .np-element")).click();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    driver.findElement(By.id("user_search_input")).click();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    driver.findElement(By.id("user_search_input")).sendKeys("Honda Civic");
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    driver.findElement(By.cssSelector(".col-1:nth-child(3) > .np-hover")).click();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    driver.findElement(By.cssSelector(".col-1:nth-child(3)")).click();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    driver.findElement(By.id("user_search_input")).sendKeys("BMW M2");
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    driver.findElement(By.cssSelector(".col-1:nth-child(3) > .np-hover")).click();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    driver.findElement(By.linkText("2")).click();
 	}
 }
