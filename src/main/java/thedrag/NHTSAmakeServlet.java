@@ -42,18 +42,23 @@ public class NHTSAmakeServlet {
 	}
 
 	public String getVehicleTypeName() {
-		String list="";
-		if(stringRes.size()>0) {
-			for(int i=0;i<stringRes.size();i++) {
-				if(i!=stringRes.size()-1)
-					list+= (String)stringRes.get(i)+", ";
-				else
-					list+= (String)stringRes.get(i);
+		try {
+			String list="";
+			if(stringRes.size()>0) {
+				for(int i=0;i<stringRes.size();i++) {
+					if(i!=stringRes.size()-1)
+						list+= (String)stringRes.get(i)+", ";
+					else
+						list+= (String)stringRes.get(i);
+				}
 			}
+			else
+				list+="N/A";
+			return list;
 		}
-		else
-			list+="N/A";
-		return list;
+		catch(Exception e) {
+			return "NHTSA Server API Error";
+		}
 	}
 
 	static String run(String url, OkHttpClient client) throws IOException {

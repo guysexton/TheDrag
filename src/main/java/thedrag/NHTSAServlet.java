@@ -33,11 +33,21 @@ public class NHTSAServlet {
 	}
 	
 	public String getBodyClass() {
-		return (String)results.get("BodyClass");
+		try {
+			return (String)results.get("BodyClass");
+		}
+		catch(Exception e){
+			return "NHTSA API Server Error";
+		}
 	}
 	
 	public String getHP() {
-		return (String)results.get("EngineHP");
+		try {
+			return (String)results.get("EngineHP");
+		}
+		catch(Exception e){
+			return "NHTSA API Server Error";
+		}
 	}
 	
 	static String run(String url, OkHttpClient client) throws IOException {
