@@ -15,21 +15,21 @@ Kishan Dayananda, kd8953, https://github.com/kish314
 
 
 Estimated Completion Time:<br>
-Daniel Lazcano = 15 Hours<br>
-Ethan Santoni-Colvin = 20 Hours<br>
-Frank Le = 20 Hours<br>
-Guy Sexton = 15 Hours<br>
-Jonathan Walsh = 20 Hours<br> 
-Kishan Dayananda = 15 Hours
+Daniel Lazcano = 20 Hours<br>
+Ethan Santoni-Colvin = 10 Hours<br>
+Frank Le = 10 Hours<br>
+Guy Sexton = 20 Hours<br>
+Jonathan Walsh = 15 Hours<br> 
+Kishan Dayananda = 20 Hours
 
 
 Actual Completion Time:<br>
-Daniel Lazcano = 20 Hours<br>
-Ethan Santoni-Colvin = 32 Hours<br>
-Frank Le = 35 Hours<br>
-Guy Sexton = 28 Hours<br>
-Jonathan Walsh = 23 Hours<br>
-Kishan Dayananda = 22 Hours
+Daniel Lazcano = 26 Hours<br>
+Ethan Santoni-Colvin = 11 Hours<br>
+Frank Le = 10 Hours<br>
+Guy Sexton = 30 Hours<br>
+Jonathan Walsh = 10 Hours<br>
+Kishan Dayananda = 24 Hours
 
 User Stories
  
