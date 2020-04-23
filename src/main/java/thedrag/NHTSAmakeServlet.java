@@ -31,8 +31,9 @@ public class NHTSAmakeServlet {
 	        Iterator<JSONObject> iterator = arr.iterator();
 	        stringRes = new ArrayList<>();
 	        while (iterator.hasNext()) {
-	            stringRes.add((String) iterator.next().get("VehicleTypeName"));
-
+	        	String next = (String) iterator.next().get("VehicleTypeName");
+	        	if(!stringRes.contains(next))
+	        		stringRes.add(next);
 	        }
 
 		}
