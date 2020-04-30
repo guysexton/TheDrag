@@ -54,11 +54,11 @@ public class Scraper {
 					String years = e.select("a").select("span").eq(1).text();
 					String image = "https://www.carlogos.org" + e.select("a").select("img").attr("src");
 					Make m = new Make();
-					m.url = url;
-					m.name = name;
-					m.market = market;
-					m.years = years;
-					m.img = image;
+					m.setUrl(url);
+					m.setName(name);
+					m.setMarket(market);
+					m.setYears(years);
+					m.setImg(image);
 					makes.put(name, m);
 				}
 			}
@@ -132,18 +132,18 @@ public class Scraper {
 				String doc = run(carUrl, client);
 				Car newCar = new Car();
 				
-				newCar.url = carUrl;
+				newCar.setUrl(carUrl);
 			
 				//Get car name
 				Elements instances = Jsoup.parse(doc).getElementsByClass("cui-heading-2--secondary vehicle-info__title");
 				for(Element instance : instances) {
-					newCar.name = instance.text();
+					newCar.setName(instance.text());
 				}
 				
 				//Get car image
 				instances = Jsoup.parse(doc).getElementsByClass("media-gallery__display-item media-gallery__display-item--image");
 				for(Element instance : instances) {
-					newCar.img = instance.attr("src");
+					newCar.setImg(instance.attr("src"));
 				}
 				
 				//Get car VIN and MPGs
@@ -151,13 +151,13 @@ public class Scraper {
 				String carVin = "FAILED";
 				for(Element instance : instances) {
 					if(instance.select("strong").text().equals("VIN:")) {
-						newCar.vin = instance.select("span[ng-non-bindable]").text();							
+						newCar.setVin(instance.select("span[ng-non-bindable]").text());							
 					}
 					if(instance.select("strong").text().equals("City MPG:")) {
-						newCar.mpg = instance.select("span[ng-non-bindable]").text() + "city/";							
+						newCar.setMpg(instance.select("span[ng-non-bindable]").text() + "city/");							
 					}
 					if(instance.select("strong").text().equals("Highway MPG:")) {
-						newCar.mpg += instance.select("span[ng-non-bindable]").text() + "hwy";							
+						newCar.setMpg(newCar.getMpg() + instance.select("span[ng-non-bindable]").text() + "hwy");							
 					}
 				}
 				
@@ -165,8 +165,8 @@ public class Scraper {
 				//Get car dealership
 				instances = Jsoup.parse(doc).getElementsByClass("vdp-dealer-location");
 				for (Element instance : instances) { // should only loop once
-					newCar.dealership = instance.getElementsByClass("vdp-dealer-info__title").text(); //adds dealership info to car					
-					dealerships.get(newCar.dealership).cars.add(newCar.vin); //adds car to dealership car list
+					newCar.setDealership(instance.getElementsByClass("vdp-dealer-info__title").text()); //adds dealership info to car					
+					dealerships.get(newCar.getDealership()).getCars().add(newCar.getVin()); //adds car to dealership car list
 				}
 				
 				
@@ -174,24 +174,26 @@ public class Scraper {
 				//Get car price
 				instances = Jsoup.parse(doc).getElementsByClass("vehicle-info__price-display");
 				for (Element instance : instances) { // should only loop once
-					newCar.price = Integer.parseInt(instance.text().replace("$", "").replace(",", ""));
+					newCar.setPrice(Integer.parseInt(instance.text().replace("$", "").replace(",", "")));
 				}
 				
 				
 				Set<String> makeName = makes.keySet();
 				for(String make : makeName) {					//loop until it finds matching make
-					String[] carName = newCar.name.split(" ");
+					String[] carName = newCar.getName().split(" ");
 					if(carName[1].equals(make)){				//if car has the make in its name
-						makes.get(make).cars.add(newCar.vin);	//then make gets that car added
-						newCar.make = make;						//car getts the make
-						dealerships.get(newCar.dealership).makes.add(make);		//dealership that already has the car get the make
-						makes.get(make).dealerships.add(newCar.dealership);		//make gets that dealership added to the make
-						makes.get(make).numCars++;
-						makes.get(make).numDealerships = makes.get(make).dealerships.size();
+						makes.get(make).getCars().add(newCar.getVin());	//then make gets that car added
+						newCar.setMake(make);						//car getts the make
+						dealerships.get(newCar.getDealership()).getMakes().add(make);		//dealership that already has the car get the make
+						makes.get(make).getDealerships().add(newCar.getDealership());		//make gets that dealership added to the make
+						Integer numCars = makes.get(make).getNumCars();
+						numCars++;
+						makes.get(make).setNumCars(numCars);
+						makes.get(make).setNumDealerships(makes.get(make).getDealerships().size());
 					}
 				}
 				
-				cars.put(newCar.vin, newCar);
+				cars.put(newCar.getVin(), newCar);
 				//System.out.println(dealerships.get(newCar.dealership));
 				//System.out.println(makes.get(newCar.make));
 				//System.out.println("Scraped car: " + newCar);
@@ -236,21 +238,21 @@ public class Scraper {
 	//Adds name, address, phone number, and website url to a dealership instance
 	public static void addDealership(String doc) {
 		Dealership d = new Dealership();
-		d.name = Jsoup.parse(doc).getElementsByClass("seller-name cui-alpha dealer-review__seller-name").text();
-		d.img = Jsoup.parse(doc).getElementsByClass("dealer__logo").attr("src");
-		d.address = Jsoup.parse(doc).getElementsByClass("dealer-update__streetAddress").text();
-		d.phoneNum = Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--new").text() + " " 
-							+ Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--used").text();
-		d.website = Jsoup.parse(doc).getElementsByClass("dealer-update-website-link").attr("href");
-		d.hours = Jsoup.parse(doc).getElementsByClass("dpp-update__sales-hours-operation").text();
+		d.setName(Jsoup.parse(doc).getElementsByClass("seller-name cui-alpha dealer-review__seller-name").text());
+		d.setImg(Jsoup.parse(doc).getElementsByClass("dealer__logo").attr("src"));
+		d.setAddress(Jsoup.parse(doc).getElementsByClass("dealer-update__streetAddress").text());
+		d.setPhoneNum(Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--new").text() + " " 
+							+ Jsoup.parse(doc).getElementsByClass("dealer-update__contact-numbers--used").text());
+		d.setWebsite(Jsoup.parse(doc).getElementsByClass("dealer-update-website-link").attr("href"));
+		d.setHours(Jsoup.parse(doc).getElementsByClass("dpp-update__sales-hours-operation").text());
 		Elements e = Jsoup.parse(doc).getElementsByClass("about-dealership-section__container");
 		String about = null;
 		for(Element e1: e) {
 			about = e1.getElementsByClass("cui-section__accordion-preview").text()
 			 	+ e1.getElementsByClass("cui-section__accordion-content").text();
 		}
-		d.about = about;
-		dealerships.put(d.name, d);
+		d.setAbout(about);
+		dealerships.put(d.getName(), d);
 	}
 
 	public static String run(String url, OkHttpClient client) throws IOException {

@@ -3,15 +3,15 @@ package web_scraping;
 import java.util.*;
 
 public class Make {
-	String name;
-	String img;
-	HashSet<String> dealerships;
-	ArrayList<String> cars;
-	Integer numCars;
-	Integer numDealerships;
-	String market;
-	String years;
-	String url;
+	private String name;
+	private String img;
+	private HashSet<String> dealerships;
+	private ArrayList<String> cars;
+	private Integer numCars;
+	private Integer numDealerships;
+	private String market;
+	private String years;
+	private String url;
 
 	Make(){
 		this.name = null;
