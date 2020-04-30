@@ -20,6 +20,8 @@
 <%@ page import="com.mongodb.MongoClientOptions"%>
 
 <%@ page import="thedrag.DBServlet"%>
+<%@ page import="thedrag.CarServlet"%>
+<%@ page import="thedrag.ServletFactory"%>
 <%@ page import="thedrag.NHTSAServlet"%>
 
   <% 
@@ -28,7 +30,8 @@
   		current_vin = request.getParameter("vin").toString();
   	}
   	
-  	DBServlet db = new DBServlet();
+  	ServletFactory servletFactory = new ServletFactory();
+  	DBServlet db = servletFactory.getServlet("cars");
   	NHTSAServlet ns = new NHTSAServlet(current_vin);
 	List<String> cars = db.carVins;
 	
@@ -47,44 +50,44 @@
 	for(String s : cars) {
 		if (s.equals(current_vin)) {
 			
-			if (!db.getCarAttribute(current_vin, "name").toString().equals("")){
-				name = db.getCarAttribute(current_vin, "name").toString();
+			if (!db.getAttribute(current_vin, "name").toString().equals("")){
+				name = db.getAttribute(current_vin, "name").toString();
 			} else {
 				name = "N/A";
 			}
 			
-			if (!db.getCarAttribute(current_vin, "img").toString().equals("")){
-				img = db.getCarAttribute(current_vin, "img").toString();
+			if (!db.getAttribute(current_vin, "img").toString().equals("")){
+				img = db.getAttribute(current_vin, "img").toString();
 			} else {
 				img = "N/A";
 			}
 			
-			if (!db.getCarAttribute(current_vin, "url").toString().equals("")){
-				url = db.getCarAttribute(current_vin, "url").toString();
+			if (!db.getAttribute(current_vin, "url").toString().equals("")){
+				url = db.getAttribute(current_vin, "url").toString();
 			} else {
 				url = "N/A";
 			}
 			
-			if (!db.getCarAttribute(current_vin, "dealership").toString().equals("")){
-				dealership = db.getCarAttribute(current_vin, "dealership").toString();
+			if (!db.getAttribute(current_vin, "dealership").toString().equals("")){
+				dealership = db.getAttribute(current_vin, "dealership").toString();
 			} else {
 				dealership = "N/A";
 			}
 			
-			if (!db.getCarAttribute(current_vin, "make").toString().equals("")){
-				make = db.getCarAttribute(current_vin, "make").toString();
+			if (db.getAttribute(current_vin, "make") != null){
+				make = db.getAttribute(current_vin, "make").toString();
 			} else {
 				make = "N/A";
 			}
 			
-			if (db.getCarAttribute(current_vin, "price") != null){
-				price = db.getCarAttribute(current_vin, "price").toString();
+			if (db.getAttribute(current_vin, "price") != null){
+				price = db.getAttribute(current_vin, "price").toString();
 			} else {
 				price = "N/A";
 			}
 			
-			if (db.getCarAttribute(current_vin, "mpg") != null){
-				mpg = db.getCarAttribute(current_vin, "mpg").toString();
+			if (db.getAttribute(current_vin, "mpg") != null){
+				mpg = db.getAttribute(current_vin, "mpg").toString();
 			} else {
 				mpg = "N/A";
 			}

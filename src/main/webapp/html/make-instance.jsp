@@ -20,6 +20,10 @@
 <%@ page import="com.mongodb.MongoClientOptions"%>
 
 <%@ page import="thedrag.DBServlet"%>
+<%@ page import="thedrag.DealerServlet"%>
+<%@ page import="thedrag.ServletFactory"%>
+<%@ page import="thedrag.CarServlet"%>
+<%@ page import="thedrag.MakeServlet"%>
 <%@ page import="thedrag.NHTSAmakeServlet"%>
 
 
@@ -32,11 +36,12 @@
   	
   	String[] makeName=make.split("~");
   	
-  	DBServlet db = new DBServlet();
+  	ServletFactory servletFactory = new ServletFactory();
+  	DBServlet db = servletFactory.getServlet("makes");
   	make = make.split("~")[0].replace('_',' ');
   	NHTSAmakeServlet ns = new NHTSAmakeServlet(make);
   	
-  	ArrayList<String> dealers = (ArrayList<String>)db.getMakeAttribute(make,"dealerships");
+  	ArrayList<String> dealers = (ArrayList<String>)db.getAttribute(make,"dealerships");
 	int dealerSize = dealers.size();
 	
   %>
@@ -86,10 +91,11 @@
 			  <ul class="offset-2 car-grid offset-xl-0" id="car-grid">
 				 
       	  		  <%
-				  	ArrayList<String> cars = (ArrayList<String>)db.getMakeAttribute(make,"cars");
+				  	ArrayList<String> cars = (ArrayList<String>)db.getAttribute(make,"cars");
+      	  			CarServlet carServlet = new CarServlet();
 				    if(cars.size()>0){
 				  		for(String c:cars){
-				  			out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href='/html/car.jsp?vin=" + c + "'>" + db.getCarAttribute(c,"name") + "</a></li>");
+				  			out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href='/html/car.jsp?vin=" + c + "'>" + carServlet.getAttribute(c,"name") + "</a></li>");
 			  			}
 				  	}
 				  	else
@@ -103,16 +109,16 @@
           </div>
           
           <div class="np-element np-colorize offset-xl-1 col-xl-3">
-				<div class="np-img-wrapper" width="100px" height="100px" id="make-img"><%out.print("<img class='np-img-expand' src='" + db.getMakeAttribute(make,"img") + "' width='inherit' height='inherit' style='margin: 10px'>");%></div>
+				<div class="np-img-wrapper" width="100px" height="100px" id="make-img"><%out.print("<img class='np-img-expand' src='" + db.getAttribute(make,"img") + "' width='inherit' height='inherit' style='margin: 10px'>");%></div>
 		  	  <h1 class="text-center">Make Information</h1>
 				<div class="np-divider"></div>
 				<p><span><b>Vehicle Type: <%=ns.getVehicleTypeName()%></b><span id="vehicleName"></span></span></p>
-				<p><span><b>Number of Cars: <%=db.getMakeAttribute(make,"numCars")%></b><span id="numCars"></span></span></p> 
+				<p><span><b>Number of Cars: <%=db.getAttribute(make,"numCars")%></b><span id="numCars"></span></span></p> 
 				<p><span><b>Number of Dealerships: <%=dealerSize%></b><span id="numDealerships"></span></span></p>
-				<p><span><b>Market: <%=db.getMakeAttribute(make,"market")%></b><span id="market"></span></span></p>
-				<p><span><b>Years sold in: <%=db.getMakeAttribute(make,"years")%></b><span id="years"></span></span></p>
+				<p><span><b>Market: <%=db.getAttribute(make,"market")%></b><span id="market"></span></span></p>
+				<p><span><b>Years sold in: <%=db.getAttribute(make,"years")%></b><span id="years"></span></span></p>
 				<% 
-				String website = (String) db.getMakeAttribute(make,"url");
+				String website = (String) db.getAttribute(make,"url");
 			  	if(!website.equals(""))
 			  		out.print("<p><a id='link' href="+ website +"><strong><u>Click here to learn more</u></strong></a></p>");
 			  	%>
@@ -123,10 +129,11 @@
 			  <ul class="offset-2 car-grid offset-xl-0" id="car-grid">
 				  
       	  		  <%
+      	  			DealerServlet dealerServlet = new DealerServlet();
 				  	if(dealerSize>0){
 				  		for(String d:dealers){
 				  			String slug = d.replace('&','$').replace(' ','_').replace("'",".")+"~";
-				  			out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href=\"/html/view-dealer.jsp?dealership=" + slug +"~\">" + db.getDealershipAttribute(d,"name") + "</a></li>");
+				  			out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href=\"/html/view-dealer.jsp?dealership=" + slug +"~\">" + dealerServlet.getAttribute(d,"name") + "</a></li>");
 			  			}
 				  	}
 				  	else

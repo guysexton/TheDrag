@@ -20,6 +20,8 @@
 <%@ page import="com.mongodb.MongoClientOptions"%>
 
 <%@ page import="thedrag.DBServlet"%>
+<%@ page import="thedrag.CarServlet"%>
+<%@ page import="thedrag.ServletFactory"%>
 
 <!DOCTYPE html>
 <html lang="en">	
@@ -61,9 +63,11 @@
 	    pageNum = Integer.parseInt(request. getParameter("page"));
 	}
   	
-  	DBServlet db = new DBServlet();
+  	ServletFactory servletFactory = new ServletFactory();
+  	DBServlet db = servletFactory.getServlet("cars");
 	List<String> cars = db.carVins;
 	List<String> pageCars = new ArrayList<>();
+	CarServlet carServlet = (CarServlet) db;
 	
 	String sort_type = null;
  	if (request.getParameter("sort") != null ) {
@@ -71,12 +75,12 @@
  		
 	    sort_type  = request.getParameter("sort");
 	 	if (sort_type.equals("year_lowhigh")){
-	 		cars = db.sortCarYearsLowHigh();
+	 		cars = carServlet.sortCarYearsLowHigh();
 	 		param_pages += "year_lowhigh";
 	 	} 
 	 	
 	 	if (sort_type.equals("year_highlow")) {
-	 		cars = db.sortCarYearsHighLow();
+	 		cars = carServlet.sortCarYearsHighLow();
 	 		param_pages += "year_highlow";
 	 	}
 	    
@@ -88,7 +92,7 @@
 	    String filter_type  = request.getParameter("filter");
 	    char filter_value = filter_type.charAt(0);
 	    param_pages += Character.toString(filter_value);
-	    cars = db.filterCarYears(filter_value);
+	    cars = carServlet.filterCarYears(filter_value);
 	}
  	
  	if (request.getParameter("search") != null) {
@@ -96,7 +100,7 @@
 	    String search_term  = request.getParameter("search");
 	    param_pages += search_term;
 	    String replaced_searchterm = search_term.replace("_", " ");
-	   	cars = db.carSearch(replaced_searchterm); 
+	   	cars = carServlet.carSearch(replaced_searchterm); 
 	}
  	
  	
@@ -164,32 +168,32 @@
 			if (i%2 == 0) {
 				listing = "<li class='card np-element np-hover col-4 model-card' style='margin-bottom: 70px; margin-right: 30px; height: 370px; float: left;' >"+
 						"<a href='/html/car.jsp?vin=" + pageCars.get(i).toString() + "'>" +
-						"<h3 style='text-align: center;'>" + db.getCarAttribute(pageCars.get(i), "name").toString() + "</h3>";
+						"<h3 style='text-align: center;'>" + db.getAttribute(pageCars.get(i), "name").toString() + "</h3>";
 			} else {
 				listing = "<li class='card np-element np-hover col-4 model-card' style='margin-bottom: 70px;  height: 370px;' >"+
 						"<a href='/html/car.jsp?vin=" + pageCars.get(i).toString() + "'>" +
-						"<h3 style='text-align: center;'>" + db.getCarAttribute(pageCars.get(i), "name").toString() + "</h3>";
+						"<h3 style='text-align: center;'>" + db.getAttribute(pageCars.get(i), "name").toString() + "</h3>";
 			}
 			
-			if(db.getCarAttribute(pageCars.get(i), "img") != ""){
+			if(db.getAttribute(pageCars.get(i), "img") != ""){
 				listing += "<div class='np-img-wrapper' width='50px' height='90px'>"+
-						"<img class='np-img-expand' src='" + db.getCarAttribute(pageCars.get(i), "img").toString() + "' width='200px' height='90px' style='margin: 10px'></div>";
+						"<img class='np-img-expand' src='" + db.getAttribute(pageCars.get(i), "img").toString() + "' width='200px' height='90px' style='margin: 10px'></div>";
 			}
-			if(db.getCarAttribute(pageCars.get(i), "dealership") != ""){
-				listing += "<p><strong>Dealership:</strong> " + db.getCarAttribute(pageCars.get(i), "dealership").toString() + "</p>";
+			if(db.getAttribute(pageCars.get(i), "dealership") != ""){
+				listing += "<p><strong>Dealership:</strong> " + db.getAttribute(pageCars.get(i), "dealership").toString() + "</p>";
 			}
-			if(db.getCarAttribute(pageCars.get(i), "price") != null){
-				if (!db.getCarAttribute(pageCars.get(i), "price").toString().equals("")){
-					listing += "<p><strong>Price: $</strong>" + db.getCarAttribute(pageCars.get(i), "price").toString() + "</p>";
+			if(db.getAttribute(pageCars.get(i), "price") != null){
+				if (!db.getAttribute(pageCars.get(i), "price").toString().equals("")){
+					listing += "<p><strong>Price: $</strong>" + db.getAttribute(pageCars.get(i), "price").toString() + "</p>";
 				} else {
-					listing += "<p><strong>No Price Listed</strong>" + db.getCarAttribute(pageCars.get(i), "price").toString() + "</p>";
+					listing += "<p><strong>No Price Listed</strong>" + db.getAttribute(pageCars.get(i), "price").toString() + "</p>";
 				}
 			} else {
 				listing += "<p><strong>No Price Listed</strong></p>";
 			}
 			
-			if(db.getCarAttribute(pageCars.get(i), "url") != ""){
-				listing += "<a href='" + db.getCarAttribute(pageCars.get(i), "url").toString() + "'><strong>Check Out Dealership Listing</strong></a></a> </li>";
+			if(db.getAttribute(pageCars.get(i), "url") != ""){
+				listing += "<a href='" + db.getAttribute(pageCars.get(i), "url").toString() + "'><strong>Check Out Dealership Listing</strong></a></a> </li>";
 			}
 			  
 			out.print(listing);

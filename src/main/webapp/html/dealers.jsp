@@ -20,6 +20,9 @@
 <%@ page import="com.mongodb.MongoClientOptions"%>
 
 <%@ page import="thedrag.DBServlet"%>
+<%@ page import="thedrag.DealerServlet"%>
+<%@ page import="thedrag.MakeServlet"%>
+<%@ page import="thedrag.ServletFactory"%>
 
 
 <!DOCTYPE html>
@@ -61,8 +64,10 @@
 	    search = request.getParameter("search").replace("%20"," ");
 	}
   	
-  	DBServlet db = new DBServlet();
+  	ServletFactory servletFactory = new ServletFactory();
+  	DBServlet db = servletFactory.getServlet("dealerships");
 	List<String> dealers = db.dealerNames;
+	DealerServlet dealerServlet = (DealerServlet) db;
 	
 	if(Z2A)
 		Collections.reverse(dealers);
@@ -70,7 +75,7 @@
 	if(carsListed){
 		List<String> newDealers = new ArrayList<String>();
 		for(String dealer:dealers){
-			if(!((ArrayList<String>)db.getDealershipAttribute(dealer, "cars")).isEmpty())
+			if(!((ArrayList<String>)db.getAttribute(dealer, "cars")).isEmpty())
 				newDealers.add(dealer);
 		}
 		dealers = newDealers;
@@ -79,14 +84,14 @@
 	if(!make.equals("")){
 		List<String> newDealers = new ArrayList<String>();
 		for(String dealer:dealers){
-			if(((ArrayList<String>)db.getDealershipAttribute(dealer, "makes")).contains(make))
+			if(((ArrayList<String>)db.getAttribute(dealer, "makes")).contains(make))
 				newDealers.add(dealer);
 		}
 		dealers = newDealers;
 	}
 	
 	if(!search.equals("")){
-		dealers = db.dealerSearch(dealers, search);
+		dealers = dealerServlet.dealerSearch(dealers, search);
 	}
 	
 		
@@ -136,7 +141,8 @@
 				&nbsp;
 				<strong>Filter by Make:</strong><select class="np-form-element" id="make" name="make" value="Filter by Make">
 					<%
-						List<String> makeList = db.makeNames;
+						MakeServlet makeServlet = new MakeServlet();
+						List<String> makeList = makeServlet.makeNames;
 						Collections.sort(makeList);
 						makeList.add(0,"");
 						for(String m : makeList){
@@ -175,17 +181,17 @@
 		  <%
 		  
 		  for(String s:pageDealers){
-			  String name = db.getDealershipAttribute(s, "name").toString();
+			  String name = db.getAttribute(s, "name").toString();
 			  String slug = name.replace('&','$').replace(' ','_').replace("'",".")+"~";
 			  
 			  String listing= "<li class='card np-element np-hover col-4 dealer-card' style='margin: 20px;height:275px;' >"+
 						"<a href='/html/view-dealer.jsp?dealership=" + slug + "' style='margin:0px;display:block;width:100%;height:100%;'>"+
 						"<h3 style='text-align: center;'>" + name + "</h3>";
 					
-			String image = db.getDealershipAttribute(s, "img").toString();
-			String address = db.getDealershipAttribute(s, "address").toString();
-			String phoneNum = db.getDealershipAttribute(s, "phoneNum").toString();
-			String website = db.getDealershipAttribute(s, "website").toString();
+			String image = db.getAttribute(s, "img").toString();
+			String address = db.getAttribute(s, "address").toString();
+			String phoneNum = db.getAttribute(s, "phoneNum").toString();
+			String website = db.getAttribute(s, "website").toString();
 			
 			listing += "<div class='np-img-wrapper' width='50px' height='50px' style='display:block;'>";
 			if(!image.equals(""))

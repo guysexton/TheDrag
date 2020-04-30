@@ -20,6 +20,8 @@
 <%@ page import="com.mongodb.MongoClientOptions"%>
 
 <%@ page import="thedrag.DBServlet"%>
+<%@ page import="thedrag.MakeServlet"%>
+<%@ page import="thedrag.ServletFactory"%>
 
 
 <!DOCTYPE html>
@@ -63,17 +65,18 @@
 	    search = request.getParameter("search");//.replace("%20"," ");
 	}
   	
-  	DBServlet db = new DBServlet();
+  	ServletFactory servletFactory = new ServletFactory();
+  	DBServlet db = servletFactory.getServlet("makes");
 	List<String> makes = db.makeNames;
-	
+	MakeServlet makeServlet = (MakeServlet) db;
 	if(!markets.equals("")){
-		makes = db.makeMarketFilter(markets);
+		makes = makeServlet.makeMarketFilter(markets);
 	}
 	
 	if(carsListed){
 		List<String> newMakes = new ArrayList<String>();
 		for(String make:makes){
-			if(!((ArrayList<String>)db.getMakeAttribute(make, "cars")).isEmpty())
+			if(!((ArrayList<String>)db.getAttribute(make, "cars")).isEmpty())
 				newMakes.add(make);
 		}
 		makes = newMakes;
@@ -87,7 +90,7 @@
 	
 	
 	if(!search.equals("")){
-		makes = db.makeSearch(makes, search);
+		makes = makeServlet.makeSearch(makes, search);
 	}
 	
 	///////////////////
@@ -167,20 +170,20 @@
 		  <% 
 		  
 		  for(String s:pageMakes){
-			  String name = db.getMakeAttribute(s, "name").toString();
+			  String name = db.getAttribute(s, "name").toString();
 			  String slug=name.replace(" ","_");
 			  String listing= "<li class='card np-element np-hover col-4 make-card' style='margin: 20px;height:375px;' >"+
 					  "<a href='/html/make-instance.jsp?make=" + slug + "' style='margin:0px;display:block;width:100%;height:100%;'>"+
 						"<h3 style='text-align: center;'>" + name + "</h3>";
 					
-			String image = db.getMakeAttribute(s, "img").toString();
-			String numCars = db.getMakeAttribute(s, "numCars").toString();
-			ArrayList<String> dealers = (ArrayList<String>)db.getMakeAttribute(s,"dealerships");
+			String image = db.getAttribute(s, "img").toString();
+			String numCars = db.getAttribute(s, "numCars").toString();
+			ArrayList<String> dealers = (ArrayList<String>)db.getAttribute(s,"dealerships");
 			int numDealerships = dealers.size();
 			
-			String market = db.getMakeAttribute(s,"market").toString();
-			String years = db.getMakeAttribute(s,"years").toString();
-			String url = db.getMakeAttribute(s,"url").toString();
+			String market = db.getAttribute(s,"market").toString();
+			String years = db.getAttribute(s,"years").toString();
+			String url = db.getAttribute(s,"url").toString();
 			
 			
 			if(!image.equals(""))

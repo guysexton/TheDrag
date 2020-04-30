@@ -20,6 +20,9 @@
 <%@ page import="com.mongodb.MongoClientOptions"%>
 
 <%@ page import="thedrag.DBServlet"%>
+<%@ page import="thedrag.DealerServlet"%>
+<%@ page import="thedrag.ServletFactory"%>
+<%@ page import="thedrag.CarServlet"%>
 
 <% 
   	String dealer="ERROR";
@@ -28,7 +31,8 @@
 	}
   	String[] dealerName=dealer.split("~");
   	
-  	DBServlet db = new DBServlet();
+  	ServletFactory servletFactory = new ServletFactory();
+  	DBServlet db = servletFactory.getServlet("dealerships");
   	dealer = dealer.split("~")[0].replace('_',' ').replace('$','&').replace(".","'");
 	
   %>
@@ -72,10 +76,10 @@
 	  
   <div class="row" style="padding:30px;">
 		  <div class="offset-xl-1 col-xl-7">
-		  	<p><span id="about"><%if(db.getDealershipAttribute(dealer,"about") != null)out.print(db.getDealershipAttribute(dealer,"about"));%></span></p>
+		  	<p><span id="about"><%if(db.getAttribute(dealer,"about") != null)out.print(db.getAttribute(dealer,"about"));%></span></p>
 		  	<br>
 		  	<% 
-		  		String address = (String)db.getDealershipAttribute(dealer,"address");
+		  		String address = (String)db.getAttribute(dealer,"address");
 		  		if(!address.equals(""))
 		  			out.print("<iframe width='100%' height='600' frameborder='0' style='border:0' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyDH2SH8bI5WAjlplxVYOx7LK-Gr3MrjeK4&q=" + address.replace(" ","+") + "' allowfullscreen></iframe>");
 		  	%>
@@ -85,10 +89,10 @@
 				  <!-- <li class="card np-element np-hover col-2 car-card" style="margin: 20px;"><a href="#">TEMPVIN</a></li> -->
 				  
 				  <%
-				  	ArrayList<String> cars = (ArrayList<String>)db.getDealershipAttribute(dealer,"cars");
-				  
+				  	ArrayList<String> cars = (ArrayList<String>)db.getAttribute(dealer,"cars");
+				  	CarServlet carServlet = new CarServlet();
 				  	for(String c:cars){
-				  		out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href='/html/car.jsp?vin=" + c + "'><div style='width:100%;height:100%;'>" + db.getCarAttribute(c,"name") + "</div></a></li>");
+				  		out.print("<li class='card np-element np-hover col-2 car-card' style='margin: 20px;'><a href='/html/car.jsp?vin=" + c + "'><div style='width:100%;height:100%;'>" + carServlet.getAttribute(c,"name") + "</div></a></li>");
 			  		}
 
 				  %>
@@ -98,18 +102,18 @@
 			  
           </div>
 		  	<div class="np-element np-colorize offset-xl-1 col-xl-3">
-				<div class="np-img-wrapper" width="100px" height="100px" id="dealer-img"><%out.print("<img class='np-img-expand' src='" + db.getDealershipAttribute(dealer,"img") + "' width='inherit' height='inherit' style='margin: 10px'>");%></div>
+				<div class="np-img-wrapper" width="100px" height="100px" id="dealer-img"><%out.print("<img class='np-img-expand' src='" + db.getAttribute(dealer,"img") + "' width='inherit' height='inherit' style='margin: 10px'>");%></div>
 		  	  <h1 class="text-center">Dealership Information</h1>
 				<div class="np-divider"></div>
 				
 				<%
-					String addr = (String)db.getDealershipAttribute(dealer,"address");
+					String addr = (String)db.getAttribute(dealer,"address");
 					
-					String phone = (String)db.getDealershipAttribute(dealer,"phoneNum");
+					String phone = (String)db.getAttribute(dealer,"phoneNum");
 					if(phone.equals(" "))
 						phone = " N/A ";
 					
-					String hrs = (String)db.getDealershipAttribute(dealer,"hours");
+					String hrs = (String)db.getAttribute(dealer,"hours");
 					if(hrs.equals(""))
 						hrs=" N/A ";
 				%>
@@ -118,12 +122,12 @@
 				<p><span><b>Phone: </b><span id="phone"><%=phone%></span></span></p>
 				<p><span><b>Hours: </b><span id="hours"><%=hrs%></span></span></p>
 			  <% 
-			  String website = (String) db.getDealershipAttribute(dealer,"website");
+			  String website = (String) db.getAttribute(dealer,"website");
 			  if(!website.equals(""))
 			  	out.print("<p><a id='link' href="+ website +" class='hov'><strong>Click here to visit dealership website</strong></a></p>");
 			  
 			  
-			  ArrayList<String> makes = (ArrayList<String>)db.getDealershipAttribute(dealer,"makes");
+			  ArrayList<String> makes = (ArrayList<String>)db.getAttribute(dealer,"makes");
 			  int makeSize = makes.size();
 			  
 			  if(makeSize>0){
