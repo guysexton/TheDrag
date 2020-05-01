@@ -21,12 +21,6 @@ import com.mongodb.operation.OrderBy;
 
 public class CarServlet extends DBServlet {
 
-	
-	
-	public List<String> getCarVins() {
-		return carVins;
-	}
-
 	public CarServlet() {
 		uri = new MongoClientURI(
 			    "mongodb+srv://jdwalsh21:BI6SfPDyhGX8ihAU@thedragapiscrapes-2duen.gcp.mongodb.net/test?authSource=admin&replicaSet=TheDragAPIScrapes-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true");

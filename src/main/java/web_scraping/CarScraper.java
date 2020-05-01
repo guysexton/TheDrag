@@ -106,7 +106,7 @@ public class CarScraper extends Scraper{
 				Set<String> makeName = getMakes().keySet();
 				for(String make : makeName) {					//loop until it finds matching make
 					String[] carName = newCar.getName().split(" ");
-					if(carName[1].equals(make)){				//if car has the make in its name
+					if(carName[1].toLowerCase().equals(make.toLowerCase())){				//if car has the make in its name
 						getMakes().get(make).getCars().add(newCar.getVin());	//then make gets that car added
 						newCar.setMake(make);						//car gets the make
 						getDealerships().get(newCar.getDealership()).getMakes().add(make);		//dealership that already has the car get the make

@@ -274,10 +274,10 @@ class ScraperTest {
 			Map<String, Make> makes = new HashMap<String, Make>();
 
 			Make m = new Make();
-			m.setName("Toyota");
-			makes.put("Toyota", m);
+			m.setName("Infiniti");
+			makes.put("Infiniti", m);
 			
-			carUrls.add("https://www.cars.com/vehicledetail/detail/808982752/overview/");
+			carUrls.add("https://www.cars.com/vehicledetail/detail/809243722/overview/");
 			
 			for(String carUrl : carUrls) {
 					String doc = run(carUrl, client);
@@ -298,14 +298,14 @@ class ScraperTest {
 					Set<String> makeName = makes.keySet();
 					for(String make : makeName) {					//loop until it finds matching make
 						String[] carName = newCar.getName().split(" ");
-						if(carName[1].equals(make)){				//if car has the make in its name
+						if(carName[1].toLowerCase().equals(make.toLowerCase())){				//if car has the make in its name
 							newCar.setMake(make);						//car gets the make
 						}
 					}
 					
 					
-					assertEquals("Charles Maund Toyota", newCar.getDealership());
-					assertEquals("Toyota", newCar.getMake());
+					assertEquals("CAG - Austin INFINITI", newCar.getDealership());
+					assertEquals("Infiniti", newCar.getMake());
 					
 			}
 		}
