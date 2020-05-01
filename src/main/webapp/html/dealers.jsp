@@ -181,41 +181,7 @@
 		  <%
 		  
 		  for(String s:pageDealers){
-			  String name = db.getAttribute(s, "name").toString();
-			  String slug = name.replace('&','$').replace(' ','_').replace("'",".")+"~";
-			  
-			  String listing= "<li class='card np-element np-hover col-4 dealer-card' style='margin: 20px;height:275px;' >"+
-						"<a href='/html/view-dealer.jsp?dealership=" + slug + "' style='margin:0px;display:block;width:100%;height:100%;'>"+
-						"<h3 style='text-align: center;'>" + name + "</h3>";
-					
-			String image = db.getAttribute(s, "img").toString();
-			String address = db.getAttribute(s, "address").toString();
-			String phoneNum = db.getAttribute(s, "phoneNum").toString();
-			String website = db.getAttribute(s, "website").toString();
-			
-			listing += "<div class='np-img-wrapper' width='50px' height='50px' style='display:block;'>";
-			if(!image.equals(""))
-				listing += "<img class='np-img-expand' src='" + image + "' width='inherit' height='inherit' style='margin: 10px'>";
-			listing+="</div>";
-				
-			if(!address.equals(""))
-				listing += "<p><strong>Address:</strong> " + address + "</p>";
-			else
-				listing += "<p><strong>Address:</strong> N/A </p>";
-				
-			if(!phoneNum.equals(" "))
-				listing += "<p><strong>Phone:</strong> " + phoneNum + "</p>";
-			else
-				listing += "<p><strong>Phone:</strong> N/A </p>";
-				
-			if(!website.equals(""))
-				listing += "<a href='" + website + "'><strong>Visit Dealer Website</strong></a>";
-			else
-				listing += "<p><strong>No Dealer Website Listed</strong></p>";
-				
-			listing += "</a> </li>";
-			
-			out.print(listing);
+			  out.print(dealerServlet.buildCard(s));
 		  }
 		  
 		  %>
