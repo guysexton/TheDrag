@@ -24,7 +24,7 @@
 <%@ page import="thedrag.ServletFactory"%>
 <%@ page import="thedrag.CarServlet"%>
 <%@ page import="thedrag.MakeServlet"%>
-<%@ page import="thedrag.NHTSAmakeServlet"%>
+<%@ page import="thedrag.NHTSAMakeServlet"%>
 
 
 <% 
@@ -39,7 +39,7 @@
   	ServletFactory servletFactory = new ServletFactory();
   	DBServlet db = servletFactory.getServlet("makes");
   	make = make.split("~")[0].replace('_',' ');
-  	NHTSAmakeServlet ns = new NHTSAmakeServlet(make);
+  	NHTSAMakeServlet ns = new NHTSAMakeServlet(make);
   	
   	ArrayList<String> dealers = (ArrayList<String>)db.getAttribute(make,"dealerships");
 	int dealerSize = dealers.size();
@@ -112,7 +112,7 @@
 				<div class="np-img-wrapper" width="100px" height="100px" id="make-img"><%out.print("<img class='np-img-expand' src='" + db.getAttribute(make,"img") + "' width='inherit' height='inherit' style='margin: 10px'>");%></div>
 		  	  <h1 class="text-center">Make Information</h1>
 				<div class="np-divider"></div>
-				<p><span><b>Vehicle Type: <%=ns.getVehicleTypeName()%></b><span id="vehicleName"></span></span></p>
+				<p><span><b>Vehicle Type: <%=ns.getNHTSAAttribute("VehicleTypeName")%></b><span id="vehicleName"></span></span></p>
 				<p><span><b>Number of Cars: <%=db.getAttribute(make,"numCars")%></b><span id="numCars"></span></span></p> 
 				<p><span><b>Number of Dealerships: <%=dealerSize%></b><span id="numDealerships"></span></span></p>
 				<p><span><b>Market: <%=db.getAttribute(make,"market")%></b><span id="market"></span></span></p>

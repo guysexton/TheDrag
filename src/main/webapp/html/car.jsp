@@ -22,7 +22,7 @@
 <%@ page import="thedrag.DBServlet"%>
 <%@ page import="thedrag.CarServlet"%>
 <%@ page import="thedrag.ServletFactory"%>
-<%@ page import="thedrag.NHTSAServlet"%>
+<%@ page import="thedrag.NHTSACarServlet"%>
 
   <% 
   	String current_vin = "KEK";
@@ -32,7 +32,7 @@
   	
   	ServletFactory servletFactory = new ServletFactory();
   	DBServlet db = servletFactory.getServlet("cars");
-  	NHTSAServlet ns = new NHTSAServlet(current_vin);
+  	NHTSACarServlet ns = new NHTSACarServlet(current_vin);
 	List<String> cars = db.carVins;
 	
 	String name = "";
@@ -92,14 +92,14 @@
 				mpg = "N/A";
 			}
 			
-			if (!ns.getBodyClass().equals("")){
-				bodyclass = ns.getBodyClass();
+			if (!ns.getNHTSAAttribute("BodyClass").equals("")){
+				bodyclass = ns.getNHTSAAttribute("BodyClass");
 			} else {
 				bodyclass = "N/A";
 			}
 			
-			if (!ns.getHP().toString().equals("")){
-				hp = ns.getHP();
+			if (!ns.getNHTSAAttribute("EngineHP").toString().equals("")){
+				hp = ns.getNHTSAAttribute("EngineHP");
 			} else {
 				hp = "N/A";
 			}
