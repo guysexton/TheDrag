@@ -135,5 +135,42 @@ public class CarServlet extends DBServlet {
 		}
 		return searchResults;
 	}
+
+	public String buildCardCars(int i, String s) {
+		String listing = "";
+		  
+		if (i%2 == 0) {
+			listing = "<li class='card np-element np-hover col-4 model-card' style='margin-bottom: 70px; margin-right: 30px; height: 370px; float: left;' >"+
+					"<a href='/html/car.jsp?vin=" + s.toString() + "'>" +
+					"<h3 style='text-align: center;'>" + getAttribute(s, "name").toString() + "</h3>";
+		} else {
+			listing = "<li class='card np-element np-hover col-4 model-card' style='margin-bottom: 70px;  height: 370px;' >"+
+					"<a href='/html/car.jsp?vin=" + s.toString() + "'>" +
+					"<h3 style='text-align: center;'>" + getAttribute(s, "name").toString() + "</h3>";
+		}
+		
+		if(getAttribute(s, "img") != ""){
+			listing += "<div class='np-img-wrapper' width='50px' height='90px'>"+
+					"<img class='np-img-expand' src='" + getAttribute(s, "img").toString() + "' width='200px' height='90px' style='margin: 10px'></div>";
+		}
+		if(getAttribute(s, "dealership") != ""){
+			listing += "<p><strong>Dealership:</strong> " + getAttribute(s, "dealership").toString() + "</p>";
+		}
+		if(getAttribute(s, "price") != null){
+			if (!getAttribute(s, "price").toString().equals("")){
+				listing += "<p><strong>Price: $</strong>" + getAttribute(s, "price").toString() + "</p>";
+			} else {
+				listing += "<p><strong>No Price Listed</strong>" + getAttribute(s, "price").toString() + "</p>";
+			}
+		} else {
+			listing += "<p><strong>No Price Listed</strong></p>";
+		}
+		
+		if(getAttribute(s, "url") != ""){
+			listing += "<a href='" + getAttribute(s, "url").toString() + "'><strong>Check Out Dealership Listing</strong></a></a> </li>";
+		}
+		
+		return listing;
+	}
 	
 }

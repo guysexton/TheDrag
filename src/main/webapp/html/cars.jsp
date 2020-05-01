@@ -163,41 +163,7 @@
 		  <% 
 		  
 		  for (int i = 0; i < pageCars.size(); i++) {
-			String listing = "";
-			  
-			if (i%2 == 0) {
-				listing = "<li class='card np-element np-hover col-4 model-card' style='margin-bottom: 70px; margin-right: 30px; height: 370px; float: left;' >"+
-						"<a href='/html/car.jsp?vin=" + pageCars.get(i).toString() + "'>" +
-						"<h3 style='text-align: center;'>" + db.getAttribute(pageCars.get(i), "name").toString() + "</h3>";
-			} else {
-				listing = "<li class='card np-element np-hover col-4 model-card' style='margin-bottom: 70px;  height: 370px;' >"+
-						"<a href='/html/car.jsp?vin=" + pageCars.get(i).toString() + "'>" +
-						"<h3 style='text-align: center;'>" + db.getAttribute(pageCars.get(i), "name").toString() + "</h3>";
-			}
-			
-			if(db.getAttribute(pageCars.get(i), "img") != ""){
-				listing += "<div class='np-img-wrapper' width='50px' height='90px'>"+
-						"<img class='np-img-expand' src='" + db.getAttribute(pageCars.get(i), "img").toString() + "' width='200px' height='90px' style='margin: 10px'></div>";
-			}
-			if(db.getAttribute(pageCars.get(i), "dealership") != ""){
-				listing += "<p><strong>Dealership:</strong> " + db.getAttribute(pageCars.get(i), "dealership").toString() + "</p>";
-			}
-			if(db.getAttribute(pageCars.get(i), "price") != null){
-				if (!db.getAttribute(pageCars.get(i), "price").toString().equals("")){
-					listing += "<p><strong>Price: $</strong>" + db.getAttribute(pageCars.get(i), "price").toString() + "</p>";
-				} else {
-					listing += "<p><strong>No Price Listed</strong>" + db.getAttribute(pageCars.get(i), "price").toString() + "</p>";
-				}
-			} else {
-				listing += "<p><strong>No Price Listed</strong></p>";
-			}
-			
-			if(db.getAttribute(pageCars.get(i), "url") != ""){
-				listing += "<a href='" + db.getAttribute(pageCars.get(i), "url").toString() + "'><strong>Check Out Dealership Listing</strong></a></a> </li>";
-			}
-			  
-			out.print(listing);
-			  
+			out.print(carServlet.buildCardCars(i, pageCars.get(i)));
 		  }
 		  
 		  

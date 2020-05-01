@@ -30,6 +30,8 @@ public abstract class DBServlet {
 	
 	
 	public abstract Object getAttribute(String name, String attribute);
+	
+	public String buildCard(String s) {return null;}
 
 	protected static List<Document> getAllDocuments(MongoCollection<Document> col) {
 		List<Document> allDocs = new ArrayList<Document>();

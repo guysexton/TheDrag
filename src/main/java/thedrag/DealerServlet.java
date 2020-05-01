@@ -63,6 +63,7 @@ public class DealerServlet extends DBServlet {
 		return rtn;
 	}
 	
+	@Override
 	public String buildCard(String s) {
 		
 		String name = getAttribute(s, "name").toString();

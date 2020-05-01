@@ -83,4 +83,37 @@ public class MakeServlet extends DBServlet {
 		return rtn;
 	}
 	
+	@Override
+	public String buildCard(String s) {
+		String name = getAttribute(s, "name").toString();
+		String slug=name.replace(" ","_");
+		String listing= "<li class='card np-element np-hover col-4 make-card' style='margin: 20px;height:375px;' >"+
+				  "<a href='/html/make-instance.jsp?make=" + slug + "' style='margin:0px;display:block;width:100%;height:100%;'>"+
+					"<h3 style='text-align: center;'>" + name + "</h3>";
+				
+		String image = getAttribute(s, "img").toString();
+		String numCars = getAttribute(s, "numCars").toString();
+		ArrayList<String> dealers = (ArrayList<String>)getAttribute(s,"dealerships");
+		int numDealerships = dealers.size();
+		
+		String market = getAttribute(s,"market").toString();
+		String years = getAttribute(s,"years").toString();
+		String url = getAttribute(s,"url").toString();
+		
+		
+		if(!image.equals(""))
+			listing += "<div class='np-img-wrapper' width='30px' height='30px'>" + "<img class='np-img-expand' src='" + image + "' width='inherit' height='inherit' style='margin: 10px'></div>";
+		if(!market.equals(""))
+			listing += "<p><strong>Market:</strong> " + market + "</p>";
+		if(!years.equals(""))
+			listing += "<p><strong>Years sold in:</strong> " + years + "</p>"; 
+		if(!url.equals("")){
+			listing += "<a href='" + url + "'><strong><u>Make Website</u></strong></a>";
+		}
+		 
+		listing += "</a> </li>";
+		
+		return listing;
+	}
+	
 }

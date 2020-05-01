@@ -170,35 +170,7 @@
 		  <% 
 		  
 		  for(String s:pageMakes){
-			  String name = db.getAttribute(s, "name").toString();
-			  String slug=name.replace(" ","_");
-			  String listing= "<li class='card np-element np-hover col-4 make-card' style='margin: 20px;height:375px;' >"+
-					  "<a href='/html/make-instance.jsp?make=" + slug + "' style='margin:0px;display:block;width:100%;height:100%;'>"+
-						"<h3 style='text-align: center;'>" + name + "</h3>";
-					
-			String image = db.getAttribute(s, "img").toString();
-			String numCars = db.getAttribute(s, "numCars").toString();
-			ArrayList<String> dealers = (ArrayList<String>)db.getAttribute(s,"dealerships");
-			int numDealerships = dealers.size();
-			
-			String market = db.getAttribute(s,"market").toString();
-			String years = db.getAttribute(s,"years").toString();
-			String url = db.getAttribute(s,"url").toString();
-			
-			
-			if(!image.equals(""))
-				listing += "<div class='np-img-wrapper' width='30px' height='30px'>" + "<img class='np-img-expand' src='" + image + "' width='inherit' height='inherit' style='margin: 10px'></div>";
-			if(!market.equals(""))
-				listing += "<p><strong>Market:</strong> " + market + "</p>";
-			if(!years.equals(""))
-				listing += "<p><strong>Years sold in:</strong> " + years + "</p>"; 
-			if(!url.equals("")){
-				listing += "<a href='" + url + "'><strong><u>Make Website</u></strong></a>";
-			}
-			 
-			listing += "</a> </li>";
-			
-			out.print(listing);
+			out.print(db.buildCard(s));
 		  }
 		  
 		  %>

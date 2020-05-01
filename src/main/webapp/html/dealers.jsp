@@ -181,7 +181,7 @@
 		  <%
 		  
 		  for(String s:pageDealers){
-			  out.print(dealerServlet.buildCard(s));
+			  out.print(db.buildCard(s));
 		  }
 		  
 		  %>
